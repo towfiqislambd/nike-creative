@@ -1,5 +1,5 @@
 "use client";
-import Container from "@/app/_components/common/Container";
+import Container from "../../_components/common/Container";
 import Image from "next/image";
 
 

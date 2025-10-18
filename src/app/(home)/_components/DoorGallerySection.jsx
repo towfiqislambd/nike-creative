@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Container from "@/app/_components/common/Container";
+import Container from "../../_components/common/Container";
 
 const doors = [
   {

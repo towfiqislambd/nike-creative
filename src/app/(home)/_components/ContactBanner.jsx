@@ -3,13 +3,14 @@ import Image from "next/image";
 
 export default function ContactBanner() {
   return (
-    <section className="relative w-full h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center">
+    <section className="relative w-full h-[500px] md:h-[500px] lg:h-[450px] flex items-center justify-center">
       {/* Background image */}
       <Image
-        src="https://i.ibb.co/d4S4WTNG/Home-No-Login.png" 
+        src="https://i.ibb.co.com/BKwv93WG/Frame-2147227093.png"
         alt="Contact Banner"
         fill
         className="object-cover"
+        unoptimized
         priority
       />
 

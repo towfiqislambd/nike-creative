@@ -12,9 +12,9 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Abwab immo",
+  title: "KD",
   description:
-    "Abwab Immo is a smart real estate platform for managing properties and evaluating tenant",
+    "",
 };
 
 export default function RootLayout({ children }) {
