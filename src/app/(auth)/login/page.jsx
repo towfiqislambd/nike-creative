@@ -108,7 +108,7 @@ export default function LoginPage() {
 
                 <p className="text-center text-sm text-primary-text mt-8">
                   Don’t have a account,{" "}
-                  <a href="#" className="font-medium text-[#21BBA2] underline">
+                  <a href="/sign_up" className="font-medium text-[#21BBA2] underline">
                     Sign up
                   </a>
                 </p>

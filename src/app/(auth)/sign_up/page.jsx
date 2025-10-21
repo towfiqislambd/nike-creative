@@ -3,7 +3,7 @@ import { EyeIcon, EyeOffIcon } from "lucide-react";
 import React from "react";
 import { useForm } from "react-hook-form";
 import Container from "../../_components/common/Container";
-
+import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
   const {
@@ -15,10 +15,12 @@ export default function SignUpPage() {
 
   const [showPassword, setShowPassword] = React.useState(false);
   const [showConfirm, setShowConfirm] = React.useState(false);
+const router = useRouter();
 
-  const onSubmit =  (data) => {
-    console.log(data);
-  };
+const onSubmit = (data) => {
+  console.log(data);
+  router.push("/verification");
+};
 
   const password = watch("password");
 
@@ -253,7 +255,7 @@ export default function SignUpPage() {
 
                 <p className="text-center text-sm text-primary-text mt-10">
                   Already have an account?{" "}
-                  <a href="#" className="font-medium text-[#21BBA2] underline">
+                  <a href="login" className="font-medium text-[#21BBA2] underline">
                     Log in
                   </a>
                 </p>
