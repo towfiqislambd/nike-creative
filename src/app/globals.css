@@ -26,6 +26,12 @@
 .section_description {
   @apply text-[#333] text-[16px] font-normal leading-[150%];
 }
+.input {
+  @apply px-6 py-[11px] rounded-lg border border-[#CFCFCF] w-full;
+}
+.lavelStyle {
+  @apply text-[#333] text-[18px] font-medium leading-[150%] mb-2;
+}
 
 
 @media (prefers-color-scheme: dark) {

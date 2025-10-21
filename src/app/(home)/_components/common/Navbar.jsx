@@ -1,5 +1,5 @@
 "use client";
-import Container from "@/app/_components/common/Container";
+import Container from "../../../_components/common/Container";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -41,7 +41,7 @@ export default function Navbar() {
 
           <div>
             <Link
-              href="#"
+              href="/login"
               className="border border-teal-500 cursor-pointer text-teal-600 px-8 py-2.5 rounded-full hover:bg-teal-500 hover:text-white transition-colors"
             >
               Sign In
