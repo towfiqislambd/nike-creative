@@ -3,7 +3,7 @@ import Image from "next/image";
 const DoorDesignSectionB2c = () => {
   return (
     <section className="pt-50 pb-16">
-      {/*  */}
+      <h3>Welcome to Nike Creative Studio</h3>
       <div className="container flex gap-10">
         <div className="w-3/4 flex flex-col gap-8">
           <div className="flex flex-col lg:flex-row items-start gap-10 bg-white rounded-3xl shadow-sm  pl-10 pt-10 pr-10">
