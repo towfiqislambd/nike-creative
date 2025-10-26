@@ -2,19 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-   font-family: "Poppins", sans-serif; 
+  font-family: "Poppins", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
   --color-primary-text: #333;
-  --color-button: #21BBA2;
+  --color-button: #21bba2;
 }
 
 .section_title {
@@ -33,16 +29,13 @@
   @apply text-[#333] text-[18px] font-medium leading-[150%] mb-2;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
 }
