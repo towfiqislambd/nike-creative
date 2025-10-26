@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Container from "../../../Components/Common/Container";
 import bgLayer from "../../../Assets/primary_layer.png";
-import { catalogueData } from "../../../Components/Data/data";
+import  {catalogueData}  from "../../../components/Data/data";
 
 const page = () => {
   return (
@@ -10,7 +9,7 @@ const page = () => {
       className="my-10 bg-primary-bg bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: `url(${bgLayer})` }}
     >
-      <Container>
+      <div className="container">
         {/* Upper Part */}
         <div className="mb-10 flex justify-between items-center">
           {/* Left */}
@@ -58,7 +57,7 @@ const page = () => {
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
