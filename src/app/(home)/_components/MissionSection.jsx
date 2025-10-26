@@ -1,15 +1,13 @@
 "use client";
 import React from "react";
-import Container from "../../_components/common/Container";
-
 const MissionSection = ({
   title = "Our Mission",
   description = `We are dedicated to bringing bespoke door designs to every home, combining creativity with precision. Each project is a reflection of our commitment to quality, style, and personalized service.`,
   image = "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2000&auto=format&fit=crop",
 }) => {
   return (
-    <section className="py-10 sm:py-12 lg:py-16">
-      <Container>
+    <div className="container">
+      <section className="py-10 sm:py-12 lg:py-16">
         <div className="flex flex-col items-center text-center gap-4 px-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-primary-text tracking-tight">
             {title}
@@ -31,8 +29,8 @@ const MissionSection = ({
             </div>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </div>
   );
 };
 

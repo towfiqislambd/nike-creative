@@ -14,7 +14,7 @@ export default function VerificationCodePage() {
 
   React.useEffect(() => {
     if (seconds <= 0) return;
-    const id = setInterval(() => setSeconds(s => s - 1), 1000);
+    const id = setInterval(() => setSeconds((s) => s - 1), 1000);
     return () => clearInterval(id);
   }, [seconds]);
 
@@ -32,7 +32,7 @@ export default function VerificationCodePage() {
     }
   };
 
-  const handlePaste = e => {
+  const handlePaste = (e) => {
     e.preventDefault();
     const text = (e.clipboardData.getData("text") || "")
       .replace(/\D/g, "")
@@ -46,12 +46,12 @@ export default function VerificationCodePage() {
 
   const code = values.join("");
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     try {
       console.log("verify code:", code);
-      await new Promise(r => setTimeout(r, 800));
+      await new Promise((r) => setTimeout(r, 800));
       alert("Code submitted: " + code);
     } finally {
       setSubmitting(false);
@@ -66,7 +66,7 @@ export default function VerificationCodePage() {
 
   return (
     <main>
-      {/* <Container> */}
+      {/*  */}
       <div className="py-10 container">
         <div className="grid lg:grid-cols-2 xl:gap-38 items-center">
           <div className="xl:p-0 p-5">
@@ -97,13 +97,13 @@ export default function VerificationCodePage() {
                   {values.map((val, i) => (
                     <input
                       key={i}
-                      ref={el => (inputsRef.current[i] = el)}
+                      ref={(el) => (inputsRef.current[i] = el)}
                       inputMode="numeric"
                       pattern="[0-9]*"
                       maxLength={1}
                       value={val}
-                      onChange={e => handleChange(i, e.target.value)}
-                      onKeyDown={e => handleKeyDown(i, e)}
+                      onChange={(e) => handleChange(i, e.target.value)}
+                      onKeyDown={(e) => handleKeyDown(i, e)}
                       className="w-12 h-12 rounded-lg border border-[#CFCFCF] text-center text-lg tracking-widest focus:border-[#21BBA2] focus:ring-2 focus:ring-[#21BBA2]/20"
                     />
                   ))}
@@ -146,7 +146,7 @@ export default function VerificationCodePage() {
           </div>
         </div>
       </div>
-      {/* </Container> */}
+      {/*  */}
     </main>
   );
 }

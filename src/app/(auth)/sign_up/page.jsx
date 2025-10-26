@@ -16,7 +16,7 @@ export default function SignUpPage() {
   const [showConfirm, setShowConfirm] = React.useState(false);
   const router = useRouter();
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     console.log(data);
     router.push("/verification");
   };
@@ -25,7 +25,7 @@ export default function SignUpPage() {
 
   return (
     <main className="">
-      {/* <Container> */}
+      {/*  */}
       <div className="py-10 container">
         <div className="grid xl:gap-38 lg:grid-cols-2">
           <div className="xl:p-0 p-5">
@@ -162,7 +162,7 @@ export default function SignUpPage() {
                     />
                     <button
                       type="button"
-                      onClick={() => setShowPassword(s => !s)}
+                      onClick={() => setShowPassword((s) => !s)}
                       className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-gray-500 hover:text-gray-700"
                       aria-label={
                         showPassword ? "Hide password" : "Show password"
@@ -184,12 +184,13 @@ export default function SignUpPage() {
                       className="input pr-10"
                       {...register("confirmPassword", {
                         required: "Confirm your password",
-                        validate: v => v === password || "Passwords must match",
+                        validate: (v) =>
+                          v === password || "Passwords must match",
                       })}
                     />
                     <button
                       type="button"
-                      onClick={() => setShowConfirm(s => !s)}
+                      onClick={() => setShowConfirm((s) => !s)}
                       className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-gray-500 hover:text-gray-700"
                       aria-label={
                         showConfirm ? "Hide password" : "Show password"
@@ -274,7 +275,7 @@ export default function SignUpPage() {
           </div>
         </div>
       </div>
-      {/* </Container> */}
+      {/*  */}
     </main>
   );
 }

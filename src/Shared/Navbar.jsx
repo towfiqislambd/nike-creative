@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
-// import Container from "@/Components/Common/Container";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -14,7 +13,7 @@ export default function Navbar() {
   const active =
     "text-teal-600 after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-teal-500 after:rounded-full";
   const hover = "hover:text-teal-600";
-  const isActive = href => (pathname === href ? active : hover);
+  const isActive = (href) => (pathname === href ? active : hover);
 
   const links = [
     { label: "Home", href: "/" },
@@ -23,11 +22,9 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full z-50">
-      {/* <Container> */}
+    <div className="absolute top-0 left-0 mt-6 w-full z-50">
       <nav className="container flex items-center justify-between w-full bg-white mt-6 px-4 sm:px-6 lg:px-10 py-2.5 border border-gray-200 rounded-full shadow-sm">
         <div className="flex items-center gap-10">
-          {/* Left: logo */}
           <Link href="/" className="flex items-center">
             <img
               src="https://i.ibb.co.com/XZ21JXnM/logo.png"
@@ -36,9 +33,8 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop links */}
           <ul className="hidden xl:flex items-center gap-8">
-            {links.map(l => (
+            {links.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
@@ -52,7 +48,6 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Desktop Sign in */}
         <div className="hidden xl:block">
           <Link
             href="/login"
@@ -62,10 +57,9 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="xl:hidden p-2 rounded-md hover:bg-gray-50"
-          onClick={() => setIsOpen(s => !s)}
+          onClick={() => setIsOpen((s) => !s)}
           aria-label="Toggle Menu"
         >
           {isOpen ? (
@@ -75,9 +69,8 @@ export default function Navbar() {
           )}
         </button>
       </nav>
-      {/* </Container> */}
+      {/*  */}
 
-      {/* Mobile drawer */}
       <div
         className={`xl:hidden fixed top-0 left-0 h-full w-[78%] max-w-xs bg-white z-50 shadow-lg transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
@@ -101,7 +94,7 @@ export default function Navbar() {
         </div>
 
         <ul className="p-5 flex flex-col gap-2">
-          {links.map(l => (
+          {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
@@ -128,7 +121,6 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Backdrop */}
       {isOpen && (
         <button
           className="fixed inset-0 bg-black/20 xl:hidden"

@@ -2,7 +2,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Image from "next/image";
-import Container from "../../_components/common/Container";
 
 export default function ContactSection() {
   const {
@@ -19,15 +18,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-25 relative">
-      <div
-        className="absolute inset-0 bg-cover bg-center -z-10"
-        style={{
-          backgroundImage:
-            "url('https://i.ibb.co.com/qM2tK9RL/Group-1321314677.png')",
-        }}
-      ></div>
-      <Container>
+    <div className="container">
+      {" "}
+      <section className="py-25 relative">
+        <div
+          className="absolute inset-0 bg-cover bg-center -z-10"
+          style={{
+            backgroundImage:
+              "url('https://i.ibb.co.com/qM2tK9RL/Group-1321314677.png')",
+          }}
+        ></div>
+
         <div className="flex w-full gap-8 z-50">
           <div className="w-3/4 ">
             <div className="p-8 rounded-3xl shadow-sm flex gap-10 bg-white">
@@ -213,7 +214,7 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </div>
   );
 }
