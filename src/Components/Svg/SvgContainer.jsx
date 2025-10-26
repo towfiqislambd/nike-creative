@@ -1,4 +1,4 @@
-export const  EyeIcon = () => {
+export const EyeIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,9 +12,9 @@ export const  EyeIcon = () => {
       <circle cx="12" cy="12" r="3" />
     </svg>
   );
-}
+};
 
-export const  EyeOffIcon = () =>  {
+export const EyeOffIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,8 +28,9 @@ export const  EyeOffIcon = () =>  {
       <path d="M10.58 10.58A3 3 0 0012 15a3 3 0 002.42-4.42M9.88 4.26A10.94 10.94 0 0112 4c7 0 11 8 11 8a18.75 18.75 0 01-3.11 3.87M6.53 6.53C3.41 8.46 1 12 1 12s4 7 11 7a10.9 10.9 0 006.47-2.15" />
     </svg>
   );
-}
-export const  LogoIconSvg = () =>  {
+};
+
+export const LogoIconSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -44,4 +45,4 @@ export const  LogoIconSvg = () =>  {
       />
     </svg>
   );
-}
+};
