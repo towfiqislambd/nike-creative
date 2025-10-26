@@ -1,10 +1,10 @@
-import Navbar from "../../Shared/Navbar";
 import Footer from "../../Shared/Footer";
+import B2CNavbar from "../../Shared/B2CNavbar";
 
 export default function B2CLayout({ children }) {
   return (
     <>
-      <Navbar />
+      <B2CNavbar />
       {children}
       <Footer />
     </>
