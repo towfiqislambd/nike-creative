@@ -2,7 +2,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-import Container from "../../_components/common/Container";
 
 export default function ResetPasswordPage() {
   const {
@@ -22,8 +21,8 @@ export default function ResetPasswordPage() {
 
   return (
     <main>
-      <Container>
-        <div className="py-10">
+      {/* <Container> */}
+        <div className="py-10 container">
           <div className="grid lg:grid-cols-2 xl:gap-38 items-center">
             <div className="xl:p-0 p-5">
               <div className="mb-8">
@@ -132,7 +131,7 @@ export default function ResetPasswordPage() {
             </div>
           </div>
         </div>
-      </Container>
+      {/* </Container> */}
     </main>
   );
 }

@@ -1,16 +1,15 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Container from "../../_components/common/Container";
 
 const doors = [
   {
     id: 1,
     code: "KDWH005",
     images: {
-      "#D3D3D3": "https://i.ibb.co.com/35TH3Mnx/Rectangle-161124225-1.png", 
-      "#555555": "https://i.ibb.co.com/KzVYJnHr/Rectangle-161124225.png", 
-      "#000000": "https://i.ibb.co.com/gLT7K6BC/Rectangle-161124224.png", 
+      "#D3D3D3": "https://i.ibb.co.com/35TH3Mnx/Rectangle-161124225-1.png",
+      "#555555": "https://i.ibb.co.com/KzVYJnHr/Rectangle-161124225.png",
+      "#000000": "https://i.ibb.co.com/gLT7K6BC/Rectangle-161124224.png",
     },
   },
   {
@@ -51,12 +50,13 @@ export default function DoorGallerySection() {
   );
 
   const handleColorClick = (doorId, color) => {
-    setSelectedColors((prev) => ({ ...prev, [doorId]: color }));
+    setSelectedColors(prev => ({ ...prev, [doorId]: color }));
   };
 
   return (
     <section className="py-25">
-      <Container>
+      {/* <Container> */}
+      <div className="container">
         <div className="text-center mb-12">
           <h2 className="section_title">The Art of the Doorway</h2>
           <p className="section_description mt-3">
@@ -65,7 +65,7 @@ export default function DoorGallerySection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {doors.map((door) => {
+          {doors.map(door => {
             const currentColor = selectedColors[door.id];
             const currentImage = door.images[currentColor];
 
@@ -113,7 +113,8 @@ export default function DoorGallerySection() {
             );
           })}
         </div>
-      </Container>
+      </div>
+      {/* </Container> */}
     </section>
   );
 }
