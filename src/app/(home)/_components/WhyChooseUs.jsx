@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Container from "../../_components/common/Container";
-
 const WhyChooseUs = ({
   eyebrow = "About Kutde",
   title = "Why Choose Us",
@@ -114,8 +112,8 @@ const WhyChooseUs = ({
   ],
 }) => {
   return (
-    <Container>
-      <section className="px-4 py-14 sm:px-6 lg:px-8">
+    <div className="container px-4 xl:px-0 py-14 ">
+      <section className="">
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-3 mb-8">
           <span className="inline-flex rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
@@ -158,7 +156,7 @@ const WhyChooseUs = ({
           </div>
         </div>
       </section>
-    </Container>
+    </div>
   );
 };
 

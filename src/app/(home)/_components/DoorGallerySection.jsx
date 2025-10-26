@@ -50,13 +50,12 @@ export default function DoorGallerySection() {
   );
 
   const handleColorClick = (doorId, color) => {
-    setSelectedColors(prev => ({ ...prev, [doorId]: color }));
+    setSelectedColors((prev) => ({ ...prev, [doorId]: color }));
   };
 
   return (
-    <section className="py-25">
-      {/* <Container> */}
-      <div className="container">
+    <section className="container py-25">
+      <div className="">
         <div className="text-center mb-12">
           <h2 className="section_title">The Art of the Doorway</h2>
           <p className="section_description mt-3">
@@ -65,7 +64,7 @@ export default function DoorGallerySection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {doors.map(door => {
+          {doors.map((door) => {
             const currentColor = selectedColors[door.id];
             const currentImage = door.images[currentColor];
 
@@ -114,7 +113,7 @@ export default function DoorGallerySection() {
           })}
         </div>
       </div>
-      {/* </Container> */}
+      {/*  */}
     </section>
   );
 }

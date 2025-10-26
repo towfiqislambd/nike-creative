@@ -9,13 +9,13 @@ export default function ForgotPasswordPage() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     console.log("Forgot password email:", data);
   };
 
   return (
     <main>
-      {/* <Container> */}
+      {/*  */}
       <div className="py-10 container">
         <div className="grid lg:grid-cols-2 xl:gap-38 items-center">
           {/* Left: Form */}
@@ -75,7 +75,7 @@ export default function ForgotPasswordPage() {
           </div>
         </div>
       </div>
-      {/* </Container> */}
+      {/*  */}
     </main>
   );
 }

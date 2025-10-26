@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Container from "../../_components/common/Container";
-
 const AboutMosaic = ({
   eyebrow = "Our Story",
   title = "Let’s Talk About Kutde",
@@ -14,8 +12,9 @@ const AboutMosaic = ({
   imgBottomWide = "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop",
 }) => {
   return (
-    <Container>
-      <section className="px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container">
+      {" "}
+      <section className=" px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 xl:flex-row">
           <div className="flex-1 flex flex-col gap-6">
             <div className="rounded-[28px] flex flex-col justify-between h-[606px] bg-white/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 backdrop-blur sm:p-8">
@@ -50,7 +49,7 @@ const AboutMosaic = ({
           </div>
         </div>
       </section>
-    </Container>
+    </div>
   );
 };
 
