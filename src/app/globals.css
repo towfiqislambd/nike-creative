@@ -11,6 +11,9 @@
 
   --color-primary-text: #333;
   --color-button: #21bba2;
+  --color-off-white: #c1d0e5;
+  --color-light-green: #21bba2;
+  --color-accent-gray: #f2f2f2;
 }
 
 .section_title {
@@ -30,7 +33,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #eff3f6;
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
 }

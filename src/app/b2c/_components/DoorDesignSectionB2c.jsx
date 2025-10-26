@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const DoorDesignSection = () => {
+const DoorDesignSectionB2c = () => {
   return (
     <section className="pt-50 pb-16">
       {/*  */}
@@ -11,15 +11,58 @@ const DoorDesignSection = () => {
               <p className="text-[#5A5C5F] text-[12px] font-medium leading-[150%]mb-2">
                 Single Door
               </p>
-              <h2 className="section_title mb-4">
-                Where Design Meets <br /> Durability
+              <h2 className="section_title mb-4 mt-10">
+                Single Door Design <br />
+                KSWH005
               </h2>
-              <p className="section_description">
-                Kutde is the exclusive B2B partner for crafting exquisite
-                architectural designs and decorative elements. We transform
-                premium materials into stunning details that elevate your impact
-                doors, windows, and structures from functional to exceptional.
-              </p>
+
+              <div className="flex w-[80%] items-center gap-6 mt-8">
+                <div className="w-full">
+                  <Image
+                    src="https://i.ibb.co.com/ymcPgKnY/Frame-2147227145.png"
+                    alt="Single Door"
+                    width={500}
+                    height={500}
+                    unoptimized
+                    className=" object-cover w-full h-auto"
+                  />
+                </div>
+                <div className="w-full">
+                  <h4 className="text-[#333] text-[22px] font-medium leading-[150%] mb-3">
+                    Single Door Design
+                  </h4>
+                  <p className="section_description">
+                    Bring your dream door to life – with elegance and strength
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-10">
+                <button
+                  className="inline-flex items-center justify-between rounded-[40px] border border-[#1F1F1F] py-2 pr-4 pl-7 text-sm text-[#1F1F1F]/80 hover:bg-black/[0.02] focus:outline-none focus:ring-2 focus:ring-[#21BBA2]/40 transition"
+                  type="button"
+                >
+                  <span className="mr-3">View Details</span>
+
+                  {/* Right circular arrow */}
+                  <span className="grid place-items-center w-8 h-8 rounded-full bg-[#21BBA2]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="M12 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
             </div>
 
             <div className=" w-full  ">
@@ -57,12 +100,40 @@ const DoorDesignSection = () => {
             </div>
 
             <div className="bg-white rounded-3xl gap-8 pl-8 pt-8 shadow-sm flex  w-2/3">
-              <div className="w-full">
-                <h3 className="section_subTitle mb-2">Double Door Design</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Open the way to style and durability with our double door
-                  designs.
-                </p>
+              <div className="w-full flex flex-col justify-between">
+                <div className="">
+                  <h3 className="section_subTitle mb-2">Double Door Design</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Open the way to style and durability with our double door
+                    designs.
+                  </p>
+                </div>
+                <div className="mb-8">
+                  <button
+                    className="inline-flex items-center justify-between rounded-[40px] border border-[#1F1F1F] py-2 pr-4 pl-7 text-sm text-[#1F1F1F]/80 hover:bg-black/[0.02] focus:outline-none focus:ring-2 focus:ring-[#21BBA2]/40 transition"
+                    type="button"
+                  >
+                    <span className="mr-3">Double Door Design</span>
+
+                    {/* Right circular arrow */}
+                    <span className="grid place-items-center w-8 h-8 rounded-full bg-[#21BBA2]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="M12 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
               </div>
               <div className="w-full">
                 <Image
@@ -163,4 +234,4 @@ const DoorDesignSection = () => {
   );
 };
 
-export default DoorDesignSection;
+export default DoorDesignSectionB2c;
