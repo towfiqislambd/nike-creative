@@ -127,7 +127,6 @@ const WhyChooseUs = ({
           <p className="max-w-3xl text-gray-500">{subtitle}</p>
         </div>
 
-        {/* Content: left image + right cards */}
         <div className="flex flex-col gap-6 lg:flex-row">
           {/* Left Image */}
           <div className="w-full lg:w-[42%] rounded-[28px] ring-1 ring-black/5 shadow-[0_10px_30px_rgba(0,0,0,0.12)] overflow-hidden">
