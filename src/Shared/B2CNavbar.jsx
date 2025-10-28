@@ -6,23 +6,16 @@ import { usePathname } from "next/navigation";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Container from "../Components/Common/Container";
 import { UserSvg } from "../Components/Svg/SvgContainer";
-import b2b2cLogo from "../Assets/b2b2c_logo.png"
+import b2b2cLogo from "../Assets/b2b2c_logo.png";
 
 const B2CNavbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const base =
-    "relative cursor-pointer transition-colors text-gray-700 font-medium";
-  const active =
-    "text-teal-600 after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-teal-500 after:rounded-full";
-  const hover = "hover:text-teal-600";
-  const isActive = href => (pathname === href ? active : hover);
-
-  const links = [
-    { label: "Home", href: "/" },
-    { label: "Shop", href: "/shop" },
-    { label: "Category", href: "/category" },
+  const navLinks = [
+    { id: 1, label: "Home", href: "/b2c" },
+    { id: 2, label: "Shop", href: "/b2c/shop" },
+    { id: 3, label: "Category", href: "/" },
   ];
 
   return (
@@ -43,17 +36,22 @@ const B2CNavbar = () => {
 
             {/* Nav links */}
             <ul className="hidden xl:flex items-center gap-8">
-              {links?.map(l => (
-                <li key={l.href}>
+              {navLinks?.map(link => {
+                const isActive = pathname === link?.href;
+
+                return (
                   <Link
-                    href={l.href}
-                    className={`${base} ${isActive(l.href)}`}
-                    aria-current={pathname === l.href ? "page" : undefined}
+                    key={link?.id}
+                    href={link?.href}
+                    className={`relative px-3 cursor-pointer transition-colors text-gray-700 font-medium ${
+                      isActive &&
+                      "text-teal-600 after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-teal-500 after:rounded-full"
+                    }`}
                   >
-                    {l.label}
+                    {link?.label}
                   </Link>
-                </li>
-              ))}
+                );
+              })}
             </ul>
           </div>
 
@@ -110,30 +108,30 @@ const B2CNavbar = () => {
           </div>
 
           <ul className="p-5 flex flex-col gap-2">
-            {links.map(l => (
-              <li key={l.href}>
+            {navLinks.map(link => {
+              const isActive = pathname === link?.href;
+
+              return (
                 <Link
-                  href={l.href}
+                  key={link?.id}
+                  href={link?.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-2 py-2.5 rounded-md ${
-                    pathname === l.href ? "text-teal-600" : "text-gray-700"
+                    isActive && "text-teal-600"
                   }`}
-                  aria-current={pathname === l.href ? "page" : undefined}
                 >
-                  {l.label}
+                  {link?.label}
                 </Link>
-              </li>
-            ))}
+              );
+            })}
 
-            <li className="mt-2">
-              <Link
-                href="/login"
-                onClick={() => setIsOpen(false)}
-                className="block text-center px-4 py-2 rounded-md border border-teal-500 text-teal-600 hover:bg-teal-500 hover:text-white transition-colors"
-              >
-                Sign In
-              </Link>
-            </li>
+            <Link
+              href="/login"
+              onClick={() => setIsOpen(false)}
+              className="block mt-2 text-center px-4 py-2 rounded-md border border-teal-500 text-teal-600 hover:bg-teal-500 hover:text-white transition-colors"
+            >
+              Sign In
+            </Link>
           </ul>
         </div>
 
