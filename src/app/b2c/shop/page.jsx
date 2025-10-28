@@ -4,7 +4,6 @@ import Container from "../../../Components/Common/Container";
 import { AirSvg, AISvg, DesignSvg } from "../../../Components/Svg/SvgContainer";
 import Favorites from "./_components/Favorites";
 import Saved from "./_components/Saved";
-import AiDesign from "./_components/AiDesign";
 
 const page = () => {
   const [activeTab, setActiveTab] = useState("favorites");
@@ -185,7 +184,6 @@ const page = () => {
           <section>
             {activeTab === "favorites" && <Favorites />}
             {activeTab === "saved" && <Saved />}
-            {activeTab === "ai_design" && <AiDesign />}
           </section>
         </main>
       </Container>
