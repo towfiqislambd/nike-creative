@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Container from "../Components/Common/Container";
 import { UserSvg } from "../Components/Svg/SvgContainer";
+import b2b2cLogo from "../Assets/b2b2c_logo.png"
 
 const B2CNavbar = () => {
   const pathname = usePathname();

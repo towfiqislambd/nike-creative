@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-import bgLayer from "../../../Assets/primary_layer.png";
+import bgLayer from "../../../Assets/Home-No-Login.png";
 import { catalogueData } from "../../../Components/Data/data";
 import Container from "../../../Components/Common/Container";
 import {
@@ -9,35 +10,69 @@ import {
   ShareSvg,
   ViewSvg,
 } from "../../../Components/Svg/SvgContainer";
+import Modal from "../../../Components/Common/Modal";
+import DoorPreviewModal from "../../../Components/Modals/DoorPreviewModal";
+
+const colors = [
+  { id: 1, code: "#3E3E3E" },
+  { id: 2, code: "#fff" },
+  { id: 3, code: "#000" },
+];
+
+const categories = [
+  { id: 1, name: "Single Door Designs" },
+  { id: 2, name: "Double Door Designs" },
+];
 
 const page = () => {
+  const [open, setOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("Single Door Designs");
+  const [activeColor, setActiveColor] = useState("#3E3E3E");
+
   return (
     <section
-      className="my-10 bg-primary-bg bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: `url(${bgLayer})` }}
+      className="my-10"
+      // style={{ backgroundImage: `url(${bgLayer.src})` }}
     >
       <Container>
         {/* Upper Part */}
         <div className="mb-10 flex justify-between items-center">
           {/* Left */}
           <div className="flex gap-12 items-center">
+            {/* Category */}
             <div className="flex gap-5 items-center">
-              <button className="bg-light-green px-5 py-3 rounded-lg text-white cursor-pointer hover:scale-105 duration-300 transition-all">
-                Single Door Designs
-              </button>
-
-              <button className="bg-transparent border border-light-green px-5 py-3 rounded-lg text-light-green cursor-pointer hover:scale-105 duration-300 transition-all">
-                Double Door Designs
-              </button>
+              {categories?.map(category => (
+                <button
+                  key={category?.id}
+                  onClick={() => setActiveCategory(category?.name)}
+                  className={`px-5 py-3 rounded-lg cursor-pointer hover:scale-105 duration-300 transition-all border border-light-green ${
+                    activeCategory === category?.name
+                      ? "bg-light-green text-white"
+                      : "bg-transparent text-light-green"
+                  }`}
+                >
+                  {category?.name}
+                </button>
+              ))}
             </div>
 
+            {/* Colors */}
             <div className="flex gap-3 items-center">
-              <p className="text-[#333] text-xl">Color:</p>
+              <p className="text-[#333] text-xl font-medium">Color:</p>
 
               <div className="flex gap-2 items-center">
-                <div className="size-5 rounded-full bg-black cursor-pointer shadow-lg" />
-                <div className="size-5 rounded-full bg-white cursor-pointer shadow-lg" />
-                <div className="size-5 rounded-full bg-black cursor-pointer shadow-lg" />
+                {colors?.map(color => (
+                  <button
+                    key={color?.id}
+                    onClick={() => setActiveColor(color?.code)}
+                    style={{ backgroundColor: color?.code }}
+                    className={`rounded-full cursor-pointer shadow-lg  ${
+                      activeColor === color?.code
+                        ? "border-light-green border-2 size-6"
+                        : "size-5 border border-gray-100"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -55,7 +90,8 @@ const page = () => {
           {catalogueData?.map(item => (
             <div
               key={item?.id}
-              className="border border-accent-gray rounded-xl bg-white text-center shadow-lg py-4 relative"
+              onClick={() => setOpen(true)}
+              className="border border-accent-gray rounded-xl bg-white text-center shadow-lg py-4 relative duration-300 transition-all cursor-pointer hover:scale-105 hover:shadow-xl hover:border-light-green"
             >
               {/* Catalogue Image */}
               <figure className="mb-3 w-[110px] h-[150px] mx-auto rounded relative">
@@ -83,6 +119,11 @@ const page = () => {
           ))}
         </div>
       </Container>
+
+      {/* Modal */}
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <DoorPreviewModal />
+      </Modal>
     </section>
   );
 };
