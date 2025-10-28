@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
-import userLogo from "../Assets/user.svg";
+import Container from "../Components/Common/Container";
+import { UserSvg } from "../Components/Svg/SvgContainer";
 
 const B2CNavbar = () => {
   const pathname = usePathname();
@@ -24,8 +25,8 @@ const B2CNavbar = () => {
   ];
 
   return (
-    <div className="container">
-      <div className="sticky top-5 mt-6 left-0 w-full z-50">
+    <div className="sticky top-5 mt-6 left-0 w-full z-50">
+      <Container>
         <nav className="flex items-center justify-between bg-white px-4 sm:px-6 lg:px-10 py-2.5 border border-gray-200 rounded-full shadow-sm">
           {/* Left */}
           <div className="flex items-center gap-10">
@@ -41,7 +42,7 @@ const B2CNavbar = () => {
 
             {/* Nav links */}
             <ul className="hidden xl:flex items-center gap-8">
-              {links?.map((l) => (
+              {links?.map(l => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
@@ -57,7 +58,7 @@ const B2CNavbar = () => {
 
           {/* Right */}
           <div className="hidden xl:flex gap-4 items-center">
-            <div className="w-[350px] px-5 py-3 border border-gray-200 rounded-full">
+            <div className="w-[400px] px-6 py-3.5 border border-gray-100 rounded-full shadow-lg  shadow-black/10">
               <input
                 type="text"
                 className="block w-full border border-none outline-none"
@@ -65,15 +66,15 @@ const B2CNavbar = () => {
               />
             </div>
 
-            <button>
-              <Image src={userLogo} alt="user" />
+            <button className="cursor-pointer">
+              <UserSvg />
             </button>
           </div>
 
           {/* Mobile hamburger */}
           <button
             className="xl:hidden p-2 rounded-md hover:bg-gray-50"
-            onClick={() => setIsOpen((s) => !s)}
+            onClick={() => setIsOpen(s => !s)}
             aria-label="Toggle Menu"
           >
             {isOpen ? (
@@ -108,7 +109,7 @@ const B2CNavbar = () => {
           </div>
 
           <ul className="p-5 flex flex-col gap-2">
-            {links.map((l) => (
+            {links.map(l => (
               <li key={l.href}>
                 <Link
                   href={l.href}
@@ -143,7 +144,7 @@ const B2CNavbar = () => {
             aria-label="Close Menu Backdrop"
           />
         )}
-      </div>
+      </Container>
     </div>
   );
 };
