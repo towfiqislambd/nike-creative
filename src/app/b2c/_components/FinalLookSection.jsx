@@ -16,7 +16,7 @@ export default function FinalLookSection() {
     singleColor: "#4B5563",
     doubleColor: "#4B5563",
   });
-
+// hello 
   function ColorCircle({ color, field }) {
     const isSelected = selected[field] === color;
     return (
