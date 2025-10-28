@@ -6,11 +6,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
   --color-primary-text: #333;
-  --color-button: #21bba2;
   --color-off-white: #c1d0e5;
   --color-light-green: #21bba2;
   --color-accent-gray: #f2f2f2;
@@ -19,22 +15,25 @@
 .section_title {
   @apply text-[#333] text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-semibold leading-[150%];
 }
+
 .section_subTitle {
   @apply text-[#333] text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] font-semibold leading-[150%];
 }
+
 .section_description {
   @apply text-[#333] text-[16px] font-normal leading-[150%];
 }
+
 .input {
   @apply px-6 py-[11px] rounded-lg border border-[#CFCFCF] w-full;
 }
+
 .lavelStyle {
   @apply text-[#333] text-[18px] font-medium leading-[150%] mb-2;
 }
 
 body {
   background: #eff3f6;
-  color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
 }
 

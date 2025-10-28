@@ -25,7 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/Components/Svg/SvgContainer.jsx",
-    "src/app/B2C/page.jsx"
+    "src/app/B2C/page.jsx",
+    "src/app/b2c/shop/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
