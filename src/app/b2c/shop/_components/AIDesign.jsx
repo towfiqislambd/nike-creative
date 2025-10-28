@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AIDesign = () => {
+const AiDesign = () => {
   return (
     <div>
-      Ai Design
+      AiDesing
     </div>
   );
 };
 
-export default AIDesign;
+export default AiDesign;
