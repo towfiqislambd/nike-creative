@@ -1,6 +1,7 @@
 import React from "react";
 import doorImg from "../../../../Assets/d1.jpg";
 import SingleDoor from "../../../../Components/Common/SingleDoor";
+
 const data = [
   { id: 1, img: doorImg, name: "KDWH010" },
   { id: 2, img: doorImg, name: "KDWH010" },
