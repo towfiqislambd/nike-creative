@@ -13,6 +13,9 @@ export default function AboutBanner() {
         priority
       />
 
+
+      {/* //hello */}
+
       <div className="absolute inset-0 bg-black/70"></div>
 
       <div className="relative z-10 text-center">
