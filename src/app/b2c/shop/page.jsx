@@ -1,12 +1,28 @@
 "use client";
 import React, { useState } from "react";
 import Container from "../../../Components/Common/Container";
-import { AirSvg, AISvg, DesignSvg } from "../../../Components/Svg/SvgContainer";
+import {
+  AirSvg,
+  AISvg,
+  CameraSvg,
+  DesignSvg,
+} from "../../../Components/Svg/SvgContainer";
 import Favorites from "./_components/Favorites";
 import Saved from "./_components/Saved";
+import CreateAiDesign from "./_components/CreateAiDesign";
+import Image from "next/image";
+import doorPreview from "../../../Assets/door_preview_img.jpg";
+const colors = [
+  { id: 1, code: "#3E3E3E" },
+  { id: 2, code: "#fff" },
+  { id: 3, code: "#000" },
+];
 
 const page = () => {
+  const [isAr, setAr] = useState(false);
+  const [imageFile, setImageFile] = useState(null);
   const [activeTab, setActiveTab] = useState("favorites");
+  const [activeColor, setActiveColor] = useState("#3E3E3E");
   const shadow_box =
     "p-5 border border-[#E9E9E9] bg-white rounded-xl w-[312px] space-y-3 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]";
 
@@ -15,7 +31,7 @@ const page = () => {
       <Container>
         <main className="flex gap-8">
           {/* Sidebar */}
-          <aside className="space-y-5">
+          <aside className="space-y-5 shrink-0">
             {/* Upper Div */}
             <div className={shadow_box}>
               <h3 className="text-[#1F1F1F] text-lg font-medium">My stuff</h3>
@@ -145,7 +161,10 @@ const page = () => {
               </h3>
 
               <button
-                onClick={() => setActiveTab("ai_design")}
+                onClick={() => {
+                  setActiveTab("ai_design");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
                 className="px-4 py-2.5 font-medium rounded-full cursor-pointer flex gap-2 items-center bg-[linear-gradient(245deg,_#4BCDE4_1.36%,_#58C5D8_49.38%,_#29717E_186.59%)] text-primary-text duration-300 transition-all hover:scale-105"
               >
                 <AISvg />
@@ -164,7 +183,11 @@ const page = () => {
                 <input
                   type="checkbox"
                   className="sr-only peer"
-                  onChange={() => setActiveTab("ar_viewer")}
+                  onChange={() => {
+                    setActiveTab("favorites");
+                    setAr(!isAr);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 />
                 <div className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full transition-all duration-300" />
                 <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 transform peer-checked:translate-x-5" />
@@ -181,9 +204,110 @@ const page = () => {
           </aside>
 
           {/* Outlet */}
-          <section>
+          <section className="grow">
+            {activeTab === "favorites" && isAr && (
+              <div>
+                {imageFile ? (
+                  <div className="border border-gray-200 rounded-2xl p-5 flex gap-6 mb-8 shadow-[0_0_4px_3px_rgba(0,0,0,0.05)]">
+                    {/* Left - Door Preview */}
+                    <div className="w-[843px]">
+                      <h3 className="text-primary-text font-semibold text-2xl mb-3.5">
+                        Bring Your Vision to Life
+                      </h3>
+
+                      <figure className="h-[380px] relative rounded-2xl">
+                        <Image
+                          src={doorPreview}
+                          alt="door_preview"
+                          fill
+                          unoptimized
+                          className="rounded-2xl"
+                        />
+                      </figure>
+                    </div>
+
+                    {/* Right - Color Changer */}
+                    <div className="flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-primary-text font-semibold text-2xl mb-3.5">
+                          Change Color
+                        </h3>
+
+                        <div className="flex gap-1 items-center">
+                          {colors?.map(color => (
+                            <button
+                              key={color?.id}
+                              onClick={() => setActiveColor(color?.code)}
+                              style={{ backgroundColor: color?.code }}
+                              className={`rounded-full cursor-pointer shadow-lg size-12 ${
+                                activeColor === color?.code
+                                  ? "border-light-green border-2"
+                                  : "border border-gray-200"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="space-y-3">
+                        <button className="text-[#000080] font-medium px-7 py-3 rounded-lg cursor-pointer duration-300 transition-all hover:scale-105 border border-[#000080]">
+                          Save the Photo
+                        </button>
+
+                        <button className="bg-[#000080] text-white font-medium px-7 py-3 rounded-lg cursor-pointer duration-300 transition-all hover:scale-105 border border-[#000080]">
+                          Select To Order
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    onDragOver={e => e.preventDefault()}
+                    onDrop={e => {
+                      e.preventDefault();
+                      const droppedFile = e.dataTransfer.files[0];
+                      if (droppedFile) setImageFile(droppedFile);
+                    }}
+                  >
+                    <label
+                      htmlFor="upload_door"
+                      className="w-full py-20 text-center flex flex-col gap-3 mb-8 border border-dashed border-[#ADADAD] rounded-2xl bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] cursor-pointer hover:bg-gray-50 transition-all duration-300 group"
+                    >
+                      <p className="mx-auto mb-2 group-hover:scale-105 duration-300 transition-transform">
+                        <CameraSvg />
+                      </p>
+
+                      <h3 className="text-primary-text text-2xl font-semibold mb-2">
+                        Bring Your Vision to Life
+                      </h3>
+
+                      <p className="text-[#ADADAD] text-xl max-w-[750px] mx-auto leading-[164%]">
+                        To begin, simply upload or take a photo of your door.
+                        For the best results, please ensure it's well-lit and
+                        shows the entire doorway clearly.
+                      </p>
+
+                      <p className="text-primary-text font-medium">
+                        Upload or drag and drop
+                      </p>
+                    </label>
+                    <input
+                      type="file"
+                      id="upload_door"
+                      className="hidden"
+                      accept="image/*"
+                      onChange={e => {
+                        const file = e.target.files[0];
+                        if (file) setImageFile(file);
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
             {activeTab === "favorites" && <Favorites />}
             {activeTab === "saved" && <Saved />}
+            {activeTab === "ai_design" && <CreateAiDesign />}
           </section>
         </main>
       </Container>
