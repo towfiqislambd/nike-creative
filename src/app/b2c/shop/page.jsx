@@ -9,6 +9,7 @@ import {
 } from "../../../Components/Svg/SvgContainer";
 import Favorites from "./_components/Favorites";
 import Saved from "./_components/Saved";
+import CreateAiDesign from "./_components/CreateAiDesign";
 import Image from "next/image";
 import doorPreview from "../../../Assets/door_preview_img.jpg";
 const colors = [
@@ -18,7 +19,7 @@ const colors = [
 ];
 
 const page = () => {
-  const [isAr, setAr] = useState(true);
+  const [isAr, setAr] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [activeTab, setActiveTab] = useState("favorites");
   const [activeColor, setActiveColor] = useState("#3E3E3E");
@@ -160,7 +161,10 @@ const page = () => {
               </h3>
 
               <button
-                onClick={() => setActiveTab("ai_design")}
+                onClick={() => {
+                  setActiveTab("ai_design");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
                 className="px-4 py-2.5 font-medium rounded-full cursor-pointer flex gap-2 items-center bg-[linear-gradient(245deg,_#4BCDE4_1.36%,_#58C5D8_49.38%,_#29717E_186.59%)] text-primary-text duration-300 transition-all hover:scale-105"
               >
                 <AISvg />
@@ -182,6 +186,7 @@ const page = () => {
                   onChange={() => {
                     setActiveTab("favorites");
                     setAr(!isAr);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                 />
                 <div className="w-11 h-6 bg-gray-300 peer-checked:bg-blue-600 rounded-full transition-all duration-300" />
@@ -290,6 +295,7 @@ const page = () => {
                       type="file"
                       id="upload_door"
                       className="hidden"
+                      accept="image/*"
                       onChange={e => {
                         const file = e.target.files[0];
                         if (file) setImageFile(file);
@@ -301,6 +307,7 @@ const page = () => {
             )}
             {activeTab === "favorites" && <Favorites />}
             {activeTab === "saved" && <Saved />}
+            {activeTab === "ai_design" && <CreateAiDesign />}
           </section>
         </main>
       </Container>
