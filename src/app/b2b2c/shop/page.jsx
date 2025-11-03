@@ -12,6 +12,7 @@ import Saved from "./_components/Saved";
 import CreateAiDesign from "./_components/CreateAiDesign";
 import Image from "next/image";
 import doorPreview from "../../../Assets/door_preview_img.jpg";
+import { useSearchParams } from "next/navigation";
 const colors = [
   { id: 1, code: "#3E3E3E" },
   { id: 2, code: "#fff" },
@@ -19,6 +20,9 @@ const colors = [
 ];
 
 const page = () => {
+  const searchParams = useSearchParams();
+  const ar = searchParams.get("isAr");
+  const preview = searchParams.get("isPreview");
   const [isAr, setAr] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [activeTab, setActiveTab] = useState("favorites");
@@ -205,9 +209,9 @@ const page = () => {
 
           {/* Outlet */}
           <section className="grow">
-            {activeTab === "favorites" && isAr && (
+            {(isAr || ar) && (
               <div>
-                {imageFile ? (
+                {imageFile || preview ? (
                   <div className="border border-gray-200 rounded-2xl p-5 flex gap-6 mb-8 shadow-[0_0_4px_3px_rgba(0,0,0,0.05)]">
                     {/* Left - Door Preview */}
                     <div className="w-[843px]">
@@ -233,7 +237,7 @@ const page = () => {
                           Change Color
                         </h3>
 
-                        <div className="flex gap-1 items-center">
+                        <div className="flex gap-2.5 items-center">
                           {colors?.map(color => (
                             <button
                               key={color?.id}
@@ -305,7 +309,9 @@ const page = () => {
                 )}
               </div>
             )}
-            {activeTab === "favorites" && <Favorites />}
+            {activeTab === "favorites" && (
+              <Favorites setAr={setAr} setImageFile={setImageFile} />
+            )}
             {activeTab === "saved" && <Saved />}
             {activeTab === "ai_design" && <CreateAiDesign />}
           </section>
