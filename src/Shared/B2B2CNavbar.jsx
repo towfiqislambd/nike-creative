@@ -8,7 +8,7 @@ import Container from "../Components/Common/Container";
 import { UserSvg } from "../Components/Svg/SvgContainer";
 import b2b2cLogo from "../Assets/b2b2c_logo.png";
 
-const B2CNavbar = () => {
+const B2B2CNavbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -19,7 +19,7 @@ const B2CNavbar = () => {
   ];
 
   return (
-    <div className="sticky top-5 mt-6 left-0 w-full z-50">
+    <div className="sticky top-6 mt-6 left-0 w-full z-50">
       <Container>
         <nav className="flex items-center justify-between bg-white px-4 sm:px-6 lg:px-10 py-2.5 border border-gray-200 rounded-full shadow-sm">
           {/* Left */}
@@ -30,6 +30,7 @@ const B2CNavbar = () => {
                 src="https://i.ibb.co.com/XZ21JXnM/logo.png"
                 alt="Logo"
                 fill
+                unoptimized
                 className="size-full cursor-pointer"
               />
             </Link>
@@ -148,4 +149,4 @@ const B2CNavbar = () => {
   );
 };
 
-export default B2CNavbar;
+export default B2B2CNavbar;

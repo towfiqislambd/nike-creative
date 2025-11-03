@@ -1,8 +1,15 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import { LoveSvg, ShareSvg, SmallOrderSvg, TrySvg } from "../Svg/SvgContainer";
+import {
+  LoveSvg,
+  ShareSvg,
+  SmallOrderSvg,
+  SuccessSvg,
+  TrySvg,
+} from "../Svg/SvgContainer";
 import Modal from "./Modal";
 import previewDoor from "../../Assets/preview_door.jpg";
+import { useRouter } from "next/navigation";
 
 const colors = [
   { id: 1, code: "#3E3E3E" },
@@ -11,13 +18,16 @@ const colors = [
 ];
 
 const SingleDoor = ({ item, setAr, setImageFile }) => {
+  const router = useRouter();
   const [activeColor, setActiveColor] = useState("#3E3E3E");
-  const [open, setOpen] = useState(false);
+  const [openPreviewModal, setOpenPreviewModal] = useState(false);
+  const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
+  const [openSuccessModal, setOpenSuccessModal] = useState(false);
 
   return (
     <>
       <div
-        onClick={() => setOpen(true)}
+        onClick={() => setOpenPreviewModal(true)}
         className="rounded-xl bg-white border border-gray-100 shadow-lg duration-400 transition-all hover:scale-[1.03] hover:shadow-2xl cursor-pointer"
       >
         <figure className="h-[200px] w-full relative">
@@ -82,16 +92,22 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
             </div>
           </div>
 
-          <button onClick={e => e.stopPropagation()} className="cursor-pointer">
+          <button
+            onClick={e => {
+              e.stopPropagation();
+              setOpenConfirmationModal(true);
+            }}
+            className="cursor-pointer"
+          >
             <SmallOrderSvg />
           </button>
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Preview Modal */}
       <Modal
-        open={open}
-        onClose={() => setOpen(false)}
+        open={openPreviewModal}
+        onClose={() => setOpenPreviewModal(false)}
         className="!max-w-[348px] h-[320px]"
       >
         <figure className="w-full h-full relative rounded">
@@ -102,6 +118,64 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
             className="w-full h-full object-cover rounded"
           />
         </figure>
+      </Modal>
+
+      {/* Confirmation Modal */}
+      <Modal
+        open={openConfirmationModal}
+        onClose={() => setOpenConfirmationModal(false)}
+        className="max-w-xl"
+      >
+        <div className="text-center py-7">
+          <h3 className="text-xl font-medium mb-4 text-primary-text">
+            Are you sure you would like to place the order?
+          </h3>
+
+          <div className="flex gap-8 justify-center items-center mt-7">
+            <button
+              onClick={() => setOpenConfirmationModal(false)}
+              className="px-7 py-2.5 rounded-lg bg-transparent text-light-green cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
+            >
+              No
+            </button>
+
+            <button
+              onClick={() => {
+                setOpenConfirmationModal(false);
+                setOpenSuccessModal(true);
+              }}
+              className="px-7 py-2.5 rounded-lg bg-light-green text-white cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Success Modal */}
+      <Modal
+        open={openSuccessModal}
+        onClose={() => setOpenSuccessModal(false)}
+        className="max-w-xl"
+      >
+        <div className="flex flex-col justify-center items-center text-center py-7">
+          <SuccessSvg />
+
+          <h3 className="text-xl font-medium text-primary-text mt-7">
+            Your order has been successfully placed
+          </h3>
+
+          <p className="py-5 text-sm text-primary-text">
+            The person assisting you will be notified.
+          </p>
+
+          <button
+            onClick={() => router.push(`/b2b2c`)}
+            className="px-7 py-2.5 rounded-lg bg-light-green text-white cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
+          >
+            Home page
+          </button>
+        </div>
       </Modal>
     </>
   );
