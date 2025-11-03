@@ -2,7 +2,7 @@
 import { RxCross2 } from "react-icons/rx";
 import React, { useEffect } from "react";
 
-const Modal = ({ open, onClose, children }) => {
+const Modal = ({ open, onClose, children, className }) => {
   // useEffect(() => {
   //   if (open) {
   //     document.body.style.overflow = "hidden";
@@ -15,14 +15,16 @@ const Modal = ({ open, onClose, children }) => {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-[1px] mx-4 md:mx-0">
       <div className="absolute inset-0" onClick={onClose} />
-      <div className="relative z-10 w-full max-w-2xl max-h-[calc(100vh-50px)] overflow-y-auto md:p-5 bg-white rounded-lg shadow-lg">
+      <div
+        className={`relative z-10 w-full max-w-2xl max-h-[calc(100vh-50px)] overflow-y-auto md:p-5 bg-white rounded-lg shadow-lg ${className}`}
+      >
         {/* Modal Content */}
         {children}
 
         {/* Close btn */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 cursor-pointer grid place-items-center"
+          className="absolute top-2 right-2 cursor-pointer grid place-items-center"
         >
           <RxCross2 className="text-xl text-black" />
         </button>
