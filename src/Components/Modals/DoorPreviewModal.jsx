@@ -3,7 +3,7 @@ import React from "react";
 import previewDoor from "../../Assets/preview_door.jpg";
 import { LoveSvg, OrderSvg, ShareSvg, TrySvg } from "../Svg/SvgContainer";
 
-const DoorPreviewModal = () => {
+const DoorPreviewModal = ({ onTryOn, onOrder }) => {
   return (
     <div className="flex gap-7">
       {/* Left - Door Image */}
@@ -29,29 +29,29 @@ const DoorPreviewModal = () => {
       {/* Right */}
       <div className="pt-4 pb-7 flex flex-col justify-between">
         <div>
-          {/* Door Name */}
           <h3 className="text-black font-semibold mb-3">
             Product Name: KDWH010
           </h3>
 
-          {/* Door Colors */}
           <div className="flex gap-3 items-center">
             <p className="text-black font-semibold">Color:</p>
-
             <div className="flex gap-2 items-center">
-              <div className="size-5 rounded-full bg-black cursor-pointer shadow-2xl border border-gray-200" />
-              <div className="size-5 rounded-full bg-white cursor-pointer shadow-2xl border border-gray-200" />
-              <div className="size-5 rounded-full bg-black cursor-pointer shadow-2xl border border-gray-200" />
+              <div className="size-5 rounded-full bg-black border border-gray-200" />
+              <div className="size-5 rounded-full bg-white border border-gray-200" />
+              <div className="size-5 rounded-full bg-black border border-gray-200" />
             </div>
           </div>
         </div>
 
         <div className="flex gap-8 items-center">
-          <button className="cursor-pointer">
+          <button onClick={onOrder} className="cursor-pointer">
             <OrderSvg />
           </button>
 
-          <button className="border rounded-lg border-light-green text-light-green cursor-pointer flex gap-2 items-center px-4 py-3 hover:bg-light-green hover:text-white duration-300 transition-all">
+          <button
+            onClick={onTryOn}
+            className="border rounded-lg border-light-green text-light-green flex gap-2 items-center px-4 py-3 hover:bg-light-green hover:text-white duration-300 transition-all cursor-pointer"
+          >
             <TrySvg />
             <span>Try On</span>
           </button>
