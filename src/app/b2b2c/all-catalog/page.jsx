@@ -12,6 +12,7 @@ import {
 } from "../../../Components/Svg/SvgContainer";
 import Modal from "../../../Components/Common/Modal";
 import DoorPreviewModal from "../../../Components/Modals/DoorPreviewModal";
+import { useRouter } from "next/navigation";
 
 const colors = [
   { id: 1, code: "#3E3E3E" },
@@ -25,7 +26,9 @@ const categories = [
 ];
 
 const page = () => {
-  const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const [openPreviewModal, setOpenPreviewModal] = useState(false);
+  const [openTryOnModal, setOpenTryOnModal] = useState(false);
   const [activeCategory, setActiveCategory] = useState("Single Door Designs");
   const [activeColor, setActiveColor] = useState("#3E3E3E");
 
@@ -90,7 +93,7 @@ const page = () => {
           {catalogueData?.map(item => (
             <div
               key={item?.id}
-              onClick={() => setOpen(true)}
+              onClick={() => setOpenPreviewModal(true)}
               className="border border-accent-gray rounded-xl bg-white text-center shadow-lg py-4 relative duration-300 transition-all cursor-pointer hover:scale-105 hover:shadow-xl hover:border-light-green"
             >
               {/* Catalogue Image */}
@@ -120,9 +123,47 @@ const page = () => {
         </div>
       </Container>
 
-      {/* Modal */}
-      <Modal open={open} onClose={() => setOpen(false)}>
-        <DoorPreviewModal />
+      {/* Door Preview Modal */}
+      <Modal open={openPreviewModal} onClose={() => setOpenPreviewModal(false)}>
+        <DoorPreviewModal
+          onClose={() => setOpenPreviewModal(false)}
+          onTryOn={() => {
+            setOpenPreviewModal(false);
+            setOpenTryOnModal(true);
+          }}
+        />
+      </Modal>
+
+      {/* Try On Modal */}
+      <Modal
+        open={openTryOnModal}
+        onClose={() => setOpenTryOnModal(false)}
+        className="max-w-xl"
+      >
+        <div className="text-center py-7">
+          <h3 className="text-xl font-medium mb-4 text-primary-text">
+            Would you like to continue to the try-on page?
+          </h3>
+
+          <div className="flex gap-8 justify-center items-center mt-7">
+            <button
+              onClick={() => setOpenTryOnModal(false)}
+              className="px-7 py-2.5 rounded-lg bg-transparent text-light-green cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
+            >
+              No
+            </button>
+
+            <button
+              onClick={() => {
+                router.push(`/b2b2c/shop?isAr=${true}&isPreview=${true}`);
+                setOpenTryOnModal(false);
+              }}
+              className="px-7 py-2.5 rounded-lg bg-light-green text-white cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
       </Modal>
     </section>
   );

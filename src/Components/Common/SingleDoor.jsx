@@ -10,7 +10,7 @@ const colors = [
   { id: 3, code: "#000" },
 ];
 
-const SingleDoor = ({ item }) => {
+const SingleDoor = ({ item, setAr, setImageFile }) => {
   const [activeColor, setActiveColor] = useState("#3E3E3E");
   const [open, setOpen] = useState(false);
 
@@ -28,16 +28,30 @@ const SingleDoor = ({ item }) => {
           />
 
           <div className="absolute right-2.5 top-2 flex gap-2 items-center">
-            <button className="size-7 rounded-full cursor-pointer grid place-items-center bg-[linear-gradient(254deg,_#E3F2FD_-2.44%,_rgba(249,252,255,0.80)_110.21%)] shadow-2xl border border-gray-100 hover:bg-light-green duration-300 transition-all hover:scale-105">
+            <button
+              onClick={e => e.stopPropagation()}
+              className="size-7 rounded-full cursor-pointer grid place-items-center bg-[linear-gradient(254deg,_#E3F2FD_-2.44%,_rgba(249,252,255,0.80)_110.21%)] shadow-2xl border border-gray-100 hover:bg-light-green duration-300 transition-all hover:scale-105"
+            >
               <ShareSvg />
             </button>
 
-            <button className="size-7 rounded-full cursor-pointer grid place-items-center bg-[linear-gradient(254deg,_#E3F2FD_-2.44%,_rgba(249,252,255,0.80)_110.21%)] shadow-2xl border border-gray-100 hover:bg-light-green duration-300 transition-all hover:scale-105">
+            <button
+              onClick={e => e.stopPropagation()}
+              className="size-7 rounded-full cursor-pointer grid place-items-center bg-[linear-gradient(254deg,_#E3F2FD_-2.44%,_rgba(249,252,255,0.80)_110.21%)] shadow-2xl border border-gray-100 hover:bg-light-green duration-300 transition-all hover:scale-105"
+            >
               <LoveSvg />
             </button>
           </div>
 
-          <button className="absolute top-2 left-2.5 cursor-pointer">
+          <button
+            onClick={e => {
+              e.stopPropagation();
+              setAr(true);
+              setImageFile(true);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="absolute top-2 left-2.5 cursor-pointer"
+          >
             <TrySvg />
           </button>
         </figure>
@@ -52,7 +66,10 @@ const SingleDoor = ({ item }) => {
                 {colors?.map(color => (
                   <button
                     key={color?.id}
-                    onClick={() => setActiveColor(color?.code)}
+                    onClick={e => {
+                      e.stopPropagation();
+                      setActiveColor(color?.code);
+                    }}
                     style={{ backgroundColor: color?.code }}
                     className={`rounded-full cursor-pointer shadow-lg size-4 ${
                       activeColor === color?.code
@@ -65,7 +82,7 @@ const SingleDoor = ({ item }) => {
             </div>
           </div>
 
-          <button className="cursor-pointer">
+          <button onClick={e => e.stopPropagation()} className="cursor-pointer">
             <SmallOrderSvg />
           </button>
         </div>

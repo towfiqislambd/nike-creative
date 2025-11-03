@@ -16,14 +16,17 @@ const data = [
   { id: 10, img: doorImg, name: "KDWH010" },
 ];
 
-const Favorites = () => {
-  
-
+const Favorites = ({ setAr, setImageFile }) => {
   return (
     <>
       <div className="grid grid-cols-5 gap-6">
         {data?.map(item => (
-          <SingleDoor key={item?.id} item={item} />
+          <SingleDoor
+            key={item?.id}
+            item={item}
+            setAr={setAr}
+            setImageFile={setImageFile}
+          />
         ))}
       </div>
     </>
