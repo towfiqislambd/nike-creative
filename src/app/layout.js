@@ -17,6 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
+        data-new-gr-c-s-check-loaded="14.1260.0"
+        cz-shortcut-listen="true"
+        data-gr-ext-installed=""
         className={`${poppins.variable} antialiased font-sans bg-[var(--background)] text-[var(--foreground)]`}
       >
         {children}

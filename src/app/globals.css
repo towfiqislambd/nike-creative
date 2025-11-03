@@ -6,10 +6,28 @@
 }
 
 @theme inline {
+  --color-primary-text: #333333;
+  --color-sub-text: #5A5C5F;
   --color-primary-text: #333;
+  --color-secondary-blue: #4bcde4;
   --color-off-white: #c1d0e5;
   --color-light-green: #21bba2;
   --color-accent-gray: #f2f2f2;
+  --shadow-custom-lg: 0px 30px 65px 6px rgba(19, 25, 39, 0.11);
+}
+
+body {
+  background: #eff3f6;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+.shadow_box {
+  @apply p-5 border border-[#E9E9E9] bg-white rounded-xl w-[312px] space-y-3 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)];
 }
 
 .section_title {
@@ -32,12 +50,10 @@
   @apply text-[#333] text-[18px] font-medium leading-[150%] mb-2;
 }
 
-body {
-  background: #eff3f6;
-  font-family: var(--font-poppins), sans-serif;
+.shadow-card {
+  @apply my-5 bg-white px-5 py-8 rounded-lg border-[#F2F2F2] shadow-[0px_30px_65px_6px_#1319271C];
 }
 
-.container {
-  max-width: 1720px;
-  margin: 0 auto;
+.shadow-card-label{
+  @apply block font-medium text-primary-text text-2xl leading-[150%] mb-3;
 }

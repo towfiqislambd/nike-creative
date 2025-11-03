@@ -8,18 +8,18 @@ import Container from "../Components/Common/Container";
 import { UserSvg } from "../Components/Svg/SvgContainer";
 import b2b2cLogo from "../Assets/b2b2c_logo.png";
 
-const B2CNavbar = () => {
+const B2B2CNavbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
 
   const navLinks = [
-    { id: 1, label: "Home", href: "/b2c" },
-    { id: 2, label: "Shop", href: "/b2c/shop" },
+    { id: 1, label: "Home", href: "/b2b2c" },
+    { id: 2, label: "Shop", href: "/b2b2c/shop" },
     { id: 3, label: "Category", href: "/" },
   ];
 
   return (
-    <div className="sticky top-5 mt-6 left-0 w-full z-50">
+    <div className="sticky top-6 mt-6 left-0 w-full z-50">
       <Container>
         <nav className="flex items-center justify-between bg-white px-4 sm:px-6 lg:px-10 py-2.5 border border-gray-200 rounded-full shadow-sm">
           {/* Left */}
@@ -27,9 +27,10 @@ const B2CNavbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center size-16 relative">
               <Image
-                src="https://i.ibb.co.com/XZ21JXnM/logo.png"
+                src={b2b2cLogo}
                 alt="Logo"
                 fill
+                unoptimized
                 className="size-full cursor-pointer"
               />
             </Link>
@@ -148,4 +149,4 @@ const B2CNavbar = () => {
   );
 };
 
-export default B2CNavbar;
+export default B2B2CNavbar;

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DoorDesignSectionB2c from "../b2c/_components/DoorDesignSectionB2c";
+import DoorDesignSectionB2c from "../b2b2c/_components/DoorDesignSectionB2c";
 import DoorGallerySectionB2bLatest from "./_conponents/DoorGallerySectionB2bLatest";
 import DoorDesignSectionB2b from "./_conponents/DoorGallerySectionB2b";
 import FinallockSecionB2b from "./_conponents/FinallockSecionB2b";
