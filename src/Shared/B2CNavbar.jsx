@@ -13,8 +13,8 @@ const B2CNavbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const navLinks = [
-    { id: 1, label: "Home", href: "/b2c" },
-    { id: 2, label: "Shop", href: "/b2c/shop" },
+    { id: 1, label: "Home", href: "/b2b2c" },
+    { id: 2, label: "Shop", href: "/b2b2c/shop" },
     { id: 3, label: "Category", href: "/" },
   ];
 

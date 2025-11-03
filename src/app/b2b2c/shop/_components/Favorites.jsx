@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import doorImg from "../../../../Assets/d1.jpg";
 import SingleDoor from "../../../../Components/Common/SingleDoor";
 
@@ -16,12 +17,16 @@ const data = [
 ];
 
 const Favorites = () => {
+  
+
   return (
-    <div className="grid grid-cols-5 gap-6">
-      {data?.map(item => (
-        <SingleDoor key={item?.id} item={item} />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-5 gap-6">
+        {data?.map(item => (
+          <SingleDoor key={item?.id} item={item} />
+        ))}
+      </div>
+    </>
   );
 };
 
