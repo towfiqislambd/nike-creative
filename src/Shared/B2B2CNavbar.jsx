@@ -27,7 +27,7 @@ const B2B2CNavbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center size-16 relative">
               <Image
-                src="https://i.ibb.co.com/XZ21JXnM/logo.png"
+                src={b2b2cLogo}
                 alt="Logo"
                 fill
                 unoptimized
