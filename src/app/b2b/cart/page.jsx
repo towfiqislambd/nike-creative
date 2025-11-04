@@ -252,7 +252,6 @@ export default function CartPage() {
         }}
         onSave={handleSaveEdit}
       />
-      ;
     </section>
   );
 }

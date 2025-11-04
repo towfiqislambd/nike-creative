@@ -105,7 +105,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
             </div>
             <button
               type="button"
-              className="rounded-xl bg-[#21BBA2] text-white py-[11px] px-5 hover:bg-[#1aa58e]"
+              className="rounded-xl bg-[#21BBA2] text-white py-[11px] px-5 text-xl hover:bg-[#1aa58e]"
             >
               Change the Product
             </button>
@@ -159,20 +159,20 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="labelCls">Select Type of Measurement</label>
+            <label className="labelCls mb-5">Select Type of Measurement</label>
             <select className="inputCls" {...register("measureType1")}>
               <option value="">Choose an option</option>
               <option value="DLO">DLO</option>
               <option value="Frame">Frame</option>
             </select>
           </div>
-          <div className="flex flex-col gap-y-4">
+          <div className="flex flex-col w-[60%] gap-y-5">
             <div className="flex itmes-center gap-4">
-              <label className="labelCls">Width</label>
+              <label className="labelCls mb-0">Width</label>
               <input className="inputCls" {...register("width")} />
             </div>
             <div className="flex itmes-center gap-4">
-              <label className="labelCls">Height</label>
+              <label className="labelCls mb-0">Height</label>
               <input className="inputCls" {...register("height")} />
             </div>
           </div>
