@@ -80,7 +80,10 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
     );
   };
 
-  const onSubmit = (data) => onSave({ ...item, ...data });
+  const onSubmit = (data) => {
+    console.log("EDIT MODAL SUBMIT:", data);
+    if (onSave) onSave({ ...item, ...data });
+  };
 
   return (
     <Modal open={open} onClose={onClose} className="max-w-[900px] ">
@@ -88,17 +91,19 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
         onSubmit={handleSubmit(onSubmit)}
         className="px-5 md:px-8 pb-6 pt-4 max-h-[78vh] overflow-y-auto no-scrollbar"
       >
+ 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="flex items-center gap-4">
             <img
               src="https://i.ibb.co.com/Mx95n97C/Rectangle-161124243.png"
               alt="thumb"
-              className="h-[218px] w-[236px] rounded-xl object-cover"
+              className="h-[218px] w-[236px] rounded-xl object-cover max-md:h-40 max-md:w-40"
             />
           </div>
         </div>
-        <div className="flex items-end gap-4 mt-8">
-          <div className="">
+
+        <div className="flex flex-col xl:flex-row xl:items-end gap-4 mt-8">
+          <div className="w-full xl:w-auto">
             <label className="labelCls mb-5">Product Name</label>
             <input className="inputCls" {...register("name")} />
           </div>
@@ -128,6 +133,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           </div>
         </div>
 
+
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="labelCls mb-5">Po</label>
@@ -147,8 +153,11 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           </div>
         </div>
 
-        <div className="mt-6 w-[50%]">
-          <label className="labelCls mb-5">Select Active side of the door</label>
+ 
+        <div className="mt-6 w-full xl:w-[50%]">
+          <label className="labelCls mb-5">
+            Select Active side of the door
+          </label>
           <select className="inputCls" {...register("activeSide")}>
             <option value="">Choose an option</option>
             <option value="Left">Left</option>
@@ -156,6 +165,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           </select>
         </div>
 
+ 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="labelCls mb-5">Select Type of Measurement</label>
@@ -165,7 +175,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
               <option value="Frame">Frame</option>
             </select>
           </div>
-          <div className="flex flex-col w-[60%] gap-y-5">
+          <div className="flex flex-col w-full xl:w-[60%] gap-y-5">
             <div className="flex justify-center items-center gap-4">
               <label className="labelCls mb-0">Width</label>
               <input className="inputCls ml-2" {...register("width")} />
@@ -177,7 +187,8 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           </div>
         </div>
 
-        <div className="mt-6  xl:w-[50%] mb-5">
+
+        <div className="mt-6 xl:w-[50%] w-full mb-5">
           <div>
             <label className="labelCls mb-5">Add Side lites</label>
             <select className="inputCls" {...register("sideLites")}>
@@ -190,7 +201,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           <div>
             <label className="labelCls mb-5">Select Type of Measurement</label>
             <select className="inputCls" {...register("measureType2")}>
@@ -199,7 +210,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
               <option value="Frame">Frame</option>
             </select>
           </div>
-          <div className="flex flex-col w-[60%] gap-y-5 gap-4">
+          <div className="flex flex-col w-full xl:w-[60%] gap-y-5">
             <div className="flex justify-center items-center gap-4">
               <label className="labelCls mb-0">Width</label>
               <input className="inputCls ml-2" {...register("width2")} />
@@ -212,16 +223,28 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
         </div>
 
         <div className="my-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <label className="inline-flex text-[20px]  items-center gap-2">
-            <input type="checkbox" className="h-6 w-6" {...register("highBottom")} />
+          <label className="inline-flex text-[20px] items-center gap-2">
+            <input
+              type="checkbox"
+              className="h-6 w-6"
+              {...register("highBottom")}
+            />
             <span>High Bottom</span>
           </label>
-          <label className="inline-flex text-[20px]  items-center gap-2">
-            <input type="checkbox" className="h-6 w-6" {...register("insulatedGlass")} />
+          <label className="inline-flex text-[20px] items-center gap-2">
+            <input
+              type="checkbox"
+              className="h-6 w-6"
+              {...register("insulatedGlass")}
+            />
             <span>Insulated Glass</span>
           </label>
-          <label className="inline-flex text-[20px]  items-center gap-2">
-            <input type="checkbox" className="h-6 w-6" {...register("adaThreshold")} />
+          <label className="inline-flex text-[20px] items-center gap-2">
+            <input
+              type="checkbox"
+              className="h-6 w-6"
+              {...register("adaThreshold")}
+            />
             <span>ADA Threshold</span>
           </label>
         </div>
@@ -247,38 +270,44 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           />
         </div>
 
-        <div className="my-10 xl:w-[50%] border-2 border-dashed rounded-2xl p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <div>
-            <p className="text-[48px] font-bold">4% OFF</p>
-            <p className="text-gray-600 text-[24px]">Ex: 1/02/2026</p>
+
+        <div className="my-10 xl:w-[50%] w-full border-2 border-dashed rounded-2xl p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="text-center md:text-left">
+            <p className="text-[36px] sm:text-[42px] xl:text-[48px] font-bold">
+              4% OFF
+            </p>
+            <p className="text-gray-600 text-[18px] sm:text-[20px] xl:text-[24px]">
+              Ex: 1/02/2026
+            </p>
           </div>
-          <div>
-            <p className="text-[36px]">Coupon</p>
+
+          <div className="w-full md:w-auto text-center md:text-left">
+            <p className="text-[28px] sm:text-[32px] xl:text-[36px]">Coupon</p>
             <button
               type="button"
               onClick={() => setValue("couponCode", "SAVE4")}
-              className="h-11 px-4 rounded-xl bg-[#E91E63] text-white hover:opacity-90 w-full"
+              className="h-11 px-4 rounded-xl bg-[#E91E63] text-white hover:opacity-90 w-full md:w-auto mt-2 md:mt-0"
             >
               Add Coupon
             </button>
           </div>
         </div>
 
-        <div className="my-10 flex w-[80%] gap-3">
+
+        <div className="my-10 flex flex-col sm:flex-row w-full xl:w-[80%] gap-3">
           <input
-            className="inputCls w-[60%]"
+            className="inputCls w-full sm:w-[60%]"
             placeholder="Code"
             {...register("couponCode")}
           />
-          <div className=" w-[40%]">
-                      <button
-            type="button"
-            className=" h-14 rounded-[8px] text-[20px] bg-[#E91E63] text-white hover:opacity-90 w-full py-[11px]"
-            onClick={() => alert(`Applied: ${watch("couponCode") || "N/A"}`)}
-          >
-            Apply Coupon
-          </button>
-
+          <div className="w-full sm:w-[40%]">
+            <button
+              type="button"
+              className="h-14 rounded-[8px] text-[20px] bg-[#E91E63] text-white hover:opacity-90 w-full py-[11px]"
+              onClick={() => alert(`Applied: ${watch("couponCode") || "N/A"}`)}
+            >
+              Apply Coupon
+            </button>
           </div>
         </div>
 

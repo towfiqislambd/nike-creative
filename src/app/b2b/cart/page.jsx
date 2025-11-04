@@ -173,7 +173,7 @@ export default function CartPage() {
                   {(item.price * item.quantity).toFixed(2)}
                 </p>
                 <button
-                  className="cursor-pointer p-2 rounded-md hover:bg-gray-100"
+                  className="cursor-pointer p-1 rounded-md hover:bg-gray-100"
                   aria-label="Edit"
                   onClick={() => {
                     setEditingItem(item);
@@ -185,7 +185,7 @@ export default function CartPage() {
                 
                 <button
                   onClick={() => removeItem(item.id)}
-                  className="text-red-500 cursor-pointer p-2 rounded-md hover:bg-red-50"
+                  className="text-red-900 cursor-pointer p-2 rounded-md bg-red-300"
                   aria-label="Remove"
                 >
                   <FiTrash2 />
