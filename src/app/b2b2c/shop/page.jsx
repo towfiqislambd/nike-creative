@@ -13,6 +13,7 @@ import CreateAiDesign from "./_components/CreateAiDesign";
 import Image from "next/image";
 import doorPreview from "../../../Assets/door_preview_img.jpg";
 import { useSearchParams } from "next/navigation";
+
 const colors = [
   { id: 1, code: "#3E3E3E" },
   { id: 2, code: "#fff" },
