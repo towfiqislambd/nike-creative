@@ -61,7 +61,7 @@ const ProductPage = ({ params }) => {
   }
 
   return (
-    <section className="container relative min-h-screen py-10 px-4">
+    <section className="relative min-h-screen">
       <Image
         src="https://i.ibb.co.com/7t9dK57n/Group-1321314677.png"
         alt="Background"
@@ -69,6 +69,7 @@ const ProductPage = ({ params }) => {
         unoptimized
         className="object-cover object-center -z-10 absolute top-60"
       />
+    <div className="container relative min-h-screen py-10 px-4">
       <div className=" grid lg:grid-cols-2 gap-10">
         {/* left side */}
         <div>
@@ -81,11 +82,11 @@ const ProductPage = ({ params }) => {
               height={500}
               className="object-cover w-full"
             />
-            <button onClick={favoriteToggleHandler} className="absolute cursor-pointer top-5 right-5 size-12 rounded-full flex items-center justify-center shadow-[0px_8px_8px_-4px_#13192714,_0px_4px_8px_-4px_#1319271F] bg-[linear-gradient(253.61deg,_rgba(227,242,253,0.5)_-2.44%,_rgba(249,252,255,0.4)_110.21%)]">
+            <button onClick={favoriteToggleHandler} className="absolute cursor-pointer top-5 right-5 size-10 md:size-12 rounded-full flex items-center justify-center shadow-[0px_8px_8px_-4px_#13192714,_0px_4px_8px_-4px_#1319271F] bg-[linear-gradient(253.61deg,_rgba(227,242,253,0.5)_-2.44%,_rgba(249,252,255,0.4)_110.21%)]">
               {favorite ? (
-                <GoHeartFill className="size-8 text-red-600" />
+                <GoHeartFill className="size-6 md:size-8 text-red-600" />
 
-              ) : <GoHeart className="size-8" />}
+              ) : <GoHeart className="size-6 md:size-8" />}
             </button>
           </div>
 
@@ -175,7 +176,7 @@ const ProductPage = ({ params }) => {
                 </div>
               </div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-3 shadow-card">
+            <div className="grid sm:grid-cols-2 gap-5 shadow-card">
               <div>
                 <label className="shadow-card-label">
                   Po
@@ -215,7 +216,7 @@ const ProductPage = ({ params }) => {
             </div>
 
 
-            <div className="grid sm:grid-cols-2 gap-4 shadow-card">
+            <div className="grid sm:grid-cols-2 gap-5 shadow-card">
               <div>
                 <label className="shadow-card-label">
                   Measurement Type
@@ -231,7 +232,7 @@ const ProductPage = ({ params }) => {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
-                  <label className="shadow-card-label">
+                  <label className="shadow-card-label w-20">
                     Width
                   </label>
                   <input
@@ -241,7 +242,7 @@ const ProductPage = ({ params }) => {
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <label className="shadow-card-label">
+                  <label className="shadow-card-label w-20">
                     Height
                   </label>
                   <input
@@ -269,7 +270,7 @@ const ProductPage = ({ params }) => {
                   </select>
                 </div>
               </div>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="shadow-card-label">
                     Measurement Type
@@ -285,7 +286,7 @@ const ProductPage = ({ params }) => {
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-2">
-                    <label className="shadow-card-label">
+                    <label className="shadow-card-label w-20">
                       Width
                     </label>
                     <input
@@ -295,7 +296,7 @@ const ProductPage = ({ params }) => {
                     />
                   </div>
                   <div className="flex items-center gap-2">
-                    <label className="shadow-card-label">
+                    <label className="shadow-card-label w-20">
                       Height
                     </label>
                     <input
@@ -631,6 +632,7 @@ const ProductPage = ({ params }) => {
           </form>
         </div>
       </div>
+    </div>
     </section>
   );
 };

@@ -85,12 +85,12 @@ export default function DashboardLayout({ children }) {
 
             return (
               <Link
+                key={link?.path}
                 href={link?.path}
-                className={`flex gap-2 items-center px-4 py-3.5 rounded-lg hover:scale-105 duration-500 transition-transform ${
-                  isActive
+                className={`flex gap-2 items-center px-4 py-3.5 rounded-lg hover:scale-105 duration-500 transition-transform ${isActive
                     ? "text-white bg-secondary-blue shadow-[1px_20px_65px_6px_rgba(19,25,39,0.20)]"
                     : "text-primary-text bg-transparent"
-                }`}
+                  }`}
               >
                 {link?.icon}
                 {link?.label}
