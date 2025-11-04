@@ -81,3 +81,7 @@ body {
 .shadow-card-label{
   @apply block font-medium text-primary-text text-lg md:text-2xl leading-[150%] mb-1 md:mb-3;
 }
+
+.dashboard_header{
+  @apply text-2xl md:text-4xl font-medium text-primary-text;
+}
