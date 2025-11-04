@@ -1,8 +1,13 @@
-import Image from 'next/image';
-import React from 'react';
-import wavingHand from '../../../Assets/waving-hand.png'
-import profilePicture from '../../../Assets/profile.svg'
-import { DeliverTrack, Laptop, OrderList, Timer } from '../../../Components/Svg/SvgContainer';
+import Image from "next/image";
+import React from "react";
+import wavingHand from "../../../Assets/waving-hand.png";
+import profilePicture from "../../../Assets/profile.svg";
+import {
+  DeliverTrack,
+  Laptop,
+  OrderList,
+  Timer,
+} from "../../../Components/Svg/SvgContainer";
 
 const orderCardData = [
   {
@@ -25,7 +30,7 @@ const orderCardData = [
     totalCount: "02",
     subTitle: "Guest User Design Requests – Not Yet Sent to Manufacture",
   },
-]
+];
 
 const ordersData = [
   {
@@ -80,43 +85,42 @@ const ordersData = [
   },
 ];
 const page = () => {
-
   return (
     <section>
-      <header className='flex items-center justify-between'>
-        <h1 className='dashboard_header flex gap-4'>(B2B)Pogo Creative studio
-          <Image src={wavingHand} width={36} height={36} alt='' />
+      <header className="flex items-center justify-between">
+        <h1 className="dashboard_header flex gap-4">
+          (B2B)Pogo Creative studio
+          <Image src={wavingHand} width={36} height={36} alt="" />
         </h1>
-        <div className='relative'>
-          <Image src={profilePicture} width={48} height={48} alt='' />
-          <div className='size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5' />
+        <div className="relative">
+          <Image src={profilePicture} width={48} height={48} alt="" />
+          <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
         </div>
       </header>
       {/* order cards */}
-      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-5 md:mt-8'>
-        {
-          orderCardData?.map(({ icon, totalCount, subTitle }, idx) => (
-            <div key={idx} className='flex items-center text-primary-text gap-3 px-3 md:px-6 py-4 md:py-7 bg-white rounded-[20px] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]'>
-              <div className='flex p-5 justify-center items-center bg-[#f8fcfe] rounded-[13.5px] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]'>
-                {icon}
-              </div>
-              <div className='flex flex-col gap-1'>
-                <h2 className='text-xl font-medium'>{totalCount}</h2>
-                <h3>{subTitle}</h3>
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-5 md:mt-8">
+        {orderCardData?.map(({ icon, totalCount, subTitle }, idx) => (
+          <div
+            key={idx}
+            className="flex items-center text-primary-text gap-3 px-3 md:px-6 py-4 md:py-7 bg-white rounded-[20px] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+          >
+            <div className="flex p-5 justify-center items-center bg-[#f8fcfe] rounded-[13.5px] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+              {icon}
             </div>
-          ))
-        }
+            <div className="flex flex-col gap-1">
+              <h2 className="text-xl font-medium">{totalCount}</h2>
+              <h3>{subTitle}</h3>
+            </div>
+          </div>
+        ))}
       </div>
       {/* notification tables */}
-      <div className='w-full mt-5 md:mt-8 inline-flex flex-col justify-end items-start px-3 md:px-5 lg:px-[30px] py-8 gap-[10px] rounded-[20px] border border-white bg-white shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]'>
-        <div className='flex items-center gap-8'>
+      <div className="w-full mt-5 md:mt-8 inline-flex flex-col justify-end items-start px-3 md:px-5 lg:px-[30px] py-8 gap-[10px] rounded-[20px] border border-white bg-white shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+        <div className="flex items-center gap-8">
           <label className="text-lg md:text-xl lg:text-[26px] text-primary-text">
             Manufacturer
           </label>
-          <select
-            className="border border-gray-300 rounded-md px-3 py-2 text-[#333] text-sm lg:text-base focus:ring-2 focus:ring-teal-500"
-          >
+          <select className="border border-gray-300 rounded-md px-3 py-2 text-[#333] text-sm lg:text-base focus:ring-2 focus:ring-teal-500">
             <option>Last 5 days</option>
             <option>Last 10 days</option>
             <option>Last 30 days</option>
@@ -124,9 +128,8 @@ const page = () => {
         </div>
         {/* table */}
         <div className="w-full overflow-x-auto rounded-lg shadow-md bg-white">
-          <table className="min-w-full text-[#333]">
+          <table className="min-w-full text-[#333] border-spacing-3 border-separate">
             <thead className="bg-[#f9f9f9] rounded-lg mb-2.5 text-sm md:text-base font-medium border-b">
-              {/* shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] */}
               <tr>
                 <th className="px-6 py-3 md:py-5 text-left">Date–Time</th>
                 <th className="px-6 py-3 md:py-5 text-left">Order#</th>
@@ -140,17 +143,21 @@ const page = () => {
               {ordersData.map((item, idx) => (
                 <tr
                   key={idx}
-                  className="border-b hover:bg-white"
+                  className="border-b shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] rounded-lg"
                 >
                   <td className="px-6 py-4 text-sm text-center">{item.date}</td>
-                  <td className="px-6 py-4 text-sm text-center">{item.order}</td>
+                  <td className="px-6 py-4 text-sm text-center">
+                    {item.order}
+                  </td>
                   <td className="px-6 py-4 text-sm text-center">{item.po}</td>
                   <td className="px-6 py-4 text-sm text-center bg-[#C8FFEC]">
                     <span className="text-gray-700 px-3 py-1 rounded-md">
                       {item.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-center">{item.notification}</td>
+                  <td className="px-6 py-4 text-sm text-center">
+                    {item.notification}
+                  </td>
                   <td className="px-6 py-4 text-sm text-center">
                     <button className="bg-[#21BBA2] text-white px-4 py-1.5 rounded-md shadow-xs">
                       View Order
