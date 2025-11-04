@@ -26,7 +26,13 @@ body {
   max-width: 1720px;
   margin: 0 auto;
 }
-
+.no-scrollbar {
+  scrollbar-width: none;     
+  -ms-overflow-style: none;   
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;          
+}
 .inputCls{
   @apply   w-full rounded-[8px] border border-[#CFCFCF] bg-white px-[24px] py-[11px] text-[#5A5C5F] text-[20px] font-normal leading-[150%] outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10;
 }
