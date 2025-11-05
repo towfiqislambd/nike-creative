@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { IoCloudUploadOutline } from "react-icons/io5";
 
-// ---- UI primitives (structure preserved, styles switched to utility classes) ----
 const Card = ({ children, className = "" }) => (
   <div
     className={`bg-white border border-neutral-200 rounded-lg p-5 md:p-6 ${className}`}
@@ -88,7 +87,6 @@ const FileDrop = ({ onFiles, files }) => {
 };
 
 export default function AccountPage() {
-  // --- tax-docs (unchanged logic) -----------------------------------------
   const [docs, setDocs] = useState([
     {
       name: "tax exception cdoc.pdf",
@@ -125,7 +123,6 @@ export default function AccountPage() {
     return `${mm}/${dd}/${yyyy}`;
   }
 
-  // --- form ---------------------------------------------------------------
   const {
     control,
     register,
@@ -182,7 +179,6 @@ export default function AccountPage() {
 
   return (
     <div className="min-h-screen bg-neutral-50 py-8 px-4 md:px-6">
-      {/* page header kept */}
       <div className="mb-6">
         <div className="rounded-[28px] bg-[#E0DDD7] px-4 py-4 shadow-sm relative">
           <div className="flex flex-col gap-4 md:flex-row md:items-end justify-end">
@@ -232,7 +228,6 @@ export default function AccountPage() {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Personal Info */}
           <Card>
             <h3 className="text-lg font-semibold text-neutral-900 mb-4">
               Personal Info
@@ -407,7 +402,6 @@ export default function AccountPage() {
 
 
 
-            {/* Notification Preferences (structure intact) */}
             <div className="rounded-2xl bg-white shadow-xl ring-1 my-6 ring-black/5 p-6">
               <div className="space-y-4">
                 <label className="flex items-start gap-3">
@@ -489,7 +483,7 @@ export default function AccountPage() {
                   </div>
                 </label>
 
-                {/* Conditional channel options */}
+
                 <div
                   aria-hidden={!availEnabled}
                   className={`pl-8 transition-all duration-300 ease-out ${
@@ -547,7 +541,7 @@ export default function AccountPage() {
             </div>
           </Card>
 
-          {/* Company Address */}
+
           <Card>
             <h3 className="text-lg font-semibold text-neutral-900 mb-4">
               Company Address
@@ -627,7 +621,7 @@ export default function AccountPage() {
               </div>
             </div>
 
-            {/* Tax Exemption uploader */}
+   
             <div className="rounded-2xl my-6 bg-white shadow-xl ring-1 ring-black/5 p-6">
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 Got a tax exemption? Upload it here to skip taxes on your orders!
@@ -685,7 +679,6 @@ export default function AccountPage() {
               </div>
             </div>
 
-            {/* Tax Exemption update list */}
             <div className="grid grid-cols-1 gap-6 my-6">
               <div className="rounded-2xl bg-white shadow-xl ring-1 ring-black/5">
                 <div className="flex items-start justify-between px-6 pt-6">
@@ -753,8 +746,6 @@ export default function AccountPage() {
             </div>
           </Card>
         </div>
-
-        {/* Save profile */}
         <div className="flex justify-end">
           <button
             type="submit"
