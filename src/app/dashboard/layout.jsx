@@ -31,7 +31,7 @@ const b2bSidebarLinks = [
     id: 1,
     label: "Dashboard",
     icon: <B1Svg />,
-    path: "/dashboard/b2b/home",
+    path: "/dashboard/b2b",
   },
   {
     id: 2,
