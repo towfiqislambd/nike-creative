@@ -7,13 +7,14 @@
 
 @theme inline {
   --color-primary-text: #333333;
-  --color-sub-text: #5A5C5F;
+  --color-sub-text: #5a5c5f;
   --color-primary-text: #333;
   --color-secondary-blue: #4bcde4;
-  --color-secondary-red: #ED1A51;
+  --color-secondary-red: #ed1a51;
   --color-off-white: #c1d0e5;
   --color-light-green: #21bba2;
   --color-accent-gray: #f2f2f2;
+  --color-accent-off-white: #e4e3e0;
   --shadow-custom-lg: 0px 30px 65px 6px rgba(19, 25, 39, 0.11);
 }
 
@@ -31,11 +32,11 @@ button{
   margin: 0 auto;
 }
 .no-scrollbar {
-  scrollbar-width: none;     
-  -ms-overflow-style: none;   
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .no-scrollbar::-webkit-scrollbar {
-  display: none;          
+  display: none;
 }
 @layer components {
   .inputCls {
@@ -82,10 +83,15 @@ button{
   @apply my-5 bg-white px-3 md:px-5 py-4 md:py-8 rounded-lg border-[#F2F2F2] shadow-[0px_30px_65px_6px_#1319271C];
 }
 
-.shadow-card-label{
+.shadow-card-label {
   @apply block font-medium text-primary-text text-lg md:text-2xl leading-[150%] mb-1 md:mb-3;
 }
 
-.dashboard_header{
+.dashboard_header {
   @apply text-2xl md:text-4xl font-medium text-primary-text;
+}
+
+/* For Custom Scrollbar */
+.side-scrollbar::-webkit-scrollbar {
+  display: none;
 }
