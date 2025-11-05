@@ -28,7 +28,7 @@ const Toggle = ({ checked, onChange }) => (
     aria-pressed={checked}
     onClick={() => onChange(!checked)}
     className={`h-6 w-10 rounded-full transition-colors ${
-      checked ? "bg-emerald-500" : "bg-neutral-300"
+      checked ? "bg-[#21BBA2]" : "bg-neutral-300"
     } relative`}
   >
     <span
@@ -76,7 +76,7 @@ const FileDrop = ({ onFiles, files }) => {
         <ul className="mt-4 space-y-1 text-sm text-neutral-700">
           {files.map((f, i) => (
             <li key={i} className="truncate">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 mr-2 align-middle" />
+              <span className="inline-block h-2 w-2 rounded-full bg-[#21BBA2] mr-2 align-middle" />
               {f.name}
             </li>
           ))}
@@ -182,22 +182,21 @@ export default function AccountPage() {
       <div className="mb-6">
         <div className="rounded-[28px] bg-[#E0DDD7] px-4 py-4 shadow-sm relative">
           <div className="flex flex-col gap-4 md:flex-row md:items-end justify-end">
-          
             <div className="flex items-center gap-5">
               <ul className="hidden md:flex items-end gap-8 text-[16px] text-gray-800">
-                <li className="cursor-pointer hover:text-teal-600 transition-colors">
+                <li className="cursor-pointer hover:text-[#21BBA2] transition-colors">
                   Home
                 </li>
-                <li className="cursor-pointer hover:text-teal-600 transition-colors">
+                <li className="cursor-pointer hover:text-[#21BBA2] transition-colors">
                   Shop
                 </li>
-                <li className="cursor-pointer hover:text-teal-600 transition-colors">
+                <li className="cursor-pointer hover:text-[#21BBA2] transition-colors">
                   Category
                 </li>
-                <li className="cursor-pointer hover:text-teal-600 transition-colors">
+                <li className="cursor-pointer hover:text-[#21BBA2] transition-colors">
                   Contact Us
                 </li>
-                <li className="cursor-pointer hover:text-teal-600 transition-colors">
+                <li className="cursor-pointer hover:text-[#21BBA2] transition-colors">
                   About Us
                 </li>
               </ul>
@@ -211,7 +210,7 @@ export default function AccountPage() {
                   src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=120&auto=format&fit=crop"
                   className="h-full w-full object-cover"
                 />
-                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#71F18E] ring-2 ring-white" />
+                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#21BBA2] ring-2 ring-white" />
               </div>
             </div>
           </div>
@@ -220,7 +219,7 @@ export default function AccountPage() {
 
           <div className="mt-3 flex items-center justify-between">
             <h1 className="text-[28px] font-semibold text-[#333]">
-               Account Details
+              Account Details
             </h1>
           </div>
         </div>
@@ -383,24 +382,22 @@ export default function AccountPage() {
                   </p>
                 )}
               </div>
-                          <div>
-              <Label htmlFor="dealerCompany">Dealer Company</Label>
-              <Input
-                id="dealerCompany"
-                {...register("dealerCompany", {
-                  required: "Dealer company is required",
-                })}
-                placeholder="Company name"
-              />
-              {errors.dealerCompany && (
-                <p className="text-xs text-red-600 mt-1">
-                  {errors.dealerCompany.message}
-                </p>
-              )}
+              <div>
+                <Label htmlFor="dealerCompany">Dealer Company</Label>
+                <Input
+                  id="dealerCompany"
+                  {...register("dealerCompany", {
+                    required: "Dealer company is required",
+                  })}
+                  placeholder="Company name"
+                />
+                {errors.dealerCompany && (
+                  <p className="text-xs text-red-600 mt-1">
+                    {errors.dealerCompany.message}
+                  </p>
+                )}
+              </div>
             </div>
-            </div>
-
-
 
             <div className="rounded-2xl bg-white shadow-xl ring-1 my-6 ring-black/5 p-6">
               <div className="space-y-4">
@@ -483,7 +480,6 @@ export default function AccountPage() {
                   </div>
                 </label>
 
-
                 <div
                   aria-hidden={!availEnabled}
                   className={`pl-8 transition-all duration-300 ease-out ${
@@ -531,7 +527,7 @@ export default function AccountPage() {
                   </button>
                   <button
                     type="submit"
-                    className="rounded-md bg-emerald-500 px-4 py-2 text-white text-sm hover:bg-emerald-600 disabled:opacity-50"
+                    className="rounded-md bg-[#21BBA2] px-4 py-2 text-white text-sm hover:bg-emerald-600 disabled:opacity-50"
                     disabled={updateDisabled}
                   >
                     Update
@@ -540,7 +536,6 @@ export default function AccountPage() {
               </div>
             </div>
           </Card>
-
 
           <Card>
             <h3 className="text-lg font-semibold text-neutral-900 mb-4">
@@ -621,10 +616,10 @@ export default function AccountPage() {
               </div>
             </div>
 
-   
             <div className="rounded-2xl my-6 bg-white shadow-xl ring-1 ring-black/5 p-6">
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                Got a tax exemption? Upload it here to skip taxes on your orders!
+                Got a tax exemption? Upload it here to skip taxes on your
+                orders!
               </h3>
               <div className="mb-3">
                 <Controller
@@ -670,7 +665,7 @@ export default function AccountPage() {
                 <div className="mt-4 flex justify-end">
                   <button
                     type="button"
-                    className="rounded-md bg-emerald-500 px-4 py-2 text-white text-sm hover:bg-emerald-600 disabled:opacity-50"
+                    className="rounded-md bg-[#21BBA2] px-4 py-2 text-white text-sm hover:bg-emerald-600 disabled:opacity-50"
                     disabled={!enabled || files.length === 0}
                   >
                     Submit for Verification
@@ -701,7 +696,7 @@ export default function AccountPage() {
                           Tax Exemption Document
                         </p>
                         <div className="flex items-center gap-2 text-sm font-medium text-neutral-800">
-                          <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+                          <span className="inline-block h-2 w-2 rounded-full bg-[#21BBA2]" />
                           {d.name}
                         </div>
                       </div>
@@ -736,7 +731,7 @@ export default function AccountPage() {
                     <button
                       type="button"
                       onClick={openPicker}
-                      className="inline-flex items-center gap-2 rounded-md bg-emerald-500 px-4 py-2 text-white text-sm hover:bg-emerald-600"
+                      className="inline-flex items-center gap-2 rounded-md bg-[#21BBA2] px-4 py-2 text-white text-sm hover:bg-emerald-600"
                     >
                       Upload new Doc
                     </button>
@@ -750,7 +745,7 @@ export default function AccountPage() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-md bg-emerald-500 px-5 py-2.5 text-white text-sm hover:bg-emerald-600 disabled:opacity-60"
+            className="rounded-md bg-[#21BBA2] px-5 py-2.5 text-white text-sm hover:bg-emerald-600 disabled:opacity-60"
           >
             {isSubmitting ? "Saving…" : "Save Profile"}
           </button>
