@@ -1,11 +1,7 @@
 import React from 'react';
 
 const page = () => {
-  return (
-    <div>
-      B2B Home
-    </div>
-  );
+  return <div>account-payable</div>;
 };
 
 export default page;
