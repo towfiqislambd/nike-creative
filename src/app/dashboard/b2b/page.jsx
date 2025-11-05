@@ -6,6 +6,7 @@ import {
   DeliverTrack,
   Laptop,
   OrderList,
+  Stars,
   Timer,
 } from "../../../Components/Svg/SvgContainer";
 
@@ -86,14 +87,14 @@ const ordersData = [
 ];
 const page = () => {
   return (
-    <section>
+    <section className="relative">
       <header className="flex items-center justify-between">
         <h1 className="dashboard_header flex gap-4">
           (B2B)Pogo Creative studio
           <Image src={wavingHand} width={36} height={36} alt="" />
         </h1>
         <div className="relative">
-          <Image src={profilePicture} width={48} height={48} alt="" />
+          <Image src={profilePicture} width={48} height={48} alt="" className="rounded-full"/>
           <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
         </div>
       </header>
@@ -114,7 +115,7 @@ const page = () => {
           </div>
         ))}
       </div>
-      {/* notification tables */}
+      {/* notification table */}
       <div className="w-full mt-5 md:mt-8 inline-flex flex-col justify-end items-start px-3 md:px-5 lg:px-[30px] py-8 gap-[10px] rounded-[20px] border border-white bg-white shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
         <div className="flex items-center gap-8">
           <label className="text-lg md:text-xl lg:text-[26px] text-primary-text">
@@ -128,22 +129,22 @@ const page = () => {
         </div>
         {/* table */}
         <div className="w-full overflow-x-auto rounded-lg shadow-md bg-white">
-          <table className="min-w-full text-[#333] border-spacing-3 border-separate">
-            <thead className="bg-[#f9f9f9] rounded-lg mb-2.5 text-sm md:text-base font-medium border-b">
-              <tr>
-                <th className="px-6 py-3 md:py-5 text-left">Date–Time</th>
-                <th className="px-6 py-3 md:py-5 text-left">Order#</th>
-                <th className="px-6 py-3 md:py-5 text-left">PO</th>
-                <th className="px-6 py-3 md:py-5 text-left">Status</th>
-                <th className="px-6 py-3 md:py-5 text-left">Notification</th>
-                <th className="px-6 py-3 md:py-5 text-left">Action</th>
+          <table className="w-full text-[#333] border-spacing-y-3 border-separate">
+            <thead className="rounded-lg text-sm md:text-base font-medium border shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+              <tr className="rounded-lg border">
+                <th className="px-6 py-3 md:py-5">Date-Time</th>
+                <th className="px-6 py-3 md:py-5">Order#</th>
+                <th className="px-6 py-3 md:py-5">PO</th>
+                <th className="px-6 py-3 md:py-5">Status</th>
+                <th className="px-6 py-3 md:py-5">Notification</th>
+                <th className="px-6 py-3 md:py-5">Action</th>
               </tr>
             </thead>
             <tbody>
               {ordersData.map((item, idx) => (
                 <tr
                   key={idx}
-                  className="border-b shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] rounded-lg"
+                  className="border rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
                 >
                   <td className="px-6 py-4 text-sm text-center">{item.date}</td>
                   <td className="px-6 py-4 text-sm text-center">
@@ -159,7 +160,7 @@ const page = () => {
                     {item.notification}
                   </td>
                   <td className="px-6 py-4 text-sm text-center">
-                    <button className="bg-[#21BBA2] text-white px-4 py-1.5 rounded-md shadow-xs">
+                    <button className="bg-[#21BBA2] text-white px-3 py-1.5 text-nowrap rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
                       View Order
                     </button>
                   </td>
@@ -169,6 +170,9 @@ const page = () => {
           </table>
         </div>
       </div>
+      <button className="fixed cursor-pointer bottom-10 right-10 bg-white size-16 p-3 rounded-full shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+        <Stars />
+      </button>
     </section>
   );
 };

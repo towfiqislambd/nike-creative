@@ -70,7 +70,7 @@ const ProductPage = ({ params }) => {
         className="object-cover object-center -z-10 absolute top-60"
       />
     <div className="container relative min-h-screen py-10 px-4">
-      <div className=" grid lg:grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-2 gap-10">
         {/* left side */}
         <div>
           {/* product image */}
