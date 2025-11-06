@@ -22,6 +22,8 @@ import MailIcon from "../../../../Assets/mail.svg";
 import WhatsAppIcon from "../../../../Assets/whatsapp.svg";
 import doorImage from "../../../../Assets/door.jpg";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
+import ServiceRequestModal from "../../../../Components/Modals/ServiceRequestModal";
 
 const orderData = [
   {
@@ -123,11 +125,55 @@ const tabs = [
   "Services",
 ];
 
+// svg
+const Filter = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M0.625 8.54167C0.625 4.80971 0.625 2.94374 1.78437 1.78437C2.94374 0.625 4.80971 0.625 8.54167 0.625C12.2736 0.625 14.1396 0.625 15.299 1.78437C16.4583 2.94374 16.4583 4.80971 16.4583 8.54167C16.4583 12.2736 16.4583 14.1396 15.299 15.299C14.1396 16.4583 12.2736 16.4583 8.54167 16.4583C4.80971 16.4583 2.94374 16.4583 1.78437 15.299C0.625 14.1396 0.625 12.2736 0.625 8.54167Z"
+        stroke="#333333"
+        stroke-width="1.25"
+      />
+      <path
+        d="M6.03906 8.54102L11.0391 8.54105"
+        stroke="#333333"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M6.875 11.458H10.2083"
+        stroke="#333333"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5.20703 5.625H11.8737"
+        stroke="#333333"
+        stroke-width="1.25"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
 const page = () => {
+  const { register, handleSubmit, reset } = useForm();
+
+  const [notes, setNotes] = useState([]);
+  const [isNoteOpen, setIsNoteOpen] = useState(false);
+
   const [activeTab, setActiveTab] = useState("Received");
   const [selected, setSelected] = useState([]);
-  const [addNote, setAddNote] = useState([""]);
-  const [isNoteOpen, setIsNoteOpen] = useState(false);
+
   const [isAddNoteModalOpen, setIsAddNoteModalOpen] = useState(false);
   const [isViewNoteModalOpen, setIsViewNoteModalOpen] = useState(false);
   const [isShareLinkModalOpen, setIsShareLinkModalOpen] = useState(false);
@@ -139,13 +185,23 @@ const page = () => {
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
   };
+  const onSubmit = (data) => {
+    if (!data.note?.trim()) return;
 
-  const addNoteHandler = () => {
-    setAddNote((prev) => [...prev, phoneNumber]);
-  };
+    const newNote = {
+      text: data.note,
+      date: new Date().toLocaleString("en-US", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      }),
+    };
 
-  const removeNoteHandler = (index) => {
-    setAddNote((prev) => prev.filter((_, i) => i !== index));
+    setNotes((prev) => [newNote, ...prev]);
+    reset(); // clear textarea
   };
 
   return (
@@ -154,16 +210,22 @@ const page = () => {
       <header className="bg-[#E4E3E0] text-[#333] p-6 rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
         <nav className="flex items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
           {/* search bar */}
-          <div className="max-w-[325px] 2xl:max-w-[425px] w-full flex items-center justify-between bg-[#E4E3E0] rounded-[40px] px-5 py-3.5 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
-            <input
-              type="text"
-              placeholder="Search by order number and PO info"
-              className="flex-1 bg-transparent outline-none text-sm text-[#5F6C72] leading-[20px]"
-            />
-            <Search />
+          <div className="flex items-center w-full">
+            <div className="max-w-[325px] 2xl:max-w-[425px] w-full flex items-center justify-between bg-[#E4E3E0] rounded-[40px] px-5 py-3.5 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+              <input
+                type="text"
+                placeholder="Search by order number and PO info"
+                className="flex-1 bg-transparent outline-none text-sm text-[#5F6C72] leading-[20px]"
+              />
+              <Search />
+            </div>
+            <div className="inline-flex px-5 py-[14px] items-center gap-2.5 md:text-xl">
+              <div>Filter</div>
+              <Filter />
+            </div>
           </div>
           {/* nav, cart, & profile */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 w-full justify-end">
             <div className="flex justify-center gap-3 md:gap-5 xl:gap-7">
               {navItems?.map(({ label, link }, idx) => (
                 <Link
@@ -214,7 +276,10 @@ const page = () => {
           <h2 className="text-lg md:text-xl xl:text-2xl font-medium text-[#333]">
             Total Orders Showing - <span className="font-normal">132</span>
           </h2>
-          <Link href={'/dashboard/b2b/orders/order/cart'} className="bg-[#4BCDE4] hover:bg-[#4BCDE4]/80 cursor-pointer text-white text-base lg:text-xl py-3 px-6 rounded-lg">
+          <Link
+            href={"/dashboard/b2b/orders/order/cart"}
+            className="bg-[#4BCDE4] hover:bg-[#4BCDE4]/80 cursor-pointer text-white text-base lg:text-xl py-3 px-6 rounded-lg"
+          >
             Pay Now
           </Link>
         </div>
@@ -398,39 +463,68 @@ const page = () => {
             <h3 className="text-base md:text-xl font-medium mb-2.5">
               Add Note
             </h3>
-            <div className="flex items-center gap-5">
-              <textarea
-                rows={2}
-                placeholder="Please install the window stickers on the sliding glass doors only, avoid the porch door."
-                className="max-w-[330px] w-full border border-[#999] rounded-lg p-3 !text-xs placeholder:text-xs placeholder:text-[#333] lg:text-xl focus:ring-2 focus:ring-teal-500"
-              ></textarea>
-              <div
-                onClick={addNoteHandler}
-                className="size-12 shrink-0 bg-light-green rounded-full flex items-center justify-center cursor-pointer"
+            <div className="w-full">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex items-center gap-5"
               >
-                <Plus />
-              </div>
-            </div>
-            <div className="my-4 flex gap-2 flex-wrap">
-              {addNote.map((note, inx) => (
-                <div
-                  key={inx}
-                  className="bg-white px-2.5 py-1.5 rounded-lg text-primary-text shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+                <textarea
+                  rows={2}
+                  placeholder="Please install the window stickers on the sliding glass doors only, avoid the porch door."
+                  {...register("note")}
+                  className="max-w-[330px] w-full border border-[#999] rounded-lg p-3 !text-xs placeholder:text-xs placeholder:text-[#333] lg:text-xl focus:ring-2 focus:ring-[#21BBA2]"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  className="size-12 shrink-0 bg-[#21BBA2] rounded-full flex items-center justify-center cursor-pointer"
                 >
-                  <div className="flex gap-3">
-                    <div className="flex items-center justify-center size-9 p-2 shrink-0 rounded-full bg-white shadow-[0_3.75px_6px_0.75px_rgba(0,0,0,0.20),_0_0_0.169px_0.169px_rgba(0,0,0,0.07),_0_0_0.169px_0_rgba(0,0,0,0.05),_0_2.024px_2.192px_-1.012px_rgba(0,0,0,0.25),_0_0.675px_2.698px_0.675px_rgba(0,0,0,0.12)]">
-                      <Man />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                  >
+                    <path
+                      d="M9.81641 19.6367H29.4528"
+                      stroke="white"
+                      stroke-width="2.94545"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19.6367 9.81836V29.4547"
+                      stroke="white"
+                      stroke-width="2.94545"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </form>
+              {notes.length !== 0 ? (
+                <div className="my-4 flex flex-col gap-2">
+                  {notes.map((note, index) => (
+                    <div
+                      key={index}
+                      className="bg-white w-full text-wrap px-2.5 py-1.5 rounded-lg text-primary-text shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+                    >
+                      <div className="flex gap-3">
+                        <div className="flex items-center justify-center size-9 p-2 shrink-0 rounded-full bg-white shadow-[0_3.75px_6px_0.75px_rgba(0,0,0,0.20),_0_0_0.169px_0.169px_rgba(0,0,0,0.07),_0_0_0.169px_0_rgba(0,0,0,0.05),_0_2.024px_2.192px_-1.012px_rgba(0,0,0,0.25),_0_0.675px_2.698px_0.675px_rgba(0,0,0,0.12)]">
+                          <Man />
+                        </div>
+                        <p>{note.text}</p>
+                      </div>
+                      <p className="text-xs text-sub-text text-end mt-1">
+                        Date: {note.date}
+                      </p>
                     </div>
-                    <p>
-                      Please install the window stickers on the sliding glass
-                      doors only, avoid the porch door.
-                    </p>
-                  </div>
-                  <p className="text-xs text-sub-text text-end mt-1">
-                    Date:10/20/2025 - 7:20 Am
-                  </p>
+                  ))}
                 </div>
-              ))}
+              ) : (
+                <p className="text-center text-gray-400 mt-4">no notes added</p>
+              )}
             </div>
           </div>
         </div>
@@ -448,27 +542,28 @@ const page = () => {
             <h3 className="text-base md:text-xl font-medium mb-2.5">
               View Note
             </h3>
-            <div className="my-4 flex gap-2 flex-wrap">
-              {addNote.map((note, inx) => (
-                <div
-                  key={inx}
-                  className="bg-white px-2.5 py-1.5 rounded-lg text-primary-text shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
-                >
-                  <div className="flex gap-3">
-                    <div className="flex items-center justify-center size-9 p-2 shrink-0 rounded-full bg-white shadow-[0_3.75px_6px_0.75px_rgba(0,0,0,0.20),_0_0_0.169px_0.169px_rgba(0,0,0,0.07),_0_0_0.169px_0_rgba(0,0,0,0.05),_0_2.024px_2.192px_-1.012px_rgba(0,0,0,0.25),_0_0.675px_2.698px_0.675px_rgba(0,0,0,0.12)]">
-                      <Man />
+            {notes.length !== 0 ? (
+              <div className="my-4 flex flex-col gap-2">
+                {notes.map((note, index) => (
+                  <div
+                    key={index}
+                    className="bg-white w-full text-wrap px-2.5 py-1.5 rounded-lg text-primary-text shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+                  >
+                    <div className="flex gap-3">
+                      <div className="flex items-center justify-center size-9 p-2 shrink-0 rounded-full bg-white shadow-[0_3.75px_6px_0.75px_rgba(0,0,0,0.20),_0_0_0.169px_0.169px_rgba(0,0,0,0.07),_0_0_0.169px_0_rgba(0,0,0,0.05),_0_2.024px_2.192px_-1.012px_rgba(0,0,0,0.25),_0_0.675px_2.698px_0.675px_rgba(0,0,0,0.12)]">
+                        <Man />
+                      </div>
+                      <p>{note.text}</p>
                     </div>
-                    <p>
-                      Please install the window stickers on the sliding glass
-                      doors only, avoid the porch door.
+                    <p className="text-xs text-sub-text text-end mt-1">
+                      Date: {note.date}
                     </p>
                   </div>
-                  <p className="text-xs text-sub-text text-end mt-1">
-                    Date:10/20/2025 - 7:20 Am
-                  </p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-center text-gray-400">no notes added</p>
+            )}
           </div>
         </div>
       )}
@@ -519,24 +614,9 @@ const page = () => {
       )}
       {/* service request modal */}
       {isServiceRequestModalOpen && (
-        <div
-          onClick={() => setIsServiceRequestModalOpen(false)}
-          className="w-screen h-screen fixed top-0 left-0 bg-black/20 flex items-center justify-center"
-        >
-          <div className="max-w-[645px] w-full rounded-[20px] bg-white px-3 md:px-5 py-4 md:py-8 text-[#333] shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
-            <div className="flex items-center justify-between">
-              <div className="text-xl md:text-[26px]">
-                Submit Your Service Request:
-              </div>
-              <button
-                onClick={() => setIsServiceRequestModalOpen(false)}
-                className="cursor-pointer"
-              >
-                <CrossCircle />
-              </button>
-            </div>
-          </div>
-        </div>
+        <ServiceRequestModal
+          onClose={() => setIsServiceRequestModalOpen(false)}
+        />
       )}
     </section>
   );
