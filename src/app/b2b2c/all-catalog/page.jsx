@@ -39,16 +39,16 @@ const Page = () => {
     <section className="my-10">
       <Container>
         {/* Upper Part */}
-        <div className="mb-10 flex justify-between items-center">
+        <div className="mb-7 2xl:mb-10 flex flex-col md:flex-row gap-3 justify-between items-center">
           {/* Left */}
-          <div className="flex gap-12 items-center">
+          <div className="flex gap-5 md:gap-12 flex-col md:flex-row items-center">
             {/* Category */}
-            <div className="flex gap-5 items-center">
+            <div className="flex flex-col sm:flex-row gap-3 xl:gap-5 items-center">
               {categories.map(category => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.name)}
-                  className={`px-5 py-3 rounded-lg cursor-pointer hover:scale-105 duration-300 transition-all border border-light-green ${
+                  className={`px-3 xl:px-5 py-2 xl:py-3 rounded-lg cursor-pointer hover:scale-105 duration-300 transition-all border border-light-green ${
                     activeCategory === category.name
                       ? "bg-light-green text-white"
                       : "bg-transparent text-light-green"
@@ -61,7 +61,9 @@ const Page = () => {
 
             {/* Colors */}
             <div className="flex gap-3 items-center">
-              <p className="text-[#333] text-xl font-medium">Color:</p>
+              <p className="text-[#333] text-lg xl:text-xl font-medium">
+                Color:
+              </p>
               <div className="flex gap-2 items-center">
                 {colors.map(color => (
                   <button
@@ -80,7 +82,7 @@ const Page = () => {
           </div>
 
           {/* Right */}
-          <button className="p-3 rounded-lg cursor-pointer text-primary-text font-medium border border-off-white bg-[#F5F7F9] flex gap-2 items-center">
+          <button className="p-2 xl:p-3 rounded-lg cursor-pointer text-primary-text font-medium border border-off-white bg-[#F5F7F9] flex gap-2 items-center">
             <ViewSvg />
             <span>View</span>
             <DownSvg />
@@ -88,7 +90,7 @@ const Page = () => {
         </div>
 
         {/* Lower Part */}
-        <div className="grid grid-cols-10 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 gap-5">
           {catalogueData.map(item => (
             <div
               key={item.id}

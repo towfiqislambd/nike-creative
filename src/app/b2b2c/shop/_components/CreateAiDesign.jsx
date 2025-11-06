@@ -34,12 +34,12 @@ const CreateAiDesign = () => {
   return (
     <>
       {/* Door Category */}
-      <div className="flex gap-5 items-center mb-5">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-center mb-5">
         {categories.map(category => (
           <button
             key={category?.id}
             onClick={() => setActiveCategory(category?.name)}
-            className={`px-5 py-3 rounded-lg cursor-pointer hover:scale-105 duration-300 transition-all border border-secondary-blue ${
+            className={`px-5 w-full sm:w-fit py-3 rounded-lg cursor-pointer hover:scale-105 duration-300 transition-all border border-secondary-blue ${
               activeCategory === category?.name
                 ? "bg-secondary-blue text-white"
                 : "bg-transparent text-secondary-blue"
@@ -50,26 +50,26 @@ const CreateAiDesign = () => {
         ))}
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex flex-col 2xl:flex-row gap-5">
         {/* Left - Chat Box */}
         <div>
-          <div className="bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] p-7 rounded-2xl w-[732px] h-[600px] relative mb-6">
+          <div className="bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] p-4 xl:p-7 rounded-2xl w-full md:w-[620px] xl:w-[732px] h-[500px] sm:h-[630px] relative mb-6">
             {/* Top Switcher */}
-            <div className="flex absolute right-4 top-4 border-4 border-primary-text rounded-full overflow-hidden">
+            <div className="flex absolute right-3 xl:right-4 top-3 xl:top-4 border-[3px] xl:border-4 border-primary-text rounded-full overflow-hidden bg-white z-10">
               <button
                 onClick={() => setActiveMode("file")}
-                className={`px-4 py-2.5 cursor-pointer ${
+                className={`px-3 xl:px-4 py-2 xl:py-2.5 cursor-pointer ${
                   activeMode === "file" && "bg-secondary-blue"
                 }`}
               >
                 <ImgSvg />
               </button>
 
-              <div className="border-r-2"></div>
+              <div className="border-r-2" />
 
               <button
                 onClick={() => setActiveMode("text")}
-                className={`px-4 py-2.5 cursor-pointer ${
+                className={`px-3 xl:px-4 py-2 xl:py-2.5 cursor-pointer ${
                   activeMode === "text" && "bg-secondary-blue"
                 }`}
               >
@@ -80,9 +80,9 @@ const CreateAiDesign = () => {
             {/* Mode */}
             {activeMode === "text" ? (
               <div className="h-full flex flex-col justify-between">
-                <div className="space-y-5">
+                <div className="space-y-5 mt-14">
                   <div className="flex gap-3 items-start">
-                    <figure className="size-12 rounded-full relative shrink-0">
+                    <figure className="size-10 sm:size-12 rounded-full relative shrink-0">
                       {/* Left - AI Image */}
                       <Image
                         src={aiImg}
@@ -94,7 +94,7 @@ const CreateAiDesign = () => {
                     </figure>
 
                     {/* Right - Prompt */}
-                    <p className="grow bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] px-4 py-3 text-[15px] text-primary-text rounded-4xl border border-gray-50 !rounded-tl-md max-w-[453px] leading-[164%]">
+                    <p className="grow bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] text-sm sm:text-[15px] px-3 sm:px-4 py-3 text-primary-text rounded-4xl border border-gray-50 !rounded-tl-md max-w-[453px] leading-[164%]">
                       Hi! I’m your virtual design assistant. Tell me what you’re
                       looking for, and I’ll show you some options
                     </p>
@@ -102,12 +102,12 @@ const CreateAiDesign = () => {
 
                   <div className="flex gap-3 items-start justify-end">
                     {/* Left - AI Image */}
-                    <p className="grow bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] px-4 py-3 text-[15px] text-primary-text rounded-4xl border border-gray-50 !rounded-tr-md max-w-[453px] leading-[164%]">
+                    <p className="grow bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] px-3 sm:px-4 py-3 text-sm sm:text-[15px] text-primary-text rounded-4xl border border-gray-50 !rounded-tr-md max-w-[453px] leading-[164%]">
                       Hi! I’m your virtual design assistant. Tell me what you’re
                       looking for, and I’ll show you some options
                     </p>
 
-                    <figure className="size-12 rounded-full relative shrink-0">
+                    <figure className="size-10 sm:size-12 rounded-full relative shrink-0">
                       {/* Right - Prompt */}
                       <Image
                         src={aiImg}
@@ -120,31 +120,31 @@ const CreateAiDesign = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-center">
+                <div className="flex gap-2 sm:gap-3 items-center">
                   <div className="w-[496px] rounded-full border border-gray-100 bg-[#fff] shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
                     <input
                       type="text"
-                      className="w-full block px-5 py-3.5 outline-none"
+                      className="w-full block px-3 sm:px-5 py-2 text-sm sm:text-base sm:py-3.5 outline-none"
                       placeholder="Make A Door Like glass"
                     />
                   </div>
 
                   <label
                     htmlFor="file"
-                    className="w-[70px] py-2.5 rounded-3xl border border-light-green grid place-items-center cursor-pointer"
+                    className="shrink-0 h-8 sm:h-auto w-8 sm:w-[70px] sm:py-2.5 rounded-3xl border border-light-green grid place-items-center cursor-pointer"
                   >
                     <input type="file" className="hidden" id="file" />
                     <PhotoSvg />
                   </label>
 
-                  <button className="w-[70px] py-2.5 rounded-3xl bg-light-green border border-light-green grid place-items-center cursor-pointer">
+                  <button className="shrink-0 h-8 sm:h-auto w-8 sm:w-[70px] sm:py-2.5 rounded-3xl bg-light-green border border-light-green grid place-items-center cursor-pointer">
                     <SendSvg />
                   </button>
                 </div>
               </div>
             ) : (
               <div className="h-full flex flex-col items-center justify-center">
-                <figure className="relative w-[400px] h-[450px] rounded-lg">
+                <figure className="relative w-full sm:w-[400px] h-[300px] sm:h-[450px] rounded-lg mt-2 sm:mt-14">
                   <Image
                     src={previewImage ? previewImage : doorImg}
                     alt="door_img"
@@ -155,19 +155,19 @@ const CreateAiDesign = () => {
 
                 {previewImage && !notClicked && (
                   <div>
-                    <h3 className="max-w-[657px] text-xl font-medium text-primary-text mt-5">
+                    <h3 className="max-w-[657px] sm:text-lg md:text-xl font-medium text-primary-text mt-5">
                       We found this product in our catalog. Would you like to
                       proceed with placing the order?
                     </h3>
 
-                    <div className="flex gap-5 mt-7 w-full">
-                      <button className="px-7 py-3 text-[17px] bg-light-green text-white cursor-pointer hover:scale-105 duration-300 transition-transform rounded-[6px] border border-light-green">
+                    <div className="flex gap-4 md:gap-5 mt-5 sm:mt-7 w-full">
+                      <button className="px-5 md:px-7 py-2 md:py-3 text-[17px] bg-light-green text-white cursor-pointer hover:scale-105 duration-300 transition-transform rounded-[6px] border border-light-green">
                         Yes
                       </button>
 
                       <button
                         onClick={() => setNotClicked(true)}
-                        className="px-7 py-3 text-[17px] bg-transparent text-light-green cursor-pointer hover:scale-105 duration-300 transition-transform rounded-[6px] border border-light-green"
+                        className="px-5 md:px-7 py-2 md:py-3 text-[17px] bg-transparent text-light-green cursor-pointer hover:scale-105 duration-300 transition-transform rounded-[6px] border border-light-green"
                       >
                         Not This
                       </button>
@@ -175,21 +175,21 @@ const CreateAiDesign = () => {
                   </div>
                 )}
                 {notClicked && (
-                  <div className="flex gap-5 justify-between items-center mt-7 w-full">
-                    <h3 className="text-primary-text font-medium text-xl">
+                  <div className="flex flex-col sm:flex-row gap-5 justify-center sm:justify-between items-center mt-7 w-full">
+                    <h3 className="text-primary-text font-medium text-lg xl:text-xl">
                       This is an AI-generated photo.
                     </h3>
 
-                    <div className="flex flex-col items-end gap-5">
+                    <div className="flex flex-col items-center sm:items-end gap-5">
                       <button
                         onClick={() => setViewPrevious(true)}
-                        className="px-4 py-2.5 font-medium rounded-full cursor-pointer flex gap-2 items-center bg-[linear-gradient(245deg,_#4BCDE4_1.36%,_#58C5D8_49.38%,_#29717E_186.59%)] text-primary-text duration-300 transition-all hover:scale-105 w-fit"
+                        className="px-4 py-2 sm:py-2.5 font-medium rounded-full cursor-pointer flex gap-2 items-center bg-[linear-gradient(245deg,_#4BCDE4_1.36%,_#58C5D8_49.38%,_#29717E_186.59%)] text-primary-text duration-300 transition-all hover:scale-105 w-fit"
                       >
                         Generate Design
                       </button>
 
                       <div className="flex gap-5 items-center">
-                        <button className="border rounded-lg border-light-green text-light-green flex gap-2 items-center px-5 py-3 hover:bg-light-green hover:text-white duration-300 transition-all cursor-pointer">
+                        <button className="border rounded-lg border-light-green text-light-green flex gap-2 items-center px-3 xl:px-5 py-2.5 xl:py-3 hover:bg-light-green hover:text-white duration-300 transition-all cursor-pointer">
                           <TrySvg />
                           <span>Try On</span>
                         </button>
@@ -208,7 +208,7 @@ const CreateAiDesign = () => {
           {/* Upload Image Box */}
           {activeMode === "file" && (
             <div className="space-y-3">
-              <h3 className="text-xl font-medium text-primary-text">
+              <h3 className="text-lg sm:text-xl font-medium text-primary-text">
                 Upload your reference image to create your design.
               </h3>
 
@@ -223,9 +223,9 @@ const CreateAiDesign = () => {
               >
                 <label
                   htmlFor="upload_img"
-                  className="shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] rounded-2xl w-[732px] py-10 relative bg-white cursor-pointer hover:bg-gray-50 transition-all duration-300 border border-dashed border-[#ADADAD] text-center flex flex-col gap-3"
+                  className="shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] rounded-2xl w-full md:w-[620px] xl:w-[732px] px-5 py-7 xl:py-10 relative bg-white cursor-pointer hover:bg-gray-50 transition-all duration-300 border border-dashed border-[#ADADAD] text-center flex flex-col gap-3"
                 >
-                  <h3 className="text-primary-text text-xl font-medium mb-3">
+                  <h3 className="text-primary-text text-lg xl:text-xl font-medium mb-1 xl:mb-3">
                     Create Your Design
                   </h3>
 
@@ -233,7 +233,7 @@ const CreateAiDesign = () => {
                     <UploadSvg />
                   </p>
 
-                  <p className="text-[#5A5C5F] font-medium">
+                  <p className="text-[#5A5C5F] text-sm xl:text-base font-medium">
                     Upload or drag and drop
                   </p>
                 </label>
@@ -254,13 +254,13 @@ const CreateAiDesign = () => {
 
         {/* Right - Preview Images */}
         {viewPrevious && (
-          <div className="py-5 px-4 rounded-lg w-[350px] shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] border border-[#E9E9E9] bg-white shrink-0 space-y-5">
+          <div className="py-5 px-4 rounded-lg w-full sm:w-[350px] shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] border border-[#E9E9E9] bg-white shrink-0 space-y-3 sm:space-y-5">
             <h3 className="text-primary-text font-semibold text-xl">
               View Previous
             </h3>
 
             {previewImages?.map(item => (
-              <figure className="w-full h-[300px] relative rounded-2xl">
+              <figure className="w-full h-[250px] sm:h-[300px] relative rounded-2xl">
                 <Image
                   src={item?.img}
                   alt="preview_img"

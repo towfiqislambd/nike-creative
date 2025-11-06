@@ -19,13 +19,13 @@ const B2B2CNavbar = () => {
   ];
 
   return (
-    <div className="sticky top-6 mt-6 left-0 w-full z-50">
+    <div className="sticky top-4 xl:top-6 mt-4 xl:mt-6 left-0 w-full z-50">
       <Container>
-        <nav className="flex items-center justify-between bg-white px-4 sm:px-6 lg:px-10 py-2.5 border border-gray-200 rounded-full shadow-sm">
+        <nav className="flex items-center justify-between bg-white px-4 sm:px-6 lg:px-10 py-1 xl:py-2.5 border border-gray-200 rounded-full shadow-sm">
           {/* Left */}
           <div className="flex items-center gap-10">
             {/* Logo */}
-            <Link href="/" className="flex items-center size-16 relative">
+            <Link href="/" className="flex items-center size-14 sm:size-16 relative">
               <Image
                 src={b2b2cLogo}
                 alt="Logo"

@@ -19,7 +19,7 @@ const data = [
 const Favorites = ({ setAr, setImageFile }) => {
   return (
     <>
-      <div className="grid grid-cols-5 gap-6">
+      <div className="grid sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-5">
         {data?.map(item => (
           <SingleDoor
             key={item?.id}

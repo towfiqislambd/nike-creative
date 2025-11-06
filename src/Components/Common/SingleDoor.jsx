@@ -66,7 +66,7 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
           </button>
         </figure>
 
-        <div className="p-3 flex gap-6 items-center">
+        <div className="p-2.5 flex gap-3 items-center justify-between">
           <div>
             <h3 className="text-primary-text font-semibold">{item?.name}</h3>
             <div className="flex gap-3 items-center">
@@ -108,7 +108,7 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
       <Modal
         open={openPreviewModal}
         onClose={() => setOpenPreviewModal(false)}
-        className="!max-w-[348px] h-[320px]"
+        className="!max-w-[348px] h-[300px] md:h-[320px]"
       >
         <figure className="w-full h-full relative rounded">
           <Image
@@ -127,14 +127,14 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
         className="max-w-xl"
       >
         <div className="text-center py-7">
-          <h3 className="text-xl font-medium mb-4 text-primary-text">
+          <h3 className="text-lg md:text-xl font-medium mb-4 text-primary-text">
             Are you sure you would like to place the order?
           </h3>
 
-          <div className="flex gap-8 justify-center items-center mt-7">
+          <div className="flex gap-4 md:gap-8 justify-center items-center mt-4 md:mt-7">
             <button
               onClick={() => setOpenConfirmationModal(false)}
-              className="px-7 py-2.5 rounded-lg bg-transparent text-light-green cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
+              className="px-5 md:px-7 py-2 md:py-2.5 rounded-lg bg-transparent text-light-green cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
             >
               No
             </button>
@@ -144,7 +144,7 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
                 setOpenConfirmationModal(false);
                 setOpenSuccessModal(true);
               }}
-              className="px-7 py-2.5 rounded-lg bg-light-green text-white cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
+              className="px-5 md:px-7 py-2 md:py-2.5 rounded-lg bg-light-green text-white cursor-pointer duration-300 hover:scale-105 transition-transform border border-light-green"
             >
               Yes
             </button>
@@ -161,7 +161,7 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
         <div className="flex flex-col justify-center items-center text-center py-7">
           <SuccessSvg />
 
-          <h3 className="text-xl font-medium text-primary-text mt-7">
+          <h3 className="text-lg md:text-xl font-medium text-primary-text mt-7">
             Your order has been successfully placed
           </h3>
 
