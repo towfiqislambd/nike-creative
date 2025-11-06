@@ -29,12 +29,12 @@ const page = () => {
   const [activeTab, setActiveTab] = useState("favorites");
   const [activeColor, setActiveColor] = useState("#3E3E3E");
   const shadow_box =
-    "p-5 border border-[#E9E9E9] bg-white rounded-xl w-[312px] space-y-3 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]";
+    "p-4 2xl:p-5 border border-[#E9E9E9] bg-white rounded-xl xl:w-[312px] space-y-3 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]";
 
   return (
-    <section className="my-10">
+    <section className="my-5 md:my-10">
       <Container>
-        <main className="flex gap-8">
+        <main className="flex flex-col lg:flex-row gap-5 xl:gap-8">
           {/* Sidebar */}
           <aside className="space-y-5 shrink-0">
             {/* Upper Div */}

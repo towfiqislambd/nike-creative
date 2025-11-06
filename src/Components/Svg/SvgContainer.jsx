@@ -1899,10 +1899,9 @@ export const InvoiceNote = () => {
         fill="#B3DAFE"
       />
     </svg>
-      );
+  );
 };
 
-    
 export const B13Svg = () => {
   return (
     <svg
@@ -1952,7 +1951,7 @@ export const GoogleDocs = () => {
         d="M17.2396 5.47793H13.0501C12.3384 5.47793 11.7617 4.90121 11.7617 4.18953V0L17.2396 5.47793Z"
         fill="#ACD1FC"
       />
-        </svg>
+    </svg>
   );
 };
 
@@ -2390,7 +2389,6 @@ export const Man = () => {
   );
 };
 
-
 export const B20Svg = () => {
   return (
     <svg
@@ -2551,7 +2549,6 @@ export const Link = () => {
   );
 };
 
-
 export const B21Svg = () => {
   return (
     <svg
@@ -2704,7 +2701,6 @@ export const ShareLink = () => {
   );
 };
 
-
 export const LeftArrow = () => {
   return (
     <svg
@@ -2721,7 +2717,6 @@ export const LeftArrow = () => {
     </svg>
   );
 };
-
 
 export const B22Svg = () => {
   return (
@@ -2747,12 +2742,42 @@ export const B22Svg = () => {
   );
 };
 
-export const B23Svg = () => {
-  return <></>;
+export const RightSvg = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="M12 5l7 7-7 7" />
+    </svg>
+  );
 };
 
-export const B24Svg = () => {
-  return <></>;
+export const LockSvg = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="M12 5l7 7-7 7" />
+    </svg>
+  );
 };
 
 export const B25Svg = () => {
