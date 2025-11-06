@@ -5,9 +5,9 @@ import { LoveSvg, OrderSvg, ShareSvg, TrySvg } from "../Svg/SvgContainer";
 
 const DoorPreviewModal = ({ onTryOn, onOrder }) => {
   return (
-    <div className="flex gap-7">
+    <div className="flex flex-col sm:flex-row md:gap-7">
       {/* Left - Door Image */}
-      <figure className="w-[348px] h-[320px] relative rounded">
+      <figure className="w-full sm:w-[280px] md:w-[348px] h-[250px] sm:h-[280px] md:h-[320px] mx-auto relative rounded">
         <Image
           src={previewDoor}
           alt="preview_door"
@@ -28,7 +28,7 @@ const DoorPreviewModal = ({ onTryOn, onOrder }) => {
 
       {/* Right */}
       <div className="pt-4 pb-7 flex flex-col justify-between">
-        <div>
+        <div className="mb-3">
           <h3 className="text-black font-semibold mb-3">
             Product Name: KDWH010
           </h3>
@@ -50,7 +50,7 @@ const DoorPreviewModal = ({ onTryOn, onOrder }) => {
 
           <button
             onClick={onTryOn}
-            className="border rounded-lg border-light-green text-light-green flex gap-2 items-center px-4 py-3 hover:bg-light-green hover:text-white duration-300 transition-all cursor-pointer"
+            className="border rounded-lg border-light-green text-light-green flex gap-2 items-center px-4 py-2 md:py-3 hover:bg-light-green hover:text-white duration-300 transition-all cursor-pointer"
           >
             <TrySvg />
             <span>Try On</span>

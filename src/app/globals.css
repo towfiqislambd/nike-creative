@@ -23,7 +23,7 @@ body {
   font-family: var(--font-poppins), sans-serif;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
@@ -60,11 +60,11 @@ button{
 }
 
 .section_title {
-  @apply text-[#333] text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-semibold leading-[150%];
+  @apply text-[#333] text-xl sm:text-2xl xl:text-3xl 2xl:text-[48px] font-semibold leading-[150%];
 }
 
 .section_subTitle {
-  @apply text-[#333] text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] font-semibold leading-[150%];
+  @apply text-[#333] text-[20px] sm:text-lg xl:text-xl 2xl:text-[28px] font-semibold leading-[150%];
 }
 
 .section_description {
