@@ -213,14 +213,14 @@ const page = () => {
             {(isAr || ar) && (
               <div>
                 {imageFile || preview ? (
-                  <div className="border border-gray-200 rounded-2xl p-5 flex gap-6 mb-8 shadow-[0_0_4px_3px_rgba(0,0,0,0.05)]">
+                  <div className="border border-gray-200 rounded-2xl p-3 sm:p-5 flex flex-col lg:flex-row gap-3 md:gap-6 mb-8 shadow-[0_0_4px_3px_rgba(0,0,0,0.05)]">
                     {/* Left - Door Preview */}
-                    <div className="w-[843px]">
-                      <h3 className="text-primary-text font-semibold text-2xl mb-3.5">
+                    <div className="w-full lg:w-[843px]">
+                      <h3 className="text-primary-text font-semibold text-xl lg:text-2xl mb-3.5">
                         Bring Your Vision to Life
                       </h3>
 
-                      <figure className="h-[380px] relative rounded-2xl">
+                      <figure className="h-[300px] sm:h-[380px] relative rounded-2xl">
                         <Image
                           src={doorPreview}
                           alt="door_preview"
@@ -232,9 +232,9 @@ const page = () => {
                     </div>
 
                     {/* Right - Color Changer */}
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col gap-3 justify-between">
                       <div>
-                        <h3 className="text-primary-text font-semibold text-2xl mb-3.5">
+                        <h3 className="text-primary-text font-semibold text-xl lg:text-2xl mb-3.5">
                           Change Color
                         </h3>
 
@@ -244,7 +244,7 @@ const page = () => {
                               key={color?.id}
                               onClick={() => setActiveColor(color?.code)}
                               style={{ backgroundColor: color?.code }}
-                              className={`rounded-full cursor-pointer shadow-lg size-12 ${
+                              className={`rounded-full cursor-pointer shadow-lg size-8 sm:size-12 ${
                                 activeColor === color?.code
                                   ? "border-light-green border-2"
                                   : "border border-gray-200"
@@ -254,7 +254,7 @@ const page = () => {
                         </div>
                       </div>
 
-                      <div className="space-y-3">
+                      <div className="flex flex-col sm:flex-row gap-3 items-center">
                         <button className="text-[#000080] font-medium px-7 py-3 rounded-lg cursor-pointer duration-300 transition-all hover:scale-105 border border-[#000080]">
                           Save the Photo
                         </button>
@@ -276,23 +276,23 @@ const page = () => {
                   >
                     <label
                       htmlFor="upload_door"
-                      className="w-full py-20 text-center flex flex-col gap-3 mb-8 border border-dashed border-[#ADADAD] rounded-2xl bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] cursor-pointer hover:bg-gray-50 transition-all duration-300 group"
+                      className="w-full px-5 lg:px-10 py-8 lg:py-20 text-center flex flex-col gap-3 mb-8 border border-dashed border-[#ADADAD] rounded-2xl bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] cursor-pointer hover:bg-gray-50 transition-all duration-300 group"
                     >
-                      <p className="mx-auto mb-2 group-hover:scale-105 duration-300 transition-transform">
+                      <p className="mx-auto mb-1 xl:mb-2 group-hover:scale-105 duration-300 transition-transform">
                         <CameraSvg />
                       </p>
 
-                      <h3 className="text-primary-text text-2xl font-semibold mb-2">
+                      <h3 className="text-primary-text text-lg lg:text-xl xl:text-2xl font-semibold mb-1 xl:mb-2">
                         Bring Your Vision to Life
                       </h3>
 
-                      <p className="text-[#ADADAD] text-xl max-w-[750px] mx-auto leading-[164%]">
+                      <p className="text-[#ADADAD] lg:text-lg xl:text-xl max-w-[750px] mx-auto leading-[164%]">
                         To begin, simply upload or take a photo of your door.
                         For the best results, please ensure it's well-lit and
                         shows the entire doorway clearly.
                       </p>
 
-                      <p className="text-primary-text font-medium">
+                      <p className="text-primary-text text-sm lg:text-base font-medium">
                         Upload or drag and drop
                       </p>
                     </label>

@@ -810,8 +810,7 @@ export const CameraSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="69"
-      height="60"
+     className="size-14 xl:size-16"
       viewBox="0 0 69 60"
       fill="none"
     >
