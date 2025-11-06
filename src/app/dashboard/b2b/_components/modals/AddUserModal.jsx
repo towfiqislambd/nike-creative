@@ -59,14 +59,12 @@ export default function AddUserModal({
   initialData,
   title,
 }) {
-  // If editing → use provided values.
-  // If adding → start empty and force user to choose role.
   const defaults = initialData ?? {
     firstName: "",
     lastName: "",
     email: "",
     username: "",
-    role: "", // empty so the placeholder keeps it invalid until user selects
+    role: "", 
   };
 
   const {
@@ -81,7 +79,7 @@ export default function AddUserModal({
 
   useEffect(() => {
     reset(defaults);
-  }, [initialData, reset]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [initialData, reset]); 
 
   const onSubmit = (data) => {
     onSave(data);
@@ -90,12 +88,9 @@ export default function AddUserModal({
 
   return (
     <>
-      {/* Header */}
       <div className="flex items-center justify-between px-6 pt-6">
         <h3 className="text-2xl font-semibold text-[#333]">{title}</h3>
       </div>
-
-      {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="px-6 pb-6 pt-4">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <Input
@@ -153,7 +148,6 @@ export default function AddUserModal({
             rules={{ required: "Role is required" }}
             error={errors.role}
           >
-            {/* disabled placeholder enforces selection */}
             <option value="" disabled>
               Select a role…
             </option>
@@ -164,8 +158,6 @@ export default function AddUserModal({
             ))}
           </Select>
         </div>
-
-        {/* Footer */}
         <div className="mt-6 flex items-center justify-end gap-3">
           <button
             type="button"
