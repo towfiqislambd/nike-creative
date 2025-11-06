@@ -810,7 +810,7 @@ export const CameraSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-     className="size-14 xl:size-16"
+      className="size-14 xl:size-16"
       viewBox="0 0 69 60"
       fill="none"
     >
@@ -971,7 +971,7 @@ export const PhotoSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="size-7"
+      className="size-5 sm:size-7"
       viewBox="0 0 36 36"
       fill="none"
     >
@@ -987,7 +987,7 @@ export const AiSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="size-5"
+      className="size-4 xl:size-5"
       viewBox="0 0 10 10"
       fill="none"
     >
@@ -1018,7 +1018,7 @@ export const SendSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="size-7"
+      className="size-4 sm:size-7"
       viewBox="0 0 36 36"
       fill="none"
     >
@@ -1044,7 +1044,7 @@ export const ImgSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="size-5"
+      className="size-4 xl:size-5"
       viewBox="0 0 10 10"
       fill="none"
     >
