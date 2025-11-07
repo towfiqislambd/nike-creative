@@ -65,25 +65,29 @@ export default function UserManagementPage() {
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="">
       <div className="mb-6">
-        <div className="rounded-[28px] bg-[#E0DDD7] px-4 py-4 shadow-sm relative">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 shadow-sm">
+        <div className="rounded-[20px] xl:rounded-[28px] bg-[#E0DDD7] px-3 py-3 xl:px-4 xl:py-4 shadow-sm relative">
+          {/* top row */}
+          <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between xl:gap-4">
+            {/* left: search + filter */}
+            <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:gap-6">
+              {/* search */}
+              <div className="flex items-center rounded-full border border-gray-300 bg-white px-3 py-2 xl:px-4 shadow-sm w-full xl:w-auto">
                 <input
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search by name"
-                  className="w-64 bg-transparent text-sm outline-none"
+                  className="w-full xl:w-64 bg-transparent text-sm outline-none"
                 />
                 <span className="ml-2 text-teal-600">
-                  {" "}
-                  <IoSearch />{" "}
+                  <IoSearch />
                 </span>
               </div>
+
+              {/* filter */}
               <div className="flex items-center gap-2 text-gray-800 relative">
-                <span className="text-[16px]">Filter</span>
+                <span className="text-[14px] xl:text-[16px]">Filter</span>
                 <span
                   onClick={() => setShowDropdown(!showDropdown)}
                   className="text-sm text-gray-700 cursor-pointer"
@@ -92,14 +96,14 @@ export default function UserManagementPage() {
                 </span>
 
                 {showDropdown && (
-                  <div className="absolute top-10 left-16 z-10 bg-white border border-gray-200 rounded-lg shadow-md p-2 w-[160px]">
+                  <div className="absolute top-8 left-0 xl:top-10 xl:left-16 z-10 bg-white border border-gray-200 rounded-lg shadow-md p-2 w-[180px] xl:w-[160px]">
                     <ul className="flex flex-col gap-1">
                       {ROLES.map((r) => (
                         <li
                           key={r}
                           onClick={() => {
                             setRoleFilter(r);
-                            setShowDropdown(false); // hide dropdown after selecting
+                            setShowDropdown(false);
                           }}
                           className={`cursor-pointer rounded-md px-4 py-2 text-sm transition ${
                             roleFilter === r
@@ -116,8 +120,10 @@ export default function UserManagementPage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-5">
-              <ul className="hidden md:flex items-end gap-8 text-[16px] text-gray-800">
+            {/* right: nav + icons */}
+            <div className="flex items-center gap-3 xl:gap-5">
+              {/* nav becomes scrollable row under xl */}
+              <ul className="hidden md:flex items-center gap-4 xl:gap-8 text-[14px] xl:text-[16px] text-gray-800 overflow-x-auto md:overflow-visible whitespace-nowrap">
                 <li className="cursor-pointer hover:text-teal-600 transition-colors">
                   Home
                 </li>
@@ -135,42 +141,45 @@ export default function UserManagementPage() {
                 </li>
               </ul>
 
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-[#21BBA2] text-white">
+              <div className="grid h-9 w-9 xl:h-10 xl:w-10 place-items-center rounded-full bg-[#21BBA2] text-white">
                 🛒
               </div>
-              <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-black/10">
+              <div className="relative h-9 w-9 xl:h-10 xl:w-10 overflow-hidden rounded-full ring-1 ring-black/10">
                 <img
                   alt="avatar"
                   src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=120&auto=format&fit=crop"
                   className="h-full w-full object-cover"
                 />
-                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#71F18E] ring-2 ring-white" />
+                <span className="absolute bottom-0 right-0 h-2 w-2 xl:h-2.5 xl:w-2.5 rounded-full bg-[#71F18E] ring-2 ring-white" />
               </div>
             </div>
           </div>
 
+          {/* divider */}
           <div className="mt-3 h-px w-full bg-black/15" />
 
-          <div className="mt-3 flex items-center justify-between">
-            <h1 className="text-[28px] font-semibold text-[#333]">
+          {/* title row */}
+          <div className="mt-3 flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+            <h1 className="text-[22px] xl:text-[28px] font-semibold text-[#333]">
               User Management
             </h1>
 
             <button
               onClick={openAdd}
-              className="group flex flex-col items-center"
+              className="self-start xl:self-auto group flex flex-col items-center"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
+              <span className="grid h-9 w-9 xl:h-10 xl:w-10 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
                 +
               </span>
-              <span className="text-[14px] text-gray-700 mt-1">Add User</span>
+              <span className="text-[13px] xl:text-[14px] text-gray-700 mt-1">
+                Add User
+              </span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* --- Table --- */}
-      <section className="pb-16">
+      <section className="pb-16 min-w-[1400px] 3xl:overflow-x-auto">
         <div className="grid grid-cols-12 mb-4 rounded-xl bg-white px-4 py-4 text-sm font-medium text-primary-black">
           <div className="col-span-4 text-center">Name</div>
           <div className="col-span-4 text-center">Email</div>
