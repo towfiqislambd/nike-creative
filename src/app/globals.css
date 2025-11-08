@@ -99,3 +99,7 @@ button {
 .card_title {
   @apply text-[#333] font-medium text-[22px] leading-[34px] sm:text-[24px] sm:leading-[36px] lg:text-[26px] lg:leading-[40px] mb-2.5;
 }
+
+.small_card {
+  @apply rounded-2xl bg-white p-4 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)];
+}
