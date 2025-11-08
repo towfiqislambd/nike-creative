@@ -217,8 +217,9 @@ const adminSidebarLinks = [
 ];
 
 export default function DashboardLayout({ children }) {
-  const user = { role: "b2b" };
+  const user = { role: "admin" };
 
+  
   return (
     <section className="flex min-h-screen max-h-screen">
       {/* Sidebar */}

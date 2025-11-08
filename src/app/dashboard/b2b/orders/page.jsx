@@ -7,6 +7,7 @@ import {
   AddNote,
   Cart,
   CrossCircle,
+  Filter,
   GoogleDocs,
   InvoiceNote,
   Man,
@@ -124,46 +125,6 @@ const tabs = [
   "Completed",
   "Services",
 ];
-
-// svg
-const Filter = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      fill="none"
-    >
-      <path
-        d="M0.625 8.54167C0.625 4.80971 0.625 2.94374 1.78437 1.78437C2.94374 0.625 4.80971 0.625 8.54167 0.625C12.2736 0.625 14.1396 0.625 15.299 1.78437C16.4583 2.94374 16.4583 4.80971 16.4583 8.54167C16.4583 12.2736 16.4583 14.1396 15.299 15.299C14.1396 16.4583 12.2736 16.4583 8.54167 16.4583C4.80971 16.4583 2.94374 16.4583 1.78437 15.299C0.625 14.1396 0.625 12.2736 0.625 8.54167Z"
-        stroke="#333333"
-        stroke-width="1.25"
-      />
-      <path
-        d="M6.03906 8.54102L11.0391 8.54105"
-        stroke="#333333"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M6.875 11.458H10.2083"
-        stroke="#333333"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M5.20703 5.625H11.8737"
-        stroke="#333333"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  );
-};
 
 const page = () => {
   const { register, handleSubmit, reset } = useForm();
