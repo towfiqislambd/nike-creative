@@ -4,6 +4,10 @@ import Image from "next/image";
 import React from "react";
 import profilePicture from "../../../Assets/profile.svg";
 import OrderByCategoryChart from "./_components/OrderByCategoryChart";
+import OrderByColorChart from "./_components/OrderByColorChart";
+import OrderByCustomer from "./_components/OrderByCustomer";
+import ProductionCosts from "./_components/ProductionCosts";
+import PerformanceByCategory from "./_components/PerformanceByCategory";
 
 const data = [
   { title: "Total Revenue", value: "55,000" },
@@ -102,7 +106,7 @@ const page = () => {
           <div>
             <h3 className="text-primary-text text-xl mb-3">Compare</h3>
             <p className="px-3 py-2 rounded-lg border border-primary-text">
-              <input type="date" />
+              <input type="date" className="border-none outline-none" />
             </p>
           </div>
         </div>
@@ -134,21 +138,45 @@ const page = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-12 gap-5">
+      <div className="grid grid-cols-12 gap-5 mb-5">
         {/* Left - Graph Cart */}
-        <div className="small_card col-span-9">
+        <div className="small_card col-span-8">
           <h2 className="text-xl font-medium text-primary-text mb-5">
             Orders by Product Category
           </h2>
+
           <OrderByCategoryChart />
         </div>
 
         {/* Right - Pie Cart */}
-        <div className="small_card col-span-3">
+        <div className="small_card col-span-4">
           <h2 className="text-xl font-medium text-primary-text mb-5">
             Orders by Color
           </h2>
+
+          <OrderByColorChart />
         </div>
+      </div>
+
+      <OrderByCustomer />
+
+      <div className="small_card my-5">
+        <h2 className="text-xl font-medium text-primary-text mb-5">
+          Production & Operational Costs
+        </h2>
+        <ProductionCosts />
+      </div>
+
+      <PerformanceByCategory />
+
+      <div className="small_card mt-5">
+        <h2 className="text-xl font-medium text-primary-text mb-1">
+          Production & Operational Costs
+        </h2>
+
+        <p className="text-primary-text">
+          Net profit increased by $6,000 this month compared to last.
+        </p>
       </div>
     </>
   );
