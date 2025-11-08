@@ -1,41 +1,15 @@
-// ! 294 line have to complete tooltip
-// ! have to move all svg in svg container
 "use client";
+
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { BellIcon, Info } from "lucide-react";
 import profilePicture from "../../../../Assets/profile.svg";
-import { EditPen, TrashBin } from "../../../../Components/Svg/SvgContainer";
-
-//svg
-const PlusBlack = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <path
-        d="M6 12H18"
-        stroke="#333333"
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M12 6V18"
-        stroke="#333333"
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  );
-};
+import {
+  EditPen,
+  PlusBlack,
+  TrashBin,
+} from "../../../../Components/Svg/SvgContainer";
 
 const page = () => {
   const [products, setProducts] = useState([
@@ -48,8 +22,58 @@ const page = () => {
       minimumStock: "20",
       specification: "1/16 inch thickness",
     },
+    {
+      productName: "Steel Screws",
+      unitType: "Pack",
+      category: "Office Supplies",
+      brand: "MetalCorp",
+      currentStock: "11",
+      minimumStock: "20",
+      specification: "1/16 inch thickness",
+    },
+    {
+      productName: "Steel Screws",
+      unitType: "Pack",
+      category: "Office Supplies",
+      brand: "MetalCorp",
+      currentStock: "30",
+      minimumStock: "20",
+      specification: "1/16 inch thickness",
+    },
+    {
+      productName: "Steel Screws",
+      unitType: "Pack",
+      category: "Office Supplies",
+      brand: "MetalCorp",
+      currentStock: "60",
+      minimumStock: "20",
+      specification: "1/16 inch thickness",
+    },
+    {
+      productName: "Steel Screws",
+      unitType: "Pack",
+      category: "Office Supplies",
+      brand: "MetalCorp",
+      currentStock: "11",
+      minimumStock: "20",
+      specification: "1/16 inch thickness",
+    },
+    {
+      productName: "Steel Screws",
+      unitType: "Pack",
+      category: "Office Supplies",
+      brand: "MetalCorp",
+      currentStock: "11",
+      minimumStock: "10",
+      specification: "1/16 inch thickness",
+    },
   ]);
   const [categories, setCategories] = useState([
+    { name: "Office Supplies", description: "This category description" },
+    { name: "Office Supplies", description: "This category description" },
+    { name: "Office Supplies", description: "This category description" },
+    { name: "Office Supplies", description: "This category description" },
+    { name: "Office Supplies", description: "This category description" },
     { name: "Office Supplies", description: "This category description" },
   ]);
 
@@ -69,6 +93,7 @@ const page = () => {
     reset: resetProduct,
     setValue: setProductValue,
   } = useForm();
+
   const {
     register: registerCategory,
     handleSubmit: handleCategorySubmit,
@@ -110,7 +135,7 @@ const page = () => {
     setIsCategoryModal(false);
   };
 
-  // delete functionality
+  // delete product or category
   const confirmDelete = () => {
     if (deleteModal.type === "product") {
       setProducts(products.filter((_, i) => i !== deleteModal.index));
@@ -146,12 +171,12 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] text-[#333] p-6 rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+      <header className="bg-[#E4E3E0] text-[#333] p-6 rounded-[40px] border-l-2 border-[#bbb] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
         <nav className="flex items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
           <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
             Inventory Management
           </h2>
-          {/* nav, cart, & profile */}
+          {/* notification & profile */}
           <div className="flex items-center gap-5">
             <div className="flex items-center gap-5">
               <button className="relative">
@@ -198,13 +223,13 @@ const page = () => {
           </button>
         </div>
       </header>
-
+      {/* all tables */}
       <div className="mt-6 min-h-screen">
         <div className="flex max-xl:flex-col gap-4 xl:gap-[30px]">
           {/* product tables */}
           <div className="w-full overflow-x-auto px-2">
-            <table className="w-full text-[#333] border-spacing-y-3 border-separate">
-              <thead className="rounded-lg text-sm md:text-base font-medium border shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+            <table className="w-full text-[#333] border-spacing-y-3 border-separate text-sm">
+              <thead className="rounded-lg font-medium border shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
                 <tr className="rounded-lg border">
                   <th className="px-3 py-3 md:py-5">Product Name</th>
                   <th className="px-3 py-3 md:py-5">Unit Type</th>
@@ -280,7 +305,7 @@ const page = () => {
           {/* category tables */}
           <div className="max-w-[450px] w-full">
             <table className="w-full text-[#333] border-spacing-y-3 border-separate">
-              <thead className="rounded-lg text-sm md:text-base font-medium border shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+              <thead className="rounded-lg text-base xl:text-[20px] font-medium border shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
                 <tr className="rounded-lg border">
                   <th className="px-3 py-3 md:py-5">Category</th>
                   <th className="px-3 py-3 md:py-5">Actions</th>
@@ -295,11 +320,11 @@ const page = () => {
                     <td className="px-3 py-3 md:py-5 text-center">
                       <div className="flex items-center gap-2.5">
                         {category.name}
-                        <div className="relative flex items-center group bg-amber-600">
-                          <button className={``}>
+                        <div className="relative flex items-center group">
+                          <button>
                             <Info size={20} />
                           </button>
-                          <div className="absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-md -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                          <div className="absolute bg-white text-base xl:text-lg border border-[#F5F4F4] px-3.5 xl:px-5 py-2.5 xl:py-3.5 rounded-t-[20px] rounded-bl-[20px] -top-16 right-2 whitespace-nowrap hidden group-hover:block transition shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
                             {category.description || "No description"}
                           </div>
                         </div>
@@ -401,14 +426,18 @@ const page = () => {
                   </select>
                 </div>
                 <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">Brand</label>
+                  <label className="text-base lg:text-xl">
+                    Brand (Optional)
+                  </label>
                   <input
                     {...registerProduct("brand")}
                     className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
                   />
                 </div>
                 <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">Specification</label>
+                  <label className="text-base lg:text-xl">
+                    Color/Specifications (Optional)
+                  </label>
                   <input
                     {...registerProduct("specification")}
                     className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
