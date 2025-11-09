@@ -16,6 +16,7 @@ const tabs = [
 
 const page = () => {
   const [activeTab, setActiveTab] = useState("Order History");
+  const [isAutomatic, setAutomatic] = useState(false);
 
   return (
     <>
@@ -64,27 +65,49 @@ const page = () => {
         </nav>
 
         {/* Lower part */}
-        <div className="flex items-center gap-5">
-          <div className="w-[412px] border border-[#565656] shadow-lg rounded-lg bg-[#E4E3E0] py-3s flex gap-3 items-center px-4 py-3">
-            <SearchSvg />
-            <input
-              type="text"
-              className="border-none outline-none"
-              placeholder="Search Order # or PO Info..."
-            />
+        <div className="flex justify-between items-center">
+          {/* Left */}
+          <div className="flex items-center gap-5">
+            <div className="w-[412px] border border-[#565656] shadow-lg rounded-lg bg-[#E4E3E0] py-3s flex gap-3 items-center px-4 py-3">
+              <SearchSvg />
+              <input
+                type="text"
+                className="border-none outline-none w-full"
+                placeholder="Search Order # or PO Info..."
+              />
+            </div>
+
+            <select className="px-4 py-3 rounded-lg border outline-none border-[#565656] shadow-lg">
+              <option value="">All Filter</option>
+              <option value="">Eco Windows</option>
+              <option value="">Eco Windows</option>
+            </select>
           </div>
 
-          <select className="px-4 py-3 rounded-lg border border-[#565656] shadow-lg">
-            <option value="">All Filter</option>
-            <option value="">Eco Windows</option>
-            <option value="">Eco Windows</option>
-          </select>
+          {/* Right */}
+          {activeTab === "Al Agent Settings" && (
+            <div className="flex gap-2 items-center">
+              <p className="text-lg text-primary-text">Use Automatic Data:</p>
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  // checked={user?.is_email_notification}
+                  onChange={() => setAutomatic(!isAutomatic)}
+                  className="sr-only peer"
+                />
+                <div className="w-11 h-6 bg-gray-300 peer-checked:bg-light-green rounded-full transition-all duration-300" />
+                <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 transform peer-checked:translate-x-5" />
+              </label>
+            </div>
+          )}
         </div>
       </header>
 
       {activeTab === "Order History" && <OrderHistory />}
       {activeTab === "Product Analytics" && <ProductAnalytics />}
-      {activeTab === "Al Agent Settings" && <AiAgentSettings />}
+      {activeTab === "Al Agent Settings" && (
+        <AiAgentSettings isAutomatic={isAutomatic} />
+      )}
     </>
   );
 };
