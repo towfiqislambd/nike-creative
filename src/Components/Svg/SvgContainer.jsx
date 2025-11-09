@@ -3183,3 +3183,69 @@ export const WrongIconRed = () => {
     </svg>
   );
 };
+
+export const SearchSvg = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="size-5"
+      viewBox="0 0 23 24"
+      fill="none"
+    >
+      <path
+        d="M10.9873 20.9746C16.5031 20.9746 20.9746 16.5031 20.9746 10.9873C20.9746 5.47146 16.5031 1 10.9873 1C5.47146 1 1 5.47146 1 10.9873C1 16.5031 5.47146 20.9746 10.9873 20.9746Z"
+        stroke="#333333"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M17.9375 18.4523L21.8531 22.3578"
+        stroke="#333333"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const Plus2Svg = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M8.75 0.75V16.75M16.75 8.75H0.75"
+        stroke="#333333"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const Minus2Svg = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="2"
+      viewBox="0 0 18 2"
+      fill="none"
+    >
+      <path
+        d="M16.75 0.75L0.749999 0.75"
+        stroke="#333333"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
