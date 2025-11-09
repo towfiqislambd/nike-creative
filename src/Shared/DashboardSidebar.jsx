@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { B9Svg, BasicLogo } from "../Components/Svg/SvgContainer";
 
-const DashboardSidebar = ({ dashboardNavLinks, role }) => {
+const DashboardSidebar = ({ role, open, dashboardNavLinks }) => {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -14,7 +14,9 @@ const DashboardSidebar = ({ dashboardNavLinks, role }) => {
 
   return (
     <aside
-      className={`border border-gray-200 px-5 py-6 w-[290px] shrink-0 overflow-y-auto side-scrollbar m-3.5 rounded-xl shadow-xl ${
+      className={`${
+        open ? "translate-x-0" : "-translate-x-full xl:translate-x-0"
+      } fixed top-0 left-0 z-[999] xl:static max-xl:h-screen border border-gray-200 duration-500 transition-transform px-5 py-6 w-[290px] shrink-0 overflow-y-auto side-scrollbar xl:m-3.5 xl:rounded-xl shadow-xl ${
         role === "b2b" ? "bg-white" : "bg-accent-off-white"
       }`}
     >
