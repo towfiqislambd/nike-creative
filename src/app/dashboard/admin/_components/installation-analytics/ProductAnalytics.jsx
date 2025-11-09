@@ -90,7 +90,7 @@ const ProductAnalytics = () => {
         ))}
       </tbody>
 
-      <Modal open={open} onClose={() => setOpen(false)}>
+      <Modal open={open} onClose={() => setOpen(false)} className="max-w-6xl">
         <AnalyticsModal />
       </Modal>
     </table>
