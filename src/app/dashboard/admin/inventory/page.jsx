@@ -11,7 +11,13 @@ import {
   TrashBin,
 } from "../../../../Components/Svg/SvgContainer";
 
-const page = () => {
+// all modals
+import ProductModal from "../_components/ProductModal";
+import CategoryModal from "../_components/CategoryModal";
+import DeleteModal from "../_components/DeleteModal";
+
+const InventoryPage = () => {
+
   const [products, setProducts] = useState([
     {
       productName: "Steel Screws",
@@ -36,24 +42,6 @@ const page = () => {
       unitType: "Pack",
       category: "Office Supplies",
       brand: "MetalCorp",
-      currentStock: "30",
-      minimumStock: "20",
-      specification: "1/16 inch thickness",
-    },
-    {
-      productName: "Steel Screws",
-      unitType: "Pack",
-      category: "Office Supplies",
-      brand: "MetalCorp",
-      currentStock: "60",
-      minimumStock: "20",
-      specification: "1/16 inch thickness",
-    },
-    {
-      productName: "Steel Screws",
-      unitType: "Pack",
-      category: "Office Supplies",
-      brand: "MetalCorp",
       currentStock: "11",
       minimumStock: "20",
       specification: "1/16 inch thickness",
@@ -64,12 +52,12 @@ const page = () => {
       category: "Office Supplies",
       brand: "MetalCorp",
       currentStock: "11",
-      minimumStock: "10",
+      minimumStock: "20",
       specification: "1/16 inch thickness",
     },
   ]);
+
   const [categories, setCategories] = useState([
-    { name: "Office Supplies", description: "This category description" },
     { name: "Office Supplies", description: "This category description" },
     { name: "Office Supplies", description: "This category description" },
     { name: "Office Supplies", description: "This category description" },
@@ -101,7 +89,6 @@ const page = () => {
     setValue: setCategoryValue,
   } = useForm();
 
-  // add or edit product
   const onSubmitProduct = (data) => {
     if (editProductIndex !== null) {
       const updated = [...products];
@@ -115,7 +102,6 @@ const page = () => {
     setIsProductModal(false);
   };
 
-  // add or edit category
   const onSubmitCategory = (data) => {
     if (editCategoryIndex !== null) {
       const updated = [...categories];
@@ -135,7 +121,6 @@ const page = () => {
     setIsCategoryModal(false);
   };
 
-  // delete product or category
   const confirmDelete = () => {
     if (deleteModal.type === "product") {
       setProducts(products.filter((_, i) => i !== deleteModal.index));
@@ -145,21 +130,13 @@ const page = () => {
     setDeleteModal({ open: false, type: "", index: null });
   };
 
-  // edit product
   const handleEditProduct = (index) => {
     const p = products[index];
-    setProductValue("productName", p.productName);
-    setProductValue("unitType", p.unitType);
-    setProductValue("currentStock", p.currentStock);
-    setProductValue("minimumStock", p.minimumStock);
-    setProductValue("category", p.category);
-    setProductValue("brand", p.brand);
-    setProductValue("specification", p.specification);
+    Object.entries(p).forEach(([key, value]) => setProductValue(key, value));
     setEditProductIndex(index);
     setIsProductModal(true);
   };
 
-  // edit category
   const handleEditCategory = (index) => {
     const c = categories[index];
     setCategoryValue("categoryName", c.name);
@@ -176,28 +153,26 @@ const page = () => {
           <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
             Inventory Management
           </h2>
-          {/* notification & profile */}
           <div className="flex items-center gap-5">
-            <div className="flex items-center gap-5">
-              <button className="relative">
-                <BellIcon className="text-[#F34235]" />
-                <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
-                  2
-                </div>
-              </button>
-              <div className="relative shrink-0 cursor-pointer">
-                <Image
-                  src={profilePicture}
-                  width={48}
-                  height={48}
-                  alt=""
-                  className="rounded-full"
-                />
-                <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+            <button className="relative">
+              <BellIcon className="text-[#F34235]" />
+              <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
+                2
               </div>
+            </button>
+            <div className="relative shrink-0 cursor-pointer">
+              <Image
+                src={profilePicture}
+                width={48}
+                height={48}
+                alt="profile"
+                className="rounded-full"
+              />
+              <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
             </div>
           </div>
         </nav>
+
         <div className="flex items-center gap-5 mt-10 px-6 py-4">
           <button
             onClick={() => {
@@ -205,25 +180,25 @@ const page = () => {
               setEditProductIndex(null);
               setIsProductModal(true);
             }}
-            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-8 py-4 text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-8 py-4 text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
           >
-            Add Product
-            <PlusBlack />
+            Add Product <PlusBlack />
           </button>
+
           <button
             onClick={() => {
               resetCategory();
               setEditCategoryIndex(null);
               setIsCategoryModal(true);
             }}
-            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-8 py-4 text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-8 py-4 text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
           >
-            Add Category
-            <PlusBlack />
+            Add Category <PlusBlack />
           </button>
         </div>
       </header>
-      {/* all tables */}
+
+      {/* tables */}
       <div className="mt-6 min-h-screen">
         <div className="flex max-xl:flex-col gap-4 xl:gap-[30px]">
           {/* product tables */}
@@ -362,192 +337,34 @@ const page = () => {
             </table>
           </div>
         </div>
-
-        {/* all Modals */}
-
-        {/* product modal */}
-        {isProductModal && (
-          <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 px-3">
-            <div className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[730px] relative shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
-              <h2 className="card_title">
-                {editProductIndex !== null ? "Edit Product" : "Add New Product"}
-              </h2>
-              <form
-                onSubmit={handleProductSubmit(onSubmitProduct)}
-                className="grid grid-cols-2 gap-4"
-              >
-                <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">Product Name</label>
-                  <input
-                    {...registerProduct("productName")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">Unit Type</label>
-                  <input
-                    {...registerProduct("unitType")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">Current Stock</label>
-                  <input
-                    type="number"
-                    {...registerProduct("currentStock")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">Minimum Stock</label>
-                  <input
-                    type="number"
-                    {...registerProduct("minimumStock")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">Category</label>
-                  <select
-                    {...registerProduct("category")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                    required
-                  >
-                    <option value="">Select Category</option>
-                    {categories.map((c, i) => (
-                      <option key={i} value={c.name}>
-                        {c.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">
-                    Brand (Optional)
-                  </label>
-                  <input
-                    {...registerProduct("brand")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                  />
-                </div>
-                <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                  <label className="text-base lg:text-xl">
-                    Color/Specifications (Optional)
-                  </label>
-                  <input
-                    {...registerProduct("specification")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                  />
-                </div>
-                <div className="col-span-2 flex justify-end gap-3 mt-4">
-                  <button
-                    type="button"
-                    onClick={() => setIsProductModal(false)}
-                    className="px-8 py-4 bg-gray-400 text-white rounded-lg text-base xl:text-xl"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-8 py-4 bg-[#21BBA2] text-white rounded-lg text-base xl:text-xl"
-                  >
-                    {editProductIndex !== null
-                      ? "Update Product"
-                      : "Add Product"}
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
-
-        {/* category modal */}
-        {isCategoryModal && (
-          <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 px-3">
-            <div className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[384px] relative shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
-              <h2 className="card_title">
-                {editCategoryIndex !== null
-                  ? "Edit Category"
-                  : "Add New Category"}
-              </h2>
-              <form
-                onSubmit={handleCategorySubmit(onSubmitCategory)}
-                className="flex flex-col gap-4"
-              >
-                <div className="flex flex-col gap-2.5">
-                  <label className="text-base lg:text-xl">Category Name</label>
-                  <input
-                    {...registerCategory("categoryName")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                    required
-                  />
-                </div>
-                <div className="flex flex-col gap-2.5">
-                  <label className="text-base lg:text-xl">
-                    Category Description
-                  </label>
-                  <textarea
-                    {...registerCategory("categoryDescription")}
-                    className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
-                    rows={4}
-                  />
-                </div>
-                <div className="flex justify-end gap-3 mt-2">
-                  <button
-                    type="button"
-                    onClick={() => setIsCategoryModal(false)}
-                    className="px-4 py-3 bg-gray-400 text-white rounded-lg text-sm md:text-base"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-4 py-3 bg-[#21BBA2] text-white rounded-lg text-sm md:text-base"
-                  >
-                    {editCategoryIndex !== null
-                      ? "Update Category"
-                      : "Add Category"}
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
-
-        {/* delete modal */}
-        {deleteModal.open && (
-          <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 px-3">
-            <div className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[585px] relative shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
-              <h2 className="md:text-xl">
-                Are you sure you would like to delete this{" "}
-                {deleteModal.type === "product" ? "Product" : "Category"}?
-              </h2>
-              <div className="flex justify-center gap-4 xl:gap-10 mt-4 xl:mt-7">
-                <button
-                  onClick={() =>
-                    setDeleteModal({ open: false, type: "", index: null })
-                  }
-                  className="bg-white border border-[#21BBA2] text-[#21BBA2] lg:text-lg px-8 py-4 rounded-lg"
-                >
-                  No
-                </button>
-                <button
-                  onClick={confirmDelete}
-                  className="bg-white border border-[#21BBA2] text-[#21BBA2] lg:text-lg px-8 py-4 rounded-lg"
-                >
-                  Yes
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* all modals */}
+      <ProductModal
+        isOpen={isProductModal}
+        onClose={() => setIsProductModal(false)}
+        onSubmit={handleProductSubmit(onSubmitProduct)}
+        register={registerProduct}
+        editIndex={editProductIndex}
+        categories={categories}
+      />
+
+      <CategoryModal
+        isOpen={isCategoryModal}
+        onClose={() => setIsCategoryModal(false)}
+        onSubmit={handleCategorySubmit(onSubmitCategory)}
+        register={registerCategory}
+        editIndex={editCategoryIndex}
+      />
+
+      <DeleteModal
+        isOpen={deleteModal.open}
+        type={deleteModal.type}
+        onCancel={() => setDeleteModal({ open: false, type: "", index: null })}
+        onConfirm={confirmDelete}
+      />
     </section>
   );
 };
 
-export default page;
+export default InventoryPage;
