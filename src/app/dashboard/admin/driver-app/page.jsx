@@ -1,11 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import ArrivalItemModal from "../_components/ArrivalItemModal";
-import { EditSvg } from "../../../../Components/Svg/SvgContainer"; 
+import { EditSvg } from "../../../../Components/Svg/SvgContainer";
 import { FaRegTrashCan } from "react-icons/fa6";
-
-
-
 
 export default function ArrivalChecklist() {
   const [items, setItems] = useState([
@@ -25,25 +22,24 @@ export default function ArrivalChecklist() {
     setModalOpen(true);
   };
 
-  const openEdit = (row) => {
+  const openEdit = row => {
     setMode("edit");
     setEditing(row);
     setModalOpen(true);
   };
 
-  const onSubmit = (text) => {
+  const onSubmit = text => {
     if (mode === "edit" && editing) {
-      setItems((prev) =>
-        prev.map((i) => (i.id === editing.id ? { ...i, text } : i))
+      setItems(prev =>
+        prev.map(i => (i.id === editing.id ? { ...i, text } : i))
       );
     } else {
-      setItems((prev) => [...prev, { id: "a_" + Date.now(), text }]);
+      setItems(prev => [...prev, { id: "a_" + Date.now(), text }]);
     }
     setModalOpen(false);
   };
 
-  const onDelete = (id) => setItems((prev) => prev.filter((i) => i.id !== id));
-
+  const onDelete = id => setItems(prev => prev.filter(i => i.id !== id));
 
   return (
     <>
@@ -98,7 +94,7 @@ export default function ArrivalChecklist() {
               </thead>
 
               <tbody>
-                {items.map((r) => (
+                {items.map(r => (
                   <tr key={r.id} className="[&_td]:bg-white">
                     <td className="td">
                       <div className="flex items-center justify-center  gap-3">
