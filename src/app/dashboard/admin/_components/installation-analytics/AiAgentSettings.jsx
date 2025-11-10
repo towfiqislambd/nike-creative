@@ -23,14 +23,20 @@ const AiAgentSettings = ({ isAutomatic }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <div className="w-full max-w-lg md:max-w-[694px] overflow-x-auto">
       {isAutomatic ? (
-        <table className="w-[694px] border-spacing-y-3 border-separate text-center">
+        <table className="w-full border-separate text-center border-spacing-y-3 text-sm lg:text-base">
           <thead>
             <tr className="rounded shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-white">
-              <td className="py-6 rounded-l-lg">Product Category</td>
-              <td className="py-6">Robust Manual Time (minutes)</td>
-              <td className="py-6 rounded-r-lg px-3">Edit</td>
+              <td className="text-nowrap px-2 py-4 md:py-6 rounded-l-lg">
+                Product Category
+              </td>
+              <td className="text-nowrap px-2 py-4 md:py-6">
+                Robust Manual Time (minutes)
+              </td>
+              <td className="text-nowrap px-2 py-4 md:py-6 rounded-r-lg">
+                Edit
+              </td>
             </tr>
           </thead>
 
@@ -40,11 +46,13 @@ const AiAgentSettings = ({ isAutomatic }) => {
                 key={item?.id}
                 className="rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.359px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-white"
               >
-                <td className="py-5 rounded-l-lg">{item?.category}</td>
-                <td className="py-5">{item?.time}</td>
+                <td className="text-nowrap px-2 py-3 md:py-5 rounded-l-lg">
+                  {item?.category}
+                </td>
+                <td className="text-nowrap px-2 py-3 md:py-5">{item?.time}</td>
                 <td
                   onClick={() => setOpen(true)}
-                  className="py-5 rounded-r-lg cursor-pointer px-3"
+                  className="text-nowrap px-3 py-3 md:py-5 rounded-r-lg cursor-pointer"
                 >
                   <button className="flex justify-center w-full">
                     <EditIconSvg />
@@ -63,9 +71,9 @@ const AiAgentSettings = ({ isAutomatic }) => {
               Edit Manual median Time
             </h3>
 
-            <div className="flex gap-12">
+            <div className="flex flex-col md:flex-row gap-5 md:gap-12">
               <div className="shrink-0">
-                <label className="text-lg font-medium text-primary-text inline-block mb-1">
+                <label className="block text-left text-lg font-medium text-primary-text  mb-1">
                   Product Category
                 </label>
                 <p className="text-primary-text text-left">Windows</p>
@@ -98,11 +106,11 @@ const AiAgentSettings = ({ isAutomatic }) => {
           </Modal>
         </table>
       ) : (
-        <table className="w-[694px] border-spacing-y-3 border-separate text-center">
+        <table className="w-full border-separate text-center border-spacing-y-3 lg:border-spacing-y-4 text-sm lg:text-base">
           <thead>
             <tr className="rounded shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-white">
-              <td className="py-6 rounded-l-lg">Product Category</td>
-              <td className="py-6 rounded-r-lg">
+              <td className="text-nowrap px-2 py-4 md:py-6 rounded-l-lg">Product Category</td>
+              <td className="text-nowrap px-2 py-4 md:py-6 rounded-r-lg">
                 Robust Manual Time (minutes)
               </td>
             </tr>
@@ -114,14 +122,18 @@ const AiAgentSettings = ({ isAutomatic }) => {
                 key={item?.id}
                 className="rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.359px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-white"
               >
-                <td className="py-5 rounded-l-lg">{item?.category}</td>
-                <td className="py-5 rounded-r-lg">{item?.time}</td>
+                <td className="text-nowrap px-2 py-3 md:py-5 rounded-l-lg">
+                  {item?.category}
+                </td>
+                <td className="text-nowrap px-2 py-3 md:py-5 rounded-r-lg">
+                  {item?.time}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-    </>
+    </div>
   );
 };
 
