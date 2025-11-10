@@ -3285,28 +3285,3 @@ export const EditIconSvg = () => {
     </svg>
   );
 };
-
-export const AdminLeftArrow = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="54"
-      height="75"
-      viewBox="0 0 54 75"
-      fill="none"
-    >
-      <path
-        d="M30 8.74228e-07C18.9543 3.91405e-07 10 8.95431 10 20L10 55C10 66.0457 18.9543 75 30 75L54 75L54 1.9233e-06L30 8.74228e-07Z"
-        fill="#21BBA2"
-      />
-      <path
-        d="M12 36.8149L12 22.9991L2.67445e-06 36.8149L12 36.8149Z"
-        fill="#21BBA2"
-      />
-      <path
-        d="M10 36.8149L10 50.6349L3.88245e-06 36.8149L10 36.8149Z"
-        fill="#21BBA2"
-      />
-    </svg>
-  );
-};

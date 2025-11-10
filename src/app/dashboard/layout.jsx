@@ -164,7 +164,7 @@ const adminSidebarLinks = [
     id: 22,
     label: "Product Management",
     icon: <B18Svg />,
-    path: "/dashboard/admin/project-management",
+    path: "/dashboard/admin/product-management",
   },
   {
     id: 23,
@@ -234,7 +234,7 @@ export default function DashboardLayout({ children }) {
       />
 
       {/* Outlet */}
-      <main className="grow bg-[#EFF3F6] overflow-y-auto p-5 relative">
+      <main className="grow bg-[#EFF3F6] overflow-y-auto p-1.5 md:p-5 relative">
         <button
           onClick={() => setOpen(!open)}
           className="xl:hidden w-9 md:w-10 h-8.5 md:h-9.5 cursor-pointer grid place-items-center rounded text-white bg-light-green absolute right-5 top-5 z-10"

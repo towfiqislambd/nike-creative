@@ -40,8 +40,14 @@ export default function AddEditUserModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-white px-8 py-5 rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white px-8 py-5 rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl"
+      >
         <h2 className="card_title mb-5">
           {initialData ? "Edit User" : "Add User"}
         </h2>

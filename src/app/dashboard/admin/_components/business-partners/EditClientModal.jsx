@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { FiX } from "react-icons/fi";
-import { Plus } from "../../../../Components/Svg/SvgContainer";
+import { Plus } from "../../../../../Components/Svg/SvgContainer";
 
 const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
   const { register, handleSubmit, reset } = useForm({
@@ -63,8 +63,14 @@ const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-      <div className="bg-white px-8 py-5 rounded-[20px] w-full max-w-[523px] relative shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white px-8 py-5 rounded-[20px] w-full max-w-[523px] relative shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+      >
         <h2 className="card_title mb-5">Edit Clients Information</h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>

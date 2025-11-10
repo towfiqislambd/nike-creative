@@ -16,8 +16,8 @@ import {
 } from "../../../../Components/Svg/SvgContainer";
 import Image from "next/image";
 import profilePicture from "../../../../Assets/profile.svg";
-import EditClientModal from "../_components/EditClientModal";
-import AddEditUserModal from "../_components/AddEditUserModal";
+import EditClientModal from "../_components/business-partners/EditClientModal";
+import AddEditUserModal from "../_components/business-partners/AddEditUserModal";
 import Link from "next/link";
 
 const page = () => {

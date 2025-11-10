@@ -35,8 +35,11 @@ const AddEditCouponModal = ({ isOpen, onClose, onSubmit, initialData }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-      <div className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg">
+    <div onClick={onClose} className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg"
+      >
         <h3 className="card_title">
           {initialData ? "Edit Coupon" : "Add Coupon"}
         </h3>
