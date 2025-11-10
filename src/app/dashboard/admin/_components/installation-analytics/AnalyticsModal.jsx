@@ -66,42 +66,52 @@ const AnalyticsModal = () => {
         </select>
       </div>
 
-      <table className="w-full border-spacing-y-4 border-separate text-center">
-        <thead>
-          <tr className="rounded shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-[#F5F5F5]">
-            <td className="py-6 rounded-l-lg">Product Image</td>
-            <td className="py-6">SKU</td>
-            <td className="py-6">Order#</td>
-            <td className="py-6">PO</td>
-            <td className="py-6">Installation Date</td>
-            <td className="py-6">Installation Time</td>
-            <td className="py-6 rounded-r-lg">Company</td>
-          </tr>
-        </thead>
-
-        <tbody>
-          {data?.map(item => (
-            <tr
-              key={item?.id}
-              className="rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.359px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-white"
-            >
-              <td className="pl-3 py-3 rounded-l-lg">
-                <Image
-                  src={item?.product_image}
-                  alt="product_img"
-                  className="size-[60px] rounded-lg"
-                />
+      <div className="w-full max-w-lg md:max-w-full overflow-x-auto">
+        <table className="w-full border-separate text-center border-spacing-y-3 lg:border-spacing-y-4 text-sm lg:text-base">
+          <thead>
+            <tr className="rounded shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-[#F5F5F5]">
+              <td className="text-nowrap px-2 py-4 lg:py-6 rounded-l-lg">
+                Product Image
               </td>
-              <td>{item?.sku}</td>
-              <td>#{item?.order_id}</td>
-              <td>{item?.po}</td>
-              <td>{item?.installation_date}</td>
-              <td>{item?.installation_time}</td>
-              <td className="rounded-r-lg">{item?.company_name}</td>
+              <td className="text-nowrap px-2 py-4 lg:py-6">SKU</td>
+              <td className="text-nowrap px-2 py-4 lg:py-6">Order#</td>
+              <td className="text-nowrap px-2 py-4 lg:py-6">PO</td>
+              <td className="text-nowrap px-2 py-4 lg:py-6">
+                Installation Date
+              </td>
+              <td className="text-nowrap px-2 py-4 lg:py-6">
+                Installation Time
+              </td>
+              <td className="text-nowrap px-2 py-4 lg:py-6 rounded-r-lg">
+                Company
+              </td>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {data?.map(item => (
+              <tr
+                key={item?.id}
+                className="rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.359px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] bg-white"
+              >
+                <td className="pl-3 py-2 md:py-3 rounded-l-lg">
+                  <Image
+                    src={item?.product_image}
+                    alt="product_img"
+                    className="size-10 md:size-[60px] rounded md:rounded-lg"
+                  />
+                </td>
+                <td className="text-nowrap px-2">{item?.sku}</td>
+                <td className="text-nowrap px-2">#{item?.order_id}</td>
+                <td className="text-nowrap px-2">{item?.po}</td>
+                <td className="text-nowrap px-2">{item?.installation_date}</td>
+                <td className="text-nowrap px-2">{item?.installation_time}</td>
+                <td className="text-nowrap px-2 rounded-r-lg">{item?.company_name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
