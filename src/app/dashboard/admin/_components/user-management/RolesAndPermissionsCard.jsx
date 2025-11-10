@@ -2,10 +2,16 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import DeleteModal from "./DeleteModal";
-import { TrashBin } from "../../../../Components/Svg/SvgContainer";
+import DeleteModal from "../DeleteModal";
+import { TrashBin } from "../../../../../Components/Svg/SvgContainer";
 
-const RolesAndPermissionsCard = ({ title, description }) => {
+const RolesAndPermissionsCard = ({
+  title,
+  description,
+  resetEmployee,
+  setEditEmployeeIndex,
+  setIsEmployeeModal,
+}) => {
   const [entries, setEntries] = useState([
     "Tech Solutions Inc",
     "Tech Solutions Inc",
@@ -14,14 +20,14 @@ const RolesAndPermissionsCard = ({ title, description }) => {
   ]);
   const [modalOpen, setModalOpen] = useState(false);
   const [deleteIndex, setDeleteIndex] = useState(null);
-  const { register, handleSubmit, reset } = useForm();
+  // const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = (data) => {
-    if (data.employee?.trim()) {
-      setEntries((prev) => [...prev, data.employee.trim()]);
-      reset();
-    }
-  };
+  // const onSubmit = (data) => {
+  //   if (data.employee?.trim()) {
+  //     setEntries((prev) => [...prev, data.employee.trim()]);
+  //     reset();
+  //   }
+  // };
 
   const handleDeleteClick = (index) => {
     setDeleteIndex(index);
@@ -39,7 +45,7 @@ const RolesAndPermissionsCard = ({ title, description }) => {
       <h2 className="text-xl 2xl:text-2xl mb-1.5">{title}</h2>
       <p className="text-gray-500 text-sm mb-3">{description}</p>
 
-      <div className="grid grid-cols-2 gap-2.5 mb-2.5">
+      <div className="grid md:grid-cols-2 gap-2.5 mb-2.5">
         {entries.map((entry, index) => (
           <div
             key={index}
@@ -48,7 +54,7 @@ const RolesAndPermissionsCard = ({ title, description }) => {
             <span className="truncate">{entry}</span>
             <button
               onClick={() => handleDeleteClick(index)}
-              className="size-5 flex items-center justify-center bg-[#F34235] rounded-full"
+              className="size-5 flex items-center justify-center bg-[#F34235] rounded-full shrink-0"
             >
               <TrashBin className="h-4 w-4" />
             </button>
@@ -56,9 +62,13 @@ const RolesAndPermissionsCard = ({ title, description }) => {
         ))}
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form>
         <input
-          {...register("employee")}
+          onClick={() => {
+            resetEmployee();
+            setEditEmployeeIndex(null);
+            setIsEmployeeModal(true);
+          }}
           placeholder="Add employee or manager..."
           className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#21BBA2]"
         />

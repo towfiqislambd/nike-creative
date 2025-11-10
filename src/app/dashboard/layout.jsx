@@ -171,7 +171,7 @@ const adminSidebarLinks = [
     id: 22,
     label: "Product Management",
     icon: <B18Svg />,
-    path: "/dashboard/admin/project-management",
+    path: "/dashboard/admin/product-management",
   },
   {
     id: 23,
