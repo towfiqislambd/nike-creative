@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import {
   B10Svg,
   B11Svg,
@@ -25,6 +26,7 @@ import {
   BasicLogo,
 } from "../../Components/Svg/SvgContainer";
 import DashboardSidebar from "../../Shared/DashboardSidebar";
+import { FaBars } from "react-icons/fa6";
 
 const b2bSidebarLinks = [
   {
@@ -218,20 +220,38 @@ const adminSidebarLinks = [
 
 export default function DashboardLayout({ children }) {
   const user = { role: "admin" };
+  const [open, setOpen] = useState(false);
 
-  
-  return (
+  return ( 
     <section className="flex min-h-screen max-h-screen">
       {/* Sidebar */}
       <DashboardSidebar
         role={user?.role}
+        open={open}
         dashboardNavLinks={
           user?.role === "b2b" ? b2bSidebarLinks : adminSidebarLinks
         }
       />
 
       {/* Outlet */}
-      <main className="grow bg-[#EFF3F6] overflow-y-auto p-5">{children}</main>
+      <main className="grow bg-[#EFF3F6] overflow-y-auto p-5 relative">
+        <button
+          onClick={() => setOpen(!open)}
+          className="xl:hidden w-9 md:w-10 h-8.5 md:h-9.5 cursor-pointer grid place-items-center rounded text-white bg-light-green absolute right-5 top-5 z-10"
+        >
+          <FaBars className="text-xl md:text-2xl" />
+        </button>
+
+        {children}
+      </main>
+
+      {/* Blur Overlay */}
+      <div
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 bg-black/30 backdrop-blur-[3px] transition-opacity duration-300 xl:hidden z-50 ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      />
     </section>
   );
 }
