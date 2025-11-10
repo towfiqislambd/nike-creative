@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { B9Svg, BasicLogo } from "../Components/Svg/SvgContainer";
 
-const DashboardSidebar = ({ role, open, dashboardNavLinks }) => {
+const DashboardSidebar = ({ role, open, setOpen, dashboardNavLinks }) => {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -16,7 +16,7 @@ const DashboardSidebar = ({ role, open, dashboardNavLinks }) => {
     <aside
       className={`${
         open ? "translate-x-0" : "-translate-x-full xl:translate-x-0"
-      } fixed top-0 left-0 z-[999] xl:static max-xl:h-screen border border-gray-200 duration-500 transition-transform px-5 py-6 w-[290px] shrink-0 overflow-y-auto side-scrollbar xl:m-3.5 xl:rounded-xl shadow-xl ${
+      } fixed top-0 left-0 z-[999] xl:static max-xl:h-screen border border-gray-200 duration-500 transition-transform p-4 md:px-5 md:py-6 w-[290px] shrink-0 overflow-y-auto side-scrollbar xl:m-3.5 xl:rounded-xl shadow-xl ${
         role === "b2b" ? "bg-white" : "bg-accent-off-white"
       }`}
     >
@@ -26,17 +26,18 @@ const DashboardSidebar = ({ role, open, dashboardNavLinks }) => {
       </figure>
 
       {/* Nav Links */}
-      <div className="space-y-5">
+      <div className="space-y-3 md:space-y-5">
         {dashboardNavLinks?.map(link => {
           const isActive = pathname === link?.path;
 
           return (
             <div key={link?.id}>
               <button
-                onClick={() =>
-                  link?.subItems ? toggleDropdown(link.id) : null
-                }
-                className={`w-full flex items-center justify-between px-3.5 py-3.5 rounded-lg hover:scale-105 duration-500 transition-transform cursor-pointer ${
+                onClick={() => {
+                  link?.subItems ? toggleDropdown(link.id) : null;
+                  setOpen(false);
+                }}
+                className={`w-full flex items-center justify-between p-2.5 md:p-3.5 rounded-lg hover:scale-105 duration-500 transition-transform cursor-pointer text-sm md:text-base ${
                   isActive
                     ? `${
                         role === "b2b"
@@ -74,7 +75,8 @@ const DashboardSidebar = ({ role, open, dashboardNavLinks }) => {
                       <Link
                         key={sub.id}
                         href={sub.path}
-                        className={`flex gap-2 items-center px-2 py-2 text-sm rounded-md hover:scale-105 transition-transform ${
+                        onClick={() => setOpen(false)}
+                        className={`flex gap-2 items-center px-2 py-2 text-[13px] md:text-sm rounded-md hover:scale-105 transition-transform ${
                           isSubActive
                             ? role === "b2b"
                               ? "bg-secondary-blue text-white"

@@ -339,6 +339,7 @@ export default function DashboardLayout({ children }) {
       <DashboardSidebar
         role={user?.role}
         open={open}
+        setOpen={setOpen}
         dashboardNavLinks={
           user?.role === "b2b"
             ? b2bSidebarLinks
@@ -351,7 +352,7 @@ export default function DashboardLayout({ children }) {
       />
 
       {/* Outlet */}
-      <main className="grow bg-[#EFF3F6] overflow-y-auto p-3 md:p-5 relative">
+      <main className="grow bg-[#EFF3F6] overflow-y-auto p-3 md:p-5 xl:ps-3 relative">
         <button
           onClick={() => setOpen(!open)}
           className="xl:hidden w-9 md:w-10 h-8.5 md:h-9.5 cursor-pointer grid place-items-center rounded text-white bg-light-green absolute right-5 top-5 z-10"
