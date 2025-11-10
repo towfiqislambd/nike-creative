@@ -47,7 +47,6 @@ export default function AddGuestModal({ open, onClose, onSave }) {
   const isTemporary = activation === "Temporary";
 
   const onSubmit = (data) => {
-    // If activation is Indefinite, ignore duration value
     const payload =
       data.activation === "Temporary"
         ? data
@@ -61,14 +60,10 @@ export default function AddGuestModal({ open, onClose, onSave }) {
 
   return (
     <Modal open={open} onClose={onClose} className="p-0">
-      {/* Header */}
       <div className="px-6 pt-6">
         <h3 className="text-2xl font-semibold text-[#333]">Add Guest</h3>
       </div>
-
-      {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="px-6 pb-6 pt-4">
-        {/* First / Last Name */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <label className="block">
             <Label>First Name</Label>
@@ -98,8 +93,6 @@ export default function AddGuestModal({ open, onClose, onSave }) {
             )}
           </label>
         </div>
-
-        {/* Address */}
         <div className="mt-5">
           <label className="block">
             <Label>Address</Label>
@@ -115,8 +108,6 @@ export default function AddGuestModal({ open, onClose, onSave }) {
             )}
           </label>
         </div>
-
-        {/* Activation + Duration (conditional) */}
         <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
           <label className="block">
             <Label>Activation Setting</Label>
@@ -142,8 +133,6 @@ export default function AddGuestModal({ open, onClose, onSave }) {
               </span>
             )}
           </label>
-
-          {/* Show only when Temporary */}
           {isTemporary ? (
             <label className="block">
               <Label>Duration</Label>
@@ -168,12 +157,9 @@ export default function AddGuestModal({ open, onClose, onSave }) {
               )}
             </label>
           ) : (
-            // Keep grid alignment when Indefinite
             <div className="hidden sm:block" />
           )}
         </div>
-
-        {/* Footer */}
         <div className="mt-6 flex items-center justify-end gap-3">
           <button
             type="button"

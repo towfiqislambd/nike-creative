@@ -32,9 +32,9 @@ const data2 = [
 const page = () => {
   return (
     <>
-      <header className="bg-[#E4E3E0] text-[#333] p-6 rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+      <header className="bg-[#E4E3E0] text-[#333] p-4 lg:p-6 rounded-xl lg:rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
         {/* Upper part */}
-        <nav className="flex items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
+        <nav className="flex items-center justify-between gap-4 mb-3 lg:mb-5 pb-2 lg:pb-5 border-[#555]/50 border-b">
           <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
             Dashboard
           </h2>
@@ -64,13 +64,15 @@ const page = () => {
         </nav>
 
         {/* Lower part */}
-        <div className="flex items-center gap-12">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-12">
           <div>
-            <h3 className="text-primary-text text-xl mb-3">Product Category</h3>
-            <div className="flex gap-7 items-center">
+            <h3 className="text-primary-text md:text-lg lg:text-xl mb-2 lg:mb-3">
+              Product Category
+            </h3>
+            <div className="flex flex-wrap gap-3 md:gap-7 items-center">
               <label
                 htmlFor="double"
-                className="text-primary-text flex gap-1.5 items-center"
+                className="text-primary-text flex gap-1.5 items-center text-nowrap text-sm sm:text-base"
               >
                 <input id="double" type="checkbox" className="size-4" />
                 Double Door
@@ -78,7 +80,7 @@ const page = () => {
 
               <label
                 htmlFor="single"
-                className="text-primary-text flex gap-1.5 items-center"
+                className="text-primary-text flex gap-1.5 items-center text-nowrap text-sm sm:text-base"
               >
                 <input id="single" type="checkbox" className="size-4" />
                 Single Door
@@ -86,7 +88,7 @@ const page = () => {
 
               <label
                 htmlFor="custom"
-                className="text-primary-text flex gap-1.5 items-center"
+                className="text-primary-text flex gap-1.5 items-center text-nowrap text-sm sm:text-base"
               >
                 <input id="custom" type="checkbox" className="size-4" />
                 Custom
@@ -95,7 +97,9 @@ const page = () => {
           </div>
 
           <div>
-            <h3 className="text-primary-text text-xl mb-3">Product Category</h3>
+            <h3 className="text-primary-text md:text-lg lg:text-xl mb-2 lg:mb-3">
+              Product Category
+            </h3>
             <select className="px-3 py-2 rounded-lg border border-primary-text">
               <option value="">Eco Windows</option>
               <option value="">Eco Windows</option>
@@ -104,43 +108,45 @@ const page = () => {
           </div>
 
           <div>
-            <h3 className="text-primary-text text-xl mb-3">Compare</h3>
-            <p className="px-3 py-2 rounded-lg border border-primary-text">
+            <h3 className="text-primary-text md:text-lg lg:text-xl mb-2 lg:mb-3">
+              Compare
+            </h3>
+            <p className="px-3 py-2 rounded-lg border border-primary-text  w-fit">
               <input type="date" className="border-none outline-none" />
             </p>
           </div>
         </div>
       </header>
 
-      <div className="grid grid-cols-7 gap-5 my-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-7 gap-3 md:gap-4 my-5">
         {data?.map(item => (
           <div className="small_card">
             <h3 className="text-primary-text mb-1">{item?.title}</h3>
-            <p className="text-primary-text font-semibold text-xl">
+            <p className="text-primary-text font-semibold ext-lg md:text-xl">
               ${item?.value}
             </p>
           </div>
         ))}
       </div>
 
-      <h2 className="text-2xl font-medium text-primary-text mb-5">
+      <h2 className="text-xl lg:text-2xl font-medium text-primary-text mb-5">
         Key Metrics from Last Month
       </h2>
 
-      <div className="grid grid-cols-4 gap-4 my-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
         {data2?.map(item => (
           <div className="small_card">
             <h3 className="text-primary-text mb-1">{item?.title}</h3>
-            <p className="text-primary-text font-semibold text-xl">
+            <p className="text-primary-text font-semibold text-lg md:text-xl">
               ${item?.value}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-12 gap-5 mb-5">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-5">
         {/* Left - Graph Cart */}
-        <div className="small_card col-span-8">
+        <div className="small_card lg:col-span-8">
           <h2 className="text-xl font-medium text-primary-text mb-5">
             Orders by Product Category
           </h2>
@@ -149,7 +155,7 @@ const page = () => {
         </div>
 
         {/* Right - Pie Cart */}
-        <div className="small_card col-span-4">
+        <div className="small_card lg:col-span-4">
           <h2 className="text-xl font-medium text-primary-text mb-5">
             Orders by Color
           </h2>
@@ -170,11 +176,11 @@ const page = () => {
       <PerformanceByCategory />
 
       <div className="small_card mt-5">
-        <h2 className="text-xl font-medium text-primary-text mb-1">
+        <h2 className="text-lg md:text-xl font-medium text-primary-text mb-1">
           Production & Operational Costs
         </h2>
 
-        <p className="text-primary-text">
+        <p className="text-primary-text text-sm md:text-base">
           Net profit increased by $6,000 this month compared to last.
         </p>
       </div>

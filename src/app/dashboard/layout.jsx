@@ -15,7 +15,14 @@ import {
   B20Svg,
   B21Svg,
   B22Svg,
+  B23Svg,
+  B24Svg,
+  B25Svg,
+  B27Svg,
+  B28Svg,
+  B29Svg,
   B2Svg,
+  B30Svg,
   B3Svg,
   B4Svg,
   B5Svg,
@@ -164,7 +171,7 @@ const adminSidebarLinks = [
     id: 22,
     label: "Product Management",
     icon: <B18Svg />,
-    path: "/dashboard/admin/project-management",
+    path: "/dashboard/admin/product-management",
   },
   {
     id: 23,
@@ -218,23 +225,134 @@ const adminSidebarLinks = [
   },
 ];
 
+const accountingSidebarLinks = [
+  {
+    id: 31,
+    label: "Accounts Receivable",
+    icon: <B1Svg />,
+    path: "/dashboard/accounting",
+  },
+  {
+    id: 32,
+    label: "Accounts Payable",
+    icon: <B2Svg />,
+    path: "/dashboard/accounting/accounts-payable",
+  },
+  {
+    id: 33,
+    label: " Business Partners",
+    icon: <B23Svg />,
+    path: "/dashboard/accounting/business-partners",
+  },
+  {
+    id: 34,
+    label: "Taxes Exception",
+    icon: <B23Svg />,
+    path: "/dashboard/accounting/taxes-exception",
+  },
+  {
+    id: 35,
+    label: "Bank",
+    icon: <B12Svg />,
+    path: "/dashboard/accounting/bank",
+  },
+];
+
+const managerSidebarLinks = [
+  {
+    id: 36,
+    label: "Dashboard",
+    icon: <B1Svg />,
+    path: "/dashboard/manager",
+  },
+  {
+    id: 37,
+    label: "Orders Management",
+    icon: <B2Svg />,
+    path: "/dashboard/manager/order-management",
+    subItems: [
+      {
+        id: 38,
+        label: "Inventory Management",
+        path: "/dashboard/manager/inventory-management",
+        icon: <B16Svg />,
+      },
+      {
+        id: 39,
+        label: "Series Options",
+        path: "/dashboard/manager/series-options",
+        icon: <B10Svg />,
+      },
+      {
+        id: 40,
+        label: "Product Display Option",
+        path: "/dashboard/manager/product-display-option",
+        icon: <B24Svg />,
+      },
+      {
+        id: 41,
+        label: "Product Prices",
+        path: "/dashboard/manager/product-prices",
+        icon: <B25Svg />,
+      },
+    ],
+  },
+  {
+    id: 42,
+    label: "Accounting",
+    path: "/dashboard/manager/accounting",
+    icon: <B27Svg />,
+  },
+  {
+    id: 43,
+    label: "Coupons",
+    path: "/dashboard/manager/coupons",
+    icon: <B28Svg />,
+  },
+  {
+    id: 44,
+    label: "Drivers",
+    path: "/dashboard/manager/drivers",
+    icon: <B29Svg />,
+  },
+  {
+    id: 45,
+    label: "Quote System",
+    path: "/dashboard/manager/quote-system",
+    icon: <B30Svg />,
+  },
+  {
+    id: 46,
+    label: "Visit Site",
+    path: "/dashboard/manager/visit-site",
+    icon: <B22Svg />,
+  },
+];
+
 export default function DashboardLayout({ children }) {
   const user = { role: "admin" };
   const [open, setOpen] = useState(false);
 
-  return ( 
+  return (
     <section className="flex min-h-screen max-h-screen">
       {/* Sidebar */}
       <DashboardSidebar
         role={user?.role}
         open={open}
+        setOpen={setOpen}
         dashboardNavLinks={
-          user?.role === "b2b" ? b2bSidebarLinks : adminSidebarLinks
+          user?.role === "b2b"
+            ? b2bSidebarLinks
+            : user?.role === "admin"
+            ? adminSidebarLinks
+            : user?.role === "accounting"
+            ? accountingSidebarLinks
+            : managerSidebarLinks
         }
       />
 
       {/* Outlet */}
-      <main className="grow bg-[#EFF3F6] overflow-y-auto p-5 relative">
+      <main className="grow bg-[#EFF3F6] overflow-y-auto p-3 md:p-5 xl:ps-3 relative">
         <button
           onClick={() => setOpen(!open)}
           className="xl:hidden w-9 md:w-10 h-8.5 md:h-9.5 cursor-pointer grid place-items-center rounded text-white bg-light-green absolute right-5 top-5 z-10"
