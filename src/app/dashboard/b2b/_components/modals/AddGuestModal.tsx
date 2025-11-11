@@ -164,14 +164,14 @@ export default function AddGuestModal({ open, onClose, onSave }) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-xl border border-teal-500 px-6 py-3 text-teal-600 hover:bg-teal-50"
+            className="rounded-xl border border-[rgba(194,255,235,1)] px-6 py-3 text-[rgba(194,255,235,1)] hover:bg-teal-50"
           >
             Cancel
           </button>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-xl bg-teal-500 px-6 py-3 text-white hover:bg-teal-600 disabled:opacity-60"
+            className="rounded-xl bg-[rgba(194,255,235,1)] px-6 py-3 text-white hover:bg-teal-600 disabled:opacity-60"
           >
             {isSubmitting ? "Saving..." : "Done"}
           </button>
