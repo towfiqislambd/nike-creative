@@ -3,7 +3,7 @@ const DeleteModal = ({ isOpen, type, onCancel, onConfirm }) => {
   if (!isOpen) return null;
 
   return (
-    <div onClick={onCancel} className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 px-3">
+    <div onClick={onCancel} className="fixed inset-0 bg-black/40 flex justify-center items-center z-[999999] px-3">
       <div onClick={(e)=> e.stopPropagation()} className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[585px] relative shadow-lg">
         <h2 className="md:text-xl">
           Are you sure you would like to delete this {type}?
