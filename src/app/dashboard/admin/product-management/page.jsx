@@ -7,7 +7,7 @@ import {
 } from "../../../../Components/Svg/SvgContainer";
 import Image from "next/image";
 import profilePicture from "../../../../Assets/profile.svg";
-import Products from "../_components/product-management/Products";
+import Products from "../_components/product-management/product/Products";
 import ClientsVisibility from "../_components/product-management/ClientsVisibility";
 import Categories from "../_components/product-management/Categories";
 import Fields from "../_components/product-management/Fields";
@@ -32,7 +32,7 @@ const tabs = [
 ];
 
 const page = () => {
-  const [productManagementTab, setProductManagementTab] = useState("Categories");
+  const [productManagementTab, setProductManagementTab] = useState("Products");
 
   return (
     <section className="text-primary-text w-full relative">
@@ -109,7 +109,12 @@ const page = () => {
             </button>
           )}
           {productManagementTab === "Fields" && (
-            <button className="max-sm:basis-2/3 max-w-[300px] bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-2 sm:px-4 lg:px-8 py-2 sm:py-4 text-sm sm:text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]">
+            <button
+              onClick={() =>
+                document.dispatchEvent(new CustomEvent("openAddField"))
+              }
+              className="max-sm:basis-2/3 max-w-[300px] bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-2 sm:px-4 lg:px-8 py-2 sm:py-4 text-sm sm:text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+            >
               Add Field <PlusBlack />
             </button>
           )}

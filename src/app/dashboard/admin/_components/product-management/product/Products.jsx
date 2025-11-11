@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { EditPen, TrashBin } from "../../../../../Components/Svg/SvgContainer";
-import DeleteModal from "../DeleteModal";
+import { EditPen, TrashBin } from "../../../../../../Components/Svg/SvgContainer";
+import DeleteModal from "../../DeleteModal";
+import AddEditProduct from './AddEditProduct'
 
 const Products = () => {
   const [products, setProducts] = useState([
@@ -83,7 +84,7 @@ const Products = () => {
 
   return (
     <div className="w-full overflow-x-auto mt-6 min-h-screen px-2">
-      <table className="w-full text-[#333] border-spacing-y-3 border-separate font-normal">
+      <table className="w-full min-w-[1000px] text-[#333] border-spacing-y-3 border-separate font-normal">
         <thead className="rounded-lg border custom-shadow-xl">
           <tr className="rounded-lg border bg-white">
             <th className="px-3 py-3 md:py-5 rounded-l-lg">Image</th>
@@ -112,7 +113,7 @@ const Products = () => {
               <td className="px-3 py-3 md:py-5 text-center">{p.category}</td>
               <td className="px-3 py-3 md:py-5 text-center">{p.description}</td>
               <td className="px-3 py-3 md:py-5 text-center">
-                ${p.price.toFixed(2)}
+                ${p.price?.toFixed(2)}
               </td>
               <td className="p-3 md:py-5 text-center">
                 <label className="inline-flex items-center cursor-pointer">
@@ -162,13 +163,17 @@ const Products = () => {
 
       {/* modals */}
 
-      {/* {showProductModal && (
-        <ProductModal
+      {showProductModal && (
+        <AddEditProduct
+        open={showProductModal}
+          onClose={() => {
+            setShowProductModal(false);
+            setEditingProduct(null);
+          }}
+          onSubmit={handleSaveProduct}
           product={editingProduct}
-          onClose={() => setShowProductModal(false)}
-          onSave={handleSaveProduct}
         />
-      )} */}
+      )}
 
       {showDeleteModal && (
         <DeleteModal

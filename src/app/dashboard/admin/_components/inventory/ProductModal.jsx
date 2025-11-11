@@ -23,44 +23,44 @@ const ProductModal = ({
         </h2>
         <form onSubmit={onSubmit} className="grid grid-cols-2 gap-4">
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-            <label className="block text-base xl:text-xl">Product Name</label>
+            <label className="card_label">Product Name</label>
             <input
               {...register("productName")}
-              className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input"
               required
             />
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-            <label className="block text-base xl:text-xl">Unit Type</label>
+            <label className="card_label">Unit Type</label>
             <input
               {...register("unitType")}
-              className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input"
               required
             />
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-            <label className="block text-base xl:text-xl">Current Stock</label>
+            <label className="card_label">Current Stock</label>
             <input
               type="number"
               {...register("currentStock")}
-              className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input"
               required
             />
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-            <label className="block text-base xl:text-xl">Minimum Stock</label>
+            <label className="card_label">Minimum Stock</label>
             <input
               type="number"
               {...register("minimumStock")}
-              className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input"
               required
             />
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-            <label className="block text-base xl:text-xl">Category</label>
+            <label className="card_label">Category</label>
             <select
               {...register("category")}
-              className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input"
               required
             >
               <option value="">Select Category</option>
@@ -72,21 +72,21 @@ const ProductModal = ({
             </select>
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-            <label className="block text-base xl:text-xl">
+            <label className="card_label">
               Brand (Optional)
             </label>
             <input
               {...register("brand")}
-              className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input"
             />
           </div>
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-            <label className="block text-base xl:text-xl">
+            <label className="card_label">
               Color/Specifications (Optional)
             </label>
             <input
               {...register("specification")}
-              className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input"
             />
           </div>
 
