@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import DeleteModal from "../DeleteModal";
+import DeleteModal from "../../../../../Components/Common/DeleteModal";
 import { TrashBin } from "../../../../../Components/Svg/SvgContainer";
 
 const RolesAndPermissionsCard = ({

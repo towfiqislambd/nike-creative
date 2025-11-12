@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { EditPen, TrashBin } from "../../../../../../Components/Svg/SvgContainer";
-import DeleteModal from "../../DeleteModal";
+import DeleteModal from "../../../../../../Components/Common/DeleteModal";
 import AddEditProduct from './AddEditProduct'
 
 const Products = () => {

@@ -1,73 +1,271 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   DeleteSvg,
   EditedSvg,
-  EditSvg,
   HomeSvg,
 } from "../../../../Components/Svg/SvgContainer";
-import m5 from "../../../../Assets/m5.png";
+import {
+  WorkSvg,
+  DocSvg,
+  CalenderSvg,
+  PrintSvg,
+  ColorSvg,
+  UpdateSvg,
+  EyeSvg,
+  ESvg,
+  CheckSvg,
+  DownloadSvg,
+  EEditSvg,
+  HardSvg,
+  MenuSvg,
+} from "../../../../Components/Svg/SvgContainer2";
+import m1 from "../../../../Assets/m1.png";
+import m2 from "../../../../Assets/m2.jpg";
+import Image from "next/image";
+const menus = [
+  "Received",
+  "Ready-to-cut",
+  "Ready-to-paint",
+  "Quality-Control",
+  "Ready-to-Deliver/Install",
+  "Re-Scheduled",
+  "Scheduled",
+  "Out-For-Delivery/install",
+  "Installed/Delivered",
+  "Completed",
+];
 
 const page = () => {
+  const [open, setOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("Received");
+
   return (
-    <div className="grid grid-cols-4 gap-5">
-      <div className="p-3 rounded-xl shadow-lg bg-white">
-        <div className="flex gap-3 items-center justify-between mb-3">
-          <h3 className="text-sm font-medium">Order #15257</h3>
-          <span className="bg-[#EFF3F6] text-xs px-3 py-1 rounded-full shadow-lg text-gray-500">
-            Received
-          </span>
-          <div className="flex gap-3 items-center">
-            <HomeSvg />
-            <EditedSvg />
-            <EditSvg />
-            <DeleteSvg />
+    <>
+      <div className="grid grid-cols-4 gap-4">
+        {Array.from({ length: 10 }).map((_, idx) => (
+          <div
+            key={idx}
+            className="p-3 rounded-xl shadow-lg bg-white space-y-2"
+          >
+            <div className="flex gap-3 items-center justify-between">
+              <h3 className="text-sm font-medium">Order #15257</h3>
+              <span className="bg-[#EFF3F6] text-xs px-3 py-1 rounded-full shadow-lg text-gray-500">
+                Received
+              </span>
+              <div className="flex gap-2 items-center">
+                <button className="bg-gray-100 size-6 shadow rounded-full cursor-pointer grid place-items-center">
+                  <HomeSvg />
+                </button>
+
+                <button className="bg-gray-100 size-6 shadow rounded-full cursor-pointer grid place-items-center">
+                  <HardSvg />
+                </button>
+
+                <button className="bg-gray-100 size-6 shadow rounded-full cursor-pointer grid place-items-center">
+                  <EditedSvg />
+                </button>
+
+                <button className="bg-red-500 size-6 shadow rounded-full cursor-pointer grid place-items-center">
+                  <DeleteSvg />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <p className="text-xs text-gray-500">Order Date: 06/13/2025</p>
+              <p className="text-xs text-gray-500">PO 10-20-2025 </p>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <h3 className="text-sm font-medium">Availability:</h3>
+              <button className="bg-[#EFF3F6] text-xs px-3 py-1 rounded-full shadow-lg text-gray-500 flex gap-1.5 items-center">
+                In 1 week
+                <EEditSvg />
+              </button>
+              <button className="text-gray-500 flex gap-1 items-center text-sm">
+                Technical Files <DocSvg />
+              </button>
+            </div>
+
+            <div className="flex gap-3 items-center justify-between">
+              <p className="text-gray-500 text-sm">4-5 week</p>
+              <div className="flex gap-2 items-center">
+                <p className="flex gap-1 items-center">
+                  <span className="text-sm">DXF:</span>
+                  <CheckSvg />
+                  <DownloadSvg />
+                </p>
+                <p className="flex gap-1 items-center">
+                  <span className="text-sm">EPS:</span>
+                  <CheckSvg />
+                  <DownloadSvg />
+                </p>
+              </div>
+            </div>
+
+            <h3 className="text-sm text-gray-500 mb-2">
+              Company Florida hurricane
+            </h3>
+
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm font-medium">Manufacturer</p>
+              <p className="text-sm">
+                Series: <span>546 Series</span>
+              </p>
+              <p className="text-sm">
+                Color: <span>White</span>
+              </p>
+            </div>
+
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-gray-500 text-sm">European industries</p>
+              <p className="text-sm text-gray-500">
+                Quantity: <span>1</span>
+              </p>
+              <p>
+                <WorkSvg />
+              </p>
+            </div>
+
+            <div className="flex gap-5 items-center">
+              <div className="flex-1">
+                <p className="text-sm text-gray-500 mb-1.5">Client Reference</p>
+                <Image
+                  src={m1}
+                  alt="m1"
+                  className="w-full h-22 rounded-lg border"
+                />
+              </div>
+
+              <div className="flex-1">
+                <p className="text-sm text-gray-500 mb-1.5">Selected Product</p>
+                <Image
+                  src={m2}
+                  alt="m1"
+                  className="w-full  h-22 rounded-lg border"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-3 justify-between">
+              <div>
+                <h4 className="text-sm text-gray-500">Product Code</h4>
+                <p className="text-xs font-semibold">KSWH001</p>
+              </div>
+              <div>
+                <h4 className="mb-1 text-sm text-gray-500">Width</h4>
+                <p className="text-xs font-medium flex gap-1 items-center mb-1">
+                  <EyeSvg />
+                  23.130232
+                </p>
+                <p className="text-xs font-medium flex gap-1 items-center">
+                  <ESvg />
+                  23.130232
+                </p>
+              </div>
+              <div>
+                <h4 className="mb-1 text-sm text-gray-500">Height</h4>
+                <p className="text-xs font-medium flex gap-1 items-center mb-1">
+                  <EyeSvg />
+                  23.130232
+                </p>
+                <p className="text-xs font-medium flex gap-1 items-center">
+                  <ESvg />
+                  23.130232
+                </p>
+              </div>
+
+              <div className="space-y-2 flex flex-col items-end">
+                <button className="w-fit flex gap-1 items-center cursor-pointer px-2.5 py-1.5 text-xs rounded-xl text-white bg-[#7FADBC]">
+                  Customer
+                  <DocSvg />
+                </button>
+
+                <button className="w-fit flex gap-1 items-center cursor-pointer px-2.5 py-1.5 text-xs rounded-xl text-white bg-[#7FADBC]">
+                  Worker
+                  <DocSvg />
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-[#EDFCFF] p-2 rounded-lg">
+              <h3 className="text-primary-text text-sm mb-2 text-center">
+                Technical Specifications
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+                <button className="px-4 py-2 cursor-pointer w-fit text-xs bg-[#DAF6FF] rounded-xl shadow">
+                  High Bottom
+                </button>
+                <button className="px-4 py-2 cursor-pointer w-fit text-xs bg-[#DAF6FF] rounded-xl shadow">
+                  Right Active
+                </button>
+                <button className="px-4 py-2 cursor-pointer w-fit text-xs bg-[#DAF6FF] rounded-xl shadow">
+                  Clear Glass
+                </button>
+                <button className="px-4 py-2 cursor-pointer w-fit text-xs bg-[#DAF6FF] rounded-xl shadow">
+                  Insulated glass
+                </button>
+                <button className="px-4 py-2 cursor-pointer w-fit text-xs bg-[#DAF6FF] rounded-xl shadow">
+                  Left Active
+                </button>
+                <button className="px-4 py-2 cursor-pointer w-fit text-xs bg-[#DAF6FF] rounded-xl shadow">
+                  ADA
+                </button>
+              </div>
+            </div>
+
+            <div className="flex gap-5 items-center justify-center py-2">
+              <button className="size-8 rounded-full bg-white cursor-pointer grid place-items-center shadow-[0_3.601px_5.761px_0.72px_rgba(0,0,0,0.20),0_0_0.162px_0.162px_rgba(0,0,0,0.07),0_0_0.162px_0_rgba(0,0,0,0.05),0_1.943px_2.105px_-0.972px_rgba(0,0,0,0.25),0_0.648px_2.591px_0.648px_rgba(0,0,0,0.12)]">
+                <CalenderSvg />
+              </button>
+
+              <button className="size-8 rounded-full bg-white cursor-pointer grid place-items-center shadow-[0_3.601px_5.761px_0.72px_rgba(0,0,0,0.20),0_0_0.162px_0.162px_rgba(0,0,0,0.07),0_0_0.162px_0_rgba(0,0,0,0.05),0_1.943px_2.105px_-0.972px_rgba(0,0,0,0.25),0_0.648px_2.591px_0.648px_rgba(0,0,0,0.12)]">
+                <PrintSvg />
+              </button>
+
+              <button className="size-8 rounded-full bg-white cursor-pointer grid place-items-center shadow-[0_3.601px_5.761px_0.72px_rgba(0,0,0,0.20),0_0_0.162px_0.162px_rgba(0,0,0,0.07),0_0_0.162px_0_rgba(0,0,0,0.05),0_1.943px_2.105px_-0.972px_rgba(0,0,0,0.25),0_0.648px_2.591px_0.648px_rgba(0,0,0,0.12)]">
+                <ColorSvg />
+              </button>
+
+              <button className="px-3 py-1.5 rounded-full bg-white cursor-pointer shadow-[0_3.601px_5.761px_0.72px_rgba(0,0,0,0.20),0_0_0.162px_0.162px_rgba(0,0,0,0.07),0_0_0.162px_0_rgba(0,0,0,0.05),0_1.943px_2.105px_-0.972px_rgba(0,0,0,0.25),0_0.648px_2.591px_0.648px_rgba(0,0,0,0.12)] flex gap-1 items-center text-sm text-gray-500">
+                <UpdateSvg />
+                Update
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div className="flex justify-between items-center mb-2">
-          <p className="text-xs text-gray-500">Order Date: 06/13/2025</p>
-          <p className="text-xs text-gray-500">PO 10-20-2025 </p>
-        </div>
-
-        <div className="flex justify-between items-center mb-2">
-          <h3 className="text-sm font-medium">Availability:</h3>
-          <button className="bg-[#EFF3F6] text-xs px-3 py-1 rounded-full shadow-lg text-gray-500">
-            in 1 week
-          </button>
-          <button className="text-gray-500">Technical Files</button>
-        </div>
-
-        <div className="flex gap-3 items-center justify-between">
-          <p className="text-gray-500 text-sm">4-5 week</p>
-          <div className="flex gap-2 items-center">
-            <div>DXF:</div>
-            <div>EPS:</div>
-          </div>
-        </div>
-
-        <h3 className="text-sm text-gray-500">Company Florida hurricane</h3>
-
-        <div className="flex items-center justify-between gap-3">
-          <p>Manufacturer</p>
-          <p>
-            Series: <span>546 Series</span>
-          </p>
-          <p>
-            Color: <span>White</span>
-          </p>
-        </div>
-
-        <div className="flex items-center justify-between gap-3">
-          <p>European industries</p>
-          <p>
-            Quantity: <span>1</span>
-          </p>
-          <p>
-            <img src={m5} />
-          </p>
-        </div>
+        ))}
       </div>
-    </div>
+
+      {/* Menu */}
+      <div className="sticky bottom-0 right-0 flex gap-3 items-center justify-end">
+        <div
+          className={`grow flex items-center bg-accent-off-white rounded-full duration-300 transition-transform ${
+            open ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {menus?.map(menu => (
+            <button
+              key={menu}
+              onClick={() => setActiveMenu(menu)}
+              className={`px-5 py-3 rounded-full cursor-pointer text-sm border-r-2 border-gray-400 ${
+                activeMenu === menu && "bg-light-green text-white"
+              }`}
+            >
+              {menu}
+            </button>
+          ))}
+        </div>
+
+        <button
+          onClick={() => setOpen(!open)}
+          className="shrink-0 size-16 grid place-items-center rounded-full bg-white shadow-xl border border-gray-100"
+        >
+          <MenuSvg />
+        </button>
+      </div>
+    </>
   );
 };
 
