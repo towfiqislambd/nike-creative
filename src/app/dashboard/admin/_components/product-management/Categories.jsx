@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import CategoryModal from "./CategoryModal";
-import DeleteModal from "../DeleteModal";
+import DeleteModal from "../../../../../Components/Common/DeleteModal";
 import { EditPen, TrashBin } from "../../../../../Components/Svg/SvgContainer";
 
 const Categories = () => {

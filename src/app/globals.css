@@ -116,7 +116,7 @@ button {
 }
 
 .card_input {
-  @apply border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl;
+  @apply border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 max-sm:text-sm text-base xl:text-xl;
 }
 
 .card_label{
@@ -124,9 +124,9 @@ button {
 }
 
 .card_btn{
-  @apply bg-[#21BBA2] border border-[#21BBA2] text-white px-8 py-4 rounded-lg;
+  @apply bg-[#21BBA2] border border-[#21BBA2] text-white max-sm:text-sm px-4 md:px-8 py-2.5 md:py-4 rounded-lg;
 }
 
 .card_btn_outline{
-  @apply bg-white border border-[#21BBA2] text-[#21BBA2] px-8 py-4 rounded-lg;
+  @apply bg-white border border-[#21BBA2] text-[#21BBA2] max-sm:text-sm px-4 md:px-8 py-2.5 md:py-4 rounded-lg;
 }

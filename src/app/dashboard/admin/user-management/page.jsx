@@ -17,7 +17,7 @@ import Image from "next/image";
 import profilePicture from "../../../../Assets/profile.svg";
 import RolesAndPermissionsCard from "../_components/user-management/RolesAndPermissionsCard";
 import AddEditEmployeeModal from "../_components/user-management/AddEditEmployeeModal";
-import DeleteModal from "../_components/DeleteModal";
+import DeleteModal from "../../../../Components/Common/DeleteModal";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
