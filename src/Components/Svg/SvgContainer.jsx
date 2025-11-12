@@ -4573,7 +4573,3 @@ export const CustomCheckBoxIcon = () => {
     </svg>
   );
 };
-
-export const Demo = () => {
-  return <></>;
-};
