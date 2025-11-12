@@ -9,7 +9,7 @@ import {
 } from "../../../../Components/Svg/SvgContainer";
 import { BellIcon } from "lucide-react";
 import AddEditCouponModal from "../_components/AddEditCouponModal";
-import DeleteModal from "../_components/DeleteModal";
+import DeleteModal from "../../../../Components/Common/DeleteModal";
 
 const page = () => {
   const [isAddEditOpen, setIsAddEditOpen] = useState(false);
@@ -94,9 +94,9 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] text-[#333] p-6 rounded-[40px] border-l-2 border-[#bbb] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+      <header className="bg-[#E4E3E0] p-6 rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
         <nav className="flex items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium">
             Coupons
           </h2>
           <div className="flex items-center gap-5">
@@ -133,7 +133,7 @@ const page = () => {
       </header>
       <div>
         <div className="w-full overflow-x-auto px-2 mt-5">
-          <table className="w-full text-[#333] border-spacing-y-3 border-separate">
+          <table className="w-full border-spacing-y-3 border-separate">
             <thead className="rounded-lg text-sm border custom-shadow-xl">
               <tr className="rounded-lg border">
                 <th className="px-3 py-3 md:py-5">Coupon Code</th>

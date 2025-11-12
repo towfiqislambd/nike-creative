@@ -14,7 +14,7 @@ import {
 // all modals
 import ProductModal from "../_components/inventory/ProductModal";
 import CategoryModal from "../_components/inventory/CategoryModal";
-import DeleteModal from "../_components/DeleteModal";
+import DeleteModal from "../../../../Components/Common/DeleteModal";
 
 const InventoryPage = () => {
   const [products, setProducts] = useState([
