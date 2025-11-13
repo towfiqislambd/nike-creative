@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import DeleteModal from "../../../../Components/Common/DeleteModal";
 import AddEditModal from "../_components/manufacturer-series/AddEditModal";
 import SeriesCard from "../_components/manufacturer-series/SeriesCard";
-import { BellIcon, Pencil, Plus, Trash } from "lucide-react";
+import { BellIcon, Plus} from "lucide-react";
 import profilePicture from "../../../../Assets/profile.svg";
 import Image from "next/image";
 import { EditPen, TrashBin } from "../../../../Components/Svg/SvgContainer";
