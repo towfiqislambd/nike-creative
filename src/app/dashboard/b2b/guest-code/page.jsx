@@ -1,6 +1,6 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import AddGuestModal from "../_components/modals/AddGuestModal";
+import {AddGuestModal} from "../_components/modals/AddGuestModal";
 import { IoSearch } from "react-icons/io5";
 import Modal from "../../../../Components/Common/Modal";
 
@@ -138,19 +138,24 @@ export default function GuestCode() {
     <main className="min-h-screen">
       <div className="mb-6">
         <div className="rounded-[28px] bg-[#E0DDD7] px-4 py-4 shadow-sm relative">
+          {/* Search + Filter + Navigation */}
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 shadow-sm">
+            {/* Search + Filter */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+              {/* Search Input */}
+              <div className="flex items-center rounded-full border border-gray-300 bg-white px-3 py-2 shadow-sm w-full sm:w-auto">
                 <input
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search by name"
-                  className="w-64 bg-transparent text-sm outline-none"
+                  className="w-full sm:w-64 bg-transparent text-sm outline-none"
                 />
                 <span className="ml-2 text-teal-600">
                   <IoSearch />
                 </span>
               </div>
+
+              {/* Filter */}
               <div className="flex items-center gap-2 text-gray-800 relative">
                 <span className="text-[16px]">Filter</span>
                 <span
@@ -161,7 +166,7 @@ export default function GuestCode() {
                 </span>
 
                 {showDropdown && (
-                  <div className="absolute top-10 left-16 z-10 bg-white border border-gray-200 rounded-lg shadow-md p-2 w-[200px]">
+                  <div className="absolute top-10 left-0 sm:left-16 z-10 bg-white border border-gray-200 rounded-lg shadow-md p-2 w-[180px] sm:w-[200px]">
                     <ul className="flex flex-col gap-1">
                       {STATUS.map((r) => (
                         <li
@@ -185,8 +190,9 @@ export default function GuestCode() {
               </div>
             </div>
 
-            <div className="flex items-center gap-5">
-              <ul className="hidden md:flex items-end gap-8 text-[16px] text-gray-800">
+            {/* Nav + Cart + Profile */}
+            <div className="flex items-center justify-between md:justify-end gap-4 sm:gap-5 flex-wrap">
+              <ul className="hidden md:flex items-end gap-6 lg:gap-8 text-[15px] lg:text-[16px] text-gray-800">
                 <li className="cursor-pointer hover:text-teal-600 transition-colors">
                   Home
                 </li>
@@ -204,10 +210,13 @@ export default function GuestCode() {
                 </li>
               </ul>
 
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-[#21BBA2] text-white">
+              {/* Cart */}
+              <div className="grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full bg-[#21BBA2] text-white text-lg sm:text-xl">
                 🛒
               </div>
-              <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-black/10">
+
+              {/* Profile */}
+              <div className="relative h-9 w-9 sm:h-10 sm:w-10 overflow-hidden rounded-full ring-1 ring-black/10">
                 <img
                   alt="avatar"
                   src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=120&auto=format&fit=crop"
@@ -218,26 +227,31 @@ export default function GuestCode() {
             </div>
           </div>
 
+          {/* Divider */}
           <div className="mt-3 h-px w-full bg-black/15" />
 
-          <div className="mt-3 flex items-center justify-between">
-            <h1 className="text-[28px] font-semibold text-[#333]">
+          {/* Title + Button */}
+          <div className="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <h1 className="text-[22px] sm:text-[24px] lg:text-[28px] font-semibold text-[#333] text-center sm:text-left">
               Guest Access Management
             </h1>
 
             <button
               onClick={openAdd}
-              className="group flex flex-col items-center"
+              className="group flex flex-col items-center sm:items-center"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
+              <span className="grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
                 +
               </span>
-              <span className="text-[14px] text-gray-700 mt-1">Add Guest</span>
+              <span className="text-[13px] sm:text-[14px] text-gray-700 mt-1">
+                Add Guest
+              </span>
             </button>
           </div>
         </div>
       </div>
-      <section className="pb-16">
+
+      <section className="pb-16 min-w-[1400px] overflow-x-auto">
         <div className="grid grid-cols-12 mb-4 rounded-xl bg-white px-4 py-4 text-sm font-medium text-primary-black">
           <div className="col-span-2 text-center">Name</div>
           <div className="col-span-3 text-center">Product</div>
