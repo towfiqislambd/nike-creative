@@ -35,7 +35,7 @@ const AddEditCouponModal = ({ isOpen, onClose, onSubmit, initialData }) => {
   if (!isOpen) return null;
 
   return (
-    <div onClick={onClose} className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+    <div onClick={onClose} className="fixed inset-0 flex items-center justify-center bg-black/40 z-[999]">
       <div
         onClick={(e) => e.stopPropagation()}
         className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg"

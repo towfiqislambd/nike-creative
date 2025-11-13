@@ -53,7 +53,7 @@ const page = () => {
       enabled: true,
     },
   ]);
-  console.log(recipients);
+
   const [modalOpen, setModalOpen] = useState(false);
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
