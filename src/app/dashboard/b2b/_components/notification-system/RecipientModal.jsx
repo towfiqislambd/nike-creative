@@ -53,33 +53,33 @@ const RecipientModal = ({ isOpen, onClose, onSave, initialData }) => {
             <h3 className="font-medium mb-2 md:mb-5 text-xl">
               Notification Preferences
             </h3>
-            <div className="space-y-2">
-              <label className="flex items-start gap-2 text-sm">
-                <input type="checkbox" {...register("invoices")} className=""/>
+            <div className="space-y-2 md:space-y-[30px]">
+              <label className="flex items-start gap-2.5">
+                <input type="checkbox" {...register("invoices")} className="size-5"/>
                 <div>
-                  <p>New Invoices</p>
-                  <p>Receive an email when a new invoice is generated after placing an order.</p>
+                  <p className="font-medium">New Invoices</p>
+                  <p className="text-sub-text">Receive an email when a new invoice is generated after placing an order.</p>
                 </div>
               </label>
-              <label className="flex items-start gap-2 text-sm">
-                <input type="checkbox" {...register("invoices")} value={'new-invoices'} />
+              <label className="flex items-start gap-2.5">
+                <input type="checkbox" {...register("invoices")}  className="size-5"/>
                 <div>
-                  <p>New Invoices</p>
-                  <p>Receive an email when a new invoice is generated after placing an order.</p>
+                  <p className="font-medium">Product Ready for Payment</p>
+                  <p className="text-sub-text">Get notified when your product has been installed or delivered and is ready for payment.</p>
                 </div>
               </label>
-              <label className="flex items-start gap-2 text-sm">
-                <input type="checkbox" {...register("invoices")} value={'new-invoices'} />
+              <label className="flex items-start gap-2.5">
+                <input type="checkbox" {...register("invoices")}  className="size-5"/>
                 <div>
-                  <p>New Invoices</p>
-                  <p>Receive an email when a new invoice is generated after placing an order.</p>
+                  <p className="font-medium">Payment Completed</p>
+                  <p className="text-sub-text">Receive an invoice confirming that your payment has been successfully processed.</p>
                 </div>
               </label>
-              <label className="flex items-start gap-2 text-sm">
-                <input type="checkbox" {...register("invoices")} value={'new-invoices'} />
+              <label className="flex items-start gap-2.5">
+                <input type="checkbox" {...register("pending-payment")}  className="size-5"/>
                 <div>
-                  <p>New Invoices</p>
-                  <p>Receive an email when a new invoice is generated after placing an order.</p>
+                  <p className="font-medium">Pending Payment Statements</p>
+                  <p className="text-sub-text">I would like to receive account statements listing the products that have been installed or delivered and remain outstanding.</p>
                 </div>
               </label>
             </div>
