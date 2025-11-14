@@ -1,6 +1,6 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import {AddGuestModal} from "../_components/modals/AddGuestModal";
+import AddGuestModal from "../_components/modals/AddGuestModal";
 import { IoSearch } from "react-icons/io5";
 import Modal from "../../../../Components/Common/Modal";
 
@@ -13,9 +13,7 @@ export default function GuestCode() {
     "Received",
     "Delivered",
   ];
-
   const bgcolors = ["#E8F1F8", "#E6F4EF", "#B0D7E9"];
-
   const [users, setUsers] = useState([
     {
       id: 1,
@@ -138,24 +136,19 @@ export default function GuestCode() {
     <main className="min-h-screen">
       <div className="mb-6">
         <div className="rounded-[28px] bg-[#E0DDD7] px-4 py-4 shadow-sm relative">
-          {/* Search + Filter + Navigation */}
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            {/* Search + Filter */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-              {/* Search Input */}
-              <div className="flex items-center rounded-full border border-gray-300 bg-white px-3 py-2 shadow-sm w-full sm:w-auto">
+              <div className="flex items-center rounded-full border border-gray-300  bg-[#E0DDD7] px-3 py-2 shadow-sm w-full sm:w-auto">
                 <input
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search by name"
-                  className="w-full sm:w-64 bg-transparent text-sm outline-none"
+                  className="w-full sm:w-64  text-sm outline-none"
                 />
-                <span className="ml-2 text-teal-600">
+                <span className="ml-2 text-teal-600 ">
                   <IoSearch />
                 </span>
               </div>
-
-              {/* Filter */}
               <div className="flex items-center gap-2 text-gray-800 relative">
                 <span className="text-[16px]">Filter</span>
                 <span
@@ -189,8 +182,6 @@ export default function GuestCode() {
                 )}
               </div>
             </div>
-
-            {/* Nav + Cart + Profile */}
             <div className="flex items-center justify-between md:justify-end gap-4 sm:gap-5 flex-wrap">
               <ul className="hidden md:flex items-end gap-6 lg:gap-8 text-[15px] lg:text-[16px] text-gray-800">
                 <li className="cursor-pointer hover:text-teal-600 transition-colors">
@@ -209,13 +200,9 @@ export default function GuestCode() {
                   About Us
                 </li>
               </ul>
-
-              {/* Cart */}
               <div className="grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full bg-[#21BBA2] text-white text-lg sm:text-xl">
                 🛒
               </div>
-
-              {/* Profile */}
               <div className="relative h-9 w-9 sm:h-10 sm:w-10 overflow-hidden rounded-full ring-1 ring-black/10">
                 <img
                   alt="avatar"
@@ -226,11 +213,7 @@ export default function GuestCode() {
               </div>
             </div>
           </div>
-
-          {/* Divider */}
           <div className="mt-3 h-px w-full bg-black/15" />
-
-          {/* Title + Button */}
           <div className="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h1 className="text-[22px] sm:text-[24px] lg:text-[28px] font-semibold text-[#333] text-center sm:text-left">
               Guest Access Management

@@ -34,6 +34,9 @@ const InventoryPage = () => {
       brand: "MetalCorp",
       currentStock: "11",
       minimumStock: "20",
+
+
+      
       specification: "1/16 inch thickness",
     },
     {
