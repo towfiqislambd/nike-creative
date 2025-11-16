@@ -89,7 +89,7 @@ const page = () => {
   return (
     <section className="relative">
       <header className="flex items-center justify-between">
-        <h1 className="dashboard_header flex gap-4">
+        <h1 className="dashboard_header max-sm:!text-xl flex gap-4">
           (B2B)Pogo Creative studio
           <Image src={wavingHand} width={36} height={36} alt="" />
         </h1>
@@ -99,24 +99,24 @@ const page = () => {
         </div>
       </header>
       {/* order cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-5 md:mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-5 mt-5 md:mt-8">
         {orderCardData?.map(({ icon, totalCount, subTitle }, idx) => (
           <div
             key={idx}
-            className="flex items-center text-primary-text gap-3 px-3 md:px-6 py-4 md:py-7 bg-white rounded-[20px] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+            className="flex items-center text-primary-text gap-3 px-3 md:px-6 py-4 md:py-7 bg-white rounded-[20px] custom-shadow-xl"
           >
-            <div className="flex p-5 justify-center items-center bg-[#f8fcfe] rounded-[13.5px] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+            <div className="flex p-2.5 sm:p-5 justify-center items-center bg-[#f8fcfe] rounded-[13.5px] custom-shadow-xl">
               {icon}
             </div>
             <div className="flex flex-col gap-1">
               <h2 className="text-xl font-medium">{totalCount}</h2>
-              <h3>{subTitle}</h3>
+              <h3 className="max-sm:text-sm">{subTitle}</h3>
             </div>
           </div>
         ))}
       </div>
       {/* notification table */}
-      <div className="w-full mt-5 md:mt-8 inline-flex flex-col justify-end items-start px-3 md:px-5 lg:px-[30px] py-8 gap-[10px] rounded-[20px] border border-white bg-white shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+      <div className="w-full mt-5 md:mt-8 inline-flex flex-col justify-end items-start px-3 md:px-5 lg:px-[30px] py-8 gap-[10px] rounded-[20px] border border-white bg-white custom-shadow-xl">
         <div className="flex items-center gap-8">
           <label className="text-lg md:text-xl lg:text-[26px] text-primary-text">
             Manufacturer
@@ -128,9 +128,9 @@ const page = () => {
           </select>
         </div>
         {/* table */}
-        <div className="w-full overflow-x-auto rounded-lg shadow-md bg-white">
-          <table className="w-full text-[#333] border-spacing-y-3 border-separate">
-            <thead className="rounded-lg text-sm md:text-base font-medium border shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+        <div className="w-full overflow-x-auto rounded-lg shadow-md bg-white px-1 ">
+          <table className="w-full text-[#333] border-spacing-y-1.5 sm:border-spacing-y-3 text-nowrap border-separate">
+            <thead className="rounded-lg text-sm md:text-base font-medium border custom-shadow-xl">
               <tr className="rounded-lg border">
                 <th className="px-6 py-3 md:py-5">Date-Time</th>
                 <th className="px-6 py-3 md:py-5">Order#</th>
@@ -144,7 +144,7 @@ const page = () => {
               {ordersData.map((item, idx) => (
                 <tr
                   key={idx}
-                  className="border rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+                  className="border rounded-lg custom-shadow-xl"
                 >
                   <td className="px-6 py-4 text-sm text-center">{item.date}</td>
                   <td className="px-6 py-4 text-sm text-center">
@@ -160,7 +160,7 @@ const page = () => {
                     {item.notification}
                   </td>
                   <td className="px-6 py-4 text-sm text-center">
-                    <button className="bg-[#21BBA2] text-white px-3 py-1.5 text-nowrap rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+                    <button className="bg-[#21BBA2] text-white px-3 py-1.5 text-nowrap rounded-lg custom-shadow-xl">
                       View Order
                     </button>
                   </td>
@@ -170,7 +170,7 @@ const page = () => {
           </table>
         </div>
       </div>
-      <button className="fixed cursor-pointer bottom-10 right-10 bg-white size-16 p-3 rounded-full shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+      <button className="fixed cursor-pointer bottom-10 right-10 bg-white size-16 p-3 rounded-full custom-shadow-xl">
         <Stars />
       </button>
     </section>

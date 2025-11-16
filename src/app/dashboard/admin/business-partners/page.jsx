@@ -217,10 +217,10 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] text-[#333] p-6 rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex items-center justify-between gap-4 pb-5 border-[#555]/50 border-b">
-          <div className="flex items-center w-full gap-5">
-            <div className="max-w-[412px] 2xl:max-w-[425px] w-full flex gap-5 items-center justify-between bg-[#E4E3E0] border border-[#565656] rounded-lg px-5 py-4 custom-shadow-xl">
+      <header className="bg-[#E4E3E0] text-[#333] p-2 sm:p-6 rounded-lg sm:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
+        <nav className="flex items-start md:items-center justify-between gap-4 sm:pb-5 border-[#555]/50 border-b">
+          <div className="flex max-md:flex-col md:items-center w-full sm:gap-5">
+            <div className="max-w-[412px] min-w-0 2xl:max-w-[425px] w-full flex gap-5 items-center justify-between bg-[#E4E3E0] border border-[#565656] rounded-lg px-5 py-4 custom-shadow-xl">
               <SearchIcon />
               <input
                 type="text"
@@ -275,9 +275,9 @@ const page = () => {
         </nav>
       </header>
       {businessPartner === "clients" && (
-        <div className="flex gap-5 mt-[18px]">
+        <div className="flex max-md:flex-col-reverse gap-5 mt-[18px]">
           <div className="max-w-[1058px] w-full overflow-x-auto px-2">
-            <table className="w-full text-[#333] border-spacing-y-3 border-separate">
+            <table className="w-full text-[#333] border-spacing-y-1.5 sm:border-spacing-y-3 border-separate text-nowrap">
               <thead className="rounded-lg text-sm border custom-shadow-xl">
                 <tr className="rounded-lg border">
                   <th className="px-3 py-3 md:py-5">Company</th>
@@ -364,7 +364,7 @@ const page = () => {
           </div>
 
           <div
-            className={`bg-white custom-shadow-xl rounded-lg p-5 transition ease-in-out duration-500 delay-300 space-y-5 w-full max-w-md mt-3`}
+            className={`bg-white custom-shadow-xl rounded-lg p-3 sm:p-5 transition ease-in-out duration-500 delay-300 space-y-5 w-full max-w-md mt-3`}
           >
             {Object.entries(grouped).map(([role, group], idx) => (
               <div key={idx}>
@@ -382,17 +382,17 @@ const page = () => {
 
                 <div className="space-y-3">
                   {group.map((user, i) => (
-                    <div key={i} className="bg-[#E4E3E0] rounded-md p-3">
+                    <div key={i} className="bg-[#E4E3E0] rounded-md p-1.5 sm:p-3">
                       <div className="flex items-center justify-between mb-2.5">
-                        <p className="font-medium">{user.fullName}</p>
-                        <Link href={`tell:${user.phone}`} className="underline">
+                        <p className="max-sm:text-sm font-medium">{user.fullName}</p>
+                        <Link href={`tell:${user.phone}`} className="underline max-sm:text-sm">
                           {user.phone}
                         </Link>
                       </div>
                       <div className="flex items-center justify-between">
                         <Link
                           href={`mailto:${user.mail}`}
-                          className="underline"
+                          className="underline max-sm:text-sm"
                         >
                           {user.email}
                         </Link>
@@ -414,7 +414,7 @@ const page = () => {
       {businessPartner === "vendors" && (
         <div>
           <div className="w-full overflow-x-auto px-2 mt-5">
-            <table className="w-full text-[#333] border-spacing-y-3 border-separate">
+            <table className="w-full text-[#333] border-spacing-y-1.5 sm:border-spacing-y-3 border-separate text-nowrap">
               <thead className="rounded-lg text-sm border custom-shadow-xl">
                 <tr className="rounded-lg border">
                   <th className="px-3 py-3 md:py-5">Company</th>

@@ -42,11 +42,11 @@ export default function AddEditUserModal({
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black/40 flex items-center justify-center z-[999] px-2"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white px-8 py-5 rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl"
+        className="bg-white p-3 sm:px-8 sm:py-5 rounded-lg sm:rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl"
       >
         <h2 className="card_title mb-5">
           {initialData ? "Edit User" : "Add User"}
@@ -108,13 +108,13 @@ export default function AddEditUserModal({
             <button
               type="button"
               onClick={onClose}
-              className="bg-white border border-[#21BBA2] text-[#21BBA2] lg:text-lg px-5 py-4 rounded-lg"
+              className="card_btn_outline"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-[#21BBA2] border border-[#21BBA2] text-white lg:text-lg px-5 py-4 rounded-lg"
+              className="card_btn"
             >
               {initialData ? "Update User" : "Add User"}
             </button>

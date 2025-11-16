@@ -71,7 +71,7 @@ const Categories = () => {
   };
 
   return (
-    <div className="bg-white w-full max-w-[497px] mx-auto mt-8 rounded-lg p-[30px] shadow-md">
+    <div className="bg-white w-full max-w-[497px] mx-auto mt-8 rounded-lg p-4 sm:p-[30px] shadow-md">
       <h2 className="card_title md:!mb-5">Existing Categories</h2>
 
       <div className="flex flex-col gap-5">
@@ -81,7 +81,7 @@ const Categories = () => {
             className="rounded-lg p-2.5 custom-shadow-xl bg-white"
           >
             <div className="flex justify-between items-start">
-              <h3 className="text-lg xl:text-xl font-semibold mb-2">
+              <h3 className="md:text-lg xl:text-xl font-medium md:font-semibold mb-2">
                 {cat.name}
               </h3>
               <div className="flex items-center justify-center gap-2">

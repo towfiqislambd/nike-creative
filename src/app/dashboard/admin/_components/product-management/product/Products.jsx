@@ -84,9 +84,9 @@ const Products = () => {
 
   return (
     <div className="w-full overflow-x-auto mt-6 min-h-screen px-2">
-      <table className="w-full min-w-[1000px] text-[#333] border-spacing-y-3 border-separate font-normal">
+      <table className="w-full min-w-[1000px] text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 border-separate font-normal">
         <thead className="rounded-lg border custom-shadow-xl">
-          <tr className="rounded-lg border bg-white">
+          <tr className="rounded-lg max-sm:text-sm border bg-white">
             <th className="px-3 py-3 md:py-5 rounded-l-lg">Image</th>
             <th className="px-3 py-3 md:py-5">SKU</th>
             <th className="px-3 py-3 md:py-5">Category</th>
@@ -100,7 +100,7 @@ const Products = () => {
           {products.map((p) => (
             <tr
               key={p.id}
-              className="border rounded-lg lg:text-lg custom-shadow-xl bg-white"
+              className="border rounded-lg text-sm lg:text-lg custom-shadow-xl bg-white"
             >
               <td className="p-3 md:py-5 text-center rounded-l-lg">
                 <img

@@ -12,16 +12,16 @@ const ProductModal = ({
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 px-3"
+      className="fixed inset-0 bg-black/40 flex justify-center items-center z-[9999] px-3"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg"
+        className="bg-white p-4 ms:px-8 md:py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg"
       >
         <h2 className="card_title">
           {editIndex !== null ? "Edit Product" : "Add New Product"}
         </h2>
-        <form onSubmit={onSubmit} className="grid grid-cols-2 gap-4">
+        <form onSubmit={onSubmit} className="grid grid-cols-2 gap-2.5 md:gap-4">
           <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
             <label className="card_label">Product Name</label>
             <input
@@ -94,13 +94,13 @@ const ProductModal = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-8 py-4 bg-gray-400 text-white rounded-lg"
+              className="card_btn_outline"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-8 py-4 bg-[#21BBA2] text-white rounded-lg"
+              className="card_btn"
             >
               {editIndex !== null ? "Update Product" : "Add Product"}
             </button>

@@ -32,7 +32,7 @@ const AddEditFields = ({ open, onClose, fields }) => {
 
   return (
     <Modal open={open} onClose={onClose}>
-      <div className="bg-white rounded-md p-3 w-full max-w-[885px]">
+      <div className="bg-white rounded-md sm:p-3 w-full max-w-[885px]">
         <h2 className="card_title">Add Field</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-2">
@@ -195,7 +195,7 @@ const AddEditFields = ({ open, onClose, fields }) => {
               { key: "adaThreshold", label: "ADA Threshold" },
             ].map((opt) => (
               <div>
-                <label className="text-base xl:text-xl flex items-center gap-2.5 mb-2.5">
+                <label className="text-sm sm:text-base xl:text-xl flex items-center gap-2.5 mb-2.5">
                   {opt.label}
                   <Eye />
                 </label>

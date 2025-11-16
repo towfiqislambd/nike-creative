@@ -29,7 +29,6 @@ export default function ExpenseModal({ expense, onClose, onUpdate }) {
       reader.onloadend = () => setImagePreview(reader.result);
       reader.readAsDataURL(file);
     }
-    image
     // console.log(file) receipt image
   };
 
@@ -43,23 +42,23 @@ export default function ExpenseModal({ expense, onClose, onUpdate }) {
         <h2 className="card_title">Expense Information</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
           <div className="grid grid-cols-2 gap-5 text-lg">
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <p className="font-medium">Expense Description</p>
               <p>{expense.description}</p>
             </div>
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <p className="font-medium">Category</p>
               <p>{expense.category}</p>
             </div>
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <p className="font-medium">Provider/Company</p>
               <p>{expense.supplier}</p>
             </div>
-            <div>
+            <div className="col-span-1">
               <p className="font-medium">Date</p>
               <p>{expense.date}</p>
             </div>
-            <div>
+            <div className="col-span-1">
               <p className="font-medium">Price</p>
               <p>${expense.amount}</p>
             </div>
@@ -103,7 +102,7 @@ export default function ExpenseModal({ expense, onClose, onUpdate }) {
                   <div className="bg-white border border-[#EAECF0] w-10 h-10 rounded-[10px] flex items-center justify-center mb-3">
                     <FiUploadCloud className="text-[#6B7280] text-xl" />
                   </div>
-                  <p className="text-lg text-sub-text">
+                  <p className="text-sm sm:text-lg text-sub-text">
                     Click to upload or drag and drop
                   </p>
                 </div>
