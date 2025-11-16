@@ -41,8 +41,8 @@ export default function ClientsVisibility() {
   return (
     <div className="w-full flex max-2xl:flex-col-reverse items-start gap-5 mt-2">
       <div className="w-full 2xl:max-w-[1075px] overflow-x-auto px-1">
-        <table className="max-md:w-[750px] w-full 2xl:max-w-[1075px] text-[#333] border-spacing-y-3 max-md:shrink-0 border-separate font-normal">
-          <thead className="rounded-lg border custom-shadow-xl">
+        <table className="max-md:w-[750px] w-full 2xl:max-w-[1075px] text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 max-md:shrink-0 border-separate font-normal">
+          <thead className="rounded-lg border custom-shadow-xl max-sm:text-sm">
             <tr className="rounded-lg border bg-white">
               <th className="px-3 py-3 md:py-5 rounded-l-lg">Company Name</th>
               <th className="px-3 py-3 md:py-5">Visible Categories</th>
@@ -53,7 +53,7 @@ export default function ClientsVisibility() {
             {clients.map((client) => (
               <tr
                 key={client.id}
-                className="border rounded-lg lg:text-lg custom-shadow-xl bg-white"
+                className="border rounded-lg lg:text-lg custom-shadow-xl bg-white max-sm:text-sm"
               >
                 <td className="p-3 md:py-5 text-center rounded-l-lg">
                   {client.company}

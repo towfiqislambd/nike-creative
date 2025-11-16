@@ -125,7 +125,7 @@ const page = () => {
               setIsAddEditOpen(true);
               setEditData(null);
             }}
-            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-8 py-4 text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-4 sm:px-8 py-3 sm:py-4 sm:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
           >
             Add Coupons <PlusBlack />
           </button>
@@ -133,7 +133,7 @@ const page = () => {
       </header>
       <div>
         <div className="w-full overflow-x-auto px-2 mt-5">
-          <table className="w-full border-spacing-y-3 border-separate">
+          <table className="w-full border-spacing-y-1.5 sm:border-spacing-y-3 border-separate text-nowrap">
             <thead className="rounded-lg text-sm border custom-shadow-xl">
               <tr className="rounded-lg border">
                 <th className="px-3 py-3 md:py-5">Coupon Code</th>

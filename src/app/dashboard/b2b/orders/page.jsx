@@ -245,11 +245,11 @@ const page = () => {
           </Link>
         </div>
       </header>
-      <div className="w-full flex gap-6 mt-5">
+      <div className="w-full flex gap-2 sm:gap-6 mt-5">
         {/* table */}
-        <div className="flex-1 text-[#333]">
+        <div className="flex-1 min-w-0 text-[#333]">
           <div className="overflow-x-auto rounded-lg">
-            <table className="min-w-full border-separate border-spacing-y-3 px-2">
+            <table className="w-[1450px] border-separate border-spacing-y-1.5 sm:border-spacing-y-3 px-2 text-nowrap">
               <thead className="md:h-[80px]">
                 <tr className="bg-white font-medium">
                   <th className="px-4 py-3 lg:py-5">
@@ -278,7 +278,7 @@ const page = () => {
                 {orderData?.map((order) => (
                   <tr
                     key={order.id}
-                    className="rounded-lg h-[68px] text-sm shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+                    className="rounded-lg h-[68px] text-sm custom-shadow-xl"
                   >
                     <td className="px-4 py-4 align-middle">
                       <div className="flex items-center justify-center">
@@ -375,7 +375,7 @@ const page = () => {
             </table>
           </div>
         </div>
-        <div className="mt-2.5">
+        <div className="sm:mt-2.5">
           <button
             onClick={() => setIsNoteOpen((prev) => !prev)}
             className="inline-flex cursor-pointer items-center justify-center p-2.5 rounded-[10px] bg-white shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
@@ -383,7 +383,7 @@ const page = () => {
             <Note />
           </button>
           <div
-            className={`max-w-[74px] w-full shrink-0 flex flex-col gap-[58px] rounded-[10px] bg-white px-2 py-7 mt-8 transition ${
+            className={`max-w-[74px] w-full shrink-0 flex flex-col gap-[58px] rounded-[10px] bg-white px-2 py-7 mt-1 sm:mt-8 transition ${
               !isNoteOpen && "invisible"
             }`}
           >

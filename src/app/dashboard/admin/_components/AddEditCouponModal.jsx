@@ -35,10 +35,10 @@ const AddEditCouponModal = ({ isOpen, onClose, onSubmit, initialData }) => {
   if (!isOpen) return null;
 
   return (
-    <div onClick={onClose} className="fixed inset-0 flex items-center justify-center bg-black/40 z-[999]">
+    <div onClick={onClose} className="fixed inset-0 flex items-center justify-center bg-black/40 z-[999] px-2">
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg"
+        className="bg-white p-4 sm:px-8 sm:py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg"
       >
         <h3 className="card_title">
           {initialData ? "Edit Coupon" : "Add Coupon"}
@@ -95,13 +95,13 @@ const AddEditCouponModal = ({ isOpen, onClose, onSubmit, initialData }) => {
             <button
               type="button"
               onClick={onClose}
-              className="bg-white border border-[#21BBA2] text-[#21BBA2] lg:text-lg px-5 py-4 rounded-lg"
+              className="card_btn_outline"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-[#21BBA2] border border-[#21BBA2] text-white lg:text-lg px-5 py-4 rounded-lg"
+              className="card_btn"
             >
               {initialData ? "Save Changes" : "Add Coupon"}
             </button>

@@ -65,11 +65,11 @@ const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
+      className="fixed inset-0 bg-black/50 flex justify-center items-center z-[999] px-2"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white px-8 py-5 rounded-[20px] w-full max-w-[523px] relative shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+        className="bg-white p-3 sm:px-8 sm:py-5 rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl"
       >
         <h2 className="card_title mb-5">Edit Clients Information</h2>
 
@@ -179,13 +179,13 @@ const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
             <button
               type="button"
               onClick={onClose}
-              className="bg-white border border-[#21BBA2] text-[#21BBA2] lg:text-lg px-5 py-4 rounded-lg"
+              className="card_btn_outline"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-[#21BBA2] border border-[#21BBA2] text-white lg:text-lg px-5 py-4 rounded-lg"
+              className="card_btn"
             >
               Save Change
             </button>
@@ -211,8 +211,8 @@ const AddManufacturerModal = ({ onAdd, onClose }) => {
   const [value, setValue] = useState("");
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-      <div className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[384px] relative shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+    <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-[999] px-2">
+      <div className="bg-white p-4 sm:px-8 sm:py-5 rounded-[16px] w-full max-w-[384px] relative custom-shadow-xl">
         <h2 className="card_title">Add Manufacturer</h2>
         <input
           value={value}

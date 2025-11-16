@@ -22,6 +22,10 @@ import {
 } from "../../../../Components/Svg/SvgContainer2";
 import m1 from "../../../../Assets/m1.png";
 import m2 from "../../../../Assets/m2.jpg";
+import CustomerNotes from "../_components/orders-management/CustomerNotes";
+import WorkInstallerNotes from "../_components/orders-management/WorkInstallerNotes";
+import TechnicalFileModal from "../_components/orders-management/TechnicalFileModal";
+import ServiceRequest from "../_components/orders-management/service-request/ServiceRequest";
 import Image from "next/image";
 const menus = [
   "Received",
@@ -39,10 +43,30 @@ const menus = [
 const page = () => {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("Received");
+  const [customerNotesOpen, setCustomerNotesOpen] = useState(false);
+  const [workInstallerNotesOpen, setWarkInstallerNotesOpen] = useState(false);
+  const [technicalFilesOpen, setTechnicalFilesOpen] = useState(false);
+  const [serviceRequestModal, setServiceRequestModal] = useState(false);
+
+  // demo data for customer notes
+  const [notes, setNotes] = useState([
+    {
+      text: "Please install the window stickers on the sliding glass doors only, avoid the porch door.",
+      date: "11/15/2025, 2:56 PM",
+    },
+    {
+      text: "Please install the window stickers on the sliding glass doors only, avoid the porch door.",
+      date: "11/15/2025, 2:56 PM",
+    },
+    {
+      text: "Please install the window stickers on the sliding glass doors only, avoid the porch door.",
+      date: "11/15/2025, 2:56 PM",
+    },
+  ]);
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {Array.from({ length: 10 }).map((_, idx) => (
           <div
             key={idx}
@@ -58,7 +82,10 @@ const page = () => {
                   <HomeSvg />
                 </button>
 
-                <button className="bg-gray-100 size-6 shadow rounded-full cursor-pointer grid place-items-center">
+                <button
+                  onClick={() => setServiceRequestModal(true)}
+                  className="bg-gray-100 size-6 shadow rounded-full cursor-pointer grid place-items-center"
+                >
                   <HardSvg />
                 </button>
 
@@ -83,7 +110,10 @@ const page = () => {
                 In 1 week
                 <EEditSvg />
               </button>
-              <button className="text-gray-500 flex gap-1 items-center text-sm">
+              <button
+                onClick={() => setTechnicalFilesOpen(true)}
+                className="text-gray-500 flex gap-1 items-center text-sm"
+              >
                 Technical Files <DocSvg />
               </button>
             </div>
@@ -177,12 +207,18 @@ const page = () => {
               </div>
 
               <div className="space-y-2 flex flex-col items-end">
-                <button className="w-fit flex gap-1 items-center cursor-pointer px-2.5 py-1.5 text-xs rounded-xl text-white bg-[#7FADBC]">
+                <button
+                  onClick={() => setCustomerNotesOpen(true)}
+                  className="w-fit flex gap-1 items-center cursor-pointer px-2.5 py-1.5 text-xs rounded-xl text-white bg-[#7FADBC]"
+                >
                   Customer
                   <DocSvg />
                 </button>
 
-                <button className="w-fit flex gap-1 items-center cursor-pointer px-2.5 py-1.5 text-xs rounded-xl text-white bg-[#7FADBC]">
+                <button
+                  onClick={() => setWarkInstallerNotesOpen(true)}
+                  className="w-fit flex gap-1 items-center cursor-pointer px-2.5 py-1.5 text-xs rounded-xl text-white bg-[#7FADBC]"
+                >
                   Worker
                   <DocSvg />
                 </button>
@@ -245,7 +281,7 @@ const page = () => {
             open ? "opacity-100" : "opacity-0"
           }`}
         >
-          {menus?.map(menu => (
+          {menus?.map((menu) => (
             <button
               key={menu}
               onClick={() => setActiveMenu(menu)}
@@ -265,6 +301,36 @@ const page = () => {
           <MenuSvg />
         </button>
       </div>
+
+      {/* pop up modals */}
+      {customerNotesOpen && (
+        <CustomerNotes
+          notes={notes}
+          open={customerNotesOpen}
+          onClose={() => setCustomerNotesOpen(false)}
+        />
+      )}
+
+      {workInstallerNotesOpen && (
+        <WorkInstallerNotes
+          open={workInstallerNotesOpen}
+          onClose={() => setWarkInstallerNotesOpen(false)}
+        />
+      )}
+
+      {technicalFilesOpen && (
+        <TechnicalFileModal
+          open={technicalFilesOpen}
+          onClose={() => setTechnicalFilesOpen(false)}
+        />
+      )}
+
+      {serviceRequestModal && (
+        <ServiceRequest
+          open={serviceRequestModal}
+          onClose={() => setServiceRequestModal(false)}
+        />
+      )}
     </>
   );
 };

@@ -21,7 +21,7 @@ export default function ChooseItemModal({ type, onAdd, open, onClose }) {
       onClose={onClose}
       className={"max-w-[384px] md:!rounded-[20px]"}
     >
-      <div className="bg-white px-2.5">
+      <div className="bg-white md:px-2.5">
         <h3 className="card_title">
           Choose {type.charAt(0).toUpperCase() + type.slice(1)}
         </h3>

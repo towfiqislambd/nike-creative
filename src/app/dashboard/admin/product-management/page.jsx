@@ -43,15 +43,15 @@ const page = () => {
             <h1 className="text-lg max-sm:hidden md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
               Product Management
             </h1>
-            <div className="flex max-w-[840px] w-full border border-[#eaeaea] bg-[#D7D6D7] -space-x-12 rounded-[40px] my-4 custom-shadow-xl">
+            <div className="grid max-sm:gap-1.5 grid-cols-2 sm:flex sm:max-w-[840px] w-full sm:border border-[#eaeaea] sm:bg-[#D7D6D7] sm:-space-x-12 sm:rounded-[40px] my-4 max-sm:shadow-none custom-shadow-xl">
               {tabs.map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => setProductManagementTab(label)}
                   className={`flex-1 py-3 md:py-4 lg:py-6 rounded-[35px] text-[13px] md:text-sm xl:text-lg transition ${
                     productManagementTab === label
-                      ? "bg-[#21BBA2] text-white border border-[#EAEAEA] custom-shadow-xl"
-                      : "border-r"
+                      ? "bg-[#21BBA2] text-white border border-gray-300 custom-shadow-xl"
+                      : "max-sm:border max-sm:border-gray-300 sm:border-r sm:!shadow-none custom-shadow-xl"
                   }`}
                 >
                   {label}
