@@ -5,11 +5,11 @@ const CategoryModal = ({ isOpen, onClose, onSubmit, register, editIndex }) => {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 px-3"
+      className="fixed inset-0 bg-black/40 flex justify-center items-center z-[9999] px-3"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white px-8 py-5 rounded-[16px] w-full max-w-[500px] relative shadow-lg"
+        className="bg-white p-4 sm:px-8 sm:py-5 rounded-[16px] w-full max-w-[500px] relative shadow-lg"
       >
         <h2 className="card_title">
           {editIndex !== null ? "Edit Category" : "Add New Category"}
@@ -37,13 +37,13 @@ const CategoryModal = ({ isOpen, onClose, onSubmit, register, editIndex }) => {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-3 bg-gray-400 text-white rounded-lg"
+              className="card_btn_outline"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-3 bg-[#21BBA2] text-white rounded-lg"
+              className="card_btn"
             >
               {editIndex !== null ? "Update Category" : "Add Category"}
             </button>

@@ -71,7 +71,7 @@ const EditClientVisibility = ({ client, onSave }) => {
         <div className="flex justify-end mt-6 xl:mt-10">
           <button
             type="submit"
-            className="bg-white border border-[#21BBA2] text-[#21BBA2] px-8 py-4 rounded-lg"
+            className="card_btn_outline"
           >
             Save
           </button>
@@ -107,13 +107,13 @@ const EditClientVisibility = ({ client, onSave }) => {
             <div className="flex justify-end gap-2">
               <button
                 onClick={() => setShowAddModal(false)}
-                className="bg-white border border-[#21BBA2] text-[#21BBA2] px-8 py-4 rounded-lg"
+                className="card_btn_outline"
               >
                 Cancel
               </button>
               <button
                 onClick={handleAddCategory}
-                className="bg-[#21bba2] border border-[#21BBA2] text-white px-8 py-4 rounded-lg"
+                className="card_btn"
               >
                 Add
               </button>

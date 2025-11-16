@@ -65,7 +65,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
         onClose={onClose}
         className={"max-w-[730px] md:rounded-[20px]"}
       >
-        <div className="px-2.5 relative">
+        <div className="md:px-2.5 relative">
           <h2 className="card_title">
             {product ? "Edit Product" : "Add Product Display"}
           </h2>
@@ -106,8 +106,8 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                 </select>
               </div>
               {/* for company field */}
-              <div className="flex items-center justify-between">
-                <div>
+              <div className="flex items-center gap-3.5 col-span-2 md:col-span-1 max-sm:justify-between md:justify-between">
+                <div className="">
                   <label className="text-base xl:text-xl flex items-center justify-between">
                     Choose companies
                   </label>
@@ -144,7 +144,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
             </div>
             <div className="grid grid-cols-2 gap-5">
               {/* for field */}
-              <div className="flex items-center justify-between">
+              <div className="flex col-span-2 md:col-span-1 items-center gap-3.5 max-sm:justify-between md:justify-between">
                 <div>
                   <label className="text-base xl:text-xl flex items-center justify-between">
                     Field
@@ -180,7 +180,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                 </button>
               </div>
               {/* for color field */}
-              <div className="flex items-center justify-between">
+              <div className="flex col-span-2 md:col-span-1 items-center gap-3.5 max-sm:justify-between md:justify-between">
                 <div>
                   <label className="text-base xl:text-xl flex items-center justify-between">
                     Color
@@ -267,7 +267,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                     <div className="bg-white border border-[#EAECF0] w-10 h-10 rounded-[10px] flex items-center justify-center mb-3">
                       <FiUploadCloud className="text-[#6B7280] text-xl" />
                     </div>
-                    <p className="text-lg text-sub-text">
+                    <p className="text-sm md:text-lg text-sub-text">
                       Click to upload or drag and drop
                     </p>
                   </div>

@@ -241,8 +241,8 @@ const page = () => {
       </header>
       {userManagementTab === "employee" && (
         <div className="flex gap-5 mt-[18px]">
-          <div className="max-w-[1058px] w-full overflow-x-auto px-2">
-            <table className="w-full text-[#333] border-spacing-y-3 border-separate">
+          <div className="min-w-0 overflow-x-auto px-2">
+            <table className="w-[1058px] text-[#333] border-spacing-y-3 border-separate">
               <thead className="rounded-lg font-normal text-sm border custom-shadow-xl">
                 <tr className="rounded-lg border">
                   <th className="px-3 py-3 md:py-5">Company & Email</th>
@@ -399,7 +399,7 @@ const page = () => {
         </div>
       )}
       {userManagementTab === "rolesAndPermissions" && (
-        <div className="w-full px-2 mt-5">
+        <div className="w-full sm:px-2 mt-5">
           <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
             Manage Page Access for Employees & Managers
           </h2>

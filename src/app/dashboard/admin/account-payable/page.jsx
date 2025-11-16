@@ -6,6 +6,8 @@ import profilePicture from "../../../../Assets/profile.svg";
 import ExpenseModal from "../_components/account-payable/ExpenseModal";
 import { useState } from "react";
 import { ReceiptFile } from "../../../../Components/Svg/SvgContainer2";
+import AddNewExpense from "../_components/account-payable/AddNewExpense";
+import AddRecurringExpense from "../_components/account-payable/AddRecurringExpense";
 
 const amountStatus = [
   {
@@ -85,7 +87,13 @@ const page = () => {
     },
   ]);
 
+  const categories = [...new Set(expenses.map((exp) => exp.category))];
+  const suppliers = [...new Set(expenses.map((exp) => exp.supplier))];
+
   const [selectedExpense, setSelectedExpense] = useState(null);
+  const [isNewExpenseModalOpen, setIsNewExpenseModalOpen] = useState(false);
+  const [isRecurringExpenseModalOpen, setIsRecurringExpenseModalOpen] =
+    useState(false);
   const [filters, setFilters] = useState({
     category: "All",
     provider: "All",
@@ -118,6 +126,10 @@ const page = () => {
       )
     );
     setSelectedExpense(null);
+  };
+
+  const handleAddExpense = (expense) => {
+    // console.log(expense);
   };
 
   const reminderColor = (status) => {
@@ -154,7 +166,7 @@ const page = () => {
           </div>
         </nav>
       </header>
-      <div className="my-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 md:gap-5">
+      <div className="my-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-1.5 md:gap-5">
         {amountStatus.map(({ title, amount }, index) => (
           <div
             key={index}
@@ -169,7 +181,7 @@ const page = () => {
       </div>
       <div className="flex flex-col min-[1877px]:flex-row gap-5">
         <div className="min-w-0 overflow-x-auto bg-white px-5 py-[30px] rounded-[20px] custom-shadow-xl">
-          <div className="w-[1152px]">
+          <div className="w-[1122px]">
             <h1 className="section_subTitle">Expense Management</h1>
             <hr className="my-5 text-[#55555580]" />
             {/* filter */}
@@ -210,7 +222,7 @@ const page = () => {
               </div>
             </div>
             {/* table */}
-            <table className="border-spacing-y-3 border-separate">
+            <table className="border-spacing-y-1.5 sm:border-spacing-y-3 w-[1104px] border-separate">
               <thead className="rounded-lg border custom-shadow-xl">
                 <tr className="rounded-lg border bg-white">
                   <th className="px-3 py-3 md:py-5 font-normal rounded-tl-lg">
@@ -296,14 +308,17 @@ const page = () => {
             />
           )}
         </div>
-        <div className="space-y-5 flex-1 max-md:flex-col max-[1877px]:flex-row flex-col flex gap-5">
+        <div className="flex-1 max-md:flex-col max-[1877px]:flex-row flex-col flex gap-5">
           <div className="inline-flex w-full flex-col gap-5 rounded-[20px] bg-white custom-shadow-xl px-[30px] py-5 max-w-[500px] h-fit">
             <h3 className="card_title font-medium">Quick Add Expense</h3>
             <div className="space-y-5 flex flex-col">
-              <button className="px-2.5 py-[18px] bg-[#5190A2] rounded-lg text-white text-base md:text-xl">
+              <button
+                onClick={() => setIsNewExpenseModalOpen(true)}
+                className="px-2.5 py-[18px] bg-[#5190A2] hover:bg-[#5190A2]/90 rounded-lg text-white text-base md:text-xl"
+              >
                 <h5>Add New Expense</h5>
               </button>
-              <button className="px-2.5 py-[18px] bg-[#5190A2] rounded-lg text-white text-base md:text-xl">
+              <button onClick={()=> setIsRecurringExpenseModalOpen(true)} className="px-2.5 py-[18px] bg-[#5190A2] hover:bg-[#5190A2]/90 rounded-lg text-white text-base md:text-xl">
                 <h5>Setup Recurring</h5>
               </button>
             </div>
@@ -350,6 +365,27 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      {/* modals (Add New Expense & Setup Recurring */}
+
+      {isNewExpenseModalOpen && (
+        <AddNewExpense
+          open={isNewExpenseModalOpen}
+          onClose={() => setIsNewExpenseModalOpen(false)}
+          onSubmit={handleAddExpense}
+          categories={categories}
+          suppliers={suppliers}
+        />
+      )}
+
+      {isRecurringExpenseModalOpen && (
+        <AddRecurringExpense
+          open={isRecurringExpenseModalOpen}
+          onClose={() => setIsRecurringExpenseModalOpen(false)}
+          categories={categories}
+          suppliers={suppliers}
+        />
+      )}
     </section>
   );
 };

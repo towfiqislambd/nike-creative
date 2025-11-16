@@ -205,7 +205,7 @@ const InventoryPage = () => {
         <div className="flex max-xl:flex-col gap-4 xl:gap-[30px]">
           {/* product tables */}
           <div className="w-full overflow-x-auto px-2">
-            <table className="w-full text-[#333] border-spacing-y-3 border-separate text-sm">
+            <table className="w-full text-[#333] border-spacing-y-1.5 sm:border-spacing-y-3 border-separate text-sm text-nowrap">
               <thead className="rounded-lg border custom-shadow-xl">
                 <tr className="rounded-lg border bg-white">
                   <th className="px-3 py-3 md:py-5 rounded-l-lg">
@@ -286,16 +286,16 @@ const InventoryPage = () => {
 
           {/* category tables */}
           <div className="max-w-[450px] w-full">
-            <table className="w-full text-[#333] border-spacing-y-3 border-separate">
-              <thead className="rounded-lg text-base xl:text-[20px] font-medium border custom-shadow-xl">
+            <table className="w-full text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 border-separate">
+              <thead className="rounded-lg text-sm md:text-base xl:text-[20px] font-medium border custom-shadow-xl">
                 <tr className="rounded-lg border bg-white">
-                  <th className="px-3 py-3 md:py-5 rounded-l-lg">Category</th>
+                  <th className="px-3 py-3 md:py-5 max-sm:text-left rounded-l-lg">Category</th>
                   <th className="px-3 py-3 md:py-5 rounded-r-lg">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {categories.map((category, idx) => (
-                  <tr key={idx} className="border rounded-lg custom-shadow-xl bg-white">
+                  <tr key={idx} className="border rounded-lg custom-shadow-xl bg-white max-sm:text-sm">
                     <td className="px-3 py-3 md:py-5 text-center rounded-l-lg">
                       <div className="flex items-center gap-2.5">
                         {category.name}
