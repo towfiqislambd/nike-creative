@@ -54,7 +54,7 @@ const  DoorGallerySectionB2b= () => {
   };
 
   return (
-    <section className="container py-25">
+    <section className="container  px-4 xl:px-0 py-10 xl:py-25">
       <div className="">
         <div className="text-center mb-12">
           <h2 className="section_title">The Art of the Doorway</h2>
