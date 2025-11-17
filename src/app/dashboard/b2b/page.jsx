@@ -117,7 +117,7 @@ const page = () => {
       </div>
       {/* notification table */}
       <div className="w-full mt-5 md:mt-8 inline-flex flex-col justify-end items-start px-3 md:px-5 lg:px-[30px] py-8 gap-[10px] rounded-[20px] border border-white bg-white custom-shadow-xl">
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-3 md:gap-8">
           <label className="text-lg md:text-xl lg:text-[26px] text-primary-text">
             Manufacturer
           </label>

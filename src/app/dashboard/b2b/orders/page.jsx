@@ -168,11 +168,11 @@ const page = () => {
   return (
     <section className=" w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] text-[#333] p-6 rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
-        <nav className="flex items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
+      <header className="bg-[#E4E3E0] text-[#333] p-2.5 sm:p-6 rounded-xl md:rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex max-lg:flex-col items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
           {/* search bar */}
           <div className="flex items-center w-full">
-            <div className="max-w-[325px] 2xl:max-w-[425px] w-full flex items-center justify-between bg-[#E4E3E0] rounded-[40px] px-5 py-3.5 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+            <div className="max-w-[325px] 2xl:max-w-[425px] w-full flex items-center justify-between bg-[#E4E3E0] rounded-[40px] px-5 py-3.5 custom-shadow-xl">
               <input
                 type="text"
                 placeholder="Search by order number and PO info"
@@ -186,8 +186,8 @@ const page = () => {
             </div>
           </div>
           {/* nav, cart, & profile */}
-          <div className="flex items-center gap-5 w-full justify-end">
-            <div className="flex justify-center gap-3 md:gap-5 xl:gap-7">
+          <div className="flex max-sm:flex-col sm:items-center gap-2 md:gap-5 w-full justify-between lg:justify-end">
+            <div className="flex flex-wrap min-w-0 sm:justify-center gap-3 md:gap-5 xl:gap-7">
               {navItems?.map(({ label, link }, idx) => (
                 <Link
                   key={idx}
@@ -199,7 +199,7 @@ const page = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex max-sm:justify-end items-center gap-2 md:gap-5">
               <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-11 flex items-center justify-center cursor-pointer">
                 <Cart />
               </button>
@@ -218,7 +218,7 @@ const page = () => {
         </nav>
 
         {/* filter Tabs */}
-        <div className="flex flex-wrap gap-x-3 gap-y-3 md:gap-y-5 mb-8 pb-5 border-[rgba(85,85,85,0.50)] border-b">
+        <div className="flex flex-wrap gap-x-2.5 gap-y-2.5 md:gap-y-5 md:mb-8 pb-5 border-[rgba(85,85,85,0.50)] border-b">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -233,13 +233,13 @@ const page = () => {
             </button>
           ))}
         </div>
-        <div className="flex justify-between items-center mt-10 px-6 py-4">
+        <div className="flex justify-between items-center md:mt-10 sm:px-6 py-4">
           <h2 className="text-lg md:text-xl xl:text-2xl font-medium text-[#333]">
             Total Orders Showing - <span className="font-normal">132</span>
           </h2>
           <Link
             href={"/dashboard/b2b/orders/order/cart"}
-            className="bg-[#4BCDE4] hover:bg-[#4BCDE4]/80 cursor-pointer text-white text-base lg:text-xl py-3 px-6 rounded-lg"
+            className="bg-[#4BCDE4] hover:bg-[#4BCDE4]/80 cursor-pointer text-nowrap text-white text-base lg:text-xl py-3 px-6 rounded-lg"
           >
             Pay Now
           </Link>

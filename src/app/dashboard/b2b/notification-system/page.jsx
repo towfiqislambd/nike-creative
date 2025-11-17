@@ -144,84 +144,83 @@ const page = () => {
           </button>
         </div>
       </header>
-      <div className="px-[30px] py-5 rounded-[40px] bg-white w-fit mt-5 pb-5 md:pb-10 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
-        <div>
+      <div className="p-4 md:px-[30px] md:py-5 rounded-xl md:rounded-[40px] bg-white max-w-fit mt-5 pb-5 md:pb-10 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
           <h3 className="card_title">Manage Notification Recipients</h3>
           <p className="text-sub-text xl:text-lg 2xl:text-xl">
             Add or edit recipients to control who receives notifications.
           </p>
           <hr className="my-5 text-[#55555580]" />
-
-          <table className="border-spacing-y-2.5 border-separate w-[820px]">
-            <thead className="rounded-lg custom-shadow-xl">
-              <tr className="rounded-lg border bg-white border-[#E6E8E5]">
-                <th className="px-3 py-3 md:py-5 font-medium rounded-tl-lg">
-                  Enable
-                </th>
-                <th className="px-3 py-3 md:py-5 font-medium">Name</th>
-                <th className="px-3 py-3 md:py-5 font-medium">Email</th>
-                <th className="px-3 py-3 md:py-5 font-medium rounded-tr-lg">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {recipients.map((r, i) => (
-                <tr
-                  key={i}
-                  className="border border-[#E6E8E5] custom-shadow-xl bg-white xl:text-lg 2xl:text-xl"
-                >
-                  <td className="px-3 py-3 md:py-5 text-center">
-                    <label className="inline-flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={r.enabled}
-                        onChange={() => handleToggle(i)}
-                        className="hidden"
-                      />
-                      <div
-                        className={`w-11 h-6 rounded-full relative transition-colors ${
-                          r.enabled ? "bg-blue-600" : "bg-gray-300"
-                        }`}
-                      >
+          <div className="w-full overflow-x-auto px-1">
+            <table className="border-spacing-y-1.5 sm:border-spacing-y-2.5 border-separate w-[820px]">
+              <thead className="rounded-lg custom-shadow-xl">
+                <tr className="rounded-lg border bg-white border-[#E6E8E5]">
+                  <th className="px-3 py-3 md:py-5 font-medium rounded-tl-lg">
+                    Enable
+                  </th>
+                  <th className="px-3 py-3 md:py-5 font-medium">Name</th>
+                  <th className="px-3 py-3 md:py-5 font-medium">Email</th>
+                  <th className="px-3 py-3 md:py-5 font-medium rounded-tr-lg">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {recipients.map((r, i) => (
+                  <tr
+                    key={i}
+                    className="border border-[#E6E8E5] custom-shadow-xl bg-white xl:text-lg 2xl:text-xl"
+                  >
+                    <td className="px-3 py-3 md:py-5 text-center">
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={r.enabled}
+                          onChange={() => handleToggle(i)}
+                          className="hidden"
+                        />
                         <div
-                          className={`absolute top-[2px] left-[2px] bg-white w-5 h-5 rounded-full transition-transform ${
-                            r.enabled ? "translate-x-5" : ""
+                          className={`w-11 h-6 rounded-full relative transition-colors ${
+                            r.enabled ? "bg-blue-600" : "bg-gray-300"
                           }`}
-                        ></div>
+                        >
+                          <div
+                            className={`absolute top-[2px] left-[2px] bg-white w-5 h-5 rounded-full transition-transform ${
+                              r.enabled ? "translate-x-5" : ""
+                            }`}
+                          ></div>
+                        </div>
+                      </label>
+                    </td>
+                    <td className="px-3 py-3 md:py-5 text-center">
+                      {r.name || "-"}
+                    </td>
+                    <td className="px-3 py-3 md:py-5 text-center">{r.email}</td>
+                    <td className="px-3 py-3 md:py-5 text-center">
+                      <div className="flex items-center justify-center gap-2.5">
+                        <button onClick={() => handleEdit(i)}>
+                          <EditPen />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(i)}
+                          className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
+                        >
+                          <TrashBin />
+                        </button>
                       </div>
-                    </label>
-                  </td>
-                  <td className="px-3 py-3 md:py-5 text-center">
-                    {r.name || "-"}
-                  </td>
-                  <td className="px-3 py-3 md:py-5 text-center">{r.email}</td>
-                  <td className="px-3 py-3 md:py-5 text-center">
-                    <div className="flex items-center justify-center gap-2.5">
-                      <button onClick={() => handleEdit(i)}>
-                        <EditPen />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(i)}
-                        className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
-                      >
-                        <TrashBin />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                  </tr>
+                ))}
 
-              {recipients.length === 0 && (
-                <tr>
-                  <td colSpan="4" className="text-center py-6 text-gray-400">
-                    No recipients added yet.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
+                {recipients.length === 0 && (
+                  <tr>
+                    <td colSpan="4" className="text-center py-6 text-gray-400">
+                      No recipients added yet.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
 
         <RecipientModal
           isOpen={modalOpen}

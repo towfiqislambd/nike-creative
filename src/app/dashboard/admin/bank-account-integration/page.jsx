@@ -167,7 +167,8 @@ export default function BankMatchingPage() {
       <main className=" bg-[#EFF3F6]">
         <div className="">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-            <section className="rounded-[28px] bg-white p-6 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
+            <div className="overflow-x-auto">
+            <section className="rounded-[28px] w-[925px] bg-white p-6 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
               <div>
                 <h2 className="text-xl font-semibold text-[#333] mb-5">
                   Bank Transactions
@@ -266,11 +267,12 @@ export default function BankMatchingPage() {
                 })}
               </div>
             </section>
-            <section className="rounded-[28px] bg-white p-6 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
+            </div>
+            <section className="rounded-[28px] bg-white p-3 sm:p-6 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
               <h2 className="text-xl font-semibold text-[#333]">
                 Unassigned Transactions
               </h2>
-              <div className="mt-4 inline-flex rounded-full bg-[#F4F5F7] p-1  font-medium">
+              <div className="mt-4 inline-flex rounded-full bg-[#F4F5F7] p-1 font-medium">
                 <button
                   onClick={() => setUnassignedTab("income")}
                   className={`rounded-full px-4 py-1 ${
@@ -299,7 +301,7 @@ export default function BankMatchingPage() {
                   return (
                     <div
                       key={tx.id}
-                      className="flex items-center justify-between rounded-2xl bg-white px-4 py-3  text-[#333] shadow-[0_8px_22px_rgba(0,0,0,0.06)]"
+                      className="flex items-center justify-between max-sm:text-sm rounded-2xl bg-white px-4 py-3  text-[#333] shadow-[0_8px_22px_rgba(0,0,0,0.06)]"
                     >
                       <div className="flex items-center gap-3">
                         <input
@@ -309,7 +311,7 @@ export default function BankMatchingPage() {
                           className="h-4 w-4 rounded border-gray-300 accent-[#21BBA2]"
                         />
                         <div>
-                          <div className="max-w-[260px] truncate font-medium">
+                          <div className="max-w-[260px] text-wrap truncate font-medium">
                             {tx.description}
                           </div>
                           <div className=" text-[#5A5C5F]">
@@ -318,7 +320,7 @@ export default function BankMatchingPage() {
                         </div>
                       </div>
 
-                      <div className=" font-semibold text-[#333]">
+                      <div className="font-semibold text-[#333]">
                         {formatCurrency(tx.amount)}
                       </div>
                     </div>

@@ -40,6 +40,8 @@ const TechnicalFileModal = ({ open, onClose }) => {
           </button>
         </div>
       </div>
+      <div className="w-full overflow-x-auto">
+
       <table className="mt-5 w-[550px] text-sm border-spacing-y-2.5 border-separate">
         <thead>
           <tr className="text-left">
@@ -100,6 +102,7 @@ const TechnicalFileModal = ({ open, onClose }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </Modal>
   );
 };
