@@ -218,7 +218,7 @@ const page = () => {
     <section className="text-primary-text w-full relative">
       {/* header */}
       <header className="bg-[#E4E3E0] text-[#333] p-2 sm:p-6 rounded-lg sm:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex items-start md:items-center justify-between gap-4 sm:pb-5 border-[#555]/50 border-b">
+        <nav className="flex max-sm:flex-col-reverse items-start md:items-center justify-between gap-4 sm:pb-5 border-[#555]/50 border-b">
           <div className="flex max-md:flex-col md:items-center w-full sm:gap-5">
             <div className="max-w-[412px] min-w-0 2xl:max-w-[425px] w-full flex gap-5 items-center justify-between bg-[#E4E3E0] border border-[#565656] rounded-lg px-5 py-4 custom-shadow-xl">
               <SearchIcon />
@@ -253,7 +253,7 @@ const page = () => {
           </div>
           {/* notification & profile */}
           <div className="flex items-center gap-5">
-            <div className="flex items-center gap-5">
+            <div className="flex max-sm:flex-row-reverse items-center gap-5">
               <button className="relative">
                 <BellIconSvg className="text-[#F34235]" />
                 <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">

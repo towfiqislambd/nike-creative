@@ -202,7 +202,7 @@ const ServiceRequestDetailsModal = ({ data, open, onClose }) => {
       {/* view full image Modal */}
       {viewImage && (
         <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-[99999]"
+          className="fixed inset-0 bg-black/70 flex px-5 items-center justify-center z-[99999]"
           onClick={() => setViewImage(null)}
         >
           <div className="relative">

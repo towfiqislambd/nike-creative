@@ -96,7 +96,7 @@ const ServiceRequest = ({ open, onClose }) => {
           </button>
         </div>
         <div className="w-full overflow-x-auto mt-2">
-          <table className="w-full border-separate border-spacing-y-3 px-2">
+          <table className="w-full border-separate border-spacing-y-1.5 sm:border-spacing-y-3 px-2">
             <thead>
               <tr className="text-sm">
                 <th className="px-4 font-normal text-nowrap text-left">

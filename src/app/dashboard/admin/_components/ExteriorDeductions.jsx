@@ -14,7 +14,7 @@ export default function ExteriorDeductions({ rows = [], onEdit, onDelete }) {
 
       <div className="mt-6 ">
         <div className="overflow-x-auto">
-          <table className="w-full border-separate border-spacing-y-[20px]">
+          <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[20px]">
             <thead >
               <tr className="!bg-white/80" >
                 <th className="th">

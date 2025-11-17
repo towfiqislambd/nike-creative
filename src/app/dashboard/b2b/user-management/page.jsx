@@ -2,7 +2,7 @@
 import React, { useMemo, useState } from "react";
 import AddUserModal from "../_components/modals/AddUserModal";
 import { IoSearch } from "react-icons/io5";
-import Modal from "../../../../Components/Common/Modal"; 
+import Modal from "../../../../Components/Common/Modal";
 
 export default function UserManagementPage() {
   const ROLES = ["All", "Accounting", "Sales", "Admin", "Viewer"];
@@ -30,7 +30,7 @@ export default function UserManagementPage() {
   const [roleFilter, setRoleFilter] = useState("All");
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState(null);
-  const [showDropdown, setShowDropdown] = useState(false); 
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const filtered = useMemo(() => {
     let list = users;
@@ -178,64 +178,65 @@ export default function UserManagementPage() {
           </div>
         </div>
       </div>
+      <div className="w-full overflow-x-auto">
+        <section className="pb-16 w-[1400px] 3xl:overflow-x-auto">
+          <div className="grid grid-cols-12 mb-2 sm:mb-4 rounded-xl bg-white px-4 py-4 text-sm font-medium text-primary-black">
+            <div className="col-span-4 text-center">Name</div>
+            <div className="col-span-4 text-center">Email</div>
+            <div className="col-span-2 text-center">Role</div>
+            <div className="col-span-2 text-center">Action Button</div>
+          </div>
 
-      <section className="pb-16 min-w-[1400px] 3xl:overflow-x-auto">
-        <div className="grid grid-cols-12 mb-4 rounded-xl bg-white px-4 py-4 text-sm font-medium text-primary-black">
-          <div className="col-span-4 text-center">Name</div>
-          <div className="col-span-4 text-center">Email</div>
-          <div className="col-span-2 text-center">Role</div>
-          <div className="col-span-2 text-center">Action Button</div>
-        </div>
+          <div className="overflow-hidden  ring-black/10">
+            {filtered.map((u) => (
+              <div
+                key={u.id}
+                className="grid grid-cols-12 items-center gap-4 mb-1 sm:mb-4"
+              >
+                <div className="col-span-4 px-5 py-4.5 bg-white text-sm shadow-lg rounded-l-[8px] truncate">
+                  {u.firstName} {u.lastName}
+                </div>
+                <div className="col-span-4  px-5 py-4.5 bg-white text-sm shadow-lg  truncate">
+                  {u.email}
+                </div>
+                <div className="col-span-2">
+                  <span
+                    className={`inline-block  px-5 py-4.5 text-center w-full h-full ${
+                      u.role === "Accounting"
+                        ? "bg-gray-200"
+                        : u.role === "Sales"
+                        ? "bg-[#DDEAEC]"
+                        : "bg-gray-100"
+                    }`}
+                  >
+                    {u.role}
+                  </span>
+                </div>
+                <div className="col-span-2 flex items-center  px-3 py-2 rounded-r-[8px] bg-white justify-center gap-2">
+                  <button
+                    onClick={() => openEdit(u)}
+                    className="rounded-md bg-[#DDEAEC] px-3 py-2 text-gray-800 hover:opacity-90"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => removeUser(u.id)}
+                    className="rounded-md bg-[#DDEAEC] px-3 py-2 text-gray-800 hover:opacity-90"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
 
-        <div className="overflow-hidden  ring-black/10">
-          {filtered.map((u) => (
-            <div
-              key={u.id}
-              className="grid grid-cols-12 items-center gap-4 mb-4"
-            >
-              <div className="col-span-4 px-5 py-4.5 bg-white text-sm shadow-lg rounded-l-[8px] truncate">
-                {u.firstName} {u.lastName}
+            {filtered.length === 0 && (
+              <div className="bg-white px-4 py-8 text-center text-sm text-gray-500">
+                No users found.
               </div>
-              <div className="col-span-4  px-5 py-4.5 bg-white text-sm shadow-lg  truncate">
-                {u.email}
-              </div>
-              <div className="col-span-2">
-                <span
-                  className={`inline-block  px-5 py-4.5 text-center w-full h-full ${
-                    u.role === "Accounting"
-                      ? "bg-gray-200"
-                      : u.role === "Sales"
-                      ? "bg-[#DDEAEC]"
-                      : "bg-gray-100"
-                  }`}
-                >
-                  {u.role}
-                </span>
-              </div>
-              <div className="col-span-2 flex items-center  px-3 py-2 rounded-r-[8px] bg-white justify-center gap-2">
-                <button
-                  onClick={() => openEdit(u)}
-                  className="rounded-md bg-[#DDEAEC] px-3 py-2 text-gray-800 hover:opacity-90"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => removeUser(u.id)}
-                  className="rounded-md bg-[#DDEAEC] px-3 py-2 text-gray-800 hover:opacity-90"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
-
-          {filtered.length === 0 && (
-            <div className="bg-white px-4 py-8 text-center text-sm text-gray-500">
-              No users found.
-            </div>
-          )}
-        </div>
-      </section>
+            )}
+          </div>
+        </section>
+      </div>
       <Modal open={open} onClose={() => setOpen(false)} className="p-0">
         <AddUserModal
           onClose={() => setOpen(false)}
