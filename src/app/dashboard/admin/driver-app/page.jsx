@@ -95,7 +95,7 @@ export default function DriverAppPage() {
         </div>
       </div>
 
-      <div className="flex flex-col w-[50%] gap-10 ">
+      <div className="flex flex-col lg:w-[50%] gap-10 ">
         <section className="mt-2">
           <div className="flex items-center justify-between">
             <h2 className="text-[28px] md:text-[32px] font-semibold text-[#333]">
@@ -114,7 +114,7 @@ export default function DriverAppPage() {
           <div className="mt-3 h-[2px] w-full bg-black/10" />
 
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full border-separate border-spacing-y-[12px]">
+            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[12px]">
               <thead>
                 <tr>
                   <th className="th">Text</th>
@@ -187,7 +187,7 @@ export default function DriverAppPage() {
           <div className="mt-3 h-[2px] w-full bg-black/10" />
 
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full border-separate border-spacing-y-[12px]">
+            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[12px]">
               <thead>
                 <tr>
                   <th className="th">Text</th>

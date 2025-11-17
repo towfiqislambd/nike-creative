@@ -175,15 +175,15 @@ export default function TaxExemptionPage() {
       </header>
       <main className="mt-6">
         <div className="">
-          <div className="">
-            <table className="w-full border-separate border-spacing-y-[12px]">
+          <div className="w-full overflow-x-auto px-1">
+            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[12px] text-nowrap">
               <thead>
                 <tr>
                   <th className={`${headerCell} rounded-tl-[20px]`}>Company</th>
                   <th className={headerCell}>Phone Number</th>
                   <th className={headerCell}>Address</th>
-                  <th className={headerCell}>Tax Exemption Document</th>
-                  <th className={headerCell}>Tax Exemption Expiration Date</th>
+                  <th className={headerCell}>Tax Exemption <br /> Document</th>
+                  <th className={headerCell}>Tax Exemption <br /> Expiration Date</th>
                   <th className={headerCell}>Status</th>
                   <th className={`${headerCell} rounded-tr-[20px]`}>Action</th>
                 </tr>

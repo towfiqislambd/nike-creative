@@ -233,9 +233,10 @@ export default function GuestCode() {
           </div>
         </div>
       </div>
+<div className="w-full overflow-x-auto">
 
-      <section className="pb-16 min-w-[1400px] overflow-x-auto">
-        <div className="grid grid-cols-12 mb-4 rounded-xl bg-white px-4 py-4 text-sm font-medium text-primary-black">
+      <section className="pb-16 w-[1400px] overflow-x-auto">
+        <div className="grid grid-cols-12 mb-2 sm:mb-4 rounded-xl bg-white px-4 py-4 text-sm font-medium text-primary-black">
           <div className="col-span-2 text-center">Name</div>
           <div className="col-span-3 text-center">Product</div>
           <div className="col-span-2 text-center">Status</div>
@@ -247,7 +248,7 @@ export default function GuestCode() {
           {filtered.map((u, index) => (
             <div
               key={u.id}
-              className="grid grid-cols-12 items-stretch gap-4 mb-4"
+              className="grid grid-cols-12 items-stretch gap-1 sm:gap-4 mb-1 sm:mb-4"
             >
               <div className="col-span-2">
                 <div className="h-full justify-center px-5 py-4.5 bg-white text-sm shadow-lg rounded-l-[8px] truncate flex items-center">
@@ -343,6 +344,7 @@ export default function GuestCode() {
           )}
         </div>
       </section>
+</div>
       <Modal open={open} onClose={() => setOpen(false)} className="p-0">
         <AddGuestModal
           open={open}

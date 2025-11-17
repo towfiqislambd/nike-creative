@@ -68,9 +68,9 @@ const page = () => {
     <section className="text-primary-text w-full relative">
       {/* header */}
       <header className="bg-[#E4E3E0] p-2 md:p-6 rounded-2xl md:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-[425px]:flex-col items-center justify-end gap-4 mb-5 pb-5 border-[#555]/50 border-b">
-          <div className="flex items-center gap-5 w-full justify-end">
-            <div className="flex justify-center gap-3 md:gap-5 xl:gap-7">
+        <nav className="flex items-center justify-end gap-4 mb-5 pb-5 border-[#555]/50 border-b">
+          <div className="flex max-sm:flex-col items-center gap-5 w-full justify-end">
+            <div className="flex flex-wrap justify-center gap-3 md:gap-5 xl:gap-7">
               {navItems?.map(({ label, link }, idx) => (
                 <Link
                   key={idx}
@@ -106,11 +106,10 @@ const page = () => {
           </h2>
         </div>
       </header>
-      <div>
-        <div className="flex flex-col md:flex-row gap-8 mt-7">
+        <div className="flex flex-col md:flex-row gap-4 xl:gap-8 mt-7">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="bg-white rounded-[20px] shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] p-6 w-full max-w-[496px] space-y-6"
+            className="bg-white flex-1 h-fit rounded-[20px] shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] p-3 sm:p-6 w-full max-w-[496px] space-y-6"
           >
             <h2 className="card_title">Catalog Change</h2>
 
@@ -201,7 +200,7 @@ const page = () => {
             </div>
           </form>
           {/* Catalog Category */}
-          <div className="bg-white max-w-[624px] rounded-2xl shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] p-7 flex-1">
+          <div className="bg-white max-w-[624px] rounded-2xl shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] p-3 sm:p-7 flex-1">
             <div className="flex items-center gap-2.5 mb-4">
               <h2 className="card_title">Catalog Category</h2>
               <div className="relative group">
@@ -214,7 +213,7 @@ const page = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-[30px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-[30px]">
               {catalogData.map((catalog) => (
                 <div key={catalog.id} className="flex flex-col items-center">
                   <div className="rounded-[20px] overflow-hidden w-full">
@@ -228,7 +227,7 @@ const page = () => {
                     {catalog.colors.map((color, idx) => (
                       <button
                         key={idx}
-                        className={`size-8 md:size-12 rounded-full border transition-all`}
+                        className={`size-8 xl:size-12 rounded-full border transition-all`}
                         style={{ backgroundColor: color }}
                       />
                     ))}
@@ -238,7 +237,6 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

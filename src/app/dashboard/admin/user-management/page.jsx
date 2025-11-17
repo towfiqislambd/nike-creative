@@ -161,9 +161,9 @@ const page = () => {
     <section className="text-primary-text w-full relative">
       {/* header */}
       <header className="bg-[#E4E3E0] text-[#333] px-2 py-3 sm:p-6 rounded-xl sm:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-sm:flex-col items-center justify-between gap-4 pb-5 border-[#555]/50 border-b">
-          <div className="flex sm:items-center max-sm:flex-col-reverse w-full gap-5">
-            <h1 className="text-lg max-sm:hidden md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+        <nav className="flex max-sm:flex-col items-center justify-between gap-4 md:pb-5 border-[#555]/50 border-b">
+          <div className="flex md:items-center max-md:flex-col-reverse w-full md:gap-5">
+            <h1 className="text-lg max-md:hidden md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
               User Management
             </h1>
             <div className="flex max-w-[474px] w-full sm:gap-5 bg-[#D7D6D7] rounded-[40px] my-4  custom-shadow-xl">
@@ -188,8 +188,8 @@ const page = () => {
                 Roles & Permissions
               </button>
             </div>
-            <div className="flex sm:ml-auto items-center justify-between">
-              <h1 className="text-lg sm:hidden md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+            <div className="flex md:ml-auto items-center justify-between">
+              <h1 className="text-lg md:hidden sm:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
                 User Management
               </h1>
               {/* notification & profile */}
@@ -240,9 +240,9 @@ const page = () => {
         </div>
       </header>
       {userManagementTab === "employee" && (
-        <div className="flex gap-5 mt-[18px]">
+        <div className="flex max-lg:flex-col-reverse gap-5 mt-[18px]">
           <div className="min-w-0 overflow-x-auto px-2">
-            <table className="w-[1058px] text-[#333] border-spacing-y-3 border-separate">
+            <table className="w-[1058px] text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 border-separate">
               <thead className="rounded-lg font-normal text-sm border custom-shadow-xl">
                 <tr className="rounded-lg border">
                   <th className="px-3 py-3 md:py-5">Company & Email</th>
@@ -259,7 +259,7 @@ const page = () => {
                 {employee.map((employee, i) => (
                   <tr
                     key={i}
-                    className={`border rounded-lg custom-shadow-xl ${
+                    className={`border rounded-lg custom-shadow-xl max-sm:text-sm ${
                       disabledEmployeeId.includes(employee.id) && "opacity-50"
                     }`}
                   >
@@ -360,7 +360,7 @@ const page = () => {
           </div>
 
           <div
-            className={`bg-white custom-shadow-xl rounded-lg p-5 transition ease-in-out duration-500 delay-300 space-y-5 w-full max-w-md mt-3`}
+            className={`bg-white custom-shadow-xl rounded-lg p-2.5 sm:p-5 transition ease-in-out duration-500 delay-300 space-y-5 w-full max-w-md mt-3`}
           >
             <div>
               <div className="flex justify-between items-center mb-3">
@@ -382,8 +382,8 @@ const page = () => {
                   </div>
                   <p>{activeEmployee?.status}</p>
                 </div>
-                <div className="mt-2 flex items-center gap-2 flex-wrap">
-                  <p>Permissions:</p>
+                <div className="mt-2 flex items-center sm:gap-2 flex-wrap">
+                  <p>Permissions: </p>
                   {activeEmployee?.permissions.map((permission, idx) => (
                     <div key={idx}>
                       {permission}

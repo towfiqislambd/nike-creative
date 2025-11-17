@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 const AboutMosaic = ({
   eyebrow = "Our Story",
   title = "Let’s Talk About Kutde",
@@ -13,19 +14,18 @@ const AboutMosaic = ({
 }) => {
   return (
     <div className="container">
-      {" "}
-      <section className=" px-4 py-12 sm:px-6 lg:px-8">
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 xl:flex-row">
           <div className="flex-1 flex flex-col gap-6">
             <div className="rounded-[28px] flex flex-col justify-between h-[606px] bg-white/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 backdrop-blur sm:p-8">
-              <div className="">
+              <div>
                 <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
                   {eyebrow}
                 </div>
                 <h2 className="mt-4 text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
                   {title}
                 </h2>
-                <p className="mt-4 max-w-4xl text-base leading-relaxed text-gray-600">
+                <p className="mt-4 max-w-full text-base leading-relaxed text-gray-600">
                   {body}
                 </p>
               </div>
@@ -39,10 +39,12 @@ const AboutMosaic = ({
               </div>
             </div>
 
+            {/* Bottom wide image */}
             <MosaicImg src={imgBottomWide} alt="Bottom wide" ratio="16/6" />
           </div>
 
-          <div className="w-full xl:w-[28%] flex flex-col gap-6">
+          {/* Right mosaic images */}
+          <div className="w-full flex flex-col gap-6 xl:w-[28%]">
             <MosaicImg src={imgTopRight} alt="Top right" />
             <MosaicImg src={imgMidRight} alt="Middle right" />
             <MosaicImg src={imgBottomRight} alt="Bottom right" />
