@@ -275,31 +275,34 @@ const page = () => {
       </div>
 
       {/* Menu */}
-      <div className="sticky bottom-0 right-0 flex gap-3 items-center justify-end">
-        <div
-          className={`grow flex items-center bg-accent-off-white rounded-full duration-300 transition-transform ${
-            open ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          {menus?.map((menu) => (
-            <button
-              key={menu}
-              onClick={() => setActiveMenu(menu)}
-              className={`px-5 py-3 rounded-full cursor-pointer text-sm border-r-2 border-gray-400 ${
-                activeMenu === menu && "bg-light-green text-white"
-              }`}
-            >
-              {menu}
-            </button>
-          ))}
+      <div className="w-full">
+        <div className="fixed max-lg:bottom-2 lg:bottom-5 right-2 flex gap-3 items-center justify-end">
+          <button
+            onClick={() => setOpen(!open)}
+            className="shrink-0 size-16 grid place-items-center rounded-full bg-white shadow-xl border border-gray-100"
+          >
+            <MenuSvg />
+          </button>
         </div>
-
-        <button
-          onClick={() => setOpen(!open)}
-          className="shrink-0 size-16 grid place-items-center rounded-full bg-white shadow-xl border border-gray-100"
-        >
-          <MenuSvg />
-        </button>
+        {open && (
+          <div
+            className={`grow fixed z-[999] max-lg:top-0 lg:!bottom-2.5 max-lg:left-0 lg:!right-20 flex h-[70px] max-lg:h-screen w-[80vw] max-lg:w-[200px] max-lg:p-4 max-lg:gap-2 max-lg:flex-col lg:items-center bg-accent-off-white lg:rounded-full duration-300 transition-transform ${
+              open ? "opacity-100" : "opacity-100"
+            }`}
+          >
+            {menus?.map((menu) => (
+              <button
+                key={menu}
+                onClick={() => setActiveMenu(menu)}
+                className={`px-5 py-3 max-lg:border rounded-full cursor-pointer text-sm border-r-2 border-gray-400 ${
+                  activeMenu === menu && "bg-light-green text-white"
+                }`}
+              >
+                {menu}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* pop up modals */}

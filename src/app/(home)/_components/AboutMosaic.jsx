@@ -17,7 +17,7 @@ const AboutMosaic = ({
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 xl:flex-row">
           <div className="flex-1 flex flex-col gap-6">
-            <div className="rounded-[28px] flex flex-col justify-between h-[606px] bg-white/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 backdrop-blur sm:p-8">
+            <div className="rounded-[28px] flex flex-col justify-between overflow-y-auto h-[606px] bg-white/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.12)] ring-1 ring-black/5 backdrop-blur sm:p-8">
               <div>
                 <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
                   {eyebrow}
@@ -25,7 +25,7 @@ const AboutMosaic = ({
                 <h2 className="mt-4 text-3xl font-semibold leading-tight text-gray-900 sm:text-4xl">
                   {title}
                 </h2>
-                <p className="mt-4 max-w-full text-base leading-relaxed text-gray-600">
+                <p className="mt-4 max-w-full text-base leading-relaxed text-gray-600 ">
                   {body}
                 </p>
               </div>
