@@ -3,12 +3,12 @@ import Image from "next/image";
 const DoorDesignSection = () => {
   return (
     <section className="pt-50 pb-16">
-      {/*  */}
-      <div className="container flex gap-10">
-        <div className="w-3/4 flex flex-col gap-8">
-          <div className="flex flex-col lg:flex-row items-start gap-10 bg-white rounded-3xl shadow-sm  pl-10 pt-10 pr-10">
+      <div className="container flex flex-col xl:flex-row gap-10">
+        {/* Left Side */}
+        <div className="w-full xl:w-3/4 flex flex-col gap-8">
+          <div className="flex flex-col lg:flex-row items-start gap-10 bg-white rounded-3xl shadow-sm pl-6 md:pl-10 pt-6 md:pt-10 pr-6 md:pr-10">
             <div className="w-full">
-              <p className="text-[#5A5C5F] text-[12px] font-medium leading-[150%]mb-2">
+              <p className="text-[#5A5C5F] text-[12px] font-medium leading-[150%] mb-2">
                 Single Door
               </p>
               <h2 className="section_title mb-4">
@@ -22,22 +22,22 @@ const DoorDesignSection = () => {
               </p>
             </div>
 
-            <div className=" w-full  ">
+            <div className="w-full">
               <Image
                 src="https://i.ibb.co.com/23t67gbd/Untitled-design-6-2.png"
                 alt="Single Door"
                 width={500}
                 height={500}
                 unoptimized
-                className=" object-cover w-full h-auto"
+                className="object-cover w-full h-auto"
               />
             </div>
           </div>
 
-          <div className="flex gap-8 w-full">
-            <div className="bg-white p-10 rounded-3xl shadow-sm w-1/3">
+          <div className="flex flex-col lg:flex-row gap-8 w-full">
+            <div className="bg-white p-6 md:p-10 rounded-3xl shadow-sm w-full lg:w-1/3">
               <h4 className="section_subTitle mb-4">All Door Design</h4>
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-wrap">
                 {[1, 2].map((i) => (
                   <div
                     key={i}
@@ -56,7 +56,7 @@ const DoorDesignSection = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl gap-8 pl-8 pt-8 shadow-sm flex  w-2/3">
+            <div className="bg-white rounded-3xl gap-8 pl-6 md:pl-8 pt-6 md:pt-8 shadow-sm flex flex-col lg:flex-row w-full lg:w-2/3">
               <div className="w-full">
                 <h3 className="section_subTitle mb-2">Double Door Design</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -78,10 +78,11 @@ const DoorDesignSection = () => {
           </div>
         </div>
 
-        <div className="w-1/4 flex flex-col gap-6">
+        {/* Right Side */}
+        <div className="w-full xl:w-1/4 flex flex-col gap-6 mt-6 xl:mt-0">
           <div className="bg-white p-6 rounded-3xl shadow-sm">
-            <h4 className="section_subTitle mb-4 ">All Door Design</h4>
-            <div className="flex gap-3">
+            <h4 className="section_subTitle mb-4">All Door Design</h4>
+            <div className="flex gap-3 flex-wrap">
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
@@ -100,7 +101,7 @@ const DoorDesignSection = () => {
             </div>
           </div>
 
-          <div className="bg-white flex pl-6 pt-3 pr-6 rounded-3xl shadow-sm">
+          <div className="bg-white flex flex-col sm:flex-row pl-6 pt-3 pr-6 rounded-3xl shadow-sm gap-4">
             <div className="w-full xl:w-4/6">
               <h4 className="section_subTitle mb-2">
                 Custom Single Door Design
@@ -120,7 +121,8 @@ const DoorDesignSection = () => {
               />
             </div>
           </div>
-          <div className="bg-white flex pl-6 pt-3 pr-6 rounded-3xl shadow-sm">
+
+          <div className="bg-white flex flex-col sm:flex-row pl-6 pt-3 pr-6 rounded-3xl shadow-sm gap-4">
             <div className="w-full xl:w-4/6">
               <h4 className="section_subTitle mb-2">See All Catalog</h4>
               <p className="text-gray-600 text-sm mb-4">
@@ -141,9 +143,8 @@ const DoorDesignSection = () => {
 
           <div className="bg-white p-6 rounded-3xl shadow-sm">
             <h4 className="section_subTitle mb-2">See All Catalog</h4>
-
-            <div className="flex">
-              <p className="text-gray-600 text-sm mb-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <p className="text-gray-600 text-sm mb-4 sm:mb-0">
                 Choose your door design from our catalogs.
               </p>
               <Image
@@ -158,7 +159,6 @@ const DoorDesignSection = () => {
           </div>
         </div>
       </div>
-      {/*  */}
     </section>
   );
 };
