@@ -594,9 +594,8 @@ export const SmallOrderSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="70"
-      height="35"
       viewBox="0 0 70 35"
+      className="w-[60px] h-[30px]"
       fill="none"
     >
       <g clipPath="url(#clip0_22860_2667)">

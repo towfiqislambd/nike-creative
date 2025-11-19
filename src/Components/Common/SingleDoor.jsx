@@ -27,10 +27,10 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
   return (
     <>
       <div
-        onClick={() => setOpenPreviewModal(true)}
         className="rounded-xl bg-white border border-gray-100 shadow-lg duration-400 transition-all hover:scale-[1.03] hover:shadow-2xl cursor-pointer"
+        onClick={() => setOpenPreviewModal(true)}
       >
-        <figure className="h-[200px] w-full relative">
+        <figure className="h-[170px] w-full relative">
           <Image
             src={item?.img}
             alt="door"
@@ -66,13 +66,13 @@ const SingleDoor = ({ item, setAr, setImageFile }) => {
           </button>
         </figure>
 
-        <div className="p-2.5 flex gap-3 items-center justify-between">
+        <div className="p-2.5 flex gap-2 items-center justify-between">
           <div>
             <h3 className="text-primary-text font-semibold">{item?.name}</h3>
             <div className="flex gap-3 items-center">
               <p className="text-[#333] font-medium text-sm">Color:</p>
 
-              <div className="flex gap-1 items-center">
+              <div className="flex gap-0.5 items-center">
                 {colors?.map(color => (
                   <button
                     key={color?.id}

@@ -26,7 +26,7 @@ const DashboardSidebar = ({ role, open, setOpen, dashboardNavLinks }) => {
       </figure>
 
       {/* Nav Links */}
-      <div className="space-y-3 md:space-y-5">
+      <div className="space-y-3 md:space-y-4">
         {dashboardNavLinks?.map(link => {
           const isActive = pathname === link?.path;
 
@@ -37,7 +37,7 @@ const DashboardSidebar = ({ role, open, setOpen, dashboardNavLinks }) => {
                   link?.subItems ? toggleDropdown(link.id) : null;
                   setOpen(false);
                 }}
-                className={`w-full flex items-center justify-between p-2.5 md:p-3.5 rounded-lg hover:scale-105 duration-500 transition-transform cursor-pointer text-sm md:text-base ${
+                className={`w-full flex items-center justify-between p-2.5 rounded-lg hover:scale-105 duration-500 transition-transform cursor-pointer text-sm md:text-[15px] ${
                   isActive
                     ? `${
                         role === "b2b"
