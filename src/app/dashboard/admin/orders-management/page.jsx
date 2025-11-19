@@ -28,6 +28,7 @@ import TechnicalFileModal from "../_components/orders-management/TechnicalFileMo
 import ServiceRequest from "../_components/orders-management/service-request/ServiceRequest";
 import Image from "next/image";
 const menus = [
+  "Dashboard",
   "Received",
   "Ready-to-cut",
   "Ready-to-paint",
@@ -286,15 +287,13 @@ const page = () => {
         </div>
         {open && (
           <div
-            className={`grow fixed z-[999] max-lg:top-0 lg:!bottom-2.5 max-lg:left-0 lg:!right-20 flex h-[70px] max-lg:h-screen w-[80vw] max-lg:w-[200px] max-lg:p-4 max-lg:gap-2 max-lg:flex-col lg:items-center bg-accent-off-white lg:rounded-full duration-300 transition-transform ${
-              open ? "opacity-100" : "opacity-100"
-            }`}
+            className={`grow fixed z-[999] max-lg:top-0 lg:!bottom-2.5 max-lg:left-0 lg:!right-20 flex lg:h-[70px] h-screen w-fit max-lg:w-[200px] max-lg:gap-2 max-lg:p-5 max-lg:flex-col lg:items-center bg-accent-off-white lg:rounded-full duration-300 transition-transform`}
           >
             {menus?.map((menu) => (
               <button
                 key={menu}
                 onClick={() => setActiveMenu(menu)}
-                className={`px-5 py-3 max-lg:border rounded-full cursor-pointer text-sm border-r-2 border-gray-400 ${
+                className={`px-5 py-3 lg:h-full max-lg:border rounded-full cursor-pointer text-sm border-r-2 border-gray-400 ${
                   activeMenu === menu && "bg-light-green text-white"
                 }`}
               >

@@ -98,15 +98,15 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] p-2 md:p-6 rounded-2xl md:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-[425px]:flex-col items-center justify-end gap-4 mb-5 pb-5 border-[#555]/50 border-b">
+      <header className="bg-[#E4E3E0] p-2 md:p-3 rounded-2xl md:rounded-[20px] border-l-2 border-[#bbb] custom-shadow-xl">
+        <nav className="flex max-[425px]:flex-col items-center justify-end gap-4 pb-2 border-[#555]/50 border-b">
           <div className="flex items-center gap-5 w-full justify-end">
-            <div className="flex justify-center gap-3 md:gap-5 xl:gap-7">
+            <div className="flex justify-center gap-3 md:gap-5">
               {navItems?.map(({ label, link }, idx) => (
                 <Link
                   key={idx}
                   href={link}
-                  className="text-sm md:text-base 2xl:text-xl text-[#333] hover:text-[#21BBA2] transition"
+                  className="text-sm md:text-base text-[#333] hover:text-[#21BBA2] transition"
                 >
                   {label}
                 </Link>
@@ -114,25 +114,25 @@ const page = () => {
             </div>
 
             <div className="flex items-center gap-5">
-              <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-11 flex items-center justify-center cursor-pointer">
+              <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-9 p-2 flex items-center justify-center cursor-pointer">
                 <Cart />
               </button>
               <div className="relative shrink-0 cursor-pointer">
                 <Image
                   src={profilePicture}
-                  width={48}
-                  height={48}
+                  width={42}
+                  height={42}
                   alt=""
                   className="rounded-full"
                 />
-                <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+                <div className="size-3.5 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
               </div>
             </div>
           </div>
         </nav>
 
-        <div className="mt-5 flex items-center justify-between">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium">
+        <div className="mt-2 flex items-center justify-between">
+          <h2 className="text-lg md:text-xl xl:text-2xl font-medium">
             Notification system
           </h2>
           <button
@@ -140,11 +140,11 @@ const page = () => {
             className="flex flex-col items-center hover:text-primary-text/80"
           >
             <PlusSignCircle />
-            <p className="text-base md:text-xl">Add Recipient</p>
+            <p className="max-sm:text-sm">Add Recipient</p>
           </button>
         </div>
       </header>
-      <div className="p-4 md:px-[30px] md:py-5 rounded-xl md:rounded-[40px] bg-white max-w-fit mt-5 pb-5 md:pb-10 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
+      <div className="p-4 md:px-5 ounded-xl md:rounded-[20px] bg-white max-w-fit mt-5 pb-5 md:pb-10 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
           <h3 className="card_title">Manage Notification Recipients</h3>
           <p className="text-sub-text xl:text-lg 2xl:text-xl">
             Add or edit recipients to control who receives notifications.
