@@ -31,13 +31,16 @@ button {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 @layer components {
   .inputCls {
     @apply w-full rounded-[8px] border border-[#CFCFCF] bg-white text-[#5A5C5F] font-normal leading-[150%] outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10;
@@ -119,14 +122,14 @@ button {
   @apply border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 max-sm:text-sm text-base xl:text-xl;
 }
 
-.card_label{
+.card_label {
   @apply block text-base xl:text-xl;
 }
 
-.card_btn{
+.card_btn {
   @apply bg-[#21BBA2] border border-[#21BBA2] text-white max-sm:text-sm px-4 md:px-8 py-2.5 md:py-4 rounded-lg;
 }
 
-.card_btn_outline{
+.card_btn_outline {
   @apply bg-white border border-[#21BBA2] text-[#21BBA2] max-sm:text-sm px-4 md:px-8 py-2.5 md:py-4 rounded-lg;
 }

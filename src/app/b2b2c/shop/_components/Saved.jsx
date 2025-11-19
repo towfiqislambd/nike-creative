@@ -15,9 +15,9 @@ const Saved = () => {
     <section className="p-6 rounded-lg shadow-lg bg-white">
       <h2 className="text-xl font-medium text-primary-text mb-4">Saved</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 2xl:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
         {data?.map(item => (
-          <figure className="rounded-2xl relative h-[200px] xl:h-[250px] 2xl:h-[350px] shadow-lg  overflow-hidden group">
+          <figure className="rounded-2xl relative h-[200px] xl:h-[250px] shadow-lg overflow-hidden group">
             <Image
               src={item?.img}
               alt="door_img"
