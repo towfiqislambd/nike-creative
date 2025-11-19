@@ -9,6 +9,7 @@ import {
 } from "../../../Components/Svg/SvgContainer";
 import Favorites from "./_components/Favorites";
 import Saved from "./_components/Saved";
+import DraftOrders from "./_components/DraftOrders";
 import CreateAiDesign from "./_components/CreateAiDesign";
 import Image from "next/image";
 import doorPreview from "../../../Assets/door_preview_img.jpg";
@@ -80,6 +81,27 @@ const page = () => {
                   className="text-sm text-primary-text font-medium"
                 >
                   Saved
+                </label>
+              </button>
+
+              {/* Draft */}
+              <button
+                onClick={() => setActiveTab("draft")}
+                className="flex gap-2 items-center"
+              >
+                <input
+                  id="draft"
+                  type="radio"
+                  className="size-4"
+                  name="filter"
+                  checked={activeTab === "draft"}
+                  readOnly
+                />
+                <label
+                  htmlFor="draft"
+                  className="text-sm text-primary-text font-medium"
+                >
+                  Draft Orders
                 </label>
               </button>
 
@@ -314,6 +336,7 @@ const page = () => {
               <Favorites setAr={setAr} setImageFile={setImageFile} />
             )}
             {activeTab === "saved" && <Saved />}
+            {activeTab === "draft" && <DraftOrders />}
             {activeTab === "ai_design" && <CreateAiDesign />}
           </section>
         </main>

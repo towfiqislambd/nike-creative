@@ -24,7 +24,7 @@ const FinallockSecionB2b = () => {
           setValue(field, color, { shouldDirty: true });
           setSelected((prev) => ({ ...prev, [field]: color }));
         }}
-        className={`h-18 w-18 rounded-full shadow-md cursor-pointer transition-all ${
+        className={`h-12 w-12 rounded-full shadow-md cursor-pointer transition-all ${
           isSelected
             ? "ring-2 ring-[#21BBA2]"
             : "hover:ring-2 hover:ring-gray-300"
@@ -37,7 +37,7 @@ const FinallockSecionB2b = () => {
 
   return (
     <div className="container">
-      <section className="p-6 md:p-0 flex flex-col xl:flex-row gap-6 my-10 w-full xl:w-[80%] mx-auto">
+      <section className="p-6 md:p-0 flex flex-col xl:flex-row gap-6 my-10 w-full">
         {/* Left Section */}
         <div className="flex-1 bg-white p-6 rounded-3xl shadow-md">
           <h2 className="text-2xl font-semibold text-gray-900">

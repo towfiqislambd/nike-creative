@@ -26,7 +26,7 @@ export default function FinalLookSection() {
           setValue(field, color, { shouldDirty: true });
           setSelected(prev => ({ ...prev, [field]: color }));
         }}
-        className={`size-6 sm:size-10 2xl:size-16 rounded-full shadow-md cursor-pointer transition-all ${
+        className={`size-6 sm:size-6 2xl:size-10 rounded-full shadow-md cursor-pointer transition-all ${
           isSelected
             ? "ring-2 ring-[#21BBA2]"
             : "hover:ring-2 hover:ring-gray-300"

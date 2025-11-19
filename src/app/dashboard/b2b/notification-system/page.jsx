@@ -98,8 +98,8 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] p-2 md:p-3 rounded-2xl md:rounded-[20px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-[425px]:flex-col items-center justify-end gap-4 pb-2 border-[#555]/50 border-b">
+      <header className="bg-[#E4E3E0] p-3 rounded-2xl md:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
+        <nav className="flex max-[425px] flex-col items-center justify-end gap-4 mb-2 pb-5 border-[#555]/50 border-b">
           <div className="flex items-center gap-5 w-full justify-end">
             <div className="flex justify-center gap-3 md:gap-5">
               {navItems?.map(({ label, link }, idx) => (
@@ -114,25 +114,25 @@ const page = () => {
             </div>
 
             <div className="flex items-center gap-5">
-              <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-9 p-2 flex items-center justify-center cursor-pointer">
+              <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-8 flex items-center justify-center cursor-pointer">
                 <Cart />
               </button>
               <div className="relative shrink-0 cursor-pointer">
                 <Image
                   src={profilePicture}
-                  width={42}
-                  height={42}
+                  width={30}
+                  height={30}
                   alt=""
                   className="rounded-full"
                 />
-                <div className="size-3.5 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+                <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
               </div>
             </div>
           </div>
         </nav>
 
-        <div className="mt-2 flex items-center justify-between">
-          <h2 className="text-lg md:text-xl xl:text-2xl font-medium">
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg md:text-xl xl:text-xl font-medium">
             Notification system
           </h2>
           <button
@@ -140,26 +140,26 @@ const page = () => {
             className="flex flex-col items-center hover:text-primary-text/80"
           >
             <PlusSignCircle />
-            <p className="max-sm:text-sm">Add Recipient</p>
+            <p className="text-base md:text-lg">Add Recipient</p>
           </button>
         </div>
       </header>
-      <div className="p-4 md:px-5 ounded-xl md:rounded-[20px] bg-white max-w-fit mt-5 pb-5 md:pb-10 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
+      <div className="p-4 md:px-[30px] md:py-3 rounded-xl md:rounded-[40px] bg-white max-w-[60%] mt-5 pb-5 md:pb-10 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
           <h3 className="card_title">Manage Notification Recipients</h3>
           <p className="text-sub-text xl:text-lg 2xl:text-xl">
             Add or edit recipients to control who receives notifications.
           </p>
           <hr className="my-5 text-[#55555580]" />
           <div className="w-full overflow-x-auto px-1">
-            <table className="border-spacing-y-1.5 sm:border-spacing-y-2.5 border-separate w-[820px]">
+            <table className="border-spacing-y-1.5 sm:border-spacing-y-2.5 border-separate w-full">
               <thead className="rounded-lg custom-shadow-xl">
                 <tr className="rounded-lg border bg-white border-[#E6E8E5]">
-                  <th className="px-3 py-3 md:py-5 font-medium rounded-tl-lg">
+                  <th className="px-3 py-1.5 md:py-3 font-medium rounded-tl-lg">
                     Enable
                   </th>
-                  <th className="px-3 py-3 md:py-5 font-medium">Name</th>
-                  <th className="px-3 py-3 md:py-5 font-medium">Email</th>
-                  <th className="px-3 py-3 md:py-5 font-medium rounded-tr-lg">
+                  <th className="px-3 py-1.5 md:py-3 font-medium">Name</th>
+                  <th className="px-3 py-1.5 md:py-3 font-medium">Email</th>
+                  <th className="px-3 py-1.5 md:py-3 font-medium rounded-tr-lg">
                     Actions
                   </th>
                 </tr>
@@ -168,9 +168,9 @@ const page = () => {
                 {recipients.map((r, i) => (
                   <tr
                     key={i}
-                    className="border border-[#E6E8E5] custom-shadow-xl bg-white xl:text-lg 2xl:text-xl"
+                    className="border border-[#E6E8E5] custom-shadow-xl bg-white text-sm md:text-base"
                   >
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-1.5 md:py-3 text-center text-sm">
                       <label className="inline-flex items-center cursor-pointer">
                         <input
                           type="checkbox"
@@ -191,11 +191,11 @@ const page = () => {
                         </div>
                       </label>
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-1.5 md:py-3 text-center">
                       {r.name || "-"}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">{r.email}</td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-1.5 md:py-3 text-center">{r.email}</td>
+                    <td className="px-3 py-1.5 md:py-3 text-center">
                       <div className="flex items-center justify-center gap-2.5">
                         <button onClick={() => handleEdit(i)}>
                           <EditPen />

@@ -144,7 +144,7 @@ const DoorDesignSection = () => {
           <div className="bg-white p-6 rounded-3xl shadow-sm">
             <h4 className="section_subTitle mb-2">See All Catalog</h4>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <p className="text-gray-600 text-sm mb-4 sm:mb-0">
+              <p className="text-gray-600 text-xs mb-4 sm:mb-0">
                 Choose your door design from our catalogs.
               </p>
               <Image
