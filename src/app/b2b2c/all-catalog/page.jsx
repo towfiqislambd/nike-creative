@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import bgLayer from "../../../Assets/Home-No-Login.png";
 import { catalogueData } from "../../../Components/Data/data";
 import Container from "../../../Components/Common/Container";
 import {
@@ -90,7 +89,7 @@ const Page = () => {
         </div>
 
         {/* Lower Part */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-4">
           {catalogueData.map(item => (
             <div
               key={item.id}

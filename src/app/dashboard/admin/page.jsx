@@ -32,10 +32,10 @@ const data2 = [
 const page = () => {
   return (
     <>
-      <header className="bg-[#E4E3E0] text-[#333] p-4 lg:p-6 rounded-xl lg:rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+      <header className="bg-[#E4E3E0] text-[#333] p-4 rounded-xl lg:rounded-[40px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
         {/* Upper part */}
-        <nav className="flex items-center justify-between gap-4 mb-3 lg:mb-5 pb-2 lg:pb-5 border-[#555]/50 border-b">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+        <nav className="flex items-center justify-between gap-4 mb-3 lg:mb-5 pb-2 lg:pb-3 border-[#555]/50 border-b">
+          <h2 className="text-lg md:text-xl xl:text-2xl font-medium text-[#333]">
             Dashboard
           </h2>
 
@@ -66,7 +66,7 @@ const page = () => {
         {/* Lower part */}
         <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-12">
           <div>
-            <h3 className="text-primary-text md:text-lg lg:text-xl mb-2 lg:mb-3">
+            <h3 className="text-primary-text md:text-lg mb-2">
               Product Category
             </h3>
             <div className="flex flex-wrap gap-3 md:gap-7 items-center">
@@ -97,7 +97,7 @@ const page = () => {
           </div>
 
           <div>
-            <h3 className="text-primary-text md:text-lg lg:text-xl mb-2 lg:mb-3">
+            <h3 className="text-primary-text md:text-lg mb-2">
               Product Category
             </h3>
             <select className="px-3 py-2 rounded-lg border border-primary-text">
@@ -108,9 +108,7 @@ const page = () => {
           </div>
 
           <div>
-            <h3 className="text-primary-text md:text-lg lg:text-xl mb-2 lg:mb-3">
-              Compare
-            </h3>
+            <h3 className="text-primary-text md:text-lg mb-2">Compare</h3>
             <p className="px-3 py-2 rounded-lg border border-primary-text  w-fit">
               <input type="date" className="border-none outline-none" />
             </p>

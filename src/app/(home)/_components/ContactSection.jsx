@@ -18,7 +18,7 @@ export default function ContactSection() {
 
   return (
     <div className="container">
-      <section className="py-25 relative">
+      <section className="py-16 relative">
         <div
           className="absolute inset-0 bg-cover bg-center -z-10"
           style={{
@@ -37,7 +37,7 @@ export default function ContactSection() {
                   <div className="space-y-4">
                     <div>
                       <label
-                        className="block text-xl text-primary-text"
+                        className="block text-lg text-primary-text"
                         htmlFor="name"
                       >
                         Name
@@ -57,7 +57,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <label
-                        className="block text-xl text-primary-text"
+                        className="block text-lg text-primary-text"
                         htmlFor="email"
                       >
                         Email Address
@@ -84,7 +84,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <label
-                        className="block text-xl text-primary-text"
+                        className="block text-lg text-primary-text"
                         htmlFor="phone"
                       >
                         Phone Number
@@ -106,7 +106,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <label
-                        className="block text-xl text-primary-text"
+                        className="block text-lg text-primary-text"
                         htmlFor="message"
                       >
                         Message
@@ -169,14 +169,14 @@ export default function ContactSection() {
           {/* Right / Info Section */}
           <div className="w-full xl:w-1/4 flex flex-col gap-6 mt-6 xl:mt-0">
             {/* Open Hours */}
-            <div className="bg-white p-6 rounded-3xl shadow-sm flex flex-col justify-center items-center h-[320px]">
+            <div className="bg-white p-4 rounded-3xl shadow-sm flex flex-col justify-center items-center h-[320px]">
               <Image
                 src="https://i.ibb.co.com/C3vnT2rH/Frame-3.png"
                 alt="Open Hours"
                 width={500}
                 height={300}
                 unoptimized
-                className="object-cover h-24 w-24 mb-6"
+                className="object-cover h-20 w-20 mb-6"
               />
               <h3 className="section_subTitle mb-4">We’re Open</h3>
               <p className="section_description text-center">
@@ -185,14 +185,14 @@ export default function ContactSection() {
             </div>
 
             {/* Phone Number */}
-            <div className="bg-white p-6 rounded-3xl shadow-sm flex flex-col justify-center items-center h-[320px]">
+            <div className="bg-white p-4 rounded-3xl shadow-sm flex flex-col justify-center items-center h-[320px]">
               <Image
                 src="https://i.ibb.co.com/mCNTD9dR/Frame-2.png"
                 alt="Phone"
                 width={500}
                 height={300}
                 unoptimized
-                className="object-cover h-24 w-24 mb-6"
+                className="object-cover h-20 w-20 mb-6"
               />
               <h3 className="section_subTitle mb-4">Phone Number</h3>
               <p className="section_description text-center">
@@ -202,14 +202,14 @@ export default function ContactSection() {
             </div>
 
             {/* Email */}
-            <div className="bg-white p-6 rounded-3xl shadow-sm flex flex-col justify-center items-center h-[320px]">
+            <div className="bg-white p-4 rounded-3xl shadow-sm flex flex-col justify-center items-center h-[320px]">
               <Image
                 src="https://i.ibb.co.com/b5VnNJkS/Frame-1.png"
                 alt="Email"
                 width={500}
                 height={300}
                 unoptimized
-                className="object-cover h-24 w-24 mb-6"
+                className="object-cover h-20 w-20 mb-6"
               />
               <h3 className="section_subTitle mb-4">Email Address</h3>
               <p className="section_description text-center">

@@ -12,8 +12,8 @@ export default function B2BNavbar() {
 
   const links = [
     { label: "Home", href: "/b2b" },
-    { label: "Shop", href: "/shop" },
-    { label: "Category", href: "/category" },
+    { label: "Shop", href: "/b2b/shop" },
+    { label: "Category", href: "/" },
     { label: "Contact Us", href: "/contact" },
     { label: "About Us", href: "/about" },
   ];
@@ -23,7 +23,7 @@ export default function B2BNavbar() {
   const active =
     "text-teal-500 after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-teal-500 after:rounded-full";
   const hover = "hover:text-teal-500";
-  const isActive = (href) => (pathname === href ? active : hover);
+  const isActive = href => (pathname === href ? active : hover);
 
   return (
     <header className="sticky top-5 mt-6 left-0 w-full z-50">
@@ -42,7 +42,7 @@ export default function B2BNavbar() {
 
           {/* Center Section: Links */}
           <ul className="hidden lg:flex items-center gap-10">
-            {links.map((l) => (
+            {links.map(l => (
               <li key={l.href}>
                 <Link
                   href={l.href}
@@ -119,7 +119,7 @@ export default function B2BNavbar() {
         </div>
 
         <ul className="p-5 flex flex-col gap-3">
-          {links.map((l) => (
+          {links.map(l => (
             <li key={l.href}>
               <Link
                 href={l.href}
