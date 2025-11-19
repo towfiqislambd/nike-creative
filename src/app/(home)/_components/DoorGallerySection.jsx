@@ -54,7 +54,7 @@ export default function DoorGallerySection() {
   };
 
   return (
-    <section className="2xl:py-25">
+    <section className="2xl:py-16">
       <Container>
         <div className="text-center mb-8 2xl:mb-12">
           <h2 className="section_title">The Art of the Doorway</h2>
@@ -73,7 +73,7 @@ export default function DoorGallerySection() {
                 key={door.id}
                 className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300"
               >
-                <div className="w-full h-56 2xl:h-70 overflow-hidden relative">
+                <div className="w-full h-30 2xl:h-45 overflow-hidden relative">
                   <Image
                     src={currentImage}
                     alt={door.code}
