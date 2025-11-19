@@ -178,12 +178,12 @@ export default function AccountPage() {
   const updateDisabled = availEnabled && !chWhatsApp && !chPhone;
 
   return (
-    <div className="min-h-screen bg-neutral-50 py-8 px-4 md:px-6">
+    <div className="">
       <div className="mb-6">
         <div className="rounded-[28px] bg-[#E0DDD7] px-4 py-4 shadow-sm relative">
           <div className="flex flex-col gap-4 md:flex-row md:items-end justify-end">
             <div className="flex items-center gap-5">
-              <ul className="hidden md:flex items-end gap-8 text-[16px] text-gray-800">
+              <ul className="hidden md:flex items-end gap-8 text-[14px] text-gray-800">
                 <li className="cursor-pointer hover:text-[#21BBA2] transition-colors">
                   Home
                 </li>
@@ -218,7 +218,7 @@ export default function AccountPage() {
           <div className="mt-3 h-px w-full bg-black/15" />
 
           <div className="mt-3 flex items-center justify-between">
-            <h1 className="text-[28px] font-semibold text-[#333]">
+            <h1 className="text-[22px] font-semibold text-[#333]">
               Account Details
             </h1>
           </div>
