@@ -74,7 +74,7 @@ const b2bSidebarLinks = [
   },
   {
     id: 7,
-    label: "Guest Code",
+    label: "Guest Access Managment",
     icon: <B7Svg />,
     path: "/dashboard/b2b/guest-code",
   },
@@ -330,7 +330,7 @@ const managerSidebarLinks = [
 ];
 
 export default function DashboardLayout({ children }) {
-  const user = { role: "admin" };
+  const user = { role: "b2b" };
   const [open, setOpen] = useState(false);
 
   return (

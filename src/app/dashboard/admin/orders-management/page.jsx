@@ -48,7 +48,7 @@ const page = () => {
   const [technicalFilesOpen, setTechnicalFilesOpen] = useState(false);
   const [serviceRequestModal, setServiceRequestModal] = useState(false);
 
-  // demo data for customer notes
+
   const [notes, setNotes] = useState([
     {
       text: "Please install the window stickers on the sliding glass doors only, avoid the porch door.",
