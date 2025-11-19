@@ -94,34 +94,34 @@ const page = () => {
           <Image src={wavingHand} width={36} height={36} alt="" />
         </h1>
         <div className="relative">
-          <Image src={profilePicture} width={48} height={48} alt="" className="rounded-full"/>
-          <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+          <Image src={profilePicture} width={42} height={42} alt="" className="rounded-full"/>
+          <div className="size-3.5 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
         </div>
       </header>
       {/* order cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-5 mt-5 md:mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-3 mt-4">
         {orderCardData?.map(({ icon, totalCount, subTitle }, idx) => (
           <div
             key={idx}
-            className="flex items-center text-primary-text gap-3 px-3 md:px-6 py-4 md:py-7 bg-white rounded-[20px] custom-shadow-xl"
+            className="flex items-center text-primary-text gap-3 px-3 md:px-4 py-2.5 bg-white rounded-[20px] custom-shadow-xl"
           >
-            <div className="flex p-2.5 sm:p-5 justify-center items-center bg-[#f8fcfe] rounded-[13.5px] custom-shadow-xl">
+            <div className="flex p-2.5 sm:p-3 justify-center items-center bg-[#f8fcfe] rounded-[13.5px] custom-shadow-xl">
               {icon}
             </div>
             <div className="flex flex-col gap-1">
-              <h2 className="text-xl font-medium">{totalCount}</h2>
-              <h3 className="max-sm:text-sm">{subTitle}</h3>
+              <h2 className="text-lg font-medium">{totalCount}</h2>
+              <h3 className="text-sm">{subTitle}</h3>
             </div>
           </div>
         ))}
       </div>
       {/* notification table */}
-      <div className="w-full mt-5 md:mt-8 inline-flex flex-col justify-end items-start px-3 md:px-5 lg:px-[30px] py-8 gap-[10px] rounded-[20px] border border-white bg-white custom-shadow-xl">
-        <div className="flex items-center gap-3 md:gap-8">
-          <label className="text-lg md:text-xl lg:text-[26px] text-primary-text">
+      <div className="w-full mt-5 inline-flex flex-col justify-end items-start p-3 gap-[10px] rounded-[14px] border border-white bg-white custom-shadow-xl">
+        <div className="flex items-center gap-3">
+          <label className="text-lg md:text-xl lg:text-[24px] text-primary-text">
             Manufacturer
           </label>
-          <select className="border border-gray-300 rounded-md px-3 py-2 text-[#333] text-sm lg:text-base focus:ring-2 focus:ring-teal-500">
+          <select className="border border-gray-300 rounded-md px-3 py-2 text-primary-text text-sm lg:text-base focus:ring-2 focus:ring-teal-500">
             <option>Last 5 days</option>
             <option>Last 10 days</option>
             <option>Last 30 days</option>
@@ -129,15 +129,15 @@ const page = () => {
         </div>
         {/* table */}
         <div className="w-full overflow-x-auto rounded-lg shadow-md bg-white px-1 ">
-          <table className="w-full text-[#333] border-spacing-y-1.5 sm:border-spacing-y-3 text-nowrap border-separate">
-            <thead className="rounded-lg text-sm md:text-base font-medium border custom-shadow-xl">
+          <table className="w-full text-primary-text border-spacing-y-1 sm:border-spacing-y-1.5 text-nowrap border-separate">
+            <thead className="rounded-lg text-sm border custom-shadow-xl">
               <tr className="rounded-lg border">
-                <th className="px-6 py-3 md:py-5">Date-Time</th>
-                <th className="px-6 py-3 md:py-5">Order#</th>
-                <th className="px-6 py-3 md:py-5">PO</th>
-                <th className="px-6 py-3 md:py-5">Status</th>
-                <th className="px-6 py-3 md:py-5">Notification</th>
-                <th className="px-6 py-3 md:py-5">Action</th>
+                <th className="px-6 py-3 font-medium">Date-Time</th>
+                <th className="px-6 py-3 font-medium">Order#</th>
+                <th className="px-6 py-3 font-medium">PO</th>
+                <th className="px-6 py-3 font-medium">Status</th>
+                <th className="px-6 py-3 font-medium">Notification</th>
+                <th className="px-6 py-3 font-medium">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -146,20 +146,20 @@ const page = () => {
                   key={idx}
                   className="border rounded-lg custom-shadow-xl"
                 >
-                  <td className="px-6 py-4 text-sm text-center">{item.date}</td>
-                  <td className="px-6 py-4 text-sm text-center">
+                  <td className="px-6 py-3 text-sm text-center">{item.date}</td>
+                  <td className="px-6 py-3 text-sm text-center">
                     {item.order}
                   </td>
-                  <td className="px-6 py-4 text-sm text-center">{item.po}</td>
-                  <td className="px-6 py-4 text-sm text-center bg-[#C8FFEC]">
+                  <td className="px-6 py-3 text-sm text-center">{item.po}</td>
+                  <td className="px-6 py-3 text-sm text-center bg-[#C8FFEC]">
                     <span className="text-gray-700 px-3 py-1 rounded-md">
                       {item.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-center">
+                  <td className="px-6 py-3 text-sm text-center">
                     {item.notification}
                   </td>
-                  <td className="px-6 py-4 text-sm text-center">
+                  <td className="px-6 py-3 text-sm text-center">
                     <button className="bg-[#21BBA2] text-white px-3 py-1.5 text-nowrap rounded-lg custom-shadow-xl">
                       View Order
                     </button>
