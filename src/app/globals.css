@@ -60,15 +60,15 @@ button {
 }
 
 .section_title {
-  @apply text-[#333] text-xl sm:text-2xl xl:text-3xl 2xl:text-[48px] font-semibold leading-[150%];
+  @apply text-[#333] text-xl sm:text-2xl xl:text-3xl 2xl:text-[36px] font-semibold leading-[150%];
 }
 
 .section_subTitle {
-  @apply text-[#333] text-[20px] sm:text-lg xl:text-xl 2xl:text-[28px] font-semibold leading-[150%];
+  @apply text-[#333] text-[20px] sm:text-lg xl:text-xl font-semibold leading-[150%];
 }
 
 .section_description {
-  @apply text-[#333] text-[16px] font-normal leading-[150%];
+  @apply text-[#333] text-[14px] font-normal leading-[150%];
 }
 
 .input {

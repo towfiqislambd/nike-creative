@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export default function Footer() {
   return (
     <footer
-      className="relative border-t border-gray-200 bg-cover bg-center bg-no-repeat text-primary-text"
+      className=" relative border-t border-gray-200 bg-cover bg-center bg-no-repeat text-primary-text"
       style={{
         backgroundImage:
           "url('https://i.ibb.co.com/r23mb4qt/Frame-2147227186-1.png')",
@@ -11,7 +11,7 @@ export default function Footer() {
     >
       <div className="absolute inset-0"></div>
 
-      <div className="relative z-10 max-w-[1720px] mx-auto px-5 xl:px-10 2xl:px-14 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container relative z-10 max-w-[1720px] mx-auto px-5 xl:px-0 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <p className="text-primary-text leading-relaxed">
             We’re dedicated to creating elegant, durable, and customizable door

@@ -1770,8 +1770,8 @@ export const Cart = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="21"
-      height="22"
+      width="16"
+      height="16"
       viewBox="0 0 21 22"
       fill="none"
     >
