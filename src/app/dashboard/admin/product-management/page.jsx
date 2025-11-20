@@ -37,18 +37,18 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] text-[#333] px-2 py-3 sm:p-6 rounded-xl sm:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-sm:flex-col items-center justify-between gap-4 pb-5 border-[#555]/50 border-b">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2 sm:pb-1.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex max-sm:flex-col items-center justify-between gap-4 pb-1 border-[#555]/50 border-b">
           <div className="flex sm:items-center max-sm:flex-col-reverse w-full gap-5">
-            <h1 className="text-lg max-sm:hidden md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+            <h1 className="dashboard_title">
               Product Management
             </h1>
-            <div className="grid max-sm:gap-1.5 grid-cols-2 sm:flex sm:max-w-[840px] w-full sm:border border-[#eaeaea] sm:bg-[#D7D6D7] sm:-space-x-12 sm:rounded-[40px] my-4 max-sm:shadow-none custom-shadow-xl">
+            <div className="grid max-sm:gap-1.5 grid-cols-2 sm:flex sm:max-w-[660px] w-full sm:border border-[#eaeaea] sm:bg-[#D7D6D7] sm:-space-x-6 sm:rounded-[40px] max-sm:shadow-none custom-shadow-xl">
               {tabs.map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => setProductManagementTab(label)}
-                  className={`flex-1 py-3 md:py-4 lg:py-6 rounded-[35px] text-[13px] md:text-sm xl:text-lg transition ${
+                  className={`flex-1 py-2 rounded-[35px] text-[13px] md:text-[15px] transition ${
                     productManagementTab === label
                       ? "bg-[#21BBA2] text-white border border-gray-300 custom-shadow-xl"
                       : "max-sm:border max-sm:border-gray-300 sm:border-r sm:!shadow-none custom-shadow-xl"
@@ -59,12 +59,12 @@ const page = () => {
               ))}
             </div>
             <div className="flex sm:ml-auto items-center justify-between">
-              <h1 className="text-lg sm:hidden md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+              <h1 className="text-lg sm:hidden font-medium">
                 Product Management
               </h1>
               {/* notification & profile */}
-              <div className="flex items-center gap-5">
-                <div className="flex items-center gap-2 sm:gap-5">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                   <button className="relative">
                     <BellIconSvg className="text-[#F34235]" />
                     <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
@@ -74,12 +74,12 @@ const page = () => {
                   <div className="relative shrink-0 cursor-pointer">
                     <Image
                       src={profilePicture}
-                      width={48}
-                      height={48}
+                      width={36}
+                      height={36}
                       alt=""
                       className="rounded-full max-sm:size-8"
                     />
-                    <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+                    <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
                   </div>
                 </div>
               </div>
@@ -87,13 +87,13 @@ const page = () => {
           </div>
         </nav>
         {/* buttons */}
-        <div className="mt-3 sm:mt-5">
+        <div className="mt-1">
           {productManagementTab === "Products" && (
             <button
               onClick={() =>
                 document.dispatchEvent(new CustomEvent("openAddProduct"))
               }
-              className="max-sm:basis-2/3 max-w-[300px] bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-2 sm:px-4 lg:px-8 py-2 sm:py-4 text-sm sm:text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+              className="max-sm:basis-2/3 dashboard_header_btn"
             >
               Add Product <PlusBlack />
             </button>
@@ -103,7 +103,7 @@ const page = () => {
               onClick={() =>
                 document.dispatchEvent(new CustomEvent("openAddCategory"))
               }
-              className="max-sm:basis-2/3 max-w-[300px] bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-2 sm:px-4 lg:px-8 py-2 sm:py-4 text-sm sm:text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+              className="max-sm:basis-2/3 dashboard_header_btn"
             >
               Add Category <PlusBlack />
             </button>
@@ -113,7 +113,7 @@ const page = () => {
               onClick={() =>
                 document.dispatchEvent(new CustomEvent("openAddField"))
               }
-              className="max-sm:basis-2/3 max-w-[300px] bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-2 sm:px-4 lg:px-8 py-2 sm:py-4 text-sm sm:text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+              className="max-sm:basis-2/3 dashboard_header_btn"
             >
               Add Field <PlusBlack />
             </button>

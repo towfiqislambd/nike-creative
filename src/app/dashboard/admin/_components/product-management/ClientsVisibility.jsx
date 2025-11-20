@@ -39,30 +39,30 @@ export default function ClientsVisibility() {
   };
 
   return (
-    <div className="w-full flex max-2xl:flex-col-reverse items-start gap-5 mt-2">
+    <div className="w-full flex max-2xl:flex-col-reverse items-start gap-3 mt-2">
       <div className="w-full 2xl:max-w-[1075px] overflow-x-auto px-1">
-        <table className="max-md:w-[750px] w-full 2xl:max-w-[1075px] text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 max-md:shrink-0 border-separate font-normal">
-          <thead className="rounded-lg border custom-shadow-xl max-sm:text-sm">
+        <table className="max-md:w-[750px] w-full 2xl:max-w-[1075px] text-primary-text border-spacing-y-1.5 md:border-spacing-y-3 max-md:shrink-0 border-separate font-normal">
+          <thead className="rounded-lg border custom-shadow-xl text-sm">
             <tr className="rounded-lg border bg-white">
-              <th className="px-3 py-3 md:py-5 rounded-l-lg">Company Name</th>
-              <th className="px-3 py-3 md:py-5">Visible Categories</th>
-              <th className="px-3 py-3 md:py-5 rounded-r-lg">Actions</th>
+              <th className="px-3 py-3 font-medium rounded-l-lg">Company Name</th>
+              <th className="px-3 py-3 font-medium">Visible Categories</th>
+              <th className="px-3 py-3 font-medium rounded-r-lg">Actions</th>
             </tr>
           </thead>
           <tbody>
             {clients.map((client) => (
               <tr
                 key={client.id}
-                className="border rounded-lg lg:text-lg custom-shadow-xl bg-white max-sm:text-sm"
+                className="border rounded-lg custom-shadow-xl bg-white text-sm"
               >
-                <td className="p-3 md:py-5 text-center rounded-l-lg">
+                <td className="px-3 py-2.5 text-center rounded-l-lg">
                   {client.company}
                 </td>
-                <td className="px-3 py-3 md:py-5 text-center">
+                <td className="px-3 py-2.5 text-center">
                   {client.categories.join(", ")}
                 </td>
 
-                <td className="px-3 py-3 md:py-5 text-center rounded-r-lg">
+                <td className="px-3 py-2.5 text-center rounded-r-lg">
                   <button onClick={() => handleEditClick(client)} className={`p-1 rounded-md ${
                   selectedClient?.id === client.id ? "custom-shadow-xl" : ""
                   }`}>

@@ -76,34 +76,36 @@ export default function DriverAppPage() {
 
   return (
     <>
-      <div className="mb-6">
-        <div className="relative rounded-[28px] bg-[#E0DDD7] px-6 py-5 shadow-sm">
+      <div className="mb-3">
+         <div className="relative rounded-xl md:rounded-[20px] bg-[#E0DDD7] px-4 py-2.5 border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
           <div className="flex flex-wrap items-center justify-between gap-5">
-            <h1 className="text-[32px] font-semibold text-[#333]">
-              Driver App
+            <h1 className="dashboard_title">
+              Deductions
             </h1>
-            <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-black/10">
-              <img
-                alt="avatar"
-                src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=120&auto=format&fit=crop"
-                className="h-full w-full object-cover"
-              />
-              <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#21BBA2] ring-2 ring-white" />
+
+            <div className="flex items-center gap-4">
+              <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-black/10">
+                <img
+                  alt="avatar"
+                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=120&auto=format&fit=crop"
+                  className="h-full w-full object-cover"
+                />
+                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#21BBA2] ring-2 ring-white" />
+              </div>
             </div>
           </div>
-          <div className="my-4 h-px w-full bg-black/15" />
         </div>
       </div>
 
-      <div className="flex flex-col lg:w-[50%] gap-10 ">
+      <div className="flex flex-col lg:w-[50%] gap-3 ">
         <section className="mt-2">
           <div className="flex items-center justify-between">
-            <h2 className="text-[28px] md:text-[32px] font-semibold text-[#333]">
+            <h2 className="text-lg md:text-[22px] font-medium text-[#333]">
               Arrival Checklist
             </h2>
             <button
               onClick={openArrivalAdd}
-              className="grid h-9 w-9 place-items-center rounded-full bg-[#21BBA2] text-white text-xl shadow-md hover:bg-[#1aa58e]"
+              className="grid size-8 place-items-center rounded-full bg-[#21BBA2] text-white text-xl shadow-md hover:bg-[#1aa58e]"
               aria-label="Add arrival item"
               title="Add"
             >
@@ -111,10 +113,10 @@ export default function DriverAppPage() {
             </button>
           </div>
 
-          <div className="mt-3 h-[2px] w-full bg-black/10" />
+          <div className="mt-1 h-[2px] w-full bg-black/10" />
 
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[12px]">
+          <div className="overflow-x-auto">
+            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-3">
               <thead>
                 <tr>
                   <th className="th">Text</th>
@@ -139,7 +141,7 @@ export default function DriverAppPage() {
                     <td className="td text-center">
                       <button
                         onClick={() => deleteArrival(r.id)}
-                        className="inline-flex items-center justify-center rounded-full bg-red-500/10 px-3 py-3 text-red-600 hover:bg-red-500/20"
+                        className="inline-flex items-center justify-center rounded-full bg-red-500/10 p-2 text-red-600 hover:bg-red-500/20"
                         title="Delete"
                       >
                         <FaRegTrashCan />
@@ -171,12 +173,12 @@ export default function DriverAppPage() {
         </section>
         <section className="mt-2">
           <div className="flex items-center justify-between">
-            <h2 className="text-[28px] md:text-[32px] font-semibold text-[#333]">
+            <h2 className="text-lg md:text-[22px] font-medium text-[#333]">
               Pre-Departure Checklist
             </h2>
             <button
               onClick={openPreAdd}
-              className="grid h-9 w-9 place-items-center rounded-full bg-[#21BBA2] text-white text-xl shadow-md hover:bg-[#1aa58e]"
+              className="grid size-8 place-items-center rounded-full bg-[#21BBA2] text-white text-xl shadow-md hover:bg-[#1aa58e]"
               aria-label="Add pre-departure item"
               title="Add"
             >
@@ -184,10 +186,10 @@ export default function DriverAppPage() {
             </button>
           </div>
 
-          <div className="mt-3 h-[2px] w-full bg-black/10" />
+          <div className="mt-1 h-[2px] w-full bg-black/10" />
 
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[12px]">
+          <div className="overflow-x-auto">
+            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-3">
               <thead>
                 <tr>
                   <th className="th">Text</th>
@@ -212,7 +214,7 @@ export default function DriverAppPage() {
                     <td className="td text-center">
                       <button
                         onClick={() => deletePre(r.id)}
-                        className="inline-flex items-center justify-center rounded-full bg-red-500/10 px-3 py-3 text-red-600 hover:bg-red-500/20"
+                        className="inline-flex items-center justify-center rounded-full bg-red-500/10 p-2 text-red-600 hover:bg-red-500/20"
                         title="Delete"
                       >
                         <FaRegTrashCan />

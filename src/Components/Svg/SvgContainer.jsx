@@ -2049,8 +2049,8 @@ export const Plus = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="17"
-      height="17"
+      width="20"
+      height="20"
       viewBox="0 0 17 17"
       fill="none"
     >
@@ -2762,8 +2762,8 @@ export const EditSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -2797,8 +2797,8 @@ export const SendIconSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width="24"
+      height="24"
       viewBox="0 0 30 30"
       fill="none"
     >
@@ -2923,8 +2923,8 @@ export const EditPen = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
+      width="18"
+      height="18"
       viewBox="0 0 22 22"
       fill="none"
     >
@@ -2959,8 +2959,8 @@ export const TrashBin = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="12"
-      height="14"
+      width="10"
+      height="12"
       viewBox="0 0 12 14"
       fill="none"
     >
@@ -3042,8 +3042,8 @@ export const SearchIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="23"
-      height="24"
+      width="17"
+      height="18"
       viewBox="0 0 23 24"
       fill="none"
     >
@@ -3086,8 +3086,8 @@ export const Eye = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -3140,8 +3140,8 @@ export const Correct = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -3159,8 +3159,8 @@ export const WrongIconRed = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -3253,8 +3253,8 @@ export const EditIconSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -4389,8 +4389,8 @@ export const Circle = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="39"
-      height="39"
+      width="30"
+      height="30"
       viewBox="0 0 39 39"
       fill="none"
     >
@@ -4549,8 +4549,8 @@ export const CustomCheckBoxIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width="30"
+      height="30"
       viewBox="0 0 40 40"
       fill="none"
     >

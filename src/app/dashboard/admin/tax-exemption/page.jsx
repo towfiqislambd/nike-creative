@@ -12,9 +12,9 @@ import {
 import profilePicture from "../../../../Assets/profile.svg";
 
 
-const headerCell = "px-6 py-4  font-semibold text-[#333] text-left bg-[#fff]";
+const headerCell = "px-6 py-2 leading-[16px] font-medium text-[#333] text-left text-sm bg-[#fff]";
 const bodyCell =
-  "px-6 py-4  text-[#333] bg-white align-middle whitespace-nowrap";
+  "px-6 py-2.5 text-sm text-[#333] bg-white align-middle whitespace-nowrap";
 
 const initialRows = [
   {
@@ -131,7 +131,7 @@ export default function TaxExemptionPage() {
   const renderToggle = (row) => (
     <button
       onClick={() => toggleEnabled(row.id)}
-      className={`relative inline-flex h-6 w-11 items-center rounded-full border transition-colors ${
+      className={`relative inline-flex h-5 w-9 items-center rounded-full border transition-colors ${
         row.enabled
           ? "bg-[#4C9AF5] border-[#4C9AF5]"
           : "bg-gray-300 border-gray-300"
@@ -139,8 +139,8 @@ export default function TaxExemptionPage() {
       aria-label="Toggle tax exemption entry"
     >
       <span
-        className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transform transition-transform ${
-          row.enabled ? "translate-x-5" : "translate-x-1"
+        className={`inline-block h-4 w-4 rounded-full bg-white shadow-sm transform transition-transform ${
+          row.enabled ? "translate-x-4" : "translate-x-0.5"
         }`}
       />
     </button>
@@ -148,12 +148,12 @@ export default function TaxExemptionPage() {
 
   return (
     <>
-      <header className="bg-[#E4E3E0] p-2 md:p-6 rounded-2xl md:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-[425px]:flex-col items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-3 sm:pb-2.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex max-[425px]:flex-col items-center justify-between gap-4">
+          <h2 className="dashboard_title">
             Tax Exemption
           </h2>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3">
             <button className="relative">
               <BellIcon className="text-[#F34235]" />
               <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
@@ -163,29 +163,28 @@ export default function TaxExemptionPage() {
             <div className="relative shrink-0 cursor-pointer">
               <Image
                 src={profilePicture}
-                width={48}
-                height={48}
+                width={36}
+                height={36}
                 alt="profile"
                 className="rounded-full"
               />
-              <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+              <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
             </div>
           </div>
         </nav>
       </header>
-      <main className="mt-6">
-        <div className="">
+      <main className="mt-2">
           <div className="w-full overflow-x-auto px-1">
-            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[12px] text-nowrap">
+            <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-3 text-nowrap">
               <thead>
-                <tr>
-                  <th className={`${headerCell} rounded-tl-[20px]`}>Company</th>
+                <tr className="custom-shadow-xl rounded-lg">
+                  <th className={`${headerCell} rounded-tl-lg`}>Company</th>
                   <th className={headerCell}>Phone Number</th>
                   <th className={headerCell}>Address</th>
                   <th className={headerCell}>Tax Exemption <br /> Document</th>
                   <th className={headerCell}>Tax Exemption <br /> Expiration Date</th>
                   <th className={headerCell}>Status</th>
-                  <th className={`${headerCell} rounded-tr-[20px]`}>Action</th>
+                  <th className={`${headerCell} rounded-tr-lg`}>Action</th>
                 </tr>
               </thead>
 
@@ -193,9 +192,9 @@ export default function TaxExemptionPage() {
                 {rows.map((row) => (
                   <tr
                     key={row.id}
-                    className="shadow-[0_6px_18px_rgba(0,0,0,0.29)] rounded-xl"
+                    className="custom-shadow-xl rounded-lg"
                   >
-                    <td className={`${bodyCell} rounded-l-xl`}>
+                    <td className={`${bodyCell} rounded-l-lg`}>
                       {row.company}
                     </td>
                     <td className={bodyCell}>{row.phone}</td>
@@ -211,20 +210,20 @@ export default function TaxExemptionPage() {
                       </span>
                     </td>
                     <td className={bodyCell}>{renderStatus(row)}</td>
-                    <td className={`${bodyCell} rounded-r-xl`}>
+                    <td className={`${bodyCell} rounded-r-lg`}>
                       <div className="flex items-center justify-center gap-3">
                         <button
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 text-gray-700 hover:bg-gray-50"
+                          className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-gray-300 text-gray-700 hover:bg-gray-50"
                           title="Edit"
                         >
-                          <FiEdit2 size={18} />
+                          <FiEdit2 size={14} />
                         </button>
                         <button
                           onClick={() => deleteRow(row.id)}
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-red-500/10 text-red-600 hover:bg-red-500/20"
+                          className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-red-500/10 text-red-600 hover:bg-red-500/20"
                           title="Delete"
                         >
-                          <FiTrash2 size={18} />
+                          <FiTrash2 size={15} />
                         </button>
                         {renderToggle(row)}
                       </div>
@@ -246,7 +245,6 @@ export default function TaxExemptionPage() {
               </tbody>
             </table>
           </div>
-        </div>
       </main>
     </>
   );

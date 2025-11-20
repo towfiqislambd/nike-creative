@@ -21,21 +21,21 @@ export default function PasswordsPage() {
   };
 
   const Label = ({ children }) => (
-    <span className="block text-[#5A5C5F] text-[16px] mb-2">{children}</span>
+    <span className="block text-[#5A5C5F] text-[15px] mb-2">{children}</span>
   );
   const Input = (props) => (
     <input
       {...props}
-      className="w-full rounded-[10px] border border-[#E5E5E5] bg-white px-6 py-4 text-[20px] text-[#333] outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10"
+      className="w-full rounded-lg border border-[#E5E5E5] bg-white p-3 text-[#333] outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10"
     />
   );
 
   return (
 <>
-      <div className="mb-6">
-        <div className="relative rounded-[28px] bg-[#E0DDD7] px-6 py-5 shadow-sm">
+      <div className="mb-3">
+        <div className="relative rounded-xl md:rounded-[20px] bg-[#E0DDD7] px-4 py-2.5 border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
           <div className="flex flex-wrap items-center justify-between gap-5">
-            <h1 className="text-[32px] font-semibold text-[#333]">
+            <h1 className="dashboard_title">
               Account Details
             </h1>
 
@@ -50,12 +50,10 @@ export default function PasswordsPage() {
               </div>
             </div>
           </div>
-
-          <div className="my-4 h-px w-full bg-black/15" />
         </div>
       </div>
-          <section className=" px-4 md:px-6 lg:px-8 py-6">
-      <h1 className="text-[28px] md:text-[36px] font-semibold text-[#333]">
+          <section className="px-4 md:px-6 lg:px-8">
+      <h1 className="dashboard_title">
         Passwords
       </h1>
       <div className="mt-3 h-[2px] w-full bg-black/10" />
@@ -63,7 +61,7 @@ export default function PasswordsPage() {
         onSubmit={onSubmit}
         className="mt-5 rounded-2xl border border-black/10 bg-white p-4 md:p-6 lg:p-7 shadow-sm"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
           <div>
             <Label>Installation Note Delete Key</Label>
             <Input

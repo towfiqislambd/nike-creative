@@ -12,15 +12,15 @@ export default function SideLitesDeductionsInterior({
   onAdd,
 }) {
   return (
-    <section className="mt-10 relative">
-      <h2 className="text-[28px]  font-semibold text-[#333]">
+    <section className="relative">
+      <h2 className="text-[20px]  font-semibold text-[#333]">
         Side lites Deductions Interior
       </h2>
-      <div className="mt-3 h-[2px] w-full bg-black/10" />
+      <div className="mt-1 h-[2px] w-full bg-black/10" />
 
-      <div className="mt-6">
+      <div>
         <div className="overflow-x-auto">
-          <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[20px]">
+          <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-3">
             <thead>
               <tr>
                 <th className="th">
@@ -61,14 +61,14 @@ export default function SideLitesDeductionsInterior({
                     <div className="flex items-center justify-center gap-3">
                       <button
                         onClick={() => onEdit?.(r)}
-                        className="grid h-9 w-9 place-items-center rounded-full border border-gray-300 hover:bg-gray-50"
+                        className="grid size-8 place-items-center rounded-full border border-gray-300 hover:bg-gray-50"
                         title="Edit"
                       >
                         <EditSvg />
                       </button>
                       <button
                         onClick={() => onDelete?.(r.id)}
-                        className="grid h-9 w-9 place-items-center rounded-full bg-red-500/10 text-red-600 hover:bg-red-500/20"
+                        className="grid size-8 place-items-center rounded-full bg-red-500/10 text-red-600 hover:bg-red-500/20"
                         title="Delete"
                       >
                         <FaRegTrashCan />
@@ -97,7 +97,7 @@ export default function SideLitesDeductionsInterior({
         <div className="flex justify-end">
           <button
             onClick={onAdd}
-            className="mt-6 grid h-14 w-14 place-items-center rounded-full bg-[#21BBA2] text-white text-3xl shadow-lg hover:bg-[#1aa58e]"
+            className="mt-2 grid size-9 place-items-center rounded-full bg-[#21BBA2] text-white text-3xl shadow-lg hover:bg-[#1aa58e]"
             aria-label="Add row"
           >
             +

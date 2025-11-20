@@ -8,6 +8,7 @@ import {
   BellIconSvg,
 } from "../../../../Components/Svg/SvgContainer";
 import AddEditQuoteModal from "../_components/AddEditQuoteModal";
+import { FiBell } from "react-icons/fi";
 
 const Status = ({ value }) => {
   const map = {
@@ -19,7 +20,7 @@ const Status = ({ value }) => {
   };
   return (
     <span
-      className={`inline-block w-full text-center py-7 text-sm font-medium ${
+      className={`inline-block w-full text-center h-full py-4 text-sm font-medium ${
         map[value] || "bg-gray-100 text-gray-700"
       }`}
     >
@@ -28,10 +29,7 @@ const Status = ({ value }) => {
   );
 };
 
-
-
 const handleSubmitQuote = (data) => {
-
   console.log(modalMode === "edit" ? "Edit quote:" : "Add quote:", data);
 };
 
@@ -40,21 +38,18 @@ export default function QuotesPage() {
   const [modalMode, setModalMode] = useState("add");
   const [currentRow, setCurrentRow] = useState(null);
   const openAddQuote = () => {
-  setCurrentRow(null);
-  setModalMode("add");
-  setModalOpen(true);
-};
+    setCurrentRow(null);
+    setModalMode("add");
+    setModalOpen(true);
+  };
 
-const openEditQuote = (row) => {
-  setCurrentRow(row);
-  setModalMode("edit");
-  setModalOpen(true);
-};
+  const openEditQuote = (row) => {
+    setCurrentRow(row);
+    setModalMode("edit");
+    setModalOpen(true);
+  };
 
   const rows = [
-  
-  
-  
     {
       id: "Q-1001",
       quoteBy: "Jacky",
@@ -137,124 +132,112 @@ const openEditQuote = (row) => {
   return (
     <>
       <div className="mb-6">
-        <div className="relative rounded-[28px] bg-[#E0DDD7] px-6 py-5 shadow-sm">
-          <div className="flex flex-wrap items-center justify-between gap-5">
-            <h1 className="text-[28px] font-semibold text-[#333]">
-              Account Details
-            </h1>
+        <div className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2.5 sm:pb-2 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)] mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <h1 className="dashboard_title">Quote System</h1>
 
-            <div className="flex items-center gap-4">
-              <div className="text-lg">
-                <BellIconSvg />
+            <div className="flex items-center justify-end gap-4">
+              <div className="relative text-red-500 text-xl cursor-pointer">
+                <FiBell />
+                <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
               </div>
               <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-black/10">
                 <img
-                  alt="avatar"
                   src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=120&auto=format&fit=crop"
+                  alt="User Avatar"
                   className="h-full w-full object-cover"
                 />
-                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#21BBA2] ring-2 ring-white" />
+                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#71F18E] ring-2 ring-white" />
               </div>
             </div>
           </div>
 
-          <div className="my-4 h-px w-full bg-black/15" />
-          <div className="flex ">
-            <button
-              onClick={openAddQuote}
-              className="flex items-center cursor-pointer justify-center text-[20px] font-normal leading-[150%] px-8 py-[17px] rounded-[10px] border border-[#F5F4F4] bg-[#D7D7D7] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
-            >
-              Add New Quote
-            </button>
-          </div>
+          <div className="my-1 h-px w-full bg-black/15" />
+          <button onClick={openAddQuote} className="dashboard_header_btn">
+            Add New Quote
+          </button>
         </div>
       </div>
 
       <main className="">
-        <div className="">
-          <div className="overflow-x-auto">
-            <table className="min-w-[1000px] w-full border-separate border-spacing-y-3">
-              <thead>
-                <tr className="text-left text-sm text-[#5A5C5F]">
-                  <th className="rounded-tl-xl  bg-[#F7F7F7] px-5 py-4 font-semibold">
-                    Quote#
-                  </th>
-                  <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
-                    Company
-                  </th>
-                  <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
-                    Description
-                  </th>
-                  <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">Date</th>
-                  <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
-                    Price
-                  </th>
-                  <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
-                    Status
-                  </th>
-                  <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
-                    Attachment
-                  </th>
-                  <th className="rounded-tr-xl bg-[#F7F7F7] px-5 py-4 font-semibold">
-                    Actions
-                  </th>
+        <div className="overflow-x-auto">
+          <table className="min-w-[1000px] w-full border-separate border-spacing-y-3">
+            <thead>
+              <tr className="text-left text-sm text-[#5A5C5F]">
+                <th className="rounded-tl-xl  bg-[#F7F7F7] px-5 py-4 font-semibold">
+                  Quote#
+                </th>
+                <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
+                  Company
+                </th>
+                <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
+                  Description
+                </th>
+                <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">Date</th>
+                <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">Price</th>
+                <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">Status</th>
+                <th className="bg-[#F7F7F7] px-5 py-4 font-semibold">
+                  Attachment
+                </th>
+                <th className="rounded-tr-xl bg-[#F7F7F7] px-5 py-4 font-semibold">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {rows.map((r) => (
+                <tr
+                  key={r.id}
+                  className=" text-sm text-[#333] shadow-[0_8px_22px_rgba(0,0,0,0.06)]"
+                >
+                  <td className=" bg-white px-5 py-3 font-medium">
+                    {r.quoteBy}
+                  </td>
+                  <td className="bg-white px-5 py-3 whitespace-nowrap">
+                    {r.company}
+                  </td>
+                  <td className="bg-white px-5 py-3">
+                    <span className="block truncate max-w-[320px]">
+                      {r.description}
+                    </span>
+                  </td>
+                  <td className="bg-white px-5 py-3 whitespace-nowrap">
+                    {r.date}
+                  </td>
+                  <td className="bg-white px-5 py-3 whitespace-nowrap">
+                    {r.price}
+                  </td>
+                  <td className="bg-white">
+                    <Status value={r.status} />
+                  </td>
+                  <td className="bg-white text-center">
+                    <div className="flex justify-center items-center cursor-pointer h-full w-full">
+                      {r.attach ? <PaperclipSvg /> : <CrossIconSvg />}
+                    </div>
+                  </td>
+
+                  <td className=" bg-white px-5 py-3">
+                    <div className="flex items-center gap-4 text-[18px] text-gray-600">
+                      <button
+                        title="Send"
+                        className="transition hover:opacity-80"
+                      >
+                        <SendIconSvg />
+                      </button>
+                      <button
+                        title="Edit"
+                        className="transition hover:opacity-80"
+                        onClick={() => openEditQuote(r)}
+                      >
+                        <EditSvg />
+                      </button>
+                    </div>
+                  </td>
                 </tr>
-              </thead>
-
-              <tbody>
-                {rows.map((r) => (
-                  <tr
-                    key={r.id}
-                    className=" text-[15px] text-[#333] shadow-[0_8px_22px_rgba(0,0,0,0.06)]"
-                  >
-                    <td className=" bg-white px-5 py-5 font-medium">
-                      {r.quoteBy}
-                    </td>
-                    <td className="bg-white px-5 py-5 whitespace-nowrap">
-                      {r.company}
-                    </td>
-                    <td className="bg-white px-5 py-5">
-                      <span className="block truncate max-w-[320px]">
-                        {r.description}
-                      </span>
-                    </td>
-                    <td className="bg-white px-5 py-5 whitespace-nowrap">
-                      {r.date}
-                    </td>
-                    <td className="bg-white px-5 py-5 whitespace-nowrap">
-                      {r.price}
-                    </td>
-                    <td className="bg-white ">
-                      <Status value={r.status} />
-                    </td>
-                    <td className="bg-white text-center">
-                      <div className="flex justify-center items-center cursor-pointer h-full w-full">
-                        {r.attach ? <PaperclipSvg /> : <CrossIconSvg />}
-                      </div>
-                    </td>
-
-                    <td className=" bg-white px-5 py-5">
-                      <div className="flex items-center gap-4 text-[18px] text-gray-600">
-                        <button
-                          title="Send"
-                          className="transition hover:opacity-80"
-                        >
-                          <SendIconSvg />
-                        </button>
-                        <button
-                          title="Edit"
-                          className="transition hover:opacity-80"
-                          onClick={() => openEditQuote(r)}
-                        >
-                          <EditSvg />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <AddEditQuoteModal

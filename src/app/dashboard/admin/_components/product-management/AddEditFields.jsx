@@ -32,15 +32,15 @@ const AddEditFields = ({ open, onClose, fields }) => {
 
   return (
     <Modal open={open} onClose={onClose}>
-      <div className="bg-white rounded-md sm:p-3 w-full max-w-[885px]">
+      <div className="bg-white w-full max-w-[885px]">
         <h2 className="card_title">Add Field</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-2">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-2.5 mt-2">
           <div>
-            <label className="text-base xl:text-xl mr-2">Field</label>
+            <label className="mr-2">Field</label>
             <select
               {...register("category")}
-              className="border border-[#CFCFCF] rounded-lg px-2 md:px-3 py-2 md:py-3 text-sm"
+              className="card_input"
               required
             >
               <option value="">Select Category</option>
@@ -52,9 +52,9 @@ const AddEditFields = ({ open, onClose, fields }) => {
             </select>
           </div>
 
-          <div className="grid grid-cols-2 gap-5">
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-              <label className="text-base xl:text-xl flex items-center justify-between">
+          <div className="grid grid-cols-2 gap-2">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
+              <label className="max-sm:text-sm flex items-center justify-between">
                 <p>Po</p>
                 <Eye />
               </label>
@@ -65,8 +65,8 @@ const AddEditFields = ({ open, onClose, fields }) => {
                 className="card_input"
               />
             </div>
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-              <label className="text-base xl:text-xl flex items-center justify-between">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
+              <label className="max-sm:text-sm flex items-center justify-between">
                 Manufacturer
                 <Eye />
               </label>
@@ -79,8 +79,8 @@ const AddEditFields = ({ open, onClose, fields }) => {
             </div>
           </div>
 
-          <div className="space-y-2.5 md:max-w-1/2 w-full md:pr-2.5">
-            <label className="text-base xl:text-xl flex items-center justify-between">
+          <div className="space-y-1 md:max-w-1/2 w-full md:pr-2.5">
+            <label className="max-sm:text-sm flex items-center justify-between">
               Select Active side of the door
               <Eye />
             </label>
@@ -92,8 +92,8 @@ const AddEditFields = ({ open, onClose, fields }) => {
           </div>
 
           <div className="grid items-center grid-cols-2 gap-5">
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-              <label className="text-base xl:text-xl flex items-center justify-between">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
+              <label className="max-sm:text-sm flex items-center justify-between">
                 Select Type of Measurement
                 <Eye />
               </label>
@@ -105,9 +105,9 @@ const AddEditFields = ({ open, onClose, fields }) => {
               </select>
             </div>
 
-            <div className="space-y-2.5">
-              <div className="flex items-center col-span-2 md:col-span-1 gap-2.5">
-                <label className="text-base xl:text-xl w-[55px] xl:w-[70px] shrink-0">Width</label>
+            <div className="space-y-1">
+              <div className="flex items-center col-span-2 md:col-span-1 gap-1">
+                <label className="max-sm:text-sm w-[55px] xl:w-[70px] shrink-0">Width</label>
                 <input
                   {...register("width1")}
                   type="number"
@@ -118,8 +118,8 @@ const AddEditFields = ({ open, onClose, fields }) => {
                   <Eye />
                 </button>
               </div>
-              <div className="flex items-center col-span-2 md:col-span-1 gap-2.5">
-                <label className="text-base xl:text-xl w-[55px] xl:w-[70px] shrink-0">Height</label>
+              <div className="flex items-center col-span-2 md:col-span-1 gap-1">
+                <label className="max-sm:text-sm w-[55px] xl:w-[70px] shrink-0">Height</label>
                 <input
                   {...register("height1")}
                   type="number"
@@ -133,8 +133,8 @@ const AddEditFields = ({ open, onClose, fields }) => {
             </div>
           </div>
 
-          <div className="space-y-2.5 md:max-w-1/2 w-full md:pr-2.5">
-            <label className="text-base xl:text-xl flex items-center justify-between">
+          <div className="space-y-1 md:max-w-1/2 w-full md:pr-2.5">
+            <label className="max-sm:text-sm flex items-center justify-between">
               Add Side lites
               <Eye />
             </label>
@@ -147,8 +147,8 @@ const AddEditFields = ({ open, onClose, fields }) => {
           </div>
 
           <div className="grid items-center grid-cols-2 gap-5">
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-              <label className="text-base xl:text-xl flex items-center justify-between">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
+              <label className="max-sm:text-sm flex items-center justify-between">
                 Select Type of Measurement
                 <Eye />
               </label>
@@ -160,9 +160,9 @@ const AddEditFields = ({ open, onClose, fields }) => {
               </select>
             </div>
 
-            <div className="space-y-2.5">
-              <div className="flex items-center col-span-2 md:col-span-1 gap-2.5">
-                <label className="text-base xl:text-xl w-[55px] xl:w-[70px] shrink-0">Width</label>
+            <div className="space-y-1">
+              <div className="flex items-center col-span-2 md:col-span-1 gap-1">
+                <label className="max-sm:text-sm w-[55px] xl:w-[70px] shrink-0">Width</label>
                 <input
                   {...register("width1")}
                   type="number"
@@ -173,8 +173,8 @@ const AddEditFields = ({ open, onClose, fields }) => {
                   <Eye />
                 </button>
               </div>
-              <div className="flex items-center col-span-2 md:col-span-1 gap-2.5">
-                <label className="text-base xl:text-xl w-[55px] xl:w-[70px] shrink-0">Height</label>
+              <div className="flex items-center col-span-2 md:col-span-1 gap-1">
+                <label className="max-sm:text-sm w-[55px] xl:w-[70px] shrink-0">Height</label>
                 <input
                   {...register("height1")}
                   type="number"
@@ -195,7 +195,7 @@ const AddEditFields = ({ open, onClose, fields }) => {
               { key: "adaThreshold", label: "ADA Threshold" },
             ].map((opt) => (
               <div>
-                <label className="text-sm sm:text-base xl:text-xl flex items-center gap-2.5 mb-2.5">
+                <label className="max-sm:text-sm flex items-center gap-2.5">
                   {opt.label}
                   <Eye />
                 </label>
@@ -214,7 +214,7 @@ const AddEditFields = ({ open, onClose, fields }) => {
           </div>
 
           <div>
-            <label className="text-base xl:text-xl flex items-center gap-5 mb-2.5">
+            <label className="max-sm:text-sm flex items-center gap-5 mb-1">
               How would you like to receive the design?
               <Eye />
             </label>
@@ -230,13 +230,13 @@ const AddEditFields = ({ open, onClose, fields }) => {
           </div>
 
           <div>
-            <label className="text-base xl:text-xl flex items-center justify-between mb-2.5">
+            <label className="max-sm:text-sm flex items-center justify-between mb-1">
               Order Notes
               <Eye />
             </label>
             <textarea
               {...register("orderNotes")}
-              rows={4}
+              rows={2}
               placeholder="Write your notes here..."
               className="card_input w-full !text-base"
             ></textarea>
@@ -246,13 +246,13 @@ const AddEditFields = ({ open, onClose, fields }) => {
             <button
               type="button"
               onClick={onClose}
-              className="bg-white border border-[#21BBA2] text-[#21BBA2] px-8 py-4 rounded-lg"
+              className="card_btn_outline"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="bg-[#21BBA2] border border-[#21BBA2] text-white px-8 py-4 rounded-lg"
+              className="card_btn"
             >
               Add Fields
             </button>

@@ -150,12 +150,12 @@ const InventoryPage = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] text-[#333] px-2.5 py-4 sm:p-6 rounded-xl sm:rounded-2xl md:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2 sm:pb-1.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex items-center justify-between gap-4 pb-1.5 border-[#555]/50 border-b">
+          <h2 className="dashboard_title">
             Inventory Management
           </h2>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3">
             <button className="relative">
               <BellIcon className="text-[#F34235]" />
               <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
@@ -165,24 +165,24 @@ const InventoryPage = () => {
             <div className="relative shrink-0 cursor-pointer">
               <Image
                 src={profilePicture}
-                width={48}
-                height={48}
+                width={36}
+                height={36}
                 alt="profile"
                 className="rounded-full"
               />
-              <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+              <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
             </div>
           </div>
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-5 mt-10 sm:px-6 sm:py-4">
+        <div className="flex items-center gap-2 sm:px-2 pt-2 pb-1">
           <button
             onClick={() => {
               resetProduct();
               setEditProductIndex(null);
               setIsProductModal(true);
             }}
-            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-3 py-2 sm:px-8 sm:py-4 max-sm:text-sm md:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+            className="dashboard_header_btn"
           >
             Add Product <PlusBlack />
           </button>
@@ -193,7 +193,7 @@ const InventoryPage = () => {
               setEditCategoryIndex(null);
               setIsCategoryModal(true);
             }}
-            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-3 py-2 sm:px-8 sm:py-4 max-sm:text-sm md:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+            className="dashboard_header_btn"
           >
             Add Category <PlusBlack />
           </button>
@@ -201,39 +201,39 @@ const InventoryPage = () => {
       </header>
 
       {/* tables */}
-      <div className="mt-6 min-h-screen">
-        <div className="flex max-xl:flex-col gap-4 xl:gap-[30px]">
+      <div className="mt-2">
+        <div className="flex max-xl:flex-col gap-2 xl:gap-3">
           {/* product tables */}
-          <div className="w-full overflow-x-auto px-2">
+          <div className="w-full overflow-x-auto px-1">
             <table className="w-full text-[#333] border-spacing-y-1.5 sm:border-spacing-y-3 border-separate text-sm text-nowrap">
               <thead className="rounded-lg border custom-shadow-xl">
                 <tr className="rounded-lg border bg-white">
-                  <th className="px-3 py-3 md:py-5 rounded-l-lg">
+                  <th className="px-3 py-3 font-medium rounded-l-lg">
                     Product Name
                   </th>
-                  <th className="px-3 py-3 md:py-5">Unit Type</th>
-                  <th className="px-3 py-3 md:py-5">Current Stock</th>
-                  <th className="px-3 py-3 md:py-5">Minimum Stock</th>
-                  <th className="px-3 py-3 md:py-5">Category</th>
-                  <th className="px-3 py-3 md:py-5">Brand</th>
-                  <th className="px-3 py-3 md:py-5">Specification</th>
-                  <th className="px-3 py-3 md:py-5 rounded-r-lg">Actions</th>
+                  <th className="px-3 py-3 font-medium">Unit Type</th>
+                  <th className="px-3 py-3 font-medium">Current Stock</th>
+                  <th className="px-3 py-3 font-medium">Minimum Stock</th>
+                  <th className="px-3 py-3 font-medium">Category</th>
+                  <th className="px-3 py-3 font-medium">Brand</th>
+                  <th className="px-3 py-3 font-medium">Specification</th>
+                  <th className="px-3 py-3 font-medium text-end rounded-r-lg">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {products.map((p, i) => (
                   <tr
                     key={i}
-                    className="border rounded-lg custom-shadow-xl bg-white"
+                    className="border rounded-lg custom-shadow-xl text-[13.5px] bg-white"
                   >
-                    <td className="px-3 py-3 md:py-5 text-center rounded-l-lg">
+                    <td className="px-3 py-2.5 text-center rounded-l-lg">
                       {p.productName}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-2.5 text-center">
                       {p.unitType}
                     </td>
                     <td
-                      className={`px-3 py-3 md:py-5 text-center ${
+                      className={`px-3 py-2.5 text-center ${
                         p.currentStock < p.minimumStock
                           ? "bg-[#FF484240] text-red-600 font-semibold"
                           : ""
@@ -241,18 +241,18 @@ const InventoryPage = () => {
                     >
                       {p.currentStock}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-2.5 text-center">
                       {p.minimumStock}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-2.5 text-center">
                       {p.category}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">{p.brand}</td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-2.5 text-center">{p.brand}</td>
+                    <td className="px-3 py-2.5 text-center">
                       {p.specification}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center rounded-r-lg">
-                      <div className="flex items-center gap-2">
+                    <td className="px-3 py-2.5 text-center rounded-r-lg">
+                      <div className="flex items-center justify-end gap-1.5">
 
                       <button onClick={() => handleEditProduct(i)}>
                         <EditPen />
@@ -265,7 +265,7 @@ const InventoryPage = () => {
                             index: i,
                           })
                         }
-                        className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
+                        className="bg-[#F34235] hover:bg-[#F34235]/80 size-5.5 rounded-full flex items-center justify-center"
                         >
                         <TrashBin />
                       </button>
@@ -287,29 +287,29 @@ const InventoryPage = () => {
           {/* category tables */}
           <div className="max-w-[450px] w-full">
             <table className="w-full text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 border-separate">
-              <thead className="rounded-lg text-sm md:text-base xl:text-[20px] font-medium border custom-shadow-xl">
+              <thead className="rounded-lg text-sm md:text-[15px] border custom-shadow-xl">
                 <tr className="rounded-lg border bg-white">
-                  <th className="px-3 py-3 md:py-5 max-sm:text-left rounded-l-lg">Category</th>
-                  <th className="px-3 py-3 md:py-5 rounded-r-lg">Actions</th>
+                  <th className="px-3 py-3 max-sm:text-left rounded-l-lg font-medium">Category</th>
+                  <th className="px-3 py-3 rounded-r-lg font-medium">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {categories.map((category, idx) => (
-                  <tr key={idx} className="border rounded-lg custom-shadow-xl bg-white max-sm:text-sm">
-                    <td className="px-3 py-3 md:py-5 text-center rounded-l-lg">
-                      <div className="flex items-center gap-2.5">
+                  <tr key={idx} className="border rounded-lg custom-shadow-xl bg-white text-sm">
+                    <td className="px-3 py-3 text-center rounded-l-lg">
+                      <div className="flex items-center gap-1.5">
                         {category.name}
                         <div className="relative flex items-center group">
                           <button>
-                            <Info size={20} />
+                            <Info size={16} />
                           </button>
-                          <div className="absolute bg-white text-base xl:text-lg border border-[#F5F4F4] px-3.5 xl:px-5 py-2.5 xl:py-3.5 rounded-t-[20px] rounded-bl-[20px] -top-16 right-2 whitespace-nowrap hidden group-hover:block transition custom-shadow-xl">
+                          <div className="absolute bg-white text-[15px] border border-[#F5F4F4] px-3 py-2 rounded-t-lg rounded-bl-lg -top-11 right-2 whitespace-nowrap hidden group-hover:block transition custom-shadow-xl">
                             {category.description || "No description"}
                           </div>
                         </div>
                       </div>
                     </td>
-                    <td className="px-3 py-3 md:py-5 rounded-r-lg">
+                    <td className="px-3 py-3 rounded-r-lg">
                       <div className="flex items-center justify-end gap-2.5">
                         <button onClick={() => handleEditCategory(idx)}>
                           <EditPen />
@@ -322,7 +322,7 @@ const InventoryPage = () => {
                               index: idx,
                             })
                           }
-                          className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
+                          className="bg-[#F34235] hover:bg-[#F34235]/80 size-5.5 rounded-full flex items-center justify-center"
                         >
                           <TrashBin />
                         </button>

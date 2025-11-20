@@ -46,19 +46,19 @@ export default function AddEditUserModal({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white p-3 sm:px-8 sm:py-5 rounded-lg sm:rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl"
+        className="bg-white px-4 py-3 rounded-lg sm:rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl"
       >
         <h2 className="card_title mb-5">
           {initialData ? "Edit User" : "Add User"}
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
               <label className="text-md xl:text-base">Full Name</label>
               <input
                 {...register("fullName", { required: "Full name is required" })}
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input"
                 placeholder="John Doe"
               />
               {errors.fullName && (
@@ -68,11 +68,11 @@ export default function AddEditUserModal({
               )}
             </div>
 
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
               <label className="text-md xl:text-base">Phone number</label>
               <input
                 {...register("phone", { required: "Phone number is required" })}
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input"
                 placeholder="+123 456 7890"
               />
               {errors.phone && (
@@ -80,11 +80,11 @@ export default function AddEditUserModal({
               )}
             </div>
 
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
               <label className="text-md xl:text-base">Email</label>
               <input
                 {...register("email", { required: "Email is required" })}
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input"
                 placeholder="example@email.com"
               />
               {errors.email && (
@@ -92,11 +92,11 @@ export default function AddEditUserModal({
               )}
             </div>
 
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
               <label className="text-md xl:text-base">User Role</label>
               <select
                 {...register("userRole")}
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input"
               >
                 <option>Main Account</option>
                 <option>Accounting</option>

@@ -71,17 +71,17 @@ const Categories = () => {
   };
 
   return (
-    <div className="bg-white w-full max-w-[497px] mx-auto mt-8 rounded-lg p-4 sm:p-[30px] shadow-md">
-      <h2 className="card_title md:!mb-5">Existing Categories</h2>
+    <div className="bg-white w-full max-w-[497px] mx-auto mt-8 rounded-lg px-4 py-3 shadow-md">
+      <h2 className="card_title md:!mb-2">Existing Categories</h2>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3">
         {categories.map((cat) => (
           <div
             key={cat.id}
-            className="rounded-lg p-2.5 custom-shadow-xl bg-white"
+            className="rounded-lg p-2 custom-shadow-xl bg-white"
           >
             <div className="flex justify-between items-start">
-              <h3 className="md:text-lg xl:text-xl font-medium md:font-semibold mb-2">
+              <h3 className="md:text-lg font-medium">
                 {cat.name}
               </h3>
               <div className="flex items-center justify-center gap-2">
@@ -90,13 +90,13 @@ const Categories = () => {
                 </button>
                 <button
                   onClick={() => handleDelete(cat)}
-                  className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
+                  className="bg-[#F34235] hover:bg-[#F34235]/80 size-5.5 rounded-full flex items-center justify-center"
                 >
                   <TrashBin />
                 </button>
               </div>
             </div>
-            <p className="text-gray-600 text-sm xl:text-base mt-1">
+            <p className="text-gray-600 text-sm mt-1">
               {cat.description}
             </p>
           </div>

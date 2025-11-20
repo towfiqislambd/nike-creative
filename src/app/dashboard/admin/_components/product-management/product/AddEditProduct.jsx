@@ -63,17 +63,17 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
       <Modal
         open={open}
         onClose={onClose}
-        className={"max-w-[730px] md:rounded-[20px]"}
+        className={"max-w-[700px]"}
       >
-        <div className="md:px-2.5 relative">
+        <div className="relative">
           <h2 className="card_title">
             {product ? "Edit Product" : "Add Product Display"}
           </h2>
 
-          <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-4">
+          <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-2">
             {/* SKU and Category */}
-            <div className="grid grid-cols-2 gap-5">
-              <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
                 <label className="card_label">
                   <p>SKU</p>
                 </label>
@@ -84,7 +84,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                   className="card_input"
                 />
               </div>
-              <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+              <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
                 <label className="card_label">Category</label>
                 <select {...register("category")} className="card_input">
                   <option value={product?.category}>
@@ -95,10 +95,10 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                 </select>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-5">
-              <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
-                <label className="text-base xl:text-xl flex items-center justify-between">
-                  <p>Visibility</p>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col col-span-2 md:col-span-1 gap-1">
+                <label className="card_label">
+                  Visibility
                 </label>
                 <select {...register("visibility")} className="card_input">
                   <option>Restricted Visibility</option>
@@ -108,7 +108,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
               {/* for company field */}
               <div className="flex items-center gap-3.5 col-span-2 md:col-span-1 max-sm:justify-between md:justify-between">
                 <div className="">
-                  <label className="text-base xl:text-xl flex items-center justify-between">
+                  <label className="card_label">
                     Choose companies
                   </label>
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -127,7 +127,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                       </div>
                     ))}
                     {companies.length === 0 && (
-                      <div className="text-center text-gray-400">
+                      <div className="text-center text-sm text-gray-400">
                         No company added.
                       </div>
                     )}
@@ -136,17 +136,17 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                 <button
                   type="button"
                   onClick={() => setShowChooseModal("company")}
-                  className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-8 flex items-center justify-center rounded-full shrink-0"
+                  className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-7 flex items-center justify-center rounded-full shrink-0"
                 >
                   <Plus size={16} />
                 </button>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-3">
               {/* for field */}
-              <div className="flex col-span-2 md:col-span-1 items-center gap-3.5 max-sm:justify-between md:justify-between">
+              <div className="flex col-span-2 md:col-span-1 items-center gap-2 max-sm:justify-between md:justify-between">
                 <div>
-                  <label className="text-base xl:text-xl flex items-center justify-between">
+                  <label className="card_label">
                     Field
                   </label>
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -164,8 +164,8 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                         </button>
                       </div>
                     ))}
-                    {companies.length === 0 && (
-                      <div className="text-center text-gray-400">
+                    {fields.length === 0 && (
+                      <div className="text-center text-sm text-gray-400">
                         No field added.
                       </div>
                     )}
@@ -174,15 +174,15 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                 <button
                   type="button"
                   onClick={() => setShowChooseModal("field")}
-                  className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-8 flex items-center justify-center rounded-full shrink-0"
+                  className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-7 flex items-center justify-center rounded-full shrink-0"
                 >
                   <Plus size={16} />
                 </button>
               </div>
               {/* for color field */}
-              <div className="flex col-span-2 md:col-span-1 items-center gap-3.5 max-sm:justify-between md:justify-between">
+              <div className="flex col-span-2 md:col-span-1 items-center gap-2 max-sm:justify-between md:justify-between">
                 <div>
-                  <label className="text-base xl:text-xl flex items-center justify-between">
+                  <label className="card_label">
                     Color
                   </label>
                   <div className="flex flex-wrap gap-2 mt-1">
@@ -201,7 +201,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                       </div>
                     ))}
                     {colors.length === 0 && (
-                      <div className="text-center text-gray-400">
+                      <div className="text-center text-sm text-gray-400">
                         No color added.
                       </div>
                     )}
@@ -210,7 +210,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                 <button
                   type="button"
                   onClick={() => setShowChooseModal("color")}
-                  className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-8 flex items-center justify-center rounded-full shrink-0"
+                  className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-7 flex items-center justify-center rounded-full shrink-0"
                 >
                   <Plus size={16} />
                 </button>
@@ -218,7 +218,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
             </div>
 
             {/* description */}
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-1">
               <label className="card_label">Description</label>
               <textarea
                 {...register("description")}
@@ -230,7 +230,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
             </div>
 
             {/* image upload */}
-            <div className="space-y-2.5">
+            <div className="space-y-1">
               <label className="card_label">Upload Photo</label>
               <label
                 onDragOver={(e) => e.preventDefault()}
@@ -267,7 +267,7 @@ export default function AddEditProduct({ open, onClose, onSubmit, product }) {
                     <div className="bg-white border border-[#EAECF0] w-10 h-10 rounded-[10px] flex items-center justify-center mb-3">
                       <FiUploadCloud className="text-[#6B7280] text-xl" />
                     </div>
-                    <p className="text-sm md:text-lg text-sub-text">
+                    <p className="text-sm text-sub-text">
                       Click to upload or drag and drop
                     </p>
                   </div>

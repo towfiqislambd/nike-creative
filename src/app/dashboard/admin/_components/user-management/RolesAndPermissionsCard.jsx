@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import DeleteModal from "../../../../../Components/Common/DeleteModal";
 import { TrashBin } from "../../../../../Components/Svg/SvgContainer";
 
@@ -41,15 +40,15 @@ const RolesAndPermissionsCard = ({
   };
 
   return (
-    <div className="bg-white rounded-[16px] shadow py-5 px-4 w-full">
-      <h2 className="text-xl 2xl:text-2xl mb-1.5">{title}</h2>
-      <p className="text-gray-500 text-sm mb-3">{description}</p>
+    <div className="bg-white rounded-lg shadow py-2 px-3 w-full">
+      <h2 className="text-lg xl:text-xl">{title}</h2>
+      <p className="text-gray-500 text-sm mb-2">{description}</p>
 
-      <div className="grid md:grid-cols-2 gap-2.5 mb-2.5">
+      <div className="grid md:grid-cols-2 gap-2 mb-2">
         {entries.map((entry, index) => (
           <div
             key={index}
-            className="bg-[#EFF3F6] text-[#5A5C5F] text-sm rounded-lg flex justify-between items-center px-3 py-2"
+            className="bg-[#EFF3F6] text-[#5A5C5F] text-[13px] rounded-lg flex justify-between items-center px-2 py-1.5"
           >
             <span className="truncate">{entry}</span>
             <button
@@ -70,7 +69,7 @@ const RolesAndPermissionsCard = ({
             setIsEmployeeModal(true);
           }}
           placeholder="Add employee or manager..."
-          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#21BBA2]"
+          className="w-full border border-gray-300 rounded-lg px-2 py-1 placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-[#21BBA2]"
         />
       </form>
 

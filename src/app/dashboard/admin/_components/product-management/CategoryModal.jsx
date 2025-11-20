@@ -14,27 +14,27 @@ const CategoryModal = ({ isOpen, category, onClose, onSave }) => {
 
   return (
     <Modal open={isOpen} onClose={onClose} className={"max-w-[497px]"}>
-      <div className="bg-white p-2.5 rounded-[16px] w-full max-w-[500px] relative">
+      <div className="bg-white w-full relative">
         <h2 className="card_title">
           {category ? "Edit Category" : "Add Category"}
         </h2>
-        <form onSubmit={handleSubmit(handleSave)} className="space-y-5">
-          <div className="flex flex-col gap-2.5">
-            <label className="block text-base xl:text-lg">Category Name</label>
+        <form onSubmit={handleSubmit(handleSave)} className="space-y-2">
+          <div className="flex flex-col gap-1">
+            <label className="card_label">Category Name</label>
             <input
               {...register("name", { required: true })}
               placeholder="Category Name"
-              className="border max-w-[325px] border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg"
+              className="card_input w-fit"
               required
             />
           </div>
-          <div className="flex flex-col gap-2.5">
-            <label className="block text-base xl:text-lg">Description</label>
+          <div className="flex flex-col gap-1">
+            <label className="card_label">Description</label>
             <textarea
               {...register("description", { required: true })}
               placeholder="Category Description"
               rows="4"
-              className="border w-full border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base"
+              className="card_input"
               required
             ></textarea>
           </div>
@@ -42,13 +42,13 @@ const CategoryModal = ({ isOpen, category, onClose, onSave }) => {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded border"
+              className="card_btn_outline"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-3 bg-[#21BBA2] text-white rounded-lg"
+              className="card_btn"
             >
               {category ? "Update Category" : "Add Category"}
             </button>

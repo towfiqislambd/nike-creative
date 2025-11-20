@@ -83,39 +83,39 @@ const Products = () => {
   };
 
   return (
-    <div className="w-full overflow-x-auto mt-6 min-h-screen px-2">
+    <div className="w-full overflow-x-auto mt-2 px-2">
       <table className="w-full min-w-[1000px] text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 border-separate font-normal">
         <thead className="rounded-lg border custom-shadow-xl">
-          <tr className="rounded-lg max-sm:text-sm border bg-white">
-            <th className="px-3 py-3 md:py-5 rounded-l-lg">Image</th>
-            <th className="px-3 py-3 md:py-5">SKU</th>
-            <th className="px-3 py-3 md:py-5">Category</th>
-            <th className="px-3 py-3 md:py-5">Description</th>
-            <th className="px-3 py-3 md:py-5">Price</th>
-            <th className="px-3 py-3 md:py-5">Status</th>
-            <th className="px-3 py-3 md:py-5 rounded-r-lg">Actions</th>
+          <tr className="rounded-lg text-sm border bg-white">
+            <th className="px-3 py-3 font-medium rounded-l-lg">Image</th>
+            <th className="px-3 py-3 font-medium">SKU</th>
+            <th className="px-3 py-3 font-medium">Category</th>
+            <th className="px-3 py-3 font-medium">Description</th>
+            <th className="px-3 py-3 font-medium">Price</th>
+            <th className="px-3 py-3 font-medium">Status</th>
+            <th className="px-3 py-3 font-medium rounded-r-lg">Actions</th>
           </tr>
         </thead>
         <tbody>
           {products.map((p) => (
             <tr
               key={p.id}
-              className="border rounded-lg text-sm lg:text-lg custom-shadow-xl bg-white"
+              className="border rounded-lg text-sm custom-shadow-xl bg-white"
             >
-              <td className="p-3 md:py-5 text-center rounded-l-lg">
+              <td className="py-0.5 text-center rounded-l-lg">
                 <img
                   src={p.image}
                   alt={p.category}
                   className="w-12 h-12 rounded object-cover mx-auto"
                 />
               </td>
-              <td className="px-3 py-3 md:py-5 text-center">{p.sku}</td>
-              <td className="px-3 py-3 md:py-5 text-center">{p.category}</td>
-              <td className="px-3 py-3 md:py-5 text-center">{p.description}</td>
-              <td className="px-3 py-3 md:py-5 text-center">
+              <td className="px-3 py-3 text-center">{p.sku}</td>
+              <td className="px-3 py-3 text-center">{p.category}</td>
+              <td className="px-3 py-3 text-center">{p.description}</td>
+              <td className="px-3 py-3 text-center">
                 ${p.price?.toFixed(2)}
               </td>
-              <td className="p-3 md:py-5 text-center">
+              <td className="p-3 text-center">
                 <label className="inline-flex items-center cursor-pointer">
                   <input
                     type="checkbox"
@@ -124,26 +124,26 @@ const Products = () => {
                     className="hidden"
                   />
                   <div
-                    className={`w-11 h-6 rounded-full relative transition-colors ${
+                    className={`w-9 h-5 rounded-full relative transition-colors ${
                       p.status ? "bg-blue-600" : "bg-gray-300"
                     }`}
                   >
                     <div
-                      className={`absolute top-[2px] left-[2px] bg-white w-5 h-5 rounded-full transition-transform ${
-                        p.status ? "translate-x-5" : ""
+                      className={`absolute top-[2px] left-[2px] bg-white w-4 h-4 rounded-full transition-transform ${
+                        p.status ? "translate-x-4" : ""
                       }`}
                     ></div>
                   </div>
                 </label>
               </td>
-              <td className="px-3 py-3 md:py-5 text-center rounded-r-lg">
+              <td className="px-3 py-3 text-center rounded-r-lg">
                 <div className="flex items-center justify-center gap-2">
                   <button onClick={() => handleEdit(p)}>
                     <EditPen />
                   </button>
                   <button
                     onClick={() => handleDelete(p)}
-                    className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
+                    className="bg-[#F34235] hover:bg-[#F34235]/80 size-5.5 rounded-full flex items-center justify-center"
                   >
                     <TrashBin />
                   </button>
