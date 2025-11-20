@@ -32,25 +32,25 @@ const EditClientVisibility = ({ client, onSave }) => {
   };
 
   return (
-    <div className="bg-white flex-1 w-full min-w-[300px] mt-3 max-w-[500px] custom-shadow-xl p-5 rounded-md relative">
+    <div className="bg-white flex-1 w-full min-w-[300px] mt-3 max-w-[500px] custom-shadow-xl px-3 py-2 rounded-md relative">
       <h2 className="card_title">Edit Clients Visibility</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
-          <label className="block text-lg xl:text-xl font-medium mb-2.5">
+          <label className="block md:text-lg font-medium mb-2">
             Company Name
           </label>
           <p>{localClient.company}</p>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-lg xl:text-xl font-medium mb-2.5">
+        <div className="mb-2">
+          <label className="block font-medium mb-1.5">
             Category
           </label>
           <div className="flex flex-wrap gap-2.5">
             {localClient.categories.map((cat) => (
               <div
                 key={cat}
-                className="bg-[#F5F5F5] text-xs px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 custom-shadow-xl"
+                className="bg-[#F5F5F5] text-xs px-2 py-1 rounded-lg flex items-center gap-1.5 custom-shadow-xl"
               >
                 {cat}
                 <button type="button" onClick={() => handleRemoveCategory(cat)}>
@@ -61,9 +61,9 @@ const EditClientVisibility = ({ client, onSave }) => {
             <button
               type="button"
               onClick={() => setShowAddModal(true)}
-              className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-8 flex items-center justify-center rounded-full"
+              className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 text-white size-7 flex items-center justify-center rounded-full"
             >
-              <Plus size={16} />
+              <Plus size={18} />
             </button>
           </div>
         </div>
@@ -83,18 +83,18 @@ const EditClientVisibility = ({ client, onSave }) => {
         <Modal
           open={showAddModal}
           onClose={() => setShowAddModal(false)}
-          className={"!max-w-[385px] rounded-[20px]"}
+          className={"!max-w-[385px]"}
         >
           <div className="bg-white w-full">
             <h2 className="card_title">Add Category</h2>
 
-            <label className="block text-lg xl:text-xl font-medium mb-2.5">
+            <label className="block text-[17px] font-medium mb-1">
               Category
             </label>
             <select
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value)}
-              className="w-full mb-5 border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-xl"
+              className="card_input w-full mb-3"
             >
               <option value="">Select category</option>
               <option value="Single Door Designs">Single Door Designs</option>

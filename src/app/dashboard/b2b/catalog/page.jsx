@@ -67,7 +67,7 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] p-2 md:p-3 rounded-2xl md:rounded-[20px] border-l-2 border-[#bbb] custom-shadow-xl">
+      <header className="bg-[#E4E3E0] p-2 rounded-2xl md:rounded-[20px] border-l-2 border-[#bbb] custom-shadow-xl">
         <nav className="flex items-center justify-end gap-4 pb-2 border-[#555]/50 border-b">
           <div className="flex max-sm:flex-col items-center gap-5 w-full justify-end">
             <div className="flex flex-wrap justify-center gap-3 md:gap-5">
@@ -82,7 +82,7 @@ const page = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-3">
               <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-9 p-2 flex items-center justify-center cursor-pointer">
                 <Cart />
               </button>

@@ -287,7 +287,7 @@ const page = () => {
         </div>
         {open && (
           <div
-            className={`grow fixed z-[999] max-lg:top-0 lg:!bottom-2.5 max-lg:left-0 lg:!right-20 flex lg:h-[70px] h-screen w-fit max-lg:w-[200px] max-lg:gap-2 max-lg:p-5 max-lg:flex-col lg:items-center bg-accent-off-white lg:rounded-full duration-300 transition-transform`}
+            className={`grow border border-gray-300 fixed z-[999] max-lg:top-0 lg:!bottom-2.5 max-lg:left-0 lg:!right-20 flex lg:h-[70px] h-screen w-fit max-lg:w-[200px] max-lg:gap-2 max-lg:p-5 max-lg:flex-col lg:items-center bg-accent-off-white lg:rounded-full duration-300 transition-transform`}
           >
             {menus?.map((menu) => (
               <button

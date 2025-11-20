@@ -202,11 +202,11 @@ const page = () => {
   return (
     <section className=" w-full relative text-primary-text">
       {/* header */}
-      <header className="bg-[#E4E3E0] p-2.5 sm:px-4 sm:pt-3 sm:pb-2 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
-        <nav className="flex max-lg:flex-col items-center justify-between gap-4 mb-2 pb-3 border-[#555]/50 border-b">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2 sm:pb-1.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex max-lg:flex-col items-center justify-between gap-4 mb-1.5 pb-2 border-[#555]/50 border-b">
           {/* search bar */}
           <div className="flex items-center w-full">
-            <div className="max-w-[325px] 2xl:max-w-[425px] w-full flex items-center justify-between bg-[#E4E3E0] rounded-[40px] px-5 py-3 custom-shadow-xl">
+            <div className="max-w-[325px] 2xl:max-w-[425px] w-full flex items-center justify-between bg-[#E4E3E0] rounded-[40px] px-3 py-2.5 custom-shadow-xl">
               <input
                 type="text"
                 placeholder="Search by order number and PO info"
@@ -226,7 +226,7 @@ const page = () => {
                 <Link
                   key={idx}
                   href={link}
-                  className="text-sm md:text-base hover:text-[#21BBA2] transition"
+                  className="text-sm md:text-[15px] hover:text-[#21BBA2] transition"
                 >
                   {label}
                 </Link>
@@ -234,30 +234,30 @@ const page = () => {
             </div>
 
             <div className="flex max-sm:justify-end items-center gap-2 md:gap-3">
-              <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-9 p-2 flex items-center justify-center cursor-pointer">
+              <button className="bg-[#21BBA2] hover:bg-[#21BBA2]/80 shrink-0 rounded-full size-8 p-2 flex items-center justify-center cursor-pointer">
                 <Cart />
               </button>
               <div className="relative shrink-0 cursor-pointer">
                 <Image
                   src={profilePicture}
-                  width={42}
-                  height={42}
+                  width={36}
+                  height={36}
                   alt=""
                   className="rounded-full"
                 />
-                <div className="size-3.5 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+                <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
               </div>
             </div>
           </div>
         </nav>
 
         {/* filter Tabs */}
-        <div className="flex flex-wrap gap-x-2.5 gap-y-2.5 md:gap-y-3 pb-3 border-[rgba(85,85,85,0.50)] border-b">
+        <div className="flex flex-wrap gap-x-2.5 gap-y-2.5 md:gap-y-3 pb-2.5 border-[rgba(85,85,85,0.50)] border-b">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 md:px-4 py-2 md:py-3 cursor-pointer rounded-xl border-b border-[#777] text-sm md:text-base transition shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] ${
+              className={`px-3 md:px-4 py-2 md:py-2.5 cursor-pointer rounded-xl border-b border-[#777] text-sm transition shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] ${
                 activeTab === tab
                   ? "bg-[#21BBA2] text-white"
                   : "bg-[#D7D7D7] hover:bg-gray-300"
@@ -267,13 +267,13 @@ const page = () => {
             </button>
           ))}
         </div>
-        <div className="flex justify-between items-center sm:px-4 pt-2">
-          <h2 className="text-lg md:text-xl font-medium">
+        <div className="flex justify-between items-center sm:px-3 pt-1">
+          <h2 className="text-lg font-medium">
             Total Orders Showing - <span className="font-normal">132</span>
           </h2>
           <Link
             href={"/dashboard/b2b/orders/order/cart"}
-            className="bg-[#4BCDE4] hover:bg-[#4BCDE4]/80 cursor-pointer text-nowrap text-white text-base lg:text-lg py-2.5 px-5 rounded-lg"
+            className="bg-[#4BCDE4] hover:bg-[#4BCDE4]/80 cursor-pointer text-nowrap text-white text-sm py-2 px-5 rounded-lg"
           >
             Pay Now
           </Link>
@@ -282,7 +282,7 @@ const page = () => {
       <div className="w-full flex gap-2 sm:gap-3 mt-2">
         {/* table */}
         <div className="overflow-x-auto rounded-lg">
-          <table className="w-[1470px] border-separate border-spacing-y-1 sm:border-spacing-y-1.5 px-2 text-nowrap">
+          <table className="w-[1470px] border-separate border-spacing-y-1.5 sm:border-spacing-y-2 px-2 text-nowrap">
             <thead>
               <tr className="bg-white text-sm">
                 <th className="px-4 py-3 md:py-4 font-medium">
@@ -423,8 +423,8 @@ const page = () => {
             <Note />
           </button>
           <div
-            className={`max-w-[74px] w-full shrink-0 flex flex-col gap-[37px] rounded-[10px] bg-white px-2 py-3 mt-1 sm:mt-3 transition ${
-              !isNoteOpen && "invisible"
+            className={`max-w-[74px] w-full shrink-0 flex flex-col gap-[39px] rounded-lg bg-white px-2 py-4 mt-1 sm:mt-3 transition ${
+              isNoteOpen && "invisible"
             }`}
           >
             {orderData.map((item, idx) => (

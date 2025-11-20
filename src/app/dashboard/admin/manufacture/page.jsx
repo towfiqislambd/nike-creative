@@ -103,12 +103,12 @@ export default function Home() {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] p-2 md:p-6 rounded-2xl md:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-[425px]:flex-col items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2 sm:pb-1.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex max-[425px]:flex-col items-center justify-between gap-3 pb-1 border-[#555]/50 border-b">
+          <h2 className="dashboard_title">
             Manufacturer & Series Options
           </h2>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3">
             <button className="relative">
               <BellIcon className="text-[#F34235]" />
               <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
@@ -118,48 +118,48 @@ export default function Home() {
             <div className="relative shrink-0 cursor-pointer">
               <Image
                 src={profilePicture}
-                width={48}
-                height={48}
+                width={36}
+                height={36}
                 alt="profile"
                 className="rounded-full"
               />
-              <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+              <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
             </div>
           </div>
         </nav>
 
-        <div className="mt-5 flex justify-center sm:justify-end">
+        <div className="mt-1.5 flex justify-center sm:justify-end">
           <button
             onClick={() => setShowAddModal(true)}
-            className="bg-[#21BBA2] hover:bg-[#21BBA2]/90 inline-flex items-center justify-center px-8 py-4 md:text-xl text-white gap-2.5 rounded-[10px] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+            className="bg-[#21BBA2] hover:bg-[#21BBA2]/90 inline-flex items-center justify-center px-4 py-2 text-sm md:text-[15px] text-white gap-2 rounded-lg shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
           >
-            Add Manufacturer <Plus className="size-5 md:size-6" />
+            Add Manufacturer <Plus className="size-5" />
           </button>
         </div>
       </header>
-      <div className="w-full flex max-2xl:flex-col-reverse gap-5 mt-5">
-        <div className="overflow-x-auto 2xl:shrink-0 px-2">
+      <div className="w-full flex max-2xl:flex-col-reverse gap-2 mt-2">
+        <div className="overflow-x-auto 2xl:shrink-0 px-1">
           <table className="w-[733px] border-spacing-y-3 border-separate">
-            <thead className="rounded-lg text-sm font-normal border custom-shadow-xl">
+            <thead className="rounded-lg text-sm border custom-shadow-xl">
               <tr className="rounded-lg border bg-white">
-                <th className="px-3 py-3 md:py-5 rounded-tl-lg">
+                <th className="px-3 py-3 font-medium rounded-tl-lg">
                   Manufacturer Name
                 </th>
-                <th className="px-3 py-3 md:py-5">Series</th>
-                <th className="px-3 py-3 md:py-5 rounded-tr-lg">Actions</th>
+                <th className="px-3 py-3 font-medium">Series</th>
+                <th className="px-3 py-3 font-medium rounded-tr-lg">Actions</th>
               </tr>
             </thead>
             <tbody>
               {manufacturers.map((m, i) => (
                 <tr
                   key={i}
-                  className={`border rounded-lg custom-shadow-xl ${
+                  className={`border rounded-lg text-sm custom-shadow-xl ${
                     selectedManufacturer?.name === m.name
                       ? "bg-white"
                       : "bg-gray-50"
                   }`}
                 >
-                  <td className="px-3 py-3 md:py-5 text-center rounded-l-lg">
+                  <td className="px-3 py-2.5 text-center rounded-l-lg">
                     <div className="flex gap-2.5 items-center justify-center">
                       {m.name}
                       <button
@@ -174,7 +174,7 @@ export default function Home() {
                     </div>
                   </td>
 
-                  <td className="px-3 py-3 md:py-5 text-center">
+                  <td className="px-3 py-2.5 text-center">
                     {m.series.length > 0 ? (
                       <div className="flex items-center justify-center gap-2.5">
                         {m.series.join(", ")}
@@ -202,7 +202,7 @@ export default function Home() {
                     )}
                   </td>
 
-                  <td className="px-3 py-3 md:py-5 text-center rounded-r-lg">
+                  <td className="px-3 py-2.5 text-center rounded-r-lg">
                     <div className="flex items-center justify-center">
                       <button
                         onClick={(e) => {
@@ -210,7 +210,7 @@ export default function Home() {
                           setDeleteTarget(m.name);
                           setShowDeleteModal(true);
                         }}
-                        className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
+                        className="bg-[#F34235] hover:bg-[#F34235]/80 size-5.5 rounded-full flex items-center justify-center"
                       >
                         <TrashBin />
                       </button>

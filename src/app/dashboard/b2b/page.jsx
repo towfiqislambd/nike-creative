@@ -94,7 +94,7 @@ const page = () => {
           <Image src={wavingHand} width={36} height={36} alt="" />
         </h1>
         <div className="relative">
-          <Image src={profilePicture} width={42} height={42} alt="" className="rounded-full"/>
+          <Image src={profilePicture} width={36} height={36} alt="" className="rounded-full"/>
           <div className="size-3.5 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
         </div>
       </header>
@@ -103,7 +103,7 @@ const page = () => {
         {orderCardData?.map(({ icon, totalCount, subTitle }, idx) => (
           <div
             key={idx}
-            className="flex items-center text-primary-text gap-3 px-3 md:px-4 py-2.5 bg-white rounded-[20px] custom-shadow-xl"
+            className="flex items-center text-primary-text gap-3 px-3 md:px-4 py-2 bg-white rounded-[20px] custom-shadow-xl"
           >
             <div className="flex p-2.5 sm:p-3 justify-center items-center bg-[#f8fcfe] rounded-[13.5px] custom-shadow-xl">
               {icon}
@@ -129,7 +129,7 @@ const page = () => {
         </div>
         {/* table */}
         <div className="w-full overflow-x-auto rounded-lg shadow-md bg-white px-1 ">
-          <table className="w-full text-primary-text border-spacing-y-1 sm:border-spacing-y-1.5 text-nowrap border-separate">
+          <table className="w-full text-primary-text border-spacing-y-1.5 sm:border-spacing-y-2 text-nowrap border-separate">
             <thead className="rounded-lg text-sm border custom-shadow-xl">
               <tr className="rounded-lg border">
                 <th className="px-6 py-3 font-medium">Date-Time</th>
@@ -146,20 +146,20 @@ const page = () => {
                   key={idx}
                   className="border rounded-lg custom-shadow-xl"
                 >
-                  <td className="px-6 py-3 text-sm text-center">{item.date}</td>
-                  <td className="px-6 py-3 text-sm text-center">
+                  <td className="px-6 py-2 text-sm text-center">{item.date}</td>
+                  <td className="px-6 py-2 text-sm text-center">
                     {item.order}
                   </td>
-                  <td className="px-6 py-3 text-sm text-center">{item.po}</td>
-                  <td className="px-6 py-3 text-sm text-center bg-[#C8FFEC]">
+                  <td className="px-6 py-2 text-sm text-center">{item.po}</td>
+                  <td className="px-6 py-2 text-sm text-center bg-[#C8FFEC]">
                     <span className="text-gray-700 px-3 py-1 rounded-md">
                       {item.status}
                     </span>
                   </td>
-                  <td className="px-6 py-3 text-sm text-center">
+                  <td className="px-6 py-2 text-sm text-center">
                     {item.notification}
                   </td>
-                  <td className="px-6 py-3 text-sm text-center">
+                  <td className="px-6 py-2 text-sm text-center">
                     <button className="bg-[#21BBA2] text-white px-3 py-1.5 text-nowrap rounded-lg custom-shadow-xl">
                       View Order
                     </button>

@@ -12,17 +12,17 @@ const ProductModal = ({
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 bg-black/40 flex justify-center items-center z-[9999] px-3"
+      className="fixed inset-0 bg-black/40 flex justify-center items-center z-[9999] px-2"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white p-4 ms:px-8 md:py-5 rounded-[16px] w-full max-w-[730px] relative shadow-lg"
+        className="bg-white p-4 ms:px-8 md:py-3 rounded-[16px] w-full max-w-[730px] relative shadow-lg"
       >
         <h2 className="card_title">
           {editIndex !== null ? "Edit Product" : "Add New Product"}
         </h2>
-        <form onSubmit={onSubmit} className="grid grid-cols-2 gap-2.5 md:gap-4">
-          <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+        <form onSubmit={onSubmit} className="grid grid-cols-2 gap-2.5 md:gap-3">
+          <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
             <label className="card_label">Product Name</label>
             <input
               {...register("productName")}
@@ -30,7 +30,7 @@ const ProductModal = ({
               required
             />
           </div>
-          <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
             <label className="card_label">Unit Type</label>
             <input
               {...register("unitType")}
@@ -38,7 +38,7 @@ const ProductModal = ({
               required
             />
           </div>
-          <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
             <label className="card_label">Current Stock</label>
             <input
               type="number"
@@ -47,7 +47,7 @@ const ProductModal = ({
               required
             />
           </div>
-          <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
             <label className="card_label">Minimum Stock</label>
             <input
               type="number"
@@ -56,7 +56,7 @@ const ProductModal = ({
               required
             />
           </div>
-          <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
             <label className="card_label">Category</label>
             <select
               {...register("category")}
@@ -71,7 +71,7 @@ const ProductModal = ({
               ))}
             </select>
           </div>
-          <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
             <label className="card_label">
               Brand (Optional)
             </label>
@@ -80,7 +80,7 @@ const ProductModal = ({
               className="card_input"
             />
           </div>
-          <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
             <label className="card_label">
               Color/Specifications (Optional)
             </label>

@@ -69,50 +69,50 @@ const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white p-3 sm:px-8 sm:py-5 rounded-[20px] w-full max-w-[523px] relative custom-shadow-xl"
+        className="bg-white px-4 py-3 rounded-lg w-full max-w-[500px] relative custom-shadow-xl"
       >
-        <h2 className="card_title mb-5">Edit Clients Information</h2>
+        <h2 className="card_title mb-4">Edit Clients Information</h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
               <label className="text-md xl:text-base">Company Name</label>
               <input
                 {...register("company")}
                 placeholder="Company Name"
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input !text-sm"
               />
             </div>
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
               <label className="text-md xl:text-base">User Name</label>
               <input
                 {...register("username")}
                 placeholder="User Name"
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input !text-sm"
               />
             </div>
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
               <label className="text-md xl:text-base">Full Address</label>
               <input
                 {...register("address")}
                 placeholder="Full Address"
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input !text-sm"
               />
             </div>
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
               <label className="text-md xl:text-base">Phone number</label>
               <input
                 {...register("phone")}
                 placeholder="Phone Number"
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input !text-sm"
               />
             </div>
-            <div className="flex flex-col col-span-2 md:col-span-1 gap-2.5">
+            <div className="flex flex-col col-span-2 md:col-span-1 gap-1.5">
               <label className="text-md xl:text-base">Email Address</label>
               <input
                 {...register("email")}
                 placeholder="Email Address"
-                className="border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs"
+                className="card_input !text-sm"
               />
             </div>
           </div>
@@ -121,13 +121,13 @@ const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
           <h2 className="mt-5 text-center">
             Manufacturer Visibility For (Company name)
           </h2>
-          <div className="flex w-full gap-5 bg-[#D7D6D7] rounded-[40px] my-4  shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]">
+          <div className="flex w-full gap-2 bg-[#D7D6D7] rounded-[40px] my-2 custom-shadow-xl">
             <button
               type="button"
               onClick={() => setManufacturerTab("all")}
-              className={`flex-1 py-3 md:py-4 lg:py-6 rounded-[40px] text-xs transition ${
+              className={`flex-1 py-3 rounded-[40px] text-sm transition ${
                 manufacturerTab === "all"
-                  ? "bg-[#21BBA2] text-white border border-[#EAEAEA] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+                  ? "bg-[#21BBA2] text-white border border-[#EAEAEA] custom-shadow-xl"
                   : "hover:bg-gray-200"
               }`}
             >
@@ -136,9 +136,9 @@ const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
             <button
               type="button"
               onClick={() => setManufacturerTab("selected")}
-              className={`flex-1 py-3 md:py-4 lg:py-6 rounded-[40px] text-xs transition ${
+              className={`flex-1 py-3 rounded-[40px] text-sm transition ${
                 manufacturerTab === "selected"
-                  ? "bg-[#21BBA2] text-white border border-[#EAEAEA] shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),_0_0_0.225px_0_rgba(0,0,0,0.05),_0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),_0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)]"
+                  ? "bg-[#21BBA2] text-white border border-[#EAEAEA] custom-shadow-xl"
                   : "hover:bg-gray-200"
               }`}
             >
@@ -148,20 +148,20 @@ const EditClientModal = ({ isOpen, onClose, onSave, client }) => {
           {manufacturerTab === "selected" && (
             <div>
               <div className="flex items-center justify-between mb-2.5">
-                <label className="text-xl">Manufacturer</label>
+                <label>Manufacturer</label>
                 <button
                   type="button"
                   onClick={() => setShowAddManufacturerModal(true)}
-                  className="size-8 bg-light-green rounded-full flex items-center justify-center cursor-pointer"
+                  className="size-7 bg-light-green rounded-full flex items-center justify-center cursor-pointer"
                 >
-                  <Plus className="text-white size-5" />
+                  <Plus className="text-white size-6" />
                 </button>
               </div>
               <div className="flex flex-wrap gap-2 items-center">
                 {manufacturers.map((manuf, i) => (
                   <span
                     key={i}
-                    className="bg-[#F5F5F5] inline-flex items-center px-2.5 py-1.5 rounded-lg gap-1.5 text-xs text-primary-text shadow-[0px_0.9px_3.6px_0.9px_#0000001F,_0px_2.7px_2.92px_-1.35px_#00000040,_0px_0px_0.22px_0px_#0000000D,_0px_0px_0.22px_0.22px_#00000012,_0px_5px_8px_1px_#00000033]"
+                    className="bg-[#F5F5F5] inline-flex items-center px-2.5 py-1.5 rounded-lg gap-1.5 text-xs text-primary-text custom-shadow-xl"
                   >
                     {manuf}
                     <button
@@ -212,13 +212,13 @@ const AddManufacturerModal = ({ onAdd, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-[999] px-2">
-      <div className="bg-white p-4 sm:px-8 sm:py-5 rounded-[16px] w-full max-w-[384px] relative custom-shadow-xl">
+      <div className="bg-white px-4 py-3 rounded-lg w-full max-w-[384px] relative custom-shadow-xl">
         <h2 className="card_title">Add Manufacturer</h2>
         <input
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Manufacturer Name"
-          className="border w-full mb-3 border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 text-base xl:text-lg 2xl:text-xl"
+          className="card_input w-full mb-3 xl:mb-5"
         />
         <div className="flex justify-end gap-2">
           <button

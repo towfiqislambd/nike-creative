@@ -141,9 +141,9 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] p-2 md:p-6 rounded-2xl md:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-[425px]:flex-col items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-3 sm:pb-2.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex max-[425px]:flex-col items-center justify-between gap-4">
+          <h2 className="dashboard_title">
             Accounts Payable
           </h2>
           <div className="flex items-center gap-5">
@@ -156,41 +156,41 @@ const page = () => {
             <div className="relative shrink-0 cursor-pointer">
               <Image
                 src={profilePicture}
-                width={48}
-                height={48}
+                width={36}
+                height={36}
                 alt="profile"
                 className="rounded-full"
               />
-              <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+              <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
             </div>
           </div>
         </nav>
       </header>
-      <div className="my-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-1.5 md:gap-5">
+      <div className="my-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-1.5 md:gap-3">
         {amountStatus.map(({ title, amount }, index) => (
           <div
             key={index}
-            className="rounded-lg md:rounded-[20px] bg-white flex flex-col justify-center items-center text-center gap-2 md:gap-[30px] py-5 md:py-[30px] md:pr-[32px] md:pl-[33px] custom-shadow-xl"
+            className="rounded-lg md:rounded-[20px] bg-white flex flex-col justify-center items-center text-center gap-2 py-3 custom-shadow-xl"
           >
-            <h3 className="text-lg md:text-2xl font-medium">{title}</h3>
-            <h4 className="text-xl md:text-4xl font-semibold text-[#3BB515]">
+            <h3 className="text-lg font-medium">{title}</h3>
+            <h4 className="text-xl font-semibold text-[#3BB515]">
               ${amount}
             </h4>
           </div>
         ))}
       </div>
-      <div className="flex flex-col min-[1877px]:flex-row gap-5">
-        <div className="min-w-0 overflow-x-auto bg-white px-5 py-[30px] rounded-[20px] custom-shadow-xl">
-          <div className="w-[1122px]">
+      <div className="flex flex-col min-[1877px]:flex-row gap-3">
+        <div className="min-w-0 h-fit overflow-x-auto bg-white px-4 py-3 rounded-[20px] custom-shadow-xl">
+          <div className="min-w-[1218px]">
             <h1 className="section_subTitle">Expense Management</h1>
-            <hr className="my-5 text-[#55555580]" />
+            <hr className="my-2 text-[#55555580]" />
             {/* filter */}
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-wrap gap-3">
               <div>
                 <select
                   name="category"
                   onChange={handleFilterChange}
-                  className="bg-[#E4E3E0] hover:bg-[#E4E3E0]/80 px-3 py-2 sm:px-5 sm:py-4 max-sm:text-sm text-primary-text rounded-lg border border-[#565656] custom-shadow-xl"
+                  className="dashboard_header_btn !border-sub-text"
                 >
                   <option value="All">All Categories</option>
                   {[...new Set(expenses.map((e) => e.category))].map((cat) => (
@@ -203,7 +203,7 @@ const page = () => {
                 <select
                   name="provider"
                   onChange={handleFilterChange}
-                  className="bg-[#E4E3E0] hover:bg-[#E4E3E0]/80 px-3 py-2 sm:px-5 sm:py-4 max-sm:text-sm text-primary-text rounded-lg border border-[#565656] custom-shadow-xl"
+                  className="dashboard_header_btn !border-sub-text"
                 >
                   <option value="All">All Providers</option>
                   {[...new Set(expenses.map((e) => e.supplier))].map((prov) => (
@@ -217,26 +217,26 @@ const page = () => {
                   type="month"
                   name="date"
                   onChange={handleFilterChange}
-                  className="bg-[#E4E3E0] hover:bg-[#E4E3E0]/80 px-3 py-2 sm:px-5 sm:py-4 max-sm:text-sm text-primary-text rounded-lg border border-[#565656] custom-shadow-xl"
+                  className="dashboard_header_btn !border-sub-text"
                 />
               </div>
             </div>
             {/* table */}
-            <table className="border-spacing-y-1.5 sm:border-spacing-y-3 w-[1104px] border-separate">
-              <thead className="rounded-lg border custom-shadow-xl">
+            <table className="border-spacing-y-1.5 sm:border-spacing-y-3 w-full min-w-[1218px] border-separate">
+              <thead className="rounded-lg border text-sm custom-shadow-xl">
                 <tr className="rounded-lg border bg-white">
-                  <th className="px-3 py-3 md:py-5 font-normal rounded-tl-lg">
+                  <th className="px-3 py-3 font-medium rounded-tl-lg">
                     Due Date
                   </th>
-                  <th className="px-3 py-3 md:py-5 font-normal">Description</th>
-                  <th className="px-3 py-3 md:py-5 font-normal">Category</th>
-                  <th className="px-3 py-3 md:py-5 font-normal">
+                  <th className="px-3 py-3 font-medium">Description</th>
+                  <th className="px-3 py-3 font-medium">Category</th>
+                  <th className="px-3 py-3 font-medium">
                     Payment Method
                   </th>
-                  <th className="px-3 py-3 md:py-5 font-normal">Reminder</th>
-                  <th className="px-3 py-3 md:py-5 font-normal">Supplier</th>
-                  <th className="px-3 py-3 md:py-5 font-normal">Amount</th>
-                  <th className="px-3 py-3 md:py-5 font-normal rounded-tr-lg">
+                  <th className="px-3 py-3 font-medium">Reminder</th>
+                  <th className="px-3 py-3 font-medium">Supplier</th>
+                  <th className="px-3 py-3 font-medium">Amount</th>
+                  <th className="px-3 py-3 font-medium rounded-tr-lg">
                     <ReceiptFile />
                   </th>
                 </tr>
@@ -248,32 +248,32 @@ const page = () => {
                       key={exp.id}
                       className="border rounded-lg custom-shadow-xl bg-white"
                     >
-                      <td className="px-3 py-3 md:py-5 text-center rounded-l-lg">
+                      <td className="px-3 py-3 text-center rounded-l-lg">
                         {exp.date}
                       </td>
-                      <td className="px-3 py-3 md:py-5 text-center">
+                      <td className="px-3 py-3 text-center">
                         {exp.description}
                       </td>
-                      <td className="px-3 py-3 md:py-5 text-center">
+                      <td className="px-3 py-3 text-center">
                         {exp.category}
                       </td>
-                      <td className="px-3 py-3 md:py-5 text-center">
+                      <td className="px-3 py-3 text-center">
                         {exp.paymentMethod}
                       </td>
                       <td
-                        className={`px-3 py-3 md:py-5 text-center  ${reminderColor(
+                        className={`px-3 py-3 text-center  ${reminderColor(
                           exp.reminder
                         )}`}
                       >
                         {exp.reminder}
                       </td>
-                      <td className="px-3 py-3 md:py-5 text-center">
+                      <td className="px-3 py-3 text-center">
                         {exp.supplier}
                       </td>
-                      <td className="px-3 py-3 md:py-5 text-center">
+                      <td className="px-3 py-3 text-center">
                         {exp.amount ? `$${exp.amount}` : "-"}
                       </td>
-                      <td className="px-3 py-3 md:py-5 text-center rounded-r-lg">
+                      <td className="px-3 py-3 text-center rounded-r-lg">
                         <div className="flex items-center justify-center">
                           {exp.receipt ? (
                             <ReceiptFile />
@@ -282,7 +282,7 @@ const page = () => {
                               onClick={() => setSelectedExpense(exp)}
                               className="text-red-500 bg-white size-6 custom-shadow-xl flex items-center justify-center rounded-full"
                             >
-                              <Plus />
+                              <Plus size={16}/>
                             </button>
                           )}
                         </div>
@@ -308,22 +308,22 @@ const page = () => {
             />
           )}
         </div>
-        <div className="flex-1 max-md:flex-col max-[1877px]:flex-row flex-col flex gap-5">
-          <div className="inline-flex w-full flex-col gap-5 rounded-[20px] bg-white custom-shadow-xl px-[30px] py-5 max-w-[500px] h-fit">
+        <div className="flex-1 max-md:flex-col max-[1877px]:flex-row flex-col flex gap-3">
+          <div className="inline-flex w-full flex-col rounded-[20px] bg-white custom-shadow-xl px-4 py-3 max-w-[400px] h-fit">
             <h3 className="card_title font-medium">Quick Add Expense</h3>
-            <div className="space-y-5 flex flex-col">
+            <div className="space-y-2 flex flex-col">
               <button
                 onClick={() => setIsNewExpenseModalOpen(true)}
-                className="px-2.5 py-[18px] bg-[#5190A2] hover:bg-[#5190A2]/90 rounded-lg text-white text-base md:text-xl"
+                className="px-2 py-3 bg-[#5190A2] hover:bg-[#5190A2]/90 rounded-lg text-white"
               >
                 <h5>Add New Expense</h5>
               </button>
-              <button onClick={()=> setIsRecurringExpenseModalOpen(true)} className="px-2.5 py-[18px] bg-[#5190A2] hover:bg-[#5190A2]/90 rounded-lg text-white text-base md:text-xl">
+              <button onClick={()=> setIsRecurringExpenseModalOpen(true)} className="px-2 py-3 bg-[#5190A2] hover:bg-[#5190A2]/90 rounded-lg text-white">
                 <h5>Setup Recurring</h5>
               </button>
             </div>
           </div>
-          <div className="inline-flex w-full flex-col gap-5 rounded-[20px] bg-white custom-shadow-xl px-[30px] py-5 max-w-[500px] h-fit">
+          <div className="inline-flex w-full flex-col rounded-[20px] bg-white custom-shadow-xl px-4 py-3 max-w-[400px] h-fit">
             <div className="flex items-center gap-2.5">
               <button className="relative">
                 <BellIcon className="text-[#F34235]" />
@@ -333,31 +333,31 @@ const page = () => {
               </button>
               <h3 className="card_title font-medium">Payment Alerts</h3>
             </div>
-            <div className="space-y-2.5">
-              <div className="flex items-center justify-between px-2.5 py-[18px] gap-[25px] bg-[#5190A2] rounded-lg text-white">
+            <div className="space-y-2">
+              <div className="flex items-center justify-between p-2 gap-[25px] bg-[#5190A2] rounded-lg text-white">
                 <div>
                   <h5>Electricity USA</h5>
                   <p className="text-xs">Due in 1 day - $231.02</p>
                 </div>
-                <button className="px-4 py-2.5 bg-[#FF48424D] rounded-lg">
+                <button className="px-3 py-2 bg-[#FF48424D] text-sm rounded-lg">
                   Update
                 </button>
               </div>
-              <div className="flex items-center justify-between px-2.5 py-[18px] gap-[25px] bg-[#5190A2] rounded-lg text-white">
+              <div className="flex items-center justify-between p-2 gap-[25px] bg-[#5190A2] rounded-lg text-white">
                 <div>
                   <h5>Electricity USA</h5>
                   <p className="text-xs">Due in 1 day - $231.02</p>
                 </div>
-                <button className="px-4 py-2.5 bg-[#FF48424D] rounded-lg">
+                <button className="px-3 py-2 bg-[#FF48424D] text-sm rounded-lg">
                   Update
                 </button>
               </div>
-              <div className="flex items-center justify-between px-2.5 py-[18px] gap-[25px] bg-[#5190A2] rounded-lg text-white">
+              <div className="flex items-center justify-between p-2 gap-[25px] bg-[#5190A2] rounded-lg text-white">
                 <div>
                   <h5>Electricity USA</h5>
                   <p className="text-xs">Due in 1 day - $231.02</p>
                 </div>
-                <button className="px-4 py-2.5 bg-[#FF48424D] rounded-lg">
+                <button className="px-3 py-2 bg-[#FF48424D] text-sm rounded-lg">
                   Update
                 </button>
               </div>

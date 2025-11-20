@@ -140,9 +140,9 @@ export default function BankMatchingPage() {
 
   return (
     <>
-      <div className="rounded-[24px] bg-[#E0DDD7] px-5 py-4 shadow-sm w-full mb-6">
+      <div className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2.5 sm:pb-2 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)] mb-3">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <h1 className="text-[22px] sm:text-[24px] font-semibold text-[#333]">
+          <h1 className="dashboard_title">
             Bank Account Integration
           </h1>
 
@@ -161,16 +161,15 @@ export default function BankMatchingPage() {
             </div>
           </div>
         </div>
-        <div className="mt-3 h-px w-full bg-black/15" />
       </div>
 
       <main className=" bg-[#EFF3F6]">
         <div className="">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
             <div className="overflow-x-auto">
-            <section className="rounded-[28px] w-[925px] bg-white p-6 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
+            <section className="rounded-[28px] w-[925px] bg-white px-4 py-3 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] text-sm ">
               <div>
-                <h2 className="text-xl font-semibold text-[#333] mb-5">
+                <h2 className="text-xl font-medium text-[#333] mb-5">
                   Bank Transactions
                 </h2>
               </div>
@@ -214,7 +213,7 @@ export default function BankMatchingPage() {
                   </div>
                 </div>
               </div>
-              <div className="mb-3 mt-2 hidden rounded-[8px] bg-white px-4 py-4  text-[#333] shadow-[0_8px_22px_rgba(0,0,0,0.29)] font-medium lg:grid lg:grid-cols-[40px_110px_minmax(0,1.6fr)_minmax(0,1fr)_90px_70px]">
+              <div className="hidden rounded-[8px] bg-white px-4 py-3  text-[#333] custom-shadow-xl">
                 <span />
                 <span>Date</span>
                 <span>Description</span>
@@ -268,7 +267,7 @@ export default function BankMatchingPage() {
               </div>
             </section>
             </div>
-            <section className="rounded-[28px] bg-white p-3 sm:p-6 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]">
+            <section className="rounded-[28px] bg-white px-4 py-3 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] text-sm">
               <h2 className="text-xl font-semibold text-[#333]">
                 Unassigned Transactions
               </h2>

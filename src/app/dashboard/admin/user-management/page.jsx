@@ -160,16 +160,14 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] text-[#333] px-2 py-3 sm:p-6 rounded-xl sm:rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex max-sm:flex-col items-center justify-between gap-4 md:pb-5 border-[#555]/50 border-b">
-          <div className="flex md:items-center max-md:flex-col-reverse w-full md:gap-5">
-            <h1 className="text-lg max-md:hidden md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
-              User Management
-            </h1>
-            <div className="flex max-w-[474px] w-full sm:gap-5 bg-[#D7D6D7] rounded-[40px] my-4  custom-shadow-xl">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2 sm:pb-1.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex max-sm:flex-col items-center justify-between gap-4 pb-1.5 border-[#555]/50 border-b">
+          <div className="flex md:items-center max-md:flex-col-reverse w-full md:gap-3">
+            <h1 className="dashboard_title max-md:hidden">User Management</h1>
+            <div className="flex max-w-[350px] w-full bg-[#D7D6D7] rounded-[40px]  custom-shadow-xl">
               <button
                 onClick={() => setUserManagementTab("employee")}
-                className={`flex-1 py-3 md:py-4 lg:py-6 rounded-[40px] text-[13px] md:text-sm xl:text-xl transition ${
+                className={`flex-1 py-2.5 rounded-[40px] text-[13px] md:text-sm transition ${
                   userManagementTab === "employee"
                     ? "bg-[#21BBA2] text-white border border-[#EAEAEA] custom-shadow-xl"
                     : "hover:bg-gray-200"
@@ -179,7 +177,7 @@ const page = () => {
               </button>
               <button
                 onClick={() => setUserManagementTab("rolesAndPermissions")}
-                className={`flex-1 py-3 md:py-4 lg:py-6 rounded-[40px] text-[13px] md:text-sm xl:text-xl transition ${
+                className={`flex-1 py-2.5 rounded-[40px] text-[13px] md:text-sm transition ${
                   userManagementTab === "rolesAndPermissions"
                     ? "bg-[#21BBA2] text-white border border-[#EAEAEA] custom-shadow-xl"
                     : "hover:bg-gray-200"
@@ -189,12 +187,10 @@ const page = () => {
               </button>
             </div>
             <div className="flex md:ml-auto items-center justify-between">
-              <h1 className="text-lg md:hidden sm:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
-                User Management
-              </h1>
+              <h1 className="text-lg md:hidden font-medium">User Management</h1>
               {/* notification & profile */}
-              <div className="flex items-center gap-5">
-                <div className="flex items-center gap-2 sm:gap-5">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                   <button className="relative">
                     <BellIconSvg className="text-[#F34235]" />
                     <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
@@ -204,21 +200,21 @@ const page = () => {
                   <div className="relative shrink-0 cursor-pointer">
                     <Image
                       src={profilePicture}
-                      width={48}
-                      height={48}
+                      width={36}
+                      height={36}
                       alt=""
                       className="rounded-full max-sm:size-8"
                     />
-                    <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+                    <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </nav>
-        <div className="flex items-center justify-between gap-2 sm:gap-5 mt-3 sm:mt-5">
+        <div className="flex items-center justify-between gap-2 mt-1.5">
           <select
-            className="max-sm:basis-1/3 border max-w-[207px] w-full rounded-lg px-2 py-2 md:py-3 xl:py-4 text-xs sm:text-sm xl:text-base"
+            className="max-sm:basis-1/3 border w-fit rounded-lg px-2 py-1.5 text-xs sm:text-sm"
             required
           >
             <option value="">All Filter</option>
@@ -232,7 +228,7 @@ const page = () => {
                 setEditEmployeeIndex(null);
                 setIsEmployeeModal(true);
               }}
-              className="max-sm:basis-2/3 max-w-[300px] bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-2 sm:px-4 lg:px-8 py-2 sm:py-4 text-sm sm:text-base lg:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+              className="max-sm:basis-2/3 dashboard_header_btn"
             >
               Add New Employee <PlusBlack />
             </button>
@@ -240,18 +236,22 @@ const page = () => {
         </div>
       </header>
       {userManagementTab === "employee" && (
-        <div className="flex max-lg:flex-col-reverse gap-5 mt-[18px]">
-          <div className="min-w-0 overflow-x-auto px-2">
+        <div className="flex max-lg:flex-col-reverse gap-5 mt-2">
+          <div className="min-w-0 overflow-x-auto px-1">
             <table className="w-[1058px] text-[#333] border-spacing-y-1.5 md:border-spacing-y-3 border-separate">
-              <thead className="rounded-lg font-normal text-sm border custom-shadow-xl">
-                <tr className="rounded-lg border">
-                  <th className="px-3 py-3 md:py-5">Company & Email</th>
-                  <th className="px-3 py-3 md:py-5">Role</th>
-                  <th className="px-3 py-3 md:py-5">Permissions</th>
-                  <th className="px-3 py-3 md:py-5">Status</th>
-                  <th className="px-3 py-3 md:py-5">Actions</th>
-                  <th className="px-3 py-3 md:py-5 flex items-center justify-center">
-                    <Users />
+              <thead className="text-sm rounded-lg border custom-shadow-xl">
+                <tr className="border rounded-lg bg-white">
+                  <th className="px-3 py-3 font-medium rounded-l-lg">
+                    Company & Email
+                  </th>
+                  <th className="px-3 py-3 font-medium">Role</th>
+                  <th className="px-3 py-3 font-medium">Permissions</th>
+                  <th className="px-3 py-3 font-medium">Status</th>
+                  <th className="px-3 py-3 font-medium">Actions</th>
+                  <th className="px-3 py-3 font-medium rounded-r-lg">
+                    <div className="flex items-center justify-end">
+                      <Users />
+                    </div>
                   </th>
                 </tr>
               </thead>
@@ -259,20 +259,18 @@ const page = () => {
                 {employee.map((employee, i) => (
                   <tr
                     key={i}
-                    className={`border rounded-lg custom-shadow-xl max-sm:text-sm ${
+                    className={`border rounded-lg custom-shadow-xl bg-white text-xs sm:text-[13px] ${
                       disabledEmployeeId.includes(employee.id) && "opacity-50"
                     }`}
                   >
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-2 text-center rounded-l-lg">
                       <div>
                         <p>{employee.company}</p>
                         <p>{employee.email}</p>
                       </div>
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">
-                      {employee.role}
-                    </td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-2 text-center">{employee.role}</td>
+                    <td className="px-3 py-2 text-center">
                       {employee?.permissions?.map((permission, index) => (
                         <span key={index}>
                           {permission}
@@ -284,19 +282,19 @@ const page = () => {
                         </span>
                       ))}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center">
+                    <td className="px-3 py-2 text-center">
                       {disabledEmployeeId.includes(employee.id)
                         ? "Disabled"
                         : employee?.status}
                     </td>
-                    <td className="px-3 py-3 md:py-5 text-center ">
+                    <td className="px-3 py-2 text-center ">
                       <div className="flex items-center justify-center gap-2.5">
                         {employee.status == "Pending" ? (
                           <button
                             onClick={() => {
                               setDeleteIndex(i), setIsDeleteModalOpen(true);
                             }}
-                            className="bg-[#F34235] hover:bg-[#F34235]/80 size-6 rounded-full flex items-center justify-center"
+                            className="bg-[#F34235] hover:bg-[#F34235]/80 size-5.5 rounded-full flex items-center justify-center"
                           >
                             <WrongIconRed />
                           </button>
@@ -315,17 +313,17 @@ const page = () => {
                             </button>
                             <button
                               onClick={() => disableEmployee(employee.id)}
-                              className={`relative inline-flex items-center h-6 w-11 rounded-full transition-colors duration-300 focus:outline-none ${
+                              className={`relative inline-flex items-center h-4.5 w-8 rounded-full transition-colors duration-300 focus:outline-none ${
                                 disabledEmployeeId.includes(employee.id)
                                   ? "bg-gray-300"
                                   : "bg-blue-600"
                               }`}
                             >
                               <span
-                                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
+                                className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform duration-300 ${
                                   disabledEmployeeId.includes(employee.id)
                                     ? "translate-x-1"
-                                    : "translate-x-6"
+                                    : "translate-x-4"
                                 }`}
                               />
                             </button>
@@ -333,12 +331,12 @@ const page = () => {
                         )}
                       </div>
                     </td>
-                    <td className="px-3 py-3 md:py-5 md:px-[30px] text-center">
-                      <div className="flex items-center justify-center gap-2.5">
+                    <td className="px-3 py-2 rounded-r-lg">
+                      <div className="flex items-center justify-end gap-2.5">
                         {employee?.permissions?.length}
                         <button
                           onClick={() => setActiveEmployee(employee)}
-                          className={`size-[30px] flex items-center justify-center p-[6.5px] rounded-full bg-[#D7D7D7] border border-[#b8b6b6] shadow-[0_4.167px_4.167px_0_rgba(0,0,0,0.25)] ${
+                          className={`size-[26px] flex items-center justify-center p-1 rounded-full bg-[#D7D7D7] border border-[#b8b6b6] shadow-[0_4.167px_4.167px_0_rgba(0,0,0,0.25)] ${
                             activeEmployee.id == employee.id && "bg-white"
                           }`}
                         >
@@ -360,17 +358,17 @@ const page = () => {
           </div>
 
           <div
-            className={`bg-white custom-shadow-xl rounded-lg p-2.5 sm:p-5 transition ease-in-out duration-500 delay-300 space-y-5 w-full max-w-md mt-3`}
+            className={`bg-white custom-shadow-xl rounded-lg p-2.5 transition ease-in-out duration-500 delay-300 space-y-3 w-full max-w-md mt-3`}
           >
             <div>
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="text-lg xl:text-xl font-medium">
+              <div className="flex justify-between items-center mb-2">
+                <h3 className="text-lg font-medium">
                   {activeEmployee?.role}
                 </h3>
               </div>
 
               <div className="bg-[#E4E3E0] rounded-md p-3">
-                <div className="flex items-start justify-between">
+                <div className="flex items-start text-[15px] justify-between">
                   <div className="flex flex-col gap-1">
                     <p className="font-medium">{activeEmployee?.company}</p>
                     <Link
@@ -382,10 +380,10 @@ const page = () => {
                   </div>
                   <p>{activeEmployee?.status}</p>
                 </div>
-                <div className="mt-2 flex items-center sm:gap-2 flex-wrap">
+                <div className="mt-2 flex items-center sm:gap-1 flex-wrap text-[15px]">
                   <p>Permissions: </p>
                   {activeEmployee?.permissions.map((permission, idx) => (
-                    <div key={idx}>
+                    <div key={idx} className="text-sm">
                       {permission}
                       {activeEmployee?.permissions.length - 1 == idx
                         ? ""
@@ -399,8 +397,8 @@ const page = () => {
         </div>
       )}
       {userManagementTab === "rolesAndPermissions" && (
-        <div className="w-full sm:px-2 mt-5">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium text-[#333]">
+        <div className="w-full sm:px-2 mt-3">
+          <h2 className="text-lg md:text-xl xl:text-2xl font-medium text-[#333]">
             Manage Page Access for Employees & Managers
           </h2>
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-3">

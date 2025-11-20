@@ -178,9 +178,9 @@ export default function DeductionsPage() {
   return (
     <section className="">
       <div className="mb-6">
-        <div className="relative rounded-[28px] bg-[#E0DDD7] px-6 py-5 shadow-sm">
+         <div className="relative rounded-xl md:rounded-[20px] bg-[#E0DDD7] px-4 py-2.5 border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
           <div className="flex flex-wrap items-center justify-between gap-5">
-            <h1 className="text-[32px] font-semibold text-[#333]">
+            <h1 className="dashboard_title">
               Deductions
             </h1>
 
@@ -195,16 +195,14 @@ export default function DeductionsPage() {
               </div>
             </div>
           </div>
-
-          <div className="my-4 h-px w-full bg-black/15" />
         </div>
       </div>
-      <h1 className="text-[28px] font-semibold text-[#333]">
+      <h1 className="text-[22px] font-medium text-[#333]">
         Final Width, Height Dedication Settings
       </h1>
 
       {/* Interior */}
-      <div className="mt-3 h-[2px] w-full bg-black/10" />
+      <div className="mt-2 h-[2px] w-full bg-black/10" />
       <InteriorDeductions
         rows={interiorRows}
         onEdit={startEditInterior}
@@ -213,7 +211,7 @@ export default function DeductionsPage() {
       <div className="flex justify-end">
         <button
           onClick={startAddInterior}
-          className="mt-6 grid h-14 w-14 place-items-center rounded-full bg-[#21BBA2] text-white text-3xl shadow-lg hover:bg-[#1aa58e]"
+          className="mt-2 grid size-9 place-items-center rounded-full bg-[#21BBA2] text-white text-3xl shadow-lg hover:bg-[#1aa58e]"
           aria-label="Add interior row"
         >
           +
@@ -229,7 +227,7 @@ export default function DeductionsPage() {
       <div className="flex justify-end">
         <button
           onClick={startAddExterior}
-          className="mt-6 grid h-14 w-14 place-items-center rounded-full bg-[#21BBA2] text-white text-3xl shadow-lg hover:bg-[#1aa58e]"
+          className="mt-2 grid size-9 place-items-center rounded-full bg-[#21BBA2] text-white text-3xl shadow-lg hover:bg-[#1aa58e]"
           aria-label="Add exterior row"
         >
           +

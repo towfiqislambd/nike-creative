@@ -45,12 +45,12 @@ const Fields = () => {
 
   return (
     <section className="mt-5">
-      <div className="max-w-[289px] w-full bg-white rounded-[20px] p-6">
+      <div className="max-w-[300px] w-full bg-white rounded-lg px-4 py-3">
         <h2 className="card_title">Fields</h2>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-4">
           {fields.map(({ id, name }) => (
             <div key={id} className="flex items-center justify-between">
-              <p>{name}</p>
+              <p className="text-[15px]">{name}</p>
               <div className="flex items-center justify-center gap-3">
                 <button onClick={() => handleEdit(id)}>
                   <EditPen />
