@@ -99,15 +99,15 @@ button {
 }
 
 .card_title {
-  @apply text-[#333] font-medium text-xl leading-[34px] sm:text-[24px] sm:leading-[36px] lg:text-[26px] lg:leading-[40px] mb-2.5;
+  @apply text-primary-text font-medium text-xl leading-[34px] mb-1;
 }
 
 .th {
-  @apply bg-white text-primary-text px-4 lg:px-5 py-4 font-normal text-center text-sm whitespace-nowrap;
+  @apply bg-white text-primary-text px-4 lg:px-5 py-3 font-medium text-center text-sm whitespace-nowrap;
 }
 
 .td {
-  @apply bg-white px-4 lg:px-5 py-5 text-[16px] text-[#333] align-middle whitespace-nowrap;
+  @apply bg-white px-4 lg:px-5 py-2.5 text-[14px] text-[#333] align-middle whitespace-nowrap;
 }
 
 .small_card {
@@ -119,17 +119,25 @@ button {
 }
 
 .card_input {
-  @apply border border-[#CFCFCF] rounded-lg px-2 py-2 md:py-3 xl:py-4 max-sm:text-sm text-base xl:text-xl;
+  @apply border border-[#CFCFCF] rounded-md p-2 max-sm:text-sm text-[15px];
 }
 
 .card_label {
-  @apply block text-base xl:text-xl;
+  @apply block max-md:text-[15px];
 }
 
 .card_btn {
-  @apply bg-[#21BBA2] border border-[#21BBA2] text-white max-sm:text-sm px-4 md:px-8 py-2.5 md:py-4 rounded-lg;
+  @apply bg-[#21BBA2] border border-[#21BBA2] text-white max-sm:text-sm px-4 py-2 rounded-lg;
 }
 
 .card_btn_outline {
-  @apply bg-white border border-[#21BBA2] text-[#21BBA2] max-sm:text-sm px-4 md:px-8 py-2.5 md:py-4 rounded-lg;
+  @apply bg-white border border-[#21BBA2] text-[#21BBA2] max-sm:text-sm px-4 py-2 rounded-lg;
+}
+
+.dashboard_title {
+  @apply text-lg md:text-xl xl:text-2xl font-medium;
+}
+
+.dashboard_header_btn{
+  @apply bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-3 py-2 text-sm md:text-[15px] text-primary-text gap-2 rounded-lg border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]
 }

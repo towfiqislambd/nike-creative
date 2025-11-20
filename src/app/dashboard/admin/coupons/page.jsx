@@ -94,12 +94,12 @@ const page = () => {
   return (
     <section className="text-primary-text w-full relative">
       {/* header */}
-      <header className="bg-[#E4E3E0] p-6 rounded-[40px] border-l-2 border-[#bbb] custom-shadow-xl">
-        <nav className="flex items-center justify-between gap-4 mb-5 pb-5 border-[#555]/50 border-b">
-          <h2 className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl font-medium">
+      <header className="bg-[#E4E3E0] p-2 sm:px-2.5 sm:pt-2 sm:pb-1.5 rounded-xl md:rounded-[20px] border-l-2 border-[#bbb] shadow-[0_2px_0_0_rgba(0,_0,_0,_0.25)]">
+        <nav className="flex items-center justify-between gap-4 pb-1.5 border-[#555]/50 border-b">
+          <h2 className="text-lg md:text-xl xl:text-2xl font-medium">
             Coupons
           </h2>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3">
             <button className="relative">
               <BellIcon className="text-[#F34235]" />
               <div className="size-5 text-white bg-[#F34235] rounded-full flex items-center justify-center text-xs absolute -top-1.5 -right-1.5 border-2 border-[#e4e3e0]">
@@ -109,70 +109,72 @@ const page = () => {
             <div className="relative shrink-0 cursor-pointer">
               <Image
                 src={profilePicture}
-                width={48}
-                height={48}
+                width={36}
+                height={36}
                 alt="profile"
                 className="rounded-full"
               />
-              <div className="size-4 rounded-full border-[3px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
+              <div className="size-3 rounded-full border-[2px] border-white bg-green-500 absolute -bottom-0.5 -right-0.5" />
             </div>
           </div>
         </nav>
 
-        <div className="mt-5">
+        <div className="mt-2 px-2">
           <button
             onClick={() => {
               setIsAddEditOpen(true);
               setEditData(null);
             }}
-            className="bg-[#D7D7D7] hover:bg-[#D7D7D7]/80 inline-flex items-center justify-center px-4 sm:px-8 py-3 sm:py-4 sm:text-xl text-primary-text gap-2.5 rounded-[10px] border border-[#F5F4F4]/60 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07)]"
+            className="dashboard_header_btn"
           >
             Add Coupons <PlusBlack />
           </button>
         </div>
       </header>
       <div>
-        <div className="w-full overflow-x-auto px-2 mt-5">
+        <div className="w-full overflow-x-auto px-1 mt-2">
           <table className="w-full border-spacing-y-1.5 sm:border-spacing-y-3 border-separate text-nowrap">
             <thead className="rounded-lg text-sm border custom-shadow-xl">
               <tr className="rounded-lg border">
-                <th className="px-3 py-3 md:py-5">Coupon Code</th>
-                <th className="px-3 py-3 md:py-5">Discount Type</th>
-                <th className="px-3 py-3 md:py-5">Allowed User</th>
-                <th className="px-3 py-3 md:py-5">Discount %</th>
-                <th className="px-3 py-3 md:py-5">Expiry Date</th>
-                <th className="px-3 py-3 md:py-5">Usage Count</th>
-                <th className="px-3 py-3 md:py-5">Actions</th>
+                <th className="px-3 py-3 font-medium">Coupon Code</th>
+                <th className="px-3 py-3 font-medium">Discount Type</th>
+                <th className="px-3 py-3 font-medium">Allowed User</th>
+                <th className="px-3 py-3 font-medium">Discount %</th>
+                <th className="px-3 py-3 font-medium">Expiry Date</th>
+                <th className="px-3 py-3 font-medium">Usage Count</th>
+                <th className="px-3 py-3 font-medium text-end">Actions</th>
               </tr>
             </thead>
             <tbody>
               {coupons.map((coupon, i) => (
-                <tr key={i} className="border rounded-lg custom-shadow-xl">
-                  <td className="px-3 py-3 md:py-5 text-center">
+                <tr key={i} className="border rounded-lg custom-shadow-xl bg-white text-[13px]">
+                  <td className="px-3 py-3 text-center  rounded-l-lg">
                     {coupon.couponCode}
                   </td>
-                  <td className="px-3 py-3 md:py-5 text-center">
+                  <td className="px-3 py-3 text-center">
                     {coupon.discountType}
                   </td>
-                  <td className="px-3 py-3 md:py-5 text-center">
+                  <td className="px-3 py-3 text-center">
                     {coupon.allowedUser}
                   </td>
-                  <td className="px-3 py-3 md:py-5 text-center bg-[#EDFCFF]">
+                  <td className="px-3 py-3 text-center bg-[#EDFCFF]">
                     {coupon.discountPercent}
                   </td>
-                  <td className="px-3 py-3 md:py-5 text-center">
+                  <td className="px-3 py-3 text-center">
                     {coupon.expiryDate}
                   </td>
-                  <td className="px-3 py-3 md:py-5 text-center">
+                  <td className="px-3 py-3 text-center">
                     {coupon.usageCount}
                   </td>
-                  <td className="px-3 py-3 md:py-5 text-center flex items-center justify-center gap-2.5">
+                  <td className="px-3 py-3 text-end rounded-r-lg">
+                    <div className="flex items-center justify-end gap-2.5">
+
                     <button
                       onClick={() => {
                         setEditData(coupon);
                         setIsAddEditOpen(true);
                       }}
-                    >
+                      >
                       <EditPen />
                     </button>
                     <button
@@ -180,10 +182,11 @@ const page = () => {
                         setCouponToDelete(coupon);
                         setIsDeleteOpen(true);
                       }}
-                      className="bg-[#F34235] hover:bg-[#F34235]/80 size-7 rounded-full flex items-center justify-center"
-                    >
+                      className="bg-[#F34235] hover:bg-[#F34235]/80 size-5.5 rounded-full flex items-center justify-center"
+                      >
                       <TrashBin />
                     </button>
+                      </div>
                   </td>
                 </tr>
               ))}

@@ -48,25 +48,25 @@ const ProductAnalytics = () => {
 
   return (
     <div className="w-full max-w-lg md:max-w-full overflow-x-auto">
-      <table className="w-full border-separate text-center border-spacing-y-3 lg:border-spacing-y-4 text-sm lg:text-base">
+      <table className="w-full border-separate text-center border-spacing-y-1.5 lg:border-spacing-y-3">
         <thead>
-          <tr className="shadow bg-white rounded">
-            <td className="text-nowrap px-2 py-4 lg:py-6 rounded-l-lg">SKU / CATEGORY</td>
-            <td className="text-nowrap px-2 py-4 lg:py-6">ROBUST MEDIAN INSTALLATION TIME (MIN)</td>
-            <td className="text-nowrap px-2 py-4 lg:py-6"># OF INSTALLATIONS</td>
-            <td className="text-nowrap px-2 py-4 lg:py-6 rounded-r-lg">Details</td>
+          <tr className="shadow bg-white rounded text-sm">
+            <td className="text-nowrap px-2 py-4 font-medium rounded-l-lg">SKU / CATEGORY</td>
+            <td className="text-nowrap px-2 py-4 font-medium">ROBUST MEDIAN INSTALLATION TIME (MIN)</td>
+            <td className="text-nowrap px-2 py-4 font-medium"># OF INSTALLATIONS</td>
+            <td className="text-nowrap px-2 py-4 font-medium rounded-r-lg">Details</td>
           </tr>
         </thead>
 
         <tbody>
           {data.map(item => (
             <React.Fragment key={item.id}>
-              <tr className="shadow bg-white rounded-lg">
-                <td className="text-nowrap px-3 py-3 lg:py-6 rounded-l-lg">{item.category}</td>
-                <td className="text-nowrap px-3 py-3 lg:py-6">{item.installation_time}</td>
-                <td className="text-nowrap px-3 py-3 lg:py-6">{item.of_installation}</td>
+              <tr className="shadow bg-white rounded-lg text-sm">
+                <td className="text-nowrap px-3 py-3 rounded-l-lg">{item.category}</td>
+                <td className="text-nowrap px-3 py-3">{item.installation_time}</td>
+                <td className="text-nowrap px-3 py-3">{item.of_installation}</td>
                 <td
-                  className="text-nowrap px-3 py-3 lg:py-6 rounded-r-lg cursor-pointer"
+                  className="text-nowrap px-3 py-3 rounded-r-lg cursor-pointer"
                   onClick={() => toggleExpand(item?.id)}
                 >
                   {expanded.includes(item.id) ? <Minus2Svg /> : <Plus2Svg />}
@@ -76,12 +76,12 @@ const ProductAnalytics = () => {
               {expanded.includes(item.id) &&
                 item.children?.map((child, idx) => (
                   <tr key={idx} className="bg-[#eaeaea] shadow rounded-lg">
-                    <td className="text-nowrap px-3 py-3 lg:py-6 pl-8">{child.sku}</td>
-                    <td className="text-nowrap px-3 py-3 lg:py-6">{child.installation_time}</td>
-                    <td className="text-nowrap px-3 py-3 lg:py-6">{child.of_installation}</td>
+                    <td className="text-nowrap px-3 py-3 pl-8">{child.sku}</td>
+                    <td className="text-nowrap px-3 py-3">{child.installation_time}</td>
+                    <td className="text-nowrap px-3 py-3">{child.of_installation}</td>
                     <td
                       onClick={() => setOpen(true)}
-                      className="text-nowrap px-3 py-3 lg:py-6 cursor-pointer"
+                      className="text-nowrap px-3 py-3 cursor-pointer"
                     >
                       <Plus2Svg />
                     </td>

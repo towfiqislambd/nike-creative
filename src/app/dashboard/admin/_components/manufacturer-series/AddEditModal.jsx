@@ -33,11 +33,11 @@ const AddEditModal = ({ isOpen, onClose, onSave, defaultValue, type }) => {
 
   return (
     <Modal open={isOpen} onClose={onClose} className={'max-w-[384px]'}>
-        <div className="bg-white xl:p-5 rounded-[16px] w-full max-w-[400px] relative">
+        <div className="bg-white w-full max-w-[400px] relative">
         <h2 className="card_title">{modalTitle}</h2>
         <form
           onSubmit={handleSubmit(handleSave)}
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-1"
         >
             <label>{type.charAt(0).toUpperCase() + type.slice(1)}</label>
           <input
@@ -47,7 +47,7 @@ const AddEditModal = ({ isOpen, onClose, onSave, defaultValue, type }) => {
             }
             className="card_input"
           />
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-end gap-3 mt-2">
             <button
               type="button"
               onClick={onClose}

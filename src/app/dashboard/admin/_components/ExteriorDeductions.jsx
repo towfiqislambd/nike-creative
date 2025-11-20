@@ -6,15 +6,14 @@ import { FaRegTrashCan } from "react-icons/fa6";
 
 export default function ExteriorDeductions({ rows = [], onEdit, onDelete }) {
   return (
-    <div className="mt-10">
-      <h2 className="text-[28px] font-semibold text-[#333]">
+    <div>
+      <h2 className="text-[20px] font-semibold text-[#333]">
         Exterior Deductions
       </h2>
-      <div className="mt-3 h-[2px] w-full bg-black/10" />
+      <div className="mt-1 h-[2px] w-full bg-black/10" />
 
-      <div className="mt-6 ">
         <div className="overflow-x-auto">
-          <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-[20px]">
+          <table className="w-full border-separate border-spacing-y-1.5 md:border-spacing-y-3">
             <thead >
               <tr className="!bg-white/80" >
                 <th className="th">
@@ -64,14 +63,14 @@ export default function ExteriorDeductions({ rows = [], onEdit, onDelete }) {
                     <div className="flex items-center justify-center gap-3">
                       <button
                         onClick={() => onEdit?.(r)}
-                        className="grid h-9 w-9 place-items-center rounded-full border border-gray-300 hover:bg-gray-50"
+                        className="grid size-8 place-items-center rounded-full border border-gray-300 hover:bg-gray-50"
                         title="Edit"
                       >
                         <EditSvg />
                       </button>
                       <button
                         onClick={() => onDelete?.(r.id)}
-                        className="grid h-9 w-9 place-items-center rounded-full bg-red-500/10 text-red-600 hover:bg-red-500/20"
+                        className="grid size-8 place-items-center rounded-full bg-red-500/10 text-red-600 hover:bg-red-500/20"
                         title="Delete"
                       >
                        <FaRegTrashCan />
@@ -94,7 +93,6 @@ export default function ExteriorDeductions({ rows = [], onEdit, onDelete }) {
             </tbody>
           </table>
         </div>
-      </div>
     </div>
   );
 }

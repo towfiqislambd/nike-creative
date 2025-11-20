@@ -16,16 +16,16 @@ const SeriesCard = ({ manufacturer, onAddSeries, onDeleteSeries }) => {
   };
 
   return (
-    <div className="max-w-[625px] w-full h-fit min-h-[223px] bg-white p-4 rounded-lg shadow-md mt-2.5">
-      <div className="flex justify-between items-center mb-3 md:mb-5">
-        <h3 className="text-lg md:text-xl font-medium">
+    <div className="max-w-[625px] w-full h-fit min-h-[210px] bg-white px-3 py-2 rounded-lg shadow-md mt-2.5">
+      <div className="flex justify-between items-center mb-3">
+        <h3 className="xl:text-lg font-medium">
           Series For ({manufacturer.name})
         </h3>
         <button
           onClick={() => onAddSeries(manufacturer.name)}
-          className="bg-[#21BBA2] text-white rounded-full size-8 md:size-9 flex items-center justify-center"
+          className="bg-[#21BBA2] text-white rounded-full size-8 flex items-center justify-center"
         >
-          <Plus className="size-5 md:size-6" />
+          <Plus className="size-5" />
         </button>
       </div>
       <div className="flex flex-wrap gap-2">
