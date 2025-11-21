@@ -57,7 +57,7 @@ export default function B2BNavbar() {
         </div>
         {/* Right Section: Search + Icons */}
         <div className="hidden lg:flex items-center gap-4">
-          <div className="flex items-center bg-gray-50 border border-gray-300 rounded-full px-3 py-2 w-[260px]">
+          <div className="flex items-center bg-gray-50 border border-gray-300 shadow-md shadow-black/70 rounded-full px-3 py-2 w-[260px]">
             <input
               type="text"
               placeholder="Search product here..."
