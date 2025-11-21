@@ -58,7 +58,7 @@ const B2B2CNavbar = () => {
 
           {/* Right */}
           <div className="hidden xl:flex gap-4 items-center">
-            <div className="w-[400px] px-6 py-3.5 border border-gray-100 rounded-full shadow-lg  shadow-black/10">
+            <div className="w-[400px] px-6 py-3.5 border border-gray-100 rounded-full shadow-md  shadow-black/70">
               <input
                 type="text"
                 className="block w-full border border-none outline-none"
