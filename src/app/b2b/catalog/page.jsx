@@ -22,7 +22,7 @@ const page = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-[#eef3f7] flex flex-col lg:flex-row gap-4 p-4">
+    <div className="container min-h-screen bg-[#eef3f7] flex flex-col lg:flex-row gap-4 p-4">
       {/* Left - Sidebar */}
       <div className="w-full lg:w-[180px] bg-white rounded-xl p-4 shadow-md flex flex-col">
         <h3 className="text-center text-sm font-semibold mb-4">Pages</h3>
