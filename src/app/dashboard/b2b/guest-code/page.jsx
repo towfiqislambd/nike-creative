@@ -215,7 +215,7 @@ export default function GuestCode() {
           </div>
           <div className="mt-3 h-px w-full bg-black/15" />
           <div className="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h1 className="text-[22px] sm:text-[24px] lg:text-[28px] font-semibold text-[#333] text-center sm:text-left">
+            <h1 className="text-[18px] sm:text-[20px] lg:text-[22px] font-semibold text-[#333] text-center sm:text-left">
               Guest Access Management
             </h1>
 
@@ -223,7 +223,7 @@ export default function GuestCode() {
               onClick={openAdd}
               className="group flex flex-col items-center sm:items-center"
             >
-              <span className="grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
+              <span className="grid h-4 w-4 sm:h-6 sm:w-6 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
                 +
               </span>
               <span className="text-[13px] sm:text-[14px] text-gray-700 mt-1">
@@ -235,7 +235,7 @@ export default function GuestCode() {
       </div>
 <div className="w-full overflow-x-auto">
 
-      <section className="pb-16 w-[1400px] overflow-x-auto">
+      <section className="pb-16 overflow-x-auto">
         <div className="grid grid-cols-12 mb-2 sm:mb-4 rounded-xl bg-white px-4 py-4 text-sm font-medium text-primary-black">
           <div className="col-span-2 text-center">Name</div>
           <div className="col-span-3 text-center">Product</div>

@@ -19,8 +19,8 @@ export default function CouponsPage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-6"></div>
 
-            <div className="flex items-center gap-5">
-              <ul className="hidden md:flex items-end gap-8 text-[16px] text-gray-800">
+            <div className="flex items-center gap-3">
+              <ul className="hidden md:flex items-end gap-8 text-[14px] text-gray-800">
                 <li className="cursor-pointer hover:text-teal-600 transition-colors">
                   Home
                 </li>
@@ -55,7 +55,7 @@ export default function CouponsPage() {
           <div className="mt-3 h-px w-full bg-black/15" />
 
           <div className="mt-3 flex items-center justify-between">
-            <h1 className="text-[28px] font-semibold text-[#333]">
+            <h1 className="text-[22px] font-semibold text-[#333]">
               Available Coupons & Store Credits
             </h1>
           </div>
@@ -64,7 +64,7 @@ export default function CouponsPage() {
     </div>
      <main className="min-h-screen p-4 md:p-6">
       <div className="rounded-2xl bg-[#F5F7FA] p-5 md:p-7 shadow-[0_24px_60px_rgba(19,25,39,0.10)] ring-1 ring-black/5">
-        <h1 className="text-[22px] md:text-[26px] font-semibold text-[#333]">
+        <h1 className="text-[18px] md:text-[20px] font-semibold text-[#333]">
           Available Coupons
         </h1>
 
@@ -76,10 +76,10 @@ export default function CouponsPage() {
               style={{ minWidth: 290 }}
             >
               <div className="flex flex-wrap items-baseline gap-4">
-                <div className="text-[38px] md:text-[44px] font-extrabold leading-none text-[#333]">
+                <div className="text-[26px] md:text-[32px] font-extrabold leading-none text-[#333]">
                   {c.off}% <span className="font-black">OFF</span>
                 </div>
-                <div className="text-[28px] md:text-[32px] font-medium text-[#3C4452]">
+                <div className="text-[22px] md:text-[26px] font-medium text-[#3C4452]">
                   {c.label}
                 </div>
               </div>
