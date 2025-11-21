@@ -73,7 +73,7 @@ export default function UserManagementPage() {
             {/* left: search + filter */}
             <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:gap-6">
               {/* search */}
-              <div className="flex items-center rounded-full border border-gray-300 bg-white px-3 py-2 xl:px-4 shadow-sm w-full xl:w-auto">
+              <div className="flex items-center rounded-full border border-gray-300 bg-[#E0DDD7] px-3 py-2 xl:px-4 shadow-sm w-full xl:w-auto">
                 <input
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -121,7 +121,7 @@ export default function UserManagementPage() {
             </div>
 
             {/* right: nav + icons */}
-            <div className="flex items-center gap-3 xl:gap-5">
+            <div className="flex items-center gap-2 xl:gap-3">
               {/* nav becomes scrollable row under xl */}
               <ul className="hidden md:flex items-center gap-4 xl:gap-8 text-[14px] xl:text-[16px] text-gray-800 overflow-x-auto md:overflow-visible whitespace-nowrap">
                 <li className="cursor-pointer hover:text-teal-600 transition-colors">
@@ -160,7 +160,7 @@ export default function UserManagementPage() {
 
           {/* title row */}
           <div className="mt-3 flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
-            <h1 className="text-[22px] xl:text-[28px] font-semibold text-[#333]">
+            <h1 className="text-[18px] xl:text-[22px] font-semibold text-[#333]">
               User Management
             </h1>
 
@@ -168,7 +168,7 @@ export default function UserManagementPage() {
               onClick={openAdd}
               className="self-start xl:self-auto group flex flex-col items-center"
             >
-              <span className="grid h-9 w-9 xl:h-10 xl:w-10 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
+              <span className="grid h-4 w-4 xl:h-6 xl:w-6 place-items-center rounded-full border border-gray-600 text-gray-800 group-hover:bg-gray-800 group-hover:text-white transition">
                 +
               </span>
               <span className="text-[13px] xl:text-[14px] text-gray-700 mt-1">
