@@ -1,16 +1,22 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function ForgotPasswordPage() {
+
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm();
 
+  const router = useRouter();
+
   const onSubmit = (data) => {
     console.log("Forgot password email:", data);
+
+    router.push("/resetpassword");
   };
 
   return (
