@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -8,8 +9,12 @@ export default function B2B2CMobileLogin() {
   const { register, handleSubmit } = useForm();
   const [showPass, setShowPass] = useState(false);
 
+  const router = useRouter()
+
   const onSubmit = (data) => {
     console.log("LOGIN DATA:", data);
+    router.push("/mobile/b2b2c_onboarding")
+    
   };
 
   return (
