@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import React, { useState } from "react";
 import aiImg from "../../../Assets/avatar.jpg";
@@ -14,10 +16,7 @@ import {
   TrySvg,
   UploadSvg,
 } from "../../../Components/Svg/SvgContainer";
-const categories = [
-  { id: 1, name: "Single Door Designs" },
-  { id: 2, name: "Double Door Designs" },
-];
+
 
 const previewImages = [
   { id: 1, img: doorPreview },
@@ -26,7 +25,6 @@ const previewImages = [
 ];
 
 const Aipage = () => {
-  const [activeCategory, setActiveCategory] = useState("Single Door Designs");
   const [activeMode, setActiveMode] = useState("text");
   const [previewImage, setPreviewImage] = useState(null);
   const [notClicked, setNotClicked] = useState(false);
@@ -35,10 +33,8 @@ const Aipage = () => {
   return (
     <div className="block md:hidden">
       <div className=" flex flex-col 2xl:flex-row gap-5 pt-5 pb-50 mb-5 mx-3">
-        {/* Left - Chat Box */}
         <div>
           <div className="bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] p-4 xl:p-7 rounded-2xl w-full md:w-[620px] xl:w-[732px] h-[500px] sm:h-[630px] relative mb-6">
-            {/* Top Switcher */}
             <div className="flex absolute right-3 xl:right-4 top-3 xl:top-4 border-[3px] xl:border-4 border-primary-text rounded-full overflow-hidden bg-white z-10">
               <button
                 onClick={() => setActiveMode("file")}
@@ -60,14 +56,11 @@ const Aipage = () => {
                 <AiSvg />
               </button>
             </div>
-
-            {/* Mode */}
             {activeMode === "text" ? (
               <div className="h-full flex flex-col justify-between">
                 <div className="space-y-5 mt-14">
                   <div className="flex gap-3 items-start">
                     <figure className="size-10 sm:size-12 rounded-full relative shrink-0">
-                      {/* Left - AI Image */}
                       <Image
                         src={aiImg}
                         fill
@@ -76,8 +69,6 @@ const Aipage = () => {
                         className="size-full rounded-full"
                       />
                     </figure>
-
-                    {/* Right - Prompt */}
                     <p className="grow bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] text-sm sm:text-[15px] px-3 sm:px-4 py-3 text-primary-text rounded-4xl border border-gray-50 !rounded-tl-md max-w-[453px] leading-[164%]">
                       Hi! I’m your virtual design assistant. Tell me what you’re
                       looking for, and I’ll show you some options
@@ -85,14 +76,12 @@ const Aipage = () => {
                   </div>
 
                   <div className="flex gap-3 items-start justify-end">
-                    {/* Left - AI Image */}
                     <p className="grow bg-white shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] px-3 sm:px-4 py-3 text-sm sm:text-[15px] text-primary-text rounded-4xl border border-gray-50 !rounded-tr-md max-w-[453px] leading-[164%]">
                       Hi! I’m your virtual design assistant. Tell me what you’re
                       looking for, and I’ll show you some options
                     </p>
 
                     <figure className="size-10 sm:size-12 rounded-full relative shrink-0">
-                      {/* Right - Prompt */}
                       <Image
                         src={aiImg}
                         fill
@@ -188,8 +177,6 @@ const Aipage = () => {
               </div>
             )}
           </div>
-
-          {/* Upload Image Box */}
           {activeMode === "file" && (
             <div className="space-y-3">
               <h3 className="text-sm sm:text-xl font-medium text-white">
@@ -235,8 +222,6 @@ const Aipage = () => {
             </div>
           )}
         </div>
-
-        {/* Right - Preview Images */}
         {viewPrevious && (
           <div className="py-5 px-4 rounded-lg w-full sm:w-[350px] shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)] border border-[#E9E9E9] bg-white shrink-0 space-y-3 sm:space-y-5">
             <h3 className="text-primary-text font-semibold text-xl">
