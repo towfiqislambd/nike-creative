@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { FaCamera } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
 import { useForm } from "react-hook-form";
 import { IoCameraOutline } from "react-icons/io5";
 import { TfiCloudUp } from "react-icons/tfi";
@@ -26,7 +24,6 @@ export default function ArPage() {
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>
-
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -65,7 +62,7 @@ export default function ArPage() {
               onClick={() => document.getElementById("cameraInput").click()}
               className="h-14 w-14 rounded-full bg-white flex items-center justify-center shadow-[0_8px_20px_rgba(0,0,0,0.6)] text-[#333] text-2xl"
             >
-              <IoCameraOutline  />
+              <IoCameraOutline />
             </button>
             <button
               type="button"
