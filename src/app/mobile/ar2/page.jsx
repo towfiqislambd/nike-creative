@@ -6,8 +6,9 @@ import { useForm } from "react-hook-form";
 import { IoCameraOutline } from "react-icons/io5";
 import { FaCamera } from "react-icons/fa";
 import { TfiCloudUp } from "react-icons/tfi";
-
-/* ---------------------- STATIC STEP DATA ---------------------- */
+import { LoveSvg } from "../../../Components/Svg/SvgContainer";
+import { DubbleDoorSvg, SingleDoorSvg } from "../../../Components/Svg/SvgContainer2";
+import { RiGalleryView2 } from "react-icons/ri";
 
 const introStep = {
   title: "Could you put the\ncamera to your door?",
@@ -40,7 +41,6 @@ export default function ArPage() {
 
   return (
     <main className="relative min-h-screen w-full overflow-hidden md:hidden">
-      {/* BG IMAGE */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="https://i.ibb.co.com/WpMS6Ctf/arpic.png"
@@ -57,7 +57,6 @@ export default function ArPage() {
 
       {step === 0 && (
         <form onSubmit={handleSubmit(onSubmit)} className="relative z-10">
-          {/* hidden inputs just like before */}
           <input
             type="file"
             id="cameraInput"
@@ -91,7 +90,6 @@ export default function ArPage() {
             </div>
 
             <div className="mb-16 mt-7 flex items-center gap-4">
-              {/* camera button – opens input and moves to next step */}
               <button
                 type="button"
                 onClick={() => {
@@ -102,13 +100,10 @@ export default function ArPage() {
               >
                 <IoCameraOutline />
               </button>
-
-              {/* upload button – optional: you can also move to nextStep if you want */}
               <button
                 type="button"
                 onClick={() => {
                   document.getElementById("fileInput")?.click();
-                  // nextStep(); // uncomment if you want upload to advance the flow too
                 }}
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-2xl text-[#333] shadow-[0_8px_20px_rgba(0,0,0,0.6)]"
               >
@@ -118,8 +113,6 @@ export default function ArPage() {
           </section>
         </form>
       )}
-
-      {/* -------------------- STEP 1: INTRO OVERLAY -------------------- */}
       {step === 1 && (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-10 text-center text-white">
           <div className="flex flex-col items-center gap-6">
@@ -149,8 +142,6 @@ export default function ArPage() {
           </div>
         </section>
       )}
-
-      {/* -------------------- STEP 2: CAMERA ONLY -------------------- */}
       {step === 2 && (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-end pb-16">
           <button
@@ -162,8 +153,6 @@ export default function ArPage() {
           </button>
         </section>
       )}
-
-      {/* -------------------- STEP 3: CAMERA + NEXT BUTTON -------------------- */}
       {step === 3 && (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-end px-6 pb-10">
           <div className="flex w-full items-center justify-between">
@@ -186,25 +175,13 @@ export default function ArPage() {
         </section>
       )}
 
-      {/* floating upload icon same as before on this step */}
       {step === 3 && (
-        <button
-          type="button"
-          onClick={nextStep}
-          className="absolute bottom-24 right-6 grid h-12 w-12 place-items-center rounded-full bg-white text-2xl text-[#21BBA2] shadow-[0_8px_20px_rgba(0,0,0,0.6)]"
-        >
-          <TfiCloudUp />
-        </button>
-      )}
-
-      {/* -------------------- STEP 4: SMALL “CHOOSE DESIGN” STRIP -------------------- */}
-      {step === 4 && (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-start pt-10">
           <div className="mt-2 w-[90%] rounded-[28px]  px-4 pb-4 pt-3 text-white shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
             <div className="flex items-center justify-between">
-              <p className="text-sm font-semibold">Please Choose your design</p>
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-[18px] text-[#21BBA2]">
-                +
+              <p className="text-xl font-semibold">Please Choose your design</p>
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-[18px] text-orange-500">
+                <RiGalleryView2   />
               </span>
             </div>
 
@@ -222,8 +199,8 @@ export default function ArPage() {
                       unoptimized
                       className="object-cover"
                     />
-                    <button className="absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-full bg-white text-[10px] text-[#21BBA2]">
-                      ♥
+                    <button className="absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-full bg-white text-[10px] ">
+                      <LoveSvg />
                     </button>
                   </div>
                 </div>
@@ -250,27 +227,25 @@ export default function ArPage() {
           </button>
         </section>
       )}
-
-      {/* -------------------- STEP 5: FULL DESIGN PANEL -------------------- */}
-      {step === 5 && (
+      {step === 4 && (
         <section className="relative z-10 flex min-h-screen flex-col items-center pt-10">
-          <div className="mt-2 flex h-[88%] w-[92%] flex-col rounded-[32px]  px-4 pb-4 pt-3 text-white shadow-[0_12px_22px_rgba(0,0,0,0.6)]">
+          <div className="mt-2 flex h-[88%] w-[92%] bg-white/10 backdrop-blur-sm flex-col rounded-[32px]  px-4 pb-4 pt-3 text-white shadow-[0_12px_22px_rgba(0,0,0,0.6)]">
             <div className="mb-3 flex items-center justify-between">
-              <p className="text-sm font-semibold">
+              <p className="text-xl font-semibold">
                 Please Choose your design
               </p>
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-[18px] text-[#21BBA2]">
-                +
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-[18px] text-orange-500">
+               < RiGalleryView2  />
               </span>
             </div>
 
-            <div className="mb-3 flex items-center justify-between gap-2">
+            <div className="mb-3 flex items-center justify-center gap-4">
               <div className="flex gap-2">
-                <button className="grid h-8 w-8 place-items-center rounded-full bg-[#21BBA2] text-xs">
-                  1D
+                <button className="grid h-8 w-8 place-items-center rounded-full text-black bg-[#21BBA2] text-xs">
+                  <SingleDoorSvg />
                 </button>
-                <button className="grid h-8 w-8 place-items-center rounded-full bg-[#21BBA2] text-xs">
-                  2D
+                <button className="grid h-8 w-8 place-items-center rounded-full text-black bg-[#21BBA2] text-xs">
+                 <DubbleDoorSvg />
                 </button>
               </div>
               <div className="flex items-center gap-2">
@@ -278,7 +253,7 @@ export default function ArPage() {
                   <span
                     key={c}
                     style={{ backgroundColor: c }}
-                    className="h-3 w-3 rounded-full border border-white/60"
+                    className="h-4 w-4 rounded-full border border-white/60"
                   />
                 ))}
               </div>
@@ -299,8 +274,8 @@ export default function ArPage() {
                       unoptimized
                       className="object-cover"
                     />
-                    <button className="absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-full bg-white text-[10px] text-[#21BBA2]">
-                      ♥
+                    <button className="absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-full bg-white text-[10px] ">
+                      <LoveSvg/>
                     </button>
                   </div>
                 </div>
@@ -309,15 +284,13 @@ export default function ArPage() {
           </div>
         </section>
       )}
-
-      {/* -------------------- STEP 6: FINAL PREVIEW -------------------- */}
-      {step === 6 && (
+      {step === 5 && (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-between pb-8">
-          <div className="mt-4 w-[90%] rounded-[28px] bg-[rgba(72,39,25,0.88)] px-4 pb-4 pt-3 text-white shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
+          <div className="mt-4 w-[90%] rounded-[28px] bg-white/10 backdrop-blur-sm px-4 pb-4 pt-3 text-white shadow-[0_10px_20px_rgba(0,0,0,0.5)]">
             <div className="flex items-center justify-between">
-              <p className="text-sm font-semibold">Please Choose your design</p>
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-[18px] text-[#21BBA2]">
-                +
+              <p className="text-xl font-semibold">Please Choose your design</p>
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-white/90 text-[18px] text-orange-500">
+                <RiGalleryView2 />
               </span>
             </div>
 
@@ -335,8 +308,8 @@ export default function ArPage() {
                       unoptimized
                       className="object-cover"
                     />
-                    <button className="absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-full bg-white text-[10px] text-[#21BBA2]">
-                      ♥
+                    <button className="absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-full bg-white text-[10px]">
+                    <LoveSvg/>
                     </button>
                   </div>
                 </div>
@@ -364,7 +337,7 @@ export default function ArPage() {
             />
           </div>
 
-          <div className="mt-4 flex w-full items-center justify-between px-8">
+          <div className="mt-4 flex w-full items-center justify-center gap-5 px-8">
             <button
               type="button"
               className="grid h-10 w-10 place-items-center rounded-full bg-[#18B9C9] text-xl text-white shadow-[0_6px_15px_rgba(0,0,0,0.5)]"
