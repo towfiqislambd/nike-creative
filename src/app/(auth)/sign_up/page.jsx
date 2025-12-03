@@ -24,7 +24,7 @@ export default function SignUpPage() {
   const password = watch("password");
 
   return (
-    <main className="">
+    <main  className="w-full min-h-screen flex items-center justify-center bg-white">
       {/*  */}
       <div className="py-10 container">
         <div className="grid xl:gap-38 lg:grid-cols-2">

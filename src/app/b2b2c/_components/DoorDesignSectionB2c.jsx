@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Container from "../../../Components/Common/Container";
 import { RightSvg } from "../../../Components/Svg/SvgContainer";
+import { MoveRightIcon } from "lucide-react";
 
 const DoorDesignSectionB2c = () => {
   return (
     <section className="pb-16">
       <Container>
-        <h3 className="my-5 xl:my-8 2xl:!my-10 text-[#333] font-robotoSerif text-xl sm:text-3xl 2xl:text-[36px] font-medium leading-[150%]">
+        <h3 className="my-5 xl:my-6 text-[#333] font-robotoSerif text-xl md:text-2xl font-medium leading-[150%]">
           Welcome to Nike Creative Studio
         </h3>
 
-        <div className="flex flex-col xl:flex-row gap-5 xl:gap-6 2xl:gap-10">
+        <div className="flex flex-col xl:flex-row gap-5 xl:gap-6">
           {/* Left */}
           <div className="w-full xl:w-3/4 flex flex-col gap-5 xl:gap-8">
             <div className="flex flex-col lg:flex-row items-start gap-10 bg-white rounded-3xl shadow-sm  pl-5 2xl:pl-10 pt-5 2xl:pt-10 pr-5 2xl:pr-10">
@@ -72,10 +73,13 @@ const DoorDesignSectionB2c = () => {
             </div>
 
             <div className="flex flex-col xl:flex-row gap-6 2xl:gap-8 w-full">
-              <div className="bg-white p-5 2xl:p-10 rounded-3xl shadow-sm w-full xl:w-1/3">
-                <h4 className="section_subTitle mb-4">All Door Design</h4>
+              <div className="bg-white p-5 rounded-3xl shadow-sm w-full xl:w-1/3">
+                <div className="flex items-center justify-between mb-4 text-sub-text">
+                  <h4 className="section_subTitle">All Door Design</h4>
+                  <MoveRightIcon />
+                </div>
                 <div className="flex gap-3">
-                  {[1, 2].map(i => (
+                  {[1, 2].map((i) => (
                     <div
                       key={i}
                       className="xl:flex-1 bg-gray-100 rounded-xl overflow-hidden"
@@ -134,11 +138,12 @@ const DoorDesignSectionB2c = () => {
           {/* Right */}
           <div className="w-full xl:w-1/4 flex flex-col gap-4 2xl:gap-6">
             <div className="bg-white p-4 2xl:p-6 rounded-3xl shadow-sm">
-              <h4 className="section_subTitle mb-3 2xl:mb-4 ">
-                All Door Design
-              </h4>
+              <div className="flex items-center justify-between mb-4 text-sub-text">
+                <h4 className="section_subTitle">All Door Design</h4>
+                <MoveRightIcon />
+              </div>
               <div className="flex gap-3">
-                {[1, 2, 3].map(i => (
+                {[1, 2, 3].map((i) => (
                   <div
                     key={i}
                     className="xl:flex-1 bg-gray-100 rounded-xl overflow-hidden"
@@ -156,7 +161,7 @@ const DoorDesignSectionB2c = () => {
               </div>
             </div>
 
-            <div className="bg-white flex flex-col sm:flex-row pl-4 2xl:pl-6 pt-3 pr-4 2xl:pr-6 rounded-3xl shadow-sm gap-2">
+            <div className="bg-white flex flex-col sm:flex-row pl-4 2xl:pl-4 pt-3 pr-4 2xl:pr-4 rounded-3xl shadow-sm gap-2">
               <div className="w-full xl:w-4/6">
                 <h4 className="section_subTitle mb-2">
                   Custom Single Door Design
@@ -168,38 +173,47 @@ const DoorDesignSectionB2c = () => {
                 </p>
               </div>
 
-              <div className="w-full xl:w-2/6">
-                <Image
-                  src="https://i.ibb.co.com/23t67gbd/Untitled-design-6-2.png"
-                  alt="Custom Single"
-                  width={120}
-                  height={180}
-                  unoptimized
-                  className="rounded-xl w-full h-full object-cover"
-                />
+              <div className="w-full xl:w-2/6 overflow-hidden space-y-2 rounded-b-xl">
+                <MoveRightIcon className="ml-auto text-sub-text" />
+                <div className="w-full h-fit">
+                  <Image
+                    src="https://i.ibb.co.com/N684xm5K/Frame-2147227155-1.png"
+                    alt="Custom Single"
+                    width={120}
+                    height={0}
+                    unoptimized
+                    className="rounded-xl w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
-            <div className="bg-white flex flex-col sm:flex-row pl-4 2xl:pl-6 pt-3 pr-4 2xl:pr-6 rounded-3xl shadow-sm">
-              <div className="w-full xl:w-4/6">
-                <h4 className="section_subTitle mb-2">See All Catalog</h4>
+            <div className="bg-white gap-2 pl-4 2xl:pl-4 pt-3 pr-4 2xl:pr-4 rounded-3xl shadow-sm">
+              <div className="flex items-center justify-between mb-4 text-sub-text">
+                <h4 className="section_subTitle">Custom Double Door Design</h4>
+                <MoveRightIcon className="shrink-0"/>
+              </div>
+              <div className="flex justify-between">
                 <p className="text-gray-600 text-sm mb-4">
                   Choose your door design from our catalogs.
                 </p>
-              </div>
-              <div className="w-full xl:w-2/6">
-                <Image
-                  src="https://i.ibb.co.com/23t67gbd/Untitled-design-6-2.png"
-                  alt="Custom Single"
-                  width={120}
-                  height={180}
-                  unoptimized
-                  className="rounded-xl w-full h-full object-cover"
-                />
+                <div className="w-full flex justify-end">
+                  <Image
+                    src="https://i.ibb.co.com/mW60jHT/d217ce46811e2f939e63fd3aa02919c876ea92b9.png"
+                    alt="Custom Single"
+                    width={102}
+                    height={127}
+                    unoptimized
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="bg-white p-3 2xl:p-6 rounded-3xl shadow-sm">
-              <h4 className="section_subTitle mb-2">See All Catalog</h4>
+            <div className="bg-white p-3 2xl:p-4 rounded-3xl shadow-sm">
+              <div className="flex items-center justify-between mb-4 text-sub-text">
+                  <h4 className="section_subTitle">See All Catalog</h4>
+                  <MoveRightIcon />
+                </div>
 
               <div className="flex flex-col sm:flex-row">
                 <p className="text-gray-600 text-sm mb-4">
@@ -208,7 +222,7 @@ const DoorDesignSectionB2c = () => {
                 <Image
                   src="https://i.ibb.co.com/fd94DCnB/Group-1321314743.png"
                   alt="Catalog"
-                  width={160}
+                  width={102}
                   height={120}
                   unoptimized
                   className="object-cover"

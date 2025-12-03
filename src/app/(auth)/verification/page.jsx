@@ -65,7 +65,7 @@ export default function VerificationCodePage() {
   };
 
   return (
-    <main>
+    <main className="w-full min-h-screen flex md:pt-14 justify-center bg-white">
       {/*  */}
       <div className="py-10 container">
         <div className="grid lg:grid-cols-2 xl:gap-38 items-center">
@@ -89,7 +89,7 @@ export default function VerificationCodePage() {
 
             <form onSubmit={onSubmit} className="space-y-5">
               <div className="">
-                <label className="lavelStyle text-left mb-6 ml-47">Code</label>
+                <div className="lavelStyle text-left mb-2 ml-22">Code</div>
                 <div
                   className="flex justify-center items-center  gap-3"
                   onPaste={handlePaste}

@@ -54,7 +54,7 @@ const  DoorGallerySectionB2b= () => {
   };
 
   return (
-    <section className="container  px-4 xl:px-0 py-10 xl:py-25">
+    <section className="container  px-4 xl:px-0 py-10 xl:pb-25">
       <div className="">
         <div className="text-center mb-12">
           <h2 className="section_title">The Art of the Doorway</h2>
@@ -73,7 +73,7 @@ const  DoorGallerySectionB2b= () => {
                 key={door.id}
                 className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300"
               >
-                <div className="w-full h-64 overflow-hidden">
+                <div className="w-full h-56 overflow-hidden">
                   <Image
                     src={currentImage}
                     alt={door.code}
@@ -114,11 +114,11 @@ const  DoorGallerySectionB2b= () => {
         </div>
       </div>
       {/*  */}
-      <div className="flex w-full justify-center mt-12">
+      {/* <div className="flex w-full justify-center mt-12">
         <button className="px-8 py-[17px] border hover:scale-105 duration-300 border-[#000080] cursor-pointer rounded-[40px] text-[#000080] font-medium transition-all">
           View All Products
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }

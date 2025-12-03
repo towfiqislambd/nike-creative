@@ -17,7 +17,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main>
+    <main className="w-full min-h-screen flex items-center justify-center bg-white">
       {/*  */}
       <div className="py-10 container">
         <div className="grid lg:grid-cols-2 xl:gap-38 items-center">

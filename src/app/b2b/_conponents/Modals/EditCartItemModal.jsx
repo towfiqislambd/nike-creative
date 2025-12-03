@@ -72,7 +72,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           setValue("color", value, { shouldDirty: true });
           setValue("colorCode", bg, { shouldDirty: true });
         }}
-        className={`h-12 w-12 rounded-full border shadow-sm cursor-pointer transition ${
+        className={`size-6 rounded-full border shadow-sm cursor-pointer transition ${
           active ? "ring-2 ring-[#21BBA2]" : "hover:ring-2 hover:ring-gray-300"
         }`}
         style={{ backgroundColor: bg }}
@@ -86,10 +86,10 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
   };
 
   return (
-    <Modal open={open} onClose={onClose} className="max-w-[900px] ">
+    <Modal open={open} onClose={onClose} className="max-w-[800px] ">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="px-5 md:px-8 pb-6 pt-4 max-h-[78vh] overflow-y-auto no-scrollbar"
+        className="px-3 pb-6 pt-4 max-h-[78vh] overflow-y-auto no-scrollbar"
       >
  
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -97,38 +97,38 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
             <img
               src="https://i.ibb.co.com/Mx95n97C/Rectangle-161124243.png"
               alt="thumb"
-              className="h-[218px] w-[236px] rounded-xl object-cover max-md:h-40 max-md:w-40"
+              className="size-[180px] rounded-4xl object-cover max-md:h-40 max-md:w-40"
             />
           </div>
         </div>
 
         <div className="flex flex-col xl:flex-row xl:items-end gap-4 mt-8">
-          <div className="w-full xl:w-auto">
-            <label className="labelCls mb-5">Product Name</label>
+          <div className="w-full xl:w-auto flex-1">
+            <label className="labelCls mb-0.5">Product Name</label>
             <input className="inputCls" {...register("name")} />
           </div>
           <button
             type="button"
-            className="rounded-xl bg-[#21BBA2] text-white h-14 text-[20px] px-5 text-xl hover:bg-[#1aa58e]"
+            className="rounded-lg bg-[#21BBA2] text-[15px] text-white px-5 py-1.5 hover:bg-[#1aa58e]"
           >
             Change the Product
           </button>
         </div>
 
-        <div className="mt-6">
-          <p className="text-2xl font-semibold text-gray-900">Color:</p>
-          <div className="mt-3 flex items-center gap-8">
-            <div className="flex flex-col items-center gap-2">
+        <div className="mt-2 flex items-center gap-5">
+          <p className="text-xl font-medium text-gray-900">Color:</p>
+          <div className="mt-3 flex items-center gap-4">
+            <div className="flex flex-col items-center gap-1">
               <ColorSwatch label="Bronze" value="Bronze" bg="#3f3f3f" />
-              <span className="text-sm text-gray-600">Bronze</span>
+              <span className="text-[13px] text-gray-600">Bronze</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-1">
               <ColorSwatch label="White" value="White" bg="#F3F4F6" />
-              <span className="text-sm text-gray-600">White</span>
+              <span className="text-[13px] text-gray-600">White</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-1">
               <ColorSwatch label="Black" value="Black" bg="#111827" />
-              <span className="text-sm text-gray-600">Black</span>
+              <span className="text-[13px] text-gray-600">Black</span>
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="labelCls mb-5">Po</label>
+            <label className="labelCls mb-0.5">Po</label>
             <input
               className="inputCls"
               placeholder="Po Info"
@@ -144,7 +144,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
             />
           </div>
           <div>
-            <label className="labelCls mb-5">Manufacturer</label>
+            <label className="labelCls mb-0.5">Manufacturer</label>
             <select className="inputCls" {...register("manufacturer")}>
               <option value="">Choose an option</option>
               <option value="KUTDE">KUTDE</option>
@@ -155,7 +155,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
 
  
         <div className="mt-6 w-full xl:w-[50%]">
-          <label className="labelCls mb-5">
+          <label className="labelCls mb-0.5">
             Select Active side of the door
           </label>
           <select className="inputCls" {...register("activeSide")}>
@@ -168,7 +168,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
  
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="labelCls mb-5">Select Type of Measurement</label>
+            <label className="labelCls mb-0.5">Select Type of Measurement</label>
             <select className="inputCls" {...register("measureType1")}>
               <option value="">Choose an option</option>
               <option value="DLO">DLO</option>
@@ -190,7 +190,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
 
         <div className="mt-6 xl:w-[50%] w-full mb-5">
           <div>
-            <label className="labelCls mb-5">Add Side lites</label>
+            <label className="labelCls mb-0.5">Add Side lites</label>
             <select className="inputCls" {...register("sideLites")}>
               <option value="">Choose an option</option>
               <option value="None">None</option>
@@ -203,7 +203,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           <div>
-            <label className="labelCls mb-5">Select Type of Measurement</label>
+            <label className="labelCls mb-0.5">Select Type of Measurement</label>
             <select className="inputCls" {...register("measureType2")}>
               <option value="">Choose an option</option>
               <option value="DLO">DLO</option>
@@ -222,27 +222,27 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           </div>
         </div>
 
-        <div className="my-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <label className="inline-flex text-[20px] items-center gap-2">
+        <div className="my-4 grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <label className="inline-flex text-sm items-center gap-2">
             <input
               type="checkbox"
-              className="h-6 w-6"
+              className="size-5"
               {...register("highBottom")}
             />
             <span>High Bottom</span>
           </label>
-          <label className="inline-flex text-[20px] items-center gap-2">
+          <label className="inline-flex text-sm items-center gap-2">
             <input
               type="checkbox"
-              className="h-6 w-6"
+              className="size-5"
               {...register("insulatedGlass")}
             />
             <span>Insulated Glass</span>
           </label>
-          <label className="inline-flex text-[20px] items-center gap-2">
+          <label className="inline-flex text-sm items-center gap-2">
             <input
               type="checkbox"
-              className="h-6 w-6"
+              className="size-5"
               {...register("adaThreshold")}
             />
             <span>ADA Threshold</span>
@@ -250,7 +250,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
         </div>
 
         <div className="mt-6">
-          <label className="labelCls">
+          <label className="labelCls mb-1">
             How would you like to receive the design.
           </label>
           <select className="inputCls" {...register("delivery")}>
@@ -261,9 +261,9 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
         </div>
 
         <div className="mt-6">
-          <label className="labelCls mb-5">Order Notes</label>
+          <label className="labelCls mb-0.5">Order Notes</label>
           <textarea
-            rows={5}
+            rows={3}
             className={`inputCls resize-y`}
             placeholder="Write note..."
             {...register("notes")}
@@ -271,22 +271,22 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
         </div>
 
 
-        <div className="my-10 xl:w-[50%] w-full border-2 border-dashed rounded-2xl p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="my-5 xl:w-[50%] w-full border-2 border-dashed rounded-2xl p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="text-center md:text-left">
-            <p className="text-[36px] sm:text-[42px] xl:text-[48px] font-bold">
+            <p className="text-3xl font-semibold">
               4% OFF
             </p>
-            <p className="text-gray-600 text-[18px] sm:text-[20px] xl:text-[24px]">
+            <p className="text-gray-600 text-[18px] sm:text-xl">
               Ex: 1/02/2026
             </p>
           </div>
 
           <div className="w-full md:w-auto text-center md:text-left">
-            <p className="text-[28px] sm:text-[32px] xl:text-[36px]">Coupon</p>
+            <p className="text-2xl mb-2">Coupon</p>
             <button
               type="button"
               onClick={() => setValue("couponCode", "SAVE4")}
-              className="h-11 px-4 rounded-xl bg-[#E91E63] text-white hover:opacity-90 w-full md:w-auto mt-2 md:mt-0"
+              className="py-2 px-4 text-sm rounded-lg bg-[#E91E63] text-white hover:opacity-90 w-full md:w-auto mt-2 md:mt-0"
             >
               Add Coupon
             </button>
@@ -294,7 +294,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
         </div>
 
 
-        <div className="my-10 flex flex-col sm:flex-row w-full xl:w-[80%] gap-3">
+        <div className="flex flex-col sm:flex-row w-full xl:w-[80%] gap-3">
           <input
             className="inputCls w-full sm:w-[60%]"
             placeholder="Code"
@@ -303,7 +303,7 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           <div className="w-full sm:w-[40%]">
             <button
               type="button"
-              className="h-14 rounded-[8px] text-[20px] bg-[#E91E63] text-white hover:opacity-90 w-full py-[11px]"
+              className="rounded-[8px] bg-[#E91E63] text-white hover:opacity-90 w-full py-2"
               onClick={() => alert(`Applied: ${watch("couponCode") || "N/A"}`)}
             >
               Apply Coupon
@@ -315,13 +315,13 @@ export default function EditCartItemModal({ open, item, onClose, onSave }) {
           <button
             type="button"
             onClick={onClose}
-            className="h-14 px-6 rounded-xl text-[20px] border border-gray-300 text-gray-700 hover:bg-gray-50"
+            className="py-2 px-6 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="h-14 px-6 rounded-xl text-[20px] bg-[#21BBA2] text-white hover:bg-[#1aa58e]"
+            className="py-2 px-6 rounded-lg bg-[#21BBA2] text-white hover:bg-[#1aa58e]"
           >
             Save the Change
           </button>

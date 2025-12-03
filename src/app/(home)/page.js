@@ -1,6 +1,7 @@
 import Image from "next/image";
 import DoorDesignSection from "./_components/DoorDesignSection";
 import DoorGallerySection from "./_components/DoorGallerySection";
+import DoorDesignSectionB2b from "../b2b/_conponents/DoorGallerySectionB2b"
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       />
       <div>
         <DoorDesignSection />
-        <DoorGallerySection />
+        {/* <DoorGallerySection /> */}
+        <DoorDesignSectionB2b />
       </div>
     </main>
   );
