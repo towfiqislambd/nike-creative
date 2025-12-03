@@ -83,11 +83,11 @@ button {
 }
 
 .shadow-card {
-  @apply my-5 bg-white px-3 md:px-5 py-4 md:py-8 rounded-lg border-[#F2F2F2] shadow-[0px_30px_65px_6px_#1319271C];
+  @apply my-2 bg-white px-3 md:px-5 py-4 rounded-lg border-[#F2F2F2] shadow-[0px_30px_65px_6px_#1319271C];
 }
 
 .shadow-card-label {
-  @apply block font-medium text-primary-text text-lg md:text-2xl leading-[150%] mb-1 md:mb-3;
+  @apply block font-medium text-primary-text max-md:text-sm leading-[150%] mb-1;
 }
 
 .dashboard_header {

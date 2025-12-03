@@ -70,7 +70,7 @@ const ProductPage = ({ params }) => {
         className="object-cover object-center -z-10 absolute top-60"
       />
     <div className="container relative min-h-screen py-10 px-4">
-      <div className="grid lg:grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-2 gap-5">
         {/* left side */}
         <div>
           {/* product image */}
@@ -93,7 +93,7 @@ const ProductPage = ({ params }) => {
           {/* reference image card*/}
 
           <div className="shadow-card">
-            <label className="block font-medium text-primary-text text-2xl leading-[150%] mb-4">
+            <label className="block font-medium text-primary-text text-xl leading-[150%] mb-1">
               You can add your reference
             </label>
 
@@ -135,25 +135,25 @@ const ProductPage = ({ params }) => {
           className=""//bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-6
           onSubmit={handleSubmit(onSubmit)}
         >
-          <form className="space-y-6">
+          <form>
             <div>
               <div className="flex items-center justify-between">
-              <h2 className="text-lg lg:text-2xl text-sub-text">
+              <h2 className="text-lg lg:text-xl text-sub-text">
                 Custom Double Door Design – White
               </h2>
               <button className="flex items-center justify-center size-10 md:size-12 rounded-full shrink-0 mr-2 cursor-pointer bg-[linear-gradient(254deg,_#E3F2FD_-2.44%,_rgba(249,252,255,0.80)_110.21%)] shadow-[0_2.667px_5.333px_-2.667px_rgba(19,25,39,0.12),_0_5.333px_5.333px_-2.667px_rgba(19,25,39,0.08)]">
                 <Image src={frameIcon} width={32} height={32} alt="" className="max-md:size-6"/>
               </button>
               </div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl text-primary-text md:mt-4">
+              <h3 className="text-xl md:text-2xl text-primary-text">
                 Product name: <span className="font-medium">KDWH010</span>
               </h3>
-              <p className="text-2xl md:text-3xl lg:text-4xl text-primary-text md:mt-4">
+              <p className="text-xl text-primary-text">
                 Price: <span className="font-medium">$350</span>
               </p>
             </div>
             <div>
-              <label className="text-primary-text text-2xl md:text-3xl lg:text-4xl mb-2">
+              <label className="text-primary-text text-xl md:text-2xl">
                 Color:
               </label>
               <div className="inline-block ml-4">
@@ -163,20 +163,20 @@ const ProductPage = ({ params }) => {
                       <button
                         type="button"
                         onClick={() => setSelectedColor(color)}
-                        className={`size-8 md:size-12 rounded-full border shadow-[0px_4px_4px_-2px_#13192714,_0px_2px_4px_-2px_#1319271F]  cursor-pointer ${selectedColor === color
+                        className={`size-8 rounded-full border shadow-[0px_4px_4px_-2px_#13192714,_0px_2px_4px_-2px_#1319271F] cursor-pointer ${selectedColor === color
                           ? "ring ring-"
                           : "border-gray-300"
                           }`}
                         style={{ backgroundColor: color }}
                       />
-                      <p className="text-center text-xs md:text-sm text-primary-text">{name}</p>
+                      <p className="text-center text-[13px] text-primary-text">{name}</p>
                     </div>
 
                   ))}
                 </div>
               </div>
             </div>
-            <div className="grid sm:grid-cols-2 gap-5 shadow-card">
+            <div className="grid sm:grid-cols-2 gap-3 shadow-card">
               <div>
                 <label className="shadow-card-label">
                   Po
@@ -184,7 +184,7 @@ const ProductPage = ({ params }) => {
                 <input
                   {...register("po")}
                   placeholder="PO Number"
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                  className="card_input w-full"
                 />
               </div>
               <div>
@@ -193,7 +193,7 @@ const ProductPage = ({ params }) => {
                 </label>
                 <select
                   {...register("manufacturer")}
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                  className="card_input w-full"
                 >
                   <option>Choose an option</option>
                   <option>ABC Doors</option>
@@ -206,7 +206,7 @@ const ProductPage = ({ params }) => {
                 </label>
                 <select
                   {...register("activeSide")}
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                  className="card_input w-full"
                 >
                   <option>Choose an option</option>
                   <option>Left</option>
@@ -215,15 +215,14 @@ const ProductPage = ({ params }) => {
               </div>
             </div>
 
-
-            <div className="grid sm:grid-cols-2 gap-5 shadow-card">
+            <div className="grid sm:grid-cols-2 gap-3 shadow-card">
               <div>
                 <label className="shadow-card-label">
                   Measurement Type
                 </label>
                 <select
                   {...register("measurementType")}
-                  className="w-full border border-gray-300 rounded-md px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                  className="card_input w-full"
                 >
                   <option>Choose an option</option>
                   <option>Outer frame</option>
@@ -238,7 +237,7 @@ const ProductPage = ({ params }) => {
                   <input
                     {...register("width")}
                     placeholder="Width"
-                    className="w-1/2 border border-gray-300 rounded-md px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                    className="card_input w-1/2"
                   />
                 </div>
                 <div className="flex items-center gap-2">
@@ -248,7 +247,7 @@ const ProductPage = ({ params }) => {
                   <input
                     {...register("height")}
                     placeholder="Height"
-                    className="w-1/2 border border-gray-300 rounded-md px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                    className="card_input w-1/2"
                   />
                 </div>
               </div>
@@ -262,7 +261,7 @@ const ProductPage = ({ params }) => {
                   </label>
                   <select
                     {...register("measurementType")}
-                    className="w-full border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                    className="card_input w-full"
                   >
                     <option>Choose an option</option>
                     <option>Outer frame</option>
@@ -270,14 +269,14 @@ const ProductPage = ({ params }) => {
                   </select>
                 </div>
               </div>
-              <div className="grid sm:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 gap-3">
                 <div>
                   <label className="shadow-card-label">
                     Measurement Type
                   </label>
                   <select
                     {...register("measurementType")}
-                    className="w-full border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                    className="card_input w-full"
                   >
                     <option>Choose an option</option>
                     <option>Outer frame</option>
@@ -292,7 +291,7 @@ const ProductPage = ({ params }) => {
                     <input
                       {...register("width")}
                       placeholder="Width"
-                      className="w-1/2 border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                      className="w-1/2 card_input"
                     />
                   </div>
                   <div className="flex items-center gap-2">
@@ -302,7 +301,7 @@ const ProductPage = ({ params }) => {
                     <input
                       {...register("height")}
                       placeholder="Height"
-                      className="w-1/2 border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                      className="w-1/2 card_input"
                     />
                   </div>
                 </div>
@@ -316,7 +315,7 @@ const ProductPage = ({ params }) => {
               </label>
               <select
                 {...register("delivery")}
-                className="border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                className="card_input w-full"
               >
                 <option>Choose an option</option>
                 <option>Installation at job site</option>
@@ -325,7 +324,7 @@ const ProductPage = ({ params }) => {
                 <option>Email</option>
               </select>
               {watch('delivery') == "Installation at job site" && (
-                <div className="grid sm:grid-cols-2 gap-5 mt-5">
+                <div className="grid sm:grid-cols-2 gap-3 mt-5">
                   <div>
                     <label className="shadow-card-label">
                       Full Name
@@ -333,16 +332,16 @@ const ProductPage = ({ params }) => {
                     <input
                       {...register("name")}
                       placeholder="Charli Curs"
-                      className="w-full border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                      className="card_input w-full"
                     />
                   </div>
                   <div>
                     <label className="shadow-card-label">
-                      Jobsite options
+                      Job site options
                     </label>
                     <select
                       {...register("asdf")}
-                      className="w-full border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                      className="card_input w-full"
                     >
                       <option>Choose an option</option>
                       <option>Palm Beach (+15000)</option>
@@ -354,17 +353,19 @@ const ProductPage = ({ params }) => {
                       <label className="shadow-card-label">
                         Phone Number
                       </label>
-                      <div onClick={addPhoneNumberHandler} className="size-8 bg-light-green rounded-full flex items-center justify-center cursor-pointer"><Plus className="text-white size-5" /></div>
+                      <div onClick={addPhoneNumberHandler} className="size-6 bg-light-green rounded-full flex items-center justify-center cursor-pointer">
+                        <Plus className="text-white size-4" />
+                        </div>
                     </div>
                     <input
                       type="text"
                       {...register("phone-number")}
                       placeholder="+1 236 123 1233"
-                      className="w-full border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500"
+                      className="card_input w-full"
                     />
-                    <div className="my-4 flex gap-2 flex-wrap">
+                    <div className="my-1 flex gap-2 flex-wrap">
                       {addPhoneNumber.map((number, inx) => (
-                        <div key={inx} onClick={() => removePhoneNumberHandler(inx)} className="bg-[#F5F5F5] inline-flex items-center px-2.5 py-1.5 rounded-lg gap-1.5 text-xs text-primary-text shadow-[0px_0.9px_3.6px_0.9px_#0000001F,_0px_2.7px_2.92px_-1.35px_#00000040,_0px_0px_0.22px_0px_#0000000D,_0px_0px_0.22px_0.22px_#00000012,_0px_5px_8px_1px_#00000033]">
+                        <div key={inx} onClick={() => removePhoneNumberHandler(inx)} className="bg-[#F5F5F5] inline-flex items-center px-2.5 py-1.5 rounded-lg gap-1.5 text-xs text-primary-text custom-shadow-xl">
                           <div>{number}</div>
                           <FiX className="size-4" />
                         </div>
@@ -377,20 +378,20 @@ const ProductPage = ({ params }) => {
                         value="receive-order-update"
                         {...register('receive-order-update')}
                       />
-                      <div className="text-sm leading-[20px] text-sub-text">Click here to receive order updates on the numbers you add: a day-before reminder, alerts when we’re on the way, and notifications if there are delays.</div>
+                      <div className="text-xs leading-[20px] text-sub-text">Click here to receive order updates on the numbers you add: a day-before reminder, alerts when we’re on the way, and notifications if there are delays.</div>
                     </div>
                   </div>
                   <div className="mt-5">
                     <label className="shadow-card-label">
                       Address
                     </label>
-                    <div className="w-full flex items-center gap-3 border border-gray-300 rounded-md  px-3 py-2 lg:py-3 lg:px-6 text-sm lg:text-xl focus:ring-2 focus:ring-teal-500">
-                      <IoLocationSharp className="size-9" />
+                    <div className="w-full flex items-center gap-1 card_input">
+                      <IoLocationSharp className="size-6" />
 
                       <input
                         {...register("name")}
                         placeholder="Dhaka, Bangladesh"
-                        className="w-full text-xl focus:outline-none focus:ring-0 focus:border-transparent"
+                        className="w-full text-sm focus:outline-none focus:ring-0 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -410,28 +411,28 @@ const ProductPage = ({ params }) => {
                 className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm resize-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
-            <div className="inline-grid grid-cols-2 gap-4 bg-[#e5ecf0] border border-dashed rounded-[20px] px-6 py-4">
+            <div className="inline-grid grid-cols-2 gap-4 bg-[#e5ecf0] border border-dashed rounded-[20px] px-5 py-4 my-2">
               <div className="my-auto">
-                <h1 className="shadow-card-label !font-semibold !text-3xl md:!text-5xl !leading-none">4% OFF</h1>
-                <p className="text-lg md:text-2xl text-primary-text">EX:1/02/2026</p>
+                <h1 className="shadow-card-label !font-semibold !text-2xl !leading-none">4% OFF</h1>
+                <p className="text-lg text-primary-text">EX:1/02/2026</p>
               </div>
               <div className="flex flex-col items-center">
-                <h2 className="shadow-card-label !text-3xl md:!text-4xl !font-normal">Coupon</h2>
+                <h2 className="shadow-card-label !text-2xl !font-normal">Coupon</h2>
                 <button className="bg-secondary-red hover:bg-secondary-red/80 w-full text-white px-4 py-1.5 rounded-md md:text-xl cursor-pointer">Add Coupon</button>
               </div>
             </div>
 
             <div className="shadow-card">
-              <h4 className="text-2xl md:text-4xl font-medium text-primary-text mb-4 lg:mb-6">Coupon</h4>
+              <h4 className="text-xl font-medium text-primary-text mb-2">Coupon</h4>
               <div className="flex gap-2">
                 <input
                   {...register("coupon")}
                   placeholder="Enter code"
-                  className="flex-1 border border-gray-300 rounded-md px-3 md:py-4 text-sm focus:ring-2 focus:ring-teal-500"
+                  className="flex-1 card_input"
                 />
                 <Button label={'Apply Coupon'} />
               </div>
-              <div className="text-sm mt-3 space-y-1 lg:text-4xl text-primary-text flex flex-col gap-4 lg:gap-6 xl:gap-8 lg:mt-6 xl:mt-8 ">
+              <div className="text-sm mt-3 lg:text-lg text-primary-text flex flex-col gap-3">
                 <p className="flex items-center justify-between">
                   Product Total: <span className="font-medium">$350.00</span>
                 </p>
@@ -447,11 +448,11 @@ const ProductPage = ({ params }) => {
               </div>
             </div>
             <div className="shadow-card">
-              <h2 className="text-2xl md:text-4xl font-medium text-primary-text">Priority</h2>
-              <p className="text-xl md:text-2xl text-primary-text mt-4 ml-6">Urgent Priority (Rush Order)</p>
-              <div className="mt-4">
-                <div className="text-xs md:text-sm text-primary-text font-medium inline-flex py-1 px-2 rounded items-center gap-2 bg-[#FF4C4C1A]">
-                  <Image src={dangerI} width={24} height={24} alt="" className="max-sm:size-5"/>
+              <h2 className="text-xl font-medium text-primary-text">Priority</h2>
+              <p className="text-lg text-primary-text mt-1 ml-4">Urgent Priority (Rush Order)</p>
+              <div className="mt-3">
+                <div className="text-[13px] text-primary-text font-medium inline-flex py-1 px-2 rounded items-center gap-2 bg-[#FF4C4C1A]">
+                  <Image src={dangerI} width={24} height={24} alt="" className="size-5"/>
                   <p>
                     You still have 2 free Rush Orders available
                   </p>
@@ -459,17 +460,17 @@ const ProductPage = ({ params }) => {
               </div>
             </div>
             <div className="shadow-card">
-              <h4 className="text-2xl md:text-4xl font-medium text-primary-text mb-4">
+              <h4 className="text-xl font-medium text-primary-text">
                 Product Availability
               </h4>
-              <p className="text-sm md:text-xl text-gray-600 mb-2">
+              <p className="text-sm md:text-base text-sub-text">
                 Let us know if the door/window is on-site and ready for us.
               </p>
               {/* Availability Tabs */}
-              <div className="flex gap-5 bg-gray-100 p-1 rounded-full my-4">
+              <div className="flex gap-3 bg-gray-100 p-1 rounded-full mt-3 mb-1">
                 <button
                   onClick={() => setAvailability("available")}
-                  className={`flex-1 py-3 md:py-4 lg:py-6 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-[13px] md:text-sm lg:text-xl font-medium transition ${availability === "available"
+                  className={`flex-1 py-2.5 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-[13px] md:text-sm font-medium transition ${availability === "available"
                     ? "bg-[#5190A2] text-white shadow"
                     : "text-primary-text hover:bg-gray-200"
                     }`}
@@ -478,7 +479,7 @@ const ProductPage = ({ params }) => {
                 </button>
                 <button
                   onClick={() => setAvailability("notAvailable")}
-                  className={`flex-1 py-3 md:py-4 lg:py-6 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-[13px] md:text-sm lg:text-xl font-medium transition ${availability === "notAvailable"
+                  className={`flex-1 py-2.5 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-[13px] md:text-sm font-medium transition ${availability === "notAvailable"
                     ? "bg-[#5190A2] text-white shadow"
                     : "text-primary-text hover:bg-gray-200"
                     }`}
@@ -488,16 +489,16 @@ const ProductPage = ({ params }) => {
               </div>
 
               {availability === "notAvailable" && (
-                <div className="border border-gray-200 rounded-2xl md:rounded-[40px] px-2.5 py-4 lg:p-[30px] space-y-4 shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]">
-                  <h3 className="text-primary-text font-medium text-xl md:text-[28px]">
+                <div className="border border-gray-200 rounded-2xl md:rounded-[20px] p-3 space-y-2 shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]">
+                  <h3 className="text-primary-text font-medium text-lg">
                     When do you estimate it will be available?
                   </h3>
 
                   {/* Estimate Type Tabs */}
-                  <div className="flex gap-2 md:gap-4 bg-gray-100 p-1 rounded-full">
+                  <div className="flex gap-1 bg-gray-100 p-1 rounded-full">
                     <button
                       onClick={() => setEstimateType("specific")}
-                      className={`flex-1 py-3 md:py-4 lg:py-6 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-xs md:text-sm lg:text-xl font-medium transition ${estimateType === "specific"
+                      className={`flex-1 py-2 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-[13px] sm:text-sm font-medium transition ${estimateType === "specific"
                         ? "bg-[#5190A2] text-white shadow"
                         : "text-primary-text hover:bg-gray-200"
                         }`}
@@ -506,7 +507,7 @@ const ProductPage = ({ params }) => {
                     </button>
                     <button
                       onClick={() => setEstimateType("dateRange")}
-                      className={`flex-1 py-3 md:py-4 lg:py-6 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-xs md:text-sm lg:text-xl font-medium transition ${estimateType === "dateRange"
+                      className={`flex-1 py-2 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-[13px] sm:text-sm font-medium transition ${estimateType === "dateRange"
                         ? "bg-[#5190A2] text-white shadow"
                         : "text-primary-text hover:bg-gray-200"
                         }`}
@@ -515,7 +516,7 @@ const ProductPage = ({ params }) => {
                     </button>
                     <button
                       onClick={() => setEstimateType("weekRange")}
-                      className={`flex-1 py-3 md:py-4 lg:py-6 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-xs md:text-sm lg:text-xl font-medium transition ${estimateType === "weekRange"
+                      className={`flex-1 py-2 cursor-pointer shadow-[0_5px_5px_0_rgba(0,0,0,0.25)] rounded-full text-[13px] sm:text-sm font-medium transition ${estimateType === "weekRange"
                         ? "bg-[#5190A2] text-white shadow"
                         : "text-primary-text hover:bg-gray-200"
                         }`}
@@ -527,65 +528,65 @@ const ProductPage = ({ params }) => {
                   {/* tabs body */}
                   {estimateType === "specific" && (
                     <div>
-                      <label className="block text-sm lg:text-2xl text-primary-text mb-1">
+                      <label className="block text-sm lg:text-base text-primary-text mb-1">
                         Estimated Date
                       </label>
                       <input
                         type="date"
                         {...register("estimatedDate")}
                         placeholder="MM/DD/YYYY"
-                        className="w-full md:text-lg lg:text-2xl uppercase text-primary-text py-3 md:py-5 px-3 md:px-7 rounded-lg md:rounded-[20px] border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
+                        className="w-full max-sm:text-sm uppercase text-primary-text py-2.5 px-3 rounded-lg md:rounded-lg border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
                       />
                     </div>
                   )}
                   {estimateType === "dateRange" && (
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid sm:grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-sm lg:text-2xl text-primary-text mb-1">
+                        <label className="block max-sm:text-sm text-primary-text mb-1">
                           From
                         </label>
                         <input
                           type="date"
                           {...register("estimatedDate")}
                           placeholder="MM/DD/YYYY"
-                          className="w-full md:text-lg lg:text-2xl uppercase text-primary-text py-3 md:py-5 px-3 md:px-7 rounded-lg md:rounded-[20px] border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
+                          className="w-full max-sm:text-sm uppercase text-primary-text px-3 py-2.5 rounded-lg border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm lg:text-2xl text-primary-text mb-1">
+                        <label className="block max-sm:text-sm text-primary-text mb-1">
                           To
                         </label>
                         <input
                           type="date"
                           {...register("estimatedDate")}
                           placeholder="MM/DD/YYYY"
-                          className="w-full md:text-lg lg:text-2xl uppercase text-primary-text py-3 md:py-5 px-3 md:px-7 rounded-lg md:rounded-[20px] border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
+                          className="w-full max-sm:text-sm uppercase text-primary-text px-3 py-2.5 rounded-lg border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
                         />
                       </div>
                     </div>
                   )}
                   {estimateType === "weekRange" && (
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid sm:grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-sm lg:text-2xl text-primary-text mb-1">
+                        <label className="block max-sm:text-sm text-primary-text mb-1">
                           Start Week
                         </label>
                         <input
                           type="number"
                           {...register("estimatedDate")}
                           placeholder="4"
-                          className="w-full md:text-lg lg:text-2xl uppercase text-primary-text py-3 md:py-5 px-3 md:px-7 rounded-lg md:rounded-[20px] border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
+                          className="w-full uppercase text-primary-text py-2.5 px-3 rounded-lg border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm lg:text-2xl text-primary-text mb-1">
+                        <label className="block max-sm:text-sm text-primary-text mb-1">
                           End Week
                         </label>
                         <input
                           type="number"
                           {...register("estimatedDate")}
                           placeholder="5"
-                          className="w-full md:text-lg lg:text-2xl uppercase text-primary-text py-3 md:py-5 px-3 md:px-7 rounded-lg md:rounded-[20px] border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
+                          className="w-full uppercase text-primary-text py-2.5 px-3 rounded-lg border border-[#8B8B8B] shadow-[0_5px_5px_0_rgba(0,0,0,0.25)]"
                         />
                       </div>
                     </div>
@@ -593,36 +594,36 @@ const ProductPage = ({ params }) => {
                 </div>
               )}
             </div>
-            <div className="flex max-sm:flex-col-reverse md:gap-4">
+            <div className="flex max-sm:flex-col-reverse md:gap-2">
               <div className="shadow-card">
-                <div className="">
+                <div className="space-y-2">
                   <button
                     type="button"
-                    className="w-full border cursor-pointer border-gray-300 rounded-md py-2 lg:py-5 font-medium hover:bg-gray-100 transition text-xl mb-5"
+                    className="card_btn_outline w-full"
                   >
                     Add To Cart
                   </button>
                   <button
                     type="submit"
-                    className="w-full cursor-pointer bg-teal-500 text-white rounded-md py-2 lg:py-5 font-medium hover:bg-teal-600 transition text-xl"
+                    className="w-full card_btn"
                   >
                     Save Draft
                   </button>
                 </div>
               </div>
               <div className="shadow-card flex-1">
-                <h1 className="text-primary-text text-center text-2xl md:text-4xl font-medium mb-5 lg:mb-7">Order Now</h1>
-                <div className="flex items-center gap-5">
+                <h1 className="text-primary-text text-center text-xl font-medium mb-3">Order Now</h1>
+                <div className="flex items-center gap-2">
 
                   <button
                     type="button"
-                    className="flex-1 cursor-pointer border border-gray-300 rounded-md py-2 lg:py-5 font-medium hover:bg-gray-100 transition text-xl"
+                    className="flex-1 card_btn_outline"
                   >
                     Pay Later
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 cursor-pointer bg-teal-500 text-white rounded-md py-2 lg:py-5 font-medium hover:bg-teal-600 transition text-xl"
+                    className="flex-1 card_btn"
                   >
                     Pay Now
                   </button>

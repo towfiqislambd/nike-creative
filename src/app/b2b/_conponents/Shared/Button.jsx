@@ -8,7 +8,7 @@ const Button = ({
     className
 }) => {
     const baseStyle =
-        "px-4 py-2 rounded-md text-sm md:text-xl font-medium focus:outline-none transition cursor-pointer";
+        "px-4 py-2 rounded-md max-sm:text-sm font-medium focus:outline-none transition cursor-pointer";
 
     const variantStyles = {
         primary: "bg-secondary-red hover:bg-secondary-red/80 text-white",

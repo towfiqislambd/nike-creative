@@ -15,7 +15,7 @@ export default function ContactBanner() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Centered text */}
       <div className="relative z-10 text-center">
