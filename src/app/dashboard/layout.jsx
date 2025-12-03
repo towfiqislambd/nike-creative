@@ -330,7 +330,7 @@ const managerSidebarLinks = [
 ];
 
 export default function DashboardLayout({ children }) {
-  const user = { role: "b2b" };
+  const user = { role: "admin" };
   const [open, setOpen] = useState(false);
 
   return (
