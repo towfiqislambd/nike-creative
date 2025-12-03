@@ -28,9 +28,9 @@ export default function B2B2CResetPasswordPage() {
     >
       <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-10 w-full max-w-3xl bg-white/90 backdrop-blur-sm px-16 py-12 rounded-3xl shadow-lg">
+      <div className="relative z-10 w-full max-w-2xl bg-white/90 backdrop-blur-sm p-5 rounded-3xl shadow-lg">
         <div className="text-center mb-8">
-          <h2 className="text-center text-[#333] not-italic font-normal leading-[150%] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px]">
+          <h2 className="text-center text-[#333] not-italic font-normal leading-[150%] text-[24px] sm:text-[28px]">
             Reset Your Password
           </h2>
           <p className="text-sm text-gray-500 mt-2">

@@ -7,6 +7,7 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Container from "../Components/Common/Container";
 import { UserSvg } from "../Components/Svg/SvgContainer";
 import b2b2cLogo from "../Assets/b2b2c_logo.png";
+import {SearchIcon2} from "../Components/Svg/SvgContainer2"
 
 const B2B2CNavbar = () => {
   const pathname = usePathname();
@@ -21,11 +22,14 @@ const B2B2CNavbar = () => {
   return (
     <div className="sticky top-4 xl:top-6 mt-4 xl:mt-6 left-0 w-full z-50">
       <Container>
-        <nav className="flex items-center justify-between bg-white px-4 sm:px-6 lg:px-10 py-1 xl:py-2.5 border border-gray-200 rounded-full shadow-sm">
+        <nav className="flex items-center justify-between bg-white px-4 sm:px-6 lg:px-10 py-1 xl:py-1 border border-gray-200 rounded-full shadow-sm">
           {/* Left */}
           <div className="flex items-center gap-10">
             {/* Logo */}
-            <Link href="/" className="flex items-center size-14 sm:size-16 relative">
+            <Link
+              href="/"
+              className="flex items-center size-14 sm:size-16 relative"
+            >
               <Image
                 src={b2b2cLogo}
                 alt="Logo"
@@ -37,7 +41,7 @@ const B2B2CNavbar = () => {
 
             {/* Nav links */}
             <ul className="hidden xl:flex items-center gap-8">
-              {navLinks?.map(link => {
+              {navLinks?.map((link) => {
                 const isActive = pathname === link?.href;
 
                 return (
@@ -58,12 +62,13 @@ const B2B2CNavbar = () => {
 
           {/* Right */}
           <div className="hidden xl:flex gap-4 items-center">
-            <div className="w-[400px] px-6 py-3.5 border border-gray-100 rounded-full shadow-md  shadow-black/70">
+            <div className="flex items-center bg-gray-50 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] rounded-full px-3 py-2 w-[260px]">
               <input
                 type="text"
-                className="block w-full border border-none outline-none"
-                placeholder="Search product here...."
+                placeholder="Search product here..."
+                className="bg-transparent outline-none w-full text-gray-700 text-sm"
               />
+              <SearchIcon2 />
             </div>
 
             <button className="cursor-pointer">
@@ -74,7 +79,7 @@ const B2B2CNavbar = () => {
           {/* Mobile hamburger */}
           <button
             className="xl:hidden p-2 rounded-md hover:bg-gray-50"
-            onClick={() => setIsOpen(s => !s)}
+            onClick={() => setIsOpen((s) => !s)}
             aria-label="Toggle Menu"
           >
             {isOpen ? (
@@ -109,7 +114,7 @@ const B2B2CNavbar = () => {
           </div>
 
           <ul className="p-5 flex flex-col gap-2">
-            {navLinks.map(link => {
+            {navLinks.map((link) => {
               const isActive = pathname === link?.href;
 
               return (

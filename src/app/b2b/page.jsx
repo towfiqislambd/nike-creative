@@ -3,6 +3,7 @@ import DoorDesignSectionB2c from "../b2b2c/_components/DoorDesignSectionB2c";
 import DoorGallerySectionB2bLatest from "./_conponents/DoorGallerySectionB2bLatest";
 import DoorDesignSectionB2b from "./_conponents/DoorGallerySectionB2b";
 import FinallockSecionB2b from "./_conponents/FinallockSecionB2b";
+import DoorGallerySection from "../(home)/_components/DoorGallerySection";
 export default function Home() {
   return (
     <main className="relative min-h-screen">
@@ -15,7 +16,8 @@ export default function Home() {
       />
       <div>
         <DoorDesignSectionB2c />
-        <DoorDesignSectionB2b />
+        {/* <DoorDesignSectionB2b /> */}
+        <DoorGallerySection />
         <DoorGallerySectionB2bLatest />
         <FinallockSecionB2b />
       </div>
