@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaRegLightbulb } from "react-icons/fa";
+import { SearchIcon2 } from "../../../../Components/Svg/SvgContainer2";
 
 export default function B2BNavbar() {
   const pathname = usePathname();
@@ -57,26 +58,13 @@ export default function B2BNavbar() {
         </div>
         {/* Right Section: Search + Icons */}
         <div className="hidden lg:flex items-center gap-4">
-          <div className="flex items-center bg-gray-50 border border-gray-300 shadow-md shadow-black/70 rounded-full px-3 py-2 w-[260px]">
+          <div className="flex items-center bg-gray-50 shadow-[0_5px_8px_1px_rgba(0,0,0,0.20),_0_0_0.225px_0.225px_rgba(0,0,0,0.07),0_0_0.225px_0_rgba(0,0,0,0.05),0_2.698px_2.923px_-1.349px_rgba(0,0,0,0.25),0_0.899px_3.598px_0.899px_rgba(0,0,0,0.12)] rounded-full px-3 py-2 w-[260px]">
             <input
               type="text"
               placeholder="Search product here..."
               className="bg-transparent outline-none w-full text-gray-700 text-sm"
             />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 text-gray-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-4.35-4.35m2.6-6.65a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+           <SearchIcon2 />
           </div>
 
           <button className="p-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition">
