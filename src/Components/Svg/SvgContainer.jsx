@@ -51,8 +51,8 @@ export const UserSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
+      width="36"
+      height="36"
       viewBox="0 0 48 48"
       fill="none"
     >
@@ -825,8 +825,8 @@ export const PenSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
     >

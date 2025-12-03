@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import {
+  HeartIcon,
+  OrderNowSvg,
+  RightArrow,
+} from "../../../Components/Svg/SvgContainer2";
 
 const doors = [
   {
@@ -41,7 +46,7 @@ const doors = [
   },
 ];
 
-const  DoorGallerySectionB2bLatest =() => {
+const DoorGallerySectionB2bLatest = () => {
   const [selectedColors, setSelectedColors] = useState(
     doors.reduce((acc, door) => {
       acc[door.id] = Object.keys(door.images)[0];
@@ -54,7 +59,7 @@ const  DoorGallerySectionB2bLatest =() => {
   };
 
   return (
-    <section className="container  px-4 xl:px-0 py-10 xl:py-25">
+    <section className="container  px-4 xl:px-0 py-10 xl:pb-25">
       <div className="">
         <div className="text-center mb-12">
           <h2 className="section_title">Our Latest Products</h2>
@@ -70,39 +75,53 @@ const  DoorGallerySectionB2bLatest =() => {
                 key={door.id}
                 className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300"
               >
-                <div className="w-full h-64 overflow-hidden">
-                  <Image
-                    src={currentImage}
-                    alt={door.code}
-                    width={400}
-                    height={300}
-                    unoptimized
-                    className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
-                  />
+                <div className="w-full h-30 2xl:h-45 overflow-hidden relative">
+                  <div>
+                    <Image
+                      src={currentImage}
+                      alt={door.code}
+                      fill
+                      unoptimized
+                      className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute top-5 right-5 flex items-center gap-2">
+                    <div className="flex cursor-pointer size-[28px] items-center justify-center rounded-full bg-white/80 shadow-[0_1.333px_2.667px_-1.333px_rgba(19,25,39,0.12),_0_2.667px_2.667px_-1.333px_rgba(19,25,39,0.08)]">
+                      <RightArrow />
+                    </div>
+                    <div className="flex cursor-pointer size-[28px] items-center justify-center rounded-full bg-white/80 shadow-[0_1.333px_2.667px_-1.333px_rgba(19,25,39,0.12),_0_2.667px_2.667px_-1.333px_rgba(19,25,39,0.08)]">
+                      <HeartIcon />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="p-5">
-                  <h3 className="font-semibold text-gray-900 text-lg mb-2">
-                    {door.code}
-                  </h3>
+                <div className="p-5 flex items-center justify-between">
+                  <div>
+                    <h3 className="font-semibold text-gray-900 text-lg mb-2">
+                      {door.code}
+                    </h3>
 
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm text-gray-500">Color:</span>
-                    <div className="flex gap-1.5">
-                      {Object.keys(door.images).map((color, i) => (
-                        <button
-                          key={i}
-                          onClick={() => handleColorClick(door.id, color)}
-                          className={`w-4 h-4 rounded-full border ${
-                            selectedColors[door.id] === color
-                              ? "ring-2 ring-offset-1 ring-gray-700"
-                              : "border-gray-300"
-                          }`}
-                          style={{ backgroundColor: color }}
-                          aria-label={`Select color ${color}`}
-                        />
-                      ))}
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-gray-500">Color:</span>
+                      <div className="flex gap-1.5">
+                        {Object.keys(door.images).map((color, i) => (
+                          <button
+                            key={i}
+                            onClick={() => handleColorClick(door.id, color)}
+                            className={`w-4 h-4 rounded-full border ${
+                              selectedColors[door.id] === color
+                                ? "ring-2 ring-offset-1 ring-gray-700"
+                                : "border-gray-300"
+                            }`}
+                            style={{ backgroundColor: color }}
+                            aria-label={`Select color ${color}`}
+                          />
+                        ))}
+                      </div>
                     </div>
+                  </div>
+                  <div>
+                    <OrderNowSvg />
                   </div>
                 </div>
               </div>
@@ -118,7 +137,6 @@ const  DoorGallerySectionB2bLatest =() => {
       </div>
     </section>
   );
-}
-
+};
 
 export default DoorGallerySectionB2bLatest;

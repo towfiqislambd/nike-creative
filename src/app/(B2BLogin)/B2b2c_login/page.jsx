@@ -25,12 +25,12 @@ export default function B2B2CLoginPage() {
     >
       <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-10 w-full max-w-4xl bg-white/90 backdrop-blur-sm px-20 py-10 rounded-3xl shadow-lg">
+      <div className="relative z-10 w-full max-w-3xl bg-white/90 backdrop-blur-sm p-7 rounded-3xl shadow-lg">
         <div className="text-center mb-6">
-          <h2 className="text-center text-[#333] not-italic font-normal leading-[150%] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px]">
+          <h2 className="text-center text-[#333] not-italic font-normal leading-[150%] text-[24px] sm:text-[28px]">
             Welcome to Nike Creative Studio
           </h2>
-          <h3 className="text-lg text-gray-700 font-medium mt-2">Login</h3>
+          <h3 className="text-lg md:text-2xl xl:text-3xl text-gray-700 font-semibold mt-2">Login</h3>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

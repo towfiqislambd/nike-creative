@@ -24,9 +24,9 @@ export default function B2B2CForgotPasswordPage() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Card */}
-      <div className="relative z-10 w-full max-w-3xl bg-white/90 backdrop-blur-sm px-16 py-12 rounded-3xl shadow-lg">
+      <div className="relative z-10 w-full max-w-xl bg-white/90 backdrop-blur-sm p-5 rounded-3xl shadow-lg">
         <div className="text-center mb-6">
-          <h2 className="text-center text-[#333] not-italic font-semibold leading-[150%] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px]">
+          <h2 className="text-center text-[#333] not-italic leading-[150%] text-[24px] sm:text-[26px]">
             Forgot Password
           </h2>
           <p className="w-[70%] mx-auto text-sm text-gray-500 mt-2">
@@ -63,7 +63,7 @@ export default function B2B2CForgotPasswordPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-25 py-[15px] rounded-[40px] bg-[#21BBA2] text-white cursor-pointer hover:bg-[#1aa58e] transition disabled:opacity-70"
+              className="px-16 py-[12px] rounded-[40px] bg-[#21BBA2] text-white cursor-pointer hover:bg-[#1aa58e] transition disabled:opacity-70"
             >
               {isSubmitting ? "Sending..." : "Send Code"}
             </button>

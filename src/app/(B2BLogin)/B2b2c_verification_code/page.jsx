@@ -75,8 +75,8 @@ export default function B2B2CVerificationCodePage() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Center Card */}
-      <div className="relative z-10 w-full max-w-3xl bg-white/90 backdrop-blur-sm px-16 py-12 rounded-3xl shadow-lg text-center">
-        <h2 className="text-center text-[#333] not-italic font-normal leading-[150%] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] mb-2">
+      <div className="relative z-10 w-full max-w-xl bg-white/90 backdrop-blur-sm p-5 rounded-3xl shadow-lg text-center">
+        <h2 className="text-center text-[#333] not-italic font-normal leading-[150%] text-[24px] sm:text-[26px] mb-2">
           Verification Code
         </h2>
         <p className="text-sm text-gray-500">
@@ -110,7 +110,7 @@ export default function B2B2CVerificationCodePage() {
             <button
               type="submit"
               disabled={code.length !== LENGTH || submitting}
-              className="px-[100px] py-[18px] rounded-[40px] bg-[#21BBA2] text-white cursor-pointer hover:bg-[#1aa58e] transition disabled:opacity-70"
+              className="px-16 py-[12px] rounded-[40px] bg-[#21BBA2] text-white cursor-pointer hover:bg-[#1aa58e] transition disabled:opacity-70"
             >
               {submitting ? "Verifying..." : "Verify Now"}
             </button>

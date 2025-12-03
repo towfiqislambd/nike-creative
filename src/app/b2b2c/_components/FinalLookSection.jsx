@@ -26,7 +26,7 @@ export default function FinalLookSection() {
           setValue(field, color, { shouldDirty: true });
           setSelected(prev => ({ ...prev, [field]: color }));
         }}
-        className={`size-6 sm:size-6 2xl:size-10 rounded-full shadow-md cursor-pointer transition-all ${
+        className={`size-6 2xl:size-8 rounded-full shadow-md cursor-pointer transition-all ${
           isSelected
             ? "ring-2 ring-[#21BBA2]"
             : "hover:ring-2 hover:ring-gray-300"
@@ -54,7 +54,7 @@ export default function FinalLookSection() {
             className="cursor-pointer mt-6 inline-flex items-center justify-between rounded-[40px] border border-[#1F1F1F] py-1.5 2xl:py-2 pr-4 pl-4 2xl:pl-7 text-sm text-[#1F1F1F]/80 hover:bg-black/[0.02] transition"
           >
             <span className="mr-3">Try the Visualizer</span>
-            <span className="grid place-items-center size-8 2xl:size-12 rounded-full bg-[#21BBA2]">
+            <span className="grid place-items-center size-6 md:size-8 rounded-full bg-[#21BBA2]">
               <LockSvg />
             </span>
           </button>
@@ -71,7 +71,7 @@ export default function FinalLookSection() {
               className="cursor-pointer inline-flex items-center justify-between rounded-[40px] border border-[#1F1F1F] w-fit py-1.5 2xl:py-2 pr-4 pl-4 2xl:pl-5 text-sm text-[#1F1F1F]/80 hover:bg-black/[0.02] transition"
             >
               <span className="mr-3">Single Door Design</span>
-              <span className="grid place-items-center size-8 2xl:size-12 rounded-full bg-[#21BBA2]">
+              <span className="grid place-items-center size-6 md:size-8 rounded-full bg-[#21BBA2]">
                 <LockSvg />
               </span>
             </button>
@@ -90,7 +90,7 @@ export default function FinalLookSection() {
               className="cursor-pointer w-fit inline-flex items-center justify-between rounded-[40px] border border-[#1F1F1F] py-1.5 2xl:py-2 pr-3 pl-4 2xl:pl-5 text-sm text-[#1F1F1F]/80 hover:bg-black/[0.02] transition"
             >
               <span className="mr-3">Double Door Design</span>
-              <span className="grid place-items-center size-8 2xl:size-12 rounded-full bg-[#21BBA2]">
+              <span className="grid place-items-center size-6 md:size-8 rounded-full bg-[#21BBA2]">
                 <LockSvg />
               </span>
             </button>

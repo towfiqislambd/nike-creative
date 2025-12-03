@@ -27,9 +27,16 @@ const page = () => {
     ],
   };
   return (
-    <div className="flex items-center justify-center w-full min-h-screen p-2">
-      <ServiceRequest data={serviceRequestData}/>
-    </div>
+    <main
+      className="relative min-h-screen bg-cover bg-center flex items-center justify-center"
+      style={{
+        backgroundImage: "url('https://i.ibb.co.com/fYVRrMc6/B2b2c-Login.png')",
+      }}
+    >
+      <div className="flex items-center justify-center w-full min-h-screen p-2">
+        <ServiceRequest data={serviceRequestData} />
+      </div>
+    </main>
   );
 };
 

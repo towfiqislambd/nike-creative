@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <div className="absolute top-0 left-0 mt-6 w-full z-50">
-      <nav className="container flex items-center justify-between w-full bg-white mt-6 px-4 sm:px-6 lg:px-10 py-2.5 border border-gray-200 rounded-full shadow-sm">
+      <nav className="container flex items-center justify-between w-full bg-white mt-6 px-4 sm:px-6 lg:px-10 py-1 border border-gray-200 rounded-full shadow-sm">
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center">
             <img
