@@ -99,12 +99,12 @@ const adminSidebarLinks = [
     icon: <B2Svg />,
     path: "/dashboard/admin/orders-management",
   },
-  {
-    id: 11,
-    label: "Dispatcher Dashboard",
-    icon: <B10Svg />,
-    path: "/dashboard/admin/dispatcher",
-  },
+  // {
+  //   id: 11,
+  //   label: "Dispatcher Dashboard",
+  //   icon: <B10Svg />,
+  //   path: "/dashboard/admin/dispatcher",
+  // },
   {
     id: 12,
     label: "Inventory",
@@ -217,12 +217,12 @@ const adminSidebarLinks = [
       },
     ],
   },
-  {
-    id: 30,
-    label: "Visit Site",
-    icon: <B22Svg />,
-    path: "/dashboard/admin/visit-site",
-  },
+  // {
+  //   id: 30,
+  //   label: "Visit Site",
+  //   icon: <B22Svg />,
+  //   path: "/dashboard/admin/visit-site",
+  // },
 ];
 
 const accountingSidebarLinks = [

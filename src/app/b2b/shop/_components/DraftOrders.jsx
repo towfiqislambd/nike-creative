@@ -31,10 +31,10 @@ const data = [
 
 const DraftOrders = () => {
   return (
-    <div className="w-full max-w-lg sm:max-w-full overflow-x-auto">
+    <div className="w-full max-w-lg sm:max-w-full overflow-x-auto p-7 backdrop-blur-md border border-gray-200 rounded-4xl">
       <table className="w-full border-spacing-y-3 border-separate text-center text-sm md:text-base">
         <thead>
-          <tr className="rounded-lg shadow-lg">
+          <tr className="rounded-lg">
             <td className="py-4 px-2 text-nowrap">Product Photo</td>
             <td className="py-4 px-2 text-nowrap">Product Name</td>
             <td className="py-4 px-2 text-nowrap">Saved time</td>

@@ -32,9 +32,17 @@ const page = () => {
     "p-4 2xl:p-5 border border-[#E9E9E9] bg-white rounded-xl xl:w-[312px] space-y-3 shadow-[0_30px_65px_6px_rgba(19,25,39,0.11)]";
 
   return (
-    <section className="my-5 md:my-10">
+    <section className="my-5 md:my-10 relative">
+      <Image
+        src="https://i.ibb.co.com/qFx39qL2/Gemini-Generated-Image-9afkus9afkus9afk.png"
+        alt="Background"
+        fill
+        unoptimized
+        className="object-cover bg-no-repeat -z-10 absolute top-60"
+      />
+
       <Container>
-        <main className="flex flex-col lg:flex-row gap-5 xl:gap-8">
+        <main className="flex flex-col lg:flex-row gap-5 xl:gap-8 relative">
           {/* Sidebar */}
           <aside className="space-y-5 shrink-0">
             {/* Upper Div */}
